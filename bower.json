@@ -1,0 +1,20 @@
+{
+  "name": "swan-ui",
+  "version": "0.0.1",
+  "homepage": "https://github.com/future-team/swan-ui",
+  "authors": [
+    "yanfang.chang <chang20159@foxmail.com>"
+  ],
+  "license": "MIT",
+  "ignore": [
+    "**/.*",
+    "node_modules",
+    "bower_components",
+    "examples/lib",
+    "test",
+    "tests"
+  ],
+  "dependencies": {
+    "phoenix-styles": "*"
+  }
+}
