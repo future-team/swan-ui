@@ -18,7 +18,7 @@
 
 <script>
     export default {
-        name: 'button-page',
+        name: 'button',
         data: function(){
             return {
                 size: 'sm',
@@ -34,7 +34,7 @@
                     this.size = 'lg';
                     this.text = '点我变小';
                 }
-
+                console.log(this.text)
             }
         }
     }

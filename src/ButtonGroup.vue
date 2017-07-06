@@ -1,0 +1,29 @@
+<template>
+    <div class="clearfix"
+         :class="classObject">
+        <slot></slot>
+    </div>
+</template>
+
+<script>
+    import SwBase from './Base.vue'
+    export default {
+        name: 'SwButtonGroup',
+        extends: SwBase,
+        props: {
+            classPrefix : {
+                type: String,
+                default: 'button-group'
+            },
+            phType: {
+                type: String,
+                default: 'default'
+            }
+        }
+    }
+</script>
+
+<style lang="less">
+    @import "../node_modules/phoenix-styles/less/public.less";
+    @import "../node_modules/phoenix-styles/less/modules/button-group.less";
+</style>

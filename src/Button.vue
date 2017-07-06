@@ -1,6 +1,6 @@
 <template>
-    <button v-bind:class="classObject"
-            v-on:click="handleClick">
+    <button :class="classObject"
+            @click="handleClick">
         <slot></slot>
     </button>
 </template>
@@ -12,7 +12,7 @@
         extends: SwBase,
         methods: {
             handleClick: function(evt){
-                this.$emit('click',evt)
+                this.$emit('click',this.id);
             }
         },
         props:{

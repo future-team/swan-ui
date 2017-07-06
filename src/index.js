@@ -1,7 +1,9 @@
 import Button from './Button.vue'
+import ButtonGroup from './ButtonGroup.vue'
 
 const components = [
-    Button
+    Button,
+    ButtonGroup
 ]
 
 const install = function(Vue, config = {}) {
@@ -19,5 +21,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 
 export default {
     install,
-    Button
+    Button,
+    ButtonGroup
 }

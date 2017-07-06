@@ -15,14 +15,19 @@ module.exports = extend({},{
         filename: 'examples.js'
     },
     resolve: {
-        alias: { "swan-ui" : "../../src/index.js" }
+        alias: { "swan-ui" : "../../src/index.js" },
+        modules: [
+            'node_modules',
+            'lib'
+        ],
+        extensions: ['.js','.vue']
     },
     module: {
         rules:[{
             test: /\.vue$/,
             use: 'vue-loader'
         },{
-            test:/\.js/,
+            test:/\.js$/,
             use: ['babel-loader'],
             exclude: /node_modules/
         },{

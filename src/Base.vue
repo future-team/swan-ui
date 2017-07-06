@@ -5,6 +5,7 @@
     export default {
         name: 'SwBase',
         mixins: [ClassName],
+        props: ['id'],
         computed: {
             classObject: function(){
                 return this.getClassObject()
