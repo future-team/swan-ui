@@ -12,6 +12,8 @@ var gulp = require('gulp'),
     projectName = require("./package.json").name,
     vueCompiler = require('vueify').compiler
     fs = require('fs'),
+    glob = require('glob'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin'),
     devPort = 3005;
 
 
@@ -19,14 +21,40 @@ function resolve(dir) {
     return path.join(process.cwd(), dir)
 }
 
+var getEntry = function() {
+    var webpackConfigEntry = {};
+    var basedir =resolve('src');
+    var files = glob.sync(path.join(basedir, '*.vue'));
+
+    files.forEach(function(file) {
+        var relativePath = path.relative(basedir, file);
+        webpackConfigEntry[relativePath.replace(/\.vue/, '')] = [file];
+    });
+
+    return webpackConfigEntry;
+};
+
 gulp.task('babel', function () {
     return gulp.src(['src/**/*.js'])
         .pipe(babel())
         .pipe(gulp.dest('lib'))
 });
 
-gulp.task('component',function(){
-
+gulp.task('component',function(done){
+    let config = {
+        entry: getEntry(),
+        output: {
+            path: resolve('lib'),
+            filename: '[name].js'
+        },
+        module:webpackConfig.module,
+        plugins: webpackConfig.plugins
+    };
+    webpack(config).run(function (err, stats) {
+        if (err) throw new gutil.PluginError("webpack", err);
+        gutil.log("[webpack]", stats.toString({}));
+        done();
+    });
 })
 
 gulp.task('open', function () {

@@ -3,7 +3,6 @@
         <sw-button phStyle="primary">primary</sw-button>
         <sw-button phStyle="warning">warning</sw-button>
         <sw-button phStyle="danger" :hollow="true">danger</sw-button>
-        <sw-button phStyle="info" :block="true">info</sw-button>
         <sw-button phStyle="error" :radius="true">error</sw-button>
         <sw-button phStyle="success" :disabled="true">success</sw-button>
         <sw-button phStyle="link">link</sw-button>
@@ -12,6 +11,8 @@
         <sw-button phSize="lg">lg</sw-button>
         <sw-button :phSize="size" v-on:click="handleClick">{{text}}</sw-button>
         <sw-button phSize="sm">sm</sw-button>
+        <sw-button phStyle="info" :block="true">info</sw-button>
+
     </div>
 </template>
 

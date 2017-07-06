@@ -39,6 +39,7 @@
     "extract-text-webpack-plugin": "^2.1.2",
     "file-loader": "^0.11.2",
     "gfs-doc": "^0.1.35",
+    "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",
     "gulp-open": "^2.0.0",

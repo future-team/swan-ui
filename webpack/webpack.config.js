@@ -9,26 +9,28 @@ function resolve(dir) {
 
 module.exports = {
     entry: [resolve('src/index.js')],
-    devtool:'source-map',
-    resolve:{
-        alias:{
-            "~":path.join(process.cwd(),"node_modules")
-        },
-        extensions: ['.js', '.vue']
-    },
     output: {
         library: 'swan',
         libraryTarget: 'umd',
         path: resolve('dist'),
-        filename: projectName+'.js'
+        filename: projectName +'.js'
+    },
+    devtool:'source-map',
+    resolve:{
+        modules: [
+            'node_modules',
+            'lib'
+        ],
+        extensions: ['.js', '.vue']
     },
     externals:[{
-        'vue': {
-            root: 'vue',
-            commonjs2: 'vue',
+        vue: {
+            root: 'Vue',
             commonjs: 'vue',
+            commonjs2: 'vue',
             amd: 'vue'
-        }
+        },
+        'vue-router':'VueRouter'
     }],
     module:{
         rules:[{
@@ -49,6 +51,6 @@ module.exports = {
         }]
     },
     plugins: [
-        new ExtractTextPlugin('phoenix-styles.css')
+        new ExtractTextPlugin('[name].css')
     ]
 };
