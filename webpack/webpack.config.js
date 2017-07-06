@@ -11,10 +11,13 @@ module.exports = {
     entry: [resolve('src/index.js')],
     devtool:'source-map',
     resolve:{
+        alias:{
+            "~":path.join(process.cwd(),"node_modules")
+        },
         extensions: ['.js', '.vue']
     },
     output: {
-        library: 'Swan',
+        library: 'swan',
         libraryTarget: 'umd',
         path: resolve('dist'),
         filename: projectName+'.js'

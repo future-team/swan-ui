@@ -56,11 +56,13 @@
     "vue-router": "^2.7.0",
     "vue-template-compiler": "^2.3.4",
     "vue-template-es2015-compiler": "^1.5.3",
+    "vueify": "^9.4.1",
     "webpack": "^3.0.0",
     "webpack-bower-resolver": "0.0.1",
     "webpack-dev-server": "^2.5.0"
   },
   "dependencies": {
+    "classnames": "^2.2.5",
     "extend": "^3.0.1",
     "phoenix-styles": "^1.5.2",
     "vue": "^2.3.4"

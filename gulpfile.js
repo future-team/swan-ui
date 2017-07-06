@@ -4,18 +4,30 @@ var gulp = require('gulp'),
     babel = require('gulp-babel'),
     gutil = require('gulp-util'),
     open = require('gulp-open'),
+    path = require('path'),
     Server = require('karma').Server,
     webpackConfig = require('./webpack/webpack.config.js'),
     exampleConfig = require('./webpack/example.config.js'),
     WebpackDevServer = require("webpack-dev-server"),
     projectName = require("./package.json").name,
+    vueCompiler = require('vueify').compiler
+    fs = require('fs'),
     devPort = 3005;
 
+
+function resolve(dir) {
+    return path.join(process.cwd(), dir)
+}
+
 gulp.task('babel', function () {
-    return gulp.src('src/**/*.js')
+    return gulp.src(['src/**/*.js'])
         .pipe(babel())
         .pipe(gulp.dest('lib'))
 });
+
+gulp.task('component',function(){
+
+})
 
 gulp.task('open', function () {
     gulp.src(__filename)
@@ -85,7 +97,7 @@ gulp.task('skin', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['babel', 'min-webpack', 'exampleWebpack','skin']);
+gulp.task('default', ['babel','component', 'min-webpack', 'exampleWebpack','skin']);
 gulp.task('demo', ['example', 'open']);
 gulp.task('min', ['min-webpack']);
 gulp.task('test',['karma']);

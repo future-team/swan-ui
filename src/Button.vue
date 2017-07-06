@@ -1,61 +1,32 @@
 <template>
-    <button v-bind:disabled="disabled"
-            v-bind:class="btnClass"
+    <button v-bind:class="classObject"
             v-on:click="handleClick">
         <slot></slot>
     </button>
 </template>
 
 <script>
+    import SwBase from './Base.vue'
     export default {
-        name: 'sw-button',
+        name: 'SwButton',
+        extends: SwBase,
         methods: {
             handleClick: function(evt){
                 this.$emit('click',evt)
-            },
-            genProperties(){
-                let btnClass = ['ph-button']
-                let props = this.$props
-                for(let key in props){
-                    if(props[key] && props.hasOwnProperty(key)){
-                        btnClass.push(`ph-button-${props[key]}`)
-                    }
-                }
-                return btnClass
-            }
-        },
-        computed:{
-            btnClass: function(){
-                return this.genProperties()
             }
         },
         props:{
+            classPrefix: {
+                type: String,
+                default: 'button'
+            },
             phSize: {
                 type: String,
-                default: 'sm',
-                validator: function(value) {
-                    return [
-                        'sm',
-                        'md',
-                        'lg'
-                    ].indexOf(value) > -1
-                }
+                default: 'sm'
             },
             phStyle: {
                 type: String,
-                default: 'primary',
-                validator: function(value) {
-                    return [
-                            'primary',
-                            'warning',
-                            'danger',
-                            'info',
-                            'error',
-                            'success',
-                            'link',
-                            'gray'
-                        ].indexOf(value) > -1
-                }
+                default: 'primary'
             },
             block: Boolean,
             radius: Boolean,
@@ -69,6 +40,6 @@
 </script>
 
 <style lang="less">
-    @import "../node_modules/phoenix-styles/less/public.less";
-    @import "../node_modules/phoenix-styles/less/modules/buttons.less";
+    @import "~phoenix-styles/less/public.less";
+    @import "~phoenix-styles/less/modules/buttons.less";
 </style>
