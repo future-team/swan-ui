@@ -1,13 +1,16 @@
-import Button from './Button.vue'
-import ButtonGroup from './ButtonGroup.vue'
-import Badge from './Badge.vue'
-import Star from './Star.vue'
+import Button from './modules/Button.vue'
+import ButtonGroup from './modules/ButtonGroup.vue'
+import Badge from './modules/Badge.vue'
+import Star from './modules/Star.vue'
+import Icon from './modules/Icon.vue'
+// import 'phoenix-styles'
 
 const components = [
     Button,
     ButtonGroup,
     Badge,
-    Star
+    Star,
+    Icon
 ]
 
 const install = function(Vue, config = {}) {
@@ -28,5 +31,6 @@ export default {
     Button,
     ButtonGroup,
     Badge,
-    Star
+    Star,
+    Icon
 }

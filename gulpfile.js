@@ -23,13 +23,15 @@ function resolve(dir) {
 
 var getEntry = function() {
     var webpackConfigEntry = {};
-    var basedir =resolve('src');
+    var basedir =resolve('src/modules');
     var files = glob.sync(path.join(basedir, '*.vue'));
 
     files.forEach(function(file) {
         var relativePath = path.relative(basedir, file);
         webpackConfigEntry[relativePath.replace(/\.vue/, '')] = [file];
     });
+
+    webpackConfigEntry['index'] = resolve('src/index.js')
 
     return webpackConfigEntry;
 };
@@ -40,7 +42,7 @@ gulp.task('babel', function () {
         .pipe(gulp.dest('lib'))
 });
 
-gulp.task('component',function(done){
+gulp.task('vue-webpack',function(done){
     let config = {
         entry: getEntry(),
         output: {
@@ -70,7 +72,8 @@ gulp.task('example', function (done) {
         'webpack/hot/only-dev-server',
         './examples/src/index.js'
     ];
-    new WebpackDevServer(webpack(wbpk), {
+    var compiler = webpack(wbpk);
+    new WebpackDevServer(compiler, {
         publicPath: '/examples/dist/',
         hot: true,
         historyApiFallback: true,
@@ -125,7 +128,7 @@ gulp.task('skin', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['babel','component', 'min-webpack', 'exampleWebpack','skin']);
+gulp.task('default', ['babel','vue-webpack','min-webpack', 'exampleWebpack','skin']);
 gulp.task('demo', ['example', 'open']);
 gulp.task('min', ['min-webpack']);
 gulp.task('test',['karma']);

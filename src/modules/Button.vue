@@ -40,6 +40,6 @@
 </script>
 
 <style lang="less" scoped>
-    @import "~phoenix-styles/less/public.less";
-    @import "~phoenix-styles/less/modules/buttons.less";
+    @import "~~phoenix-styles/less/public.less";
+    @import "~~phoenix-styles/less/modules/buttons.less";
 </style>

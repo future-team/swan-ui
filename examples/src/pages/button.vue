@@ -18,7 +18,7 @@
 
 <script>
     export default {
-        name: 'button',
+        name: 'Button',
         data: function(){
             return {
                 size: 'sm',
@@ -40,7 +40,7 @@
     }
 </script>
 
-<style lang="css">
+<style lang="less">
     .customClass{
         color: #000000;
     }

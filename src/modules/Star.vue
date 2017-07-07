@@ -40,6 +40,6 @@
 </script>
 
 <style lang="less">
-    @import "~phoenix-styles/less/public.less";
-    @import "~phoenix-styles/less/modules/star.less";
+    @import "~~phoenix-styles/less/public.less";
+    @import "~~phoenix-styles/less/modules/star.less";
 </style>

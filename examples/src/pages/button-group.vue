@@ -16,7 +16,7 @@
 
 <script>
     export default {
-        name: 'button-group',
+        name: 'ButtonGroup',
         data: function(){
             return {
                 active1: 'button1',

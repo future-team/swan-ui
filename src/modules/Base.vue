@@ -1,5 +1,5 @@
 <script>
-    import ClassName from './mixins/style'
+    import ClassName from '../mixins/style'
     import classnames from 'classnames'
 
     export default {

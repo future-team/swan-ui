@@ -24,6 +24,6 @@
 </script>
 
 <style lang="less" scoped>
-    @import "~phoenix-styles/less/public.less";
-    @import "~phoenix-styles/less/modules/button-group.less";
+    @import "~~phoenix-styles/less/public.less";
+    @import "~~phoenix-styles/less/modules/button-group.less";
 </style>

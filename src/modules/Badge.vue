@@ -37,6 +37,6 @@
 </script>
 
 <style lang="less" scoped>
-    @import "~phoenix-styles/less/public.less";
-    @import "~phoenix-styles/less/modules/badges.less";
+    @import "~~phoenix-styles/less/public.less";
+    @import "~~phoenix-styles/less/modules/badges.less";
 </style>

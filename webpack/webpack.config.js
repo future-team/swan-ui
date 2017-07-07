@@ -7,6 +7,20 @@ function resolve(dir) {
     return path.join(process.cwd(), dir)
 }
 
+var cssOption = {
+    use: [
+        'css-loader'
+    ],
+    fallback: 'vue-style-loader'
+};
+var lessOption = {
+    use: [
+        'css-loader',
+        'less-loader'
+    ],
+    fallback: 'vue-style-loader'
+};
+
 module.exports = {
     entry: [resolve('src/index.js')],
     output: {
@@ -18,11 +32,10 @@ module.exports = {
     devtool:'source-map',
     resolve:{
         modules: [
-            'node_modules',
-            'lib'
+            'node_modules'
         ],
         alias: {
-            '~': path.join(process.cwd(),"node_modules")
+            '~~': path.join(process.cwd(),"node_modules")
         },
         extensions: ['.js', '.vue']
     },
@@ -38,16 +51,24 @@ module.exports = {
     module:{
         rules:[{
             test: /\.vue$/,
-            use: 'vue-loader'
+            loader: 'vue-loader',
+            exclude: /node_modules/,
+            options: {
+                loaders: {
+                    'css': ExtractTextPlugin.extract(cssOption),
+                    'less': ExtractTextPlugin.extract(lessOption)
+                }
+            }
         },{
             test:/\.js$/,
             use: ['babel-loader'],
             exclude: /node_modules/
         },{
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract(cssOption)
+        },{
             test:/\.less$/,
-            use: ExtractTextPlugin.extract({
-                 use: 'less-loader'
-            })
+            use: ExtractTextPlugin.extract(lessOption)
         },{
             test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
             use: 'file-loader?name=./iconfont/[name].[ext]'

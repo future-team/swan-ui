@@ -11,7 +11,7 @@
 
 <script>
     export default {
-        name: 'badge'
+        name: 'Badge'
     }
 
 </script>
