@@ -23,7 +23,7 @@
     }
 </script>
 
-<style lang="less">
-    @import "../node_modules/phoenix-styles/less/public.less";
-    @import "../node_modules/phoenix-styles/less/modules/button-group.less";
+<style lang="less" scoped>
+    @import "~phoenix-styles/less/public.less";
+    @import "~phoenix-styles/less/modules/button-group.less";
 </style>

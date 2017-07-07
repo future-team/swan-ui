@@ -1,9 +1,11 @@
 import Button from './Button.vue'
 import ButtonGroup from './ButtonGroup.vue'
+import Badge from './Badge.vue'
 
 const components = [
     Button,
-    ButtonGroup
+    ButtonGroup,
+    Badge
 ]
 
 const install = function(Vue, config = {}) {
@@ -22,5 +24,6 @@ if (typeof window !== 'undefined' && window.Vue) {
 export default {
     install,
     Button,
-    ButtonGroup
+    ButtonGroup,
+    Badge
 }

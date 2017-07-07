@@ -21,6 +21,9 @@ module.exports = {
             'node_modules',
             'lib'
         ],
+        alias: {
+            '~': path.join(process.cwd(),"node_modules")
+        },
         extensions: ['.js', '.vue']
     },
     externals:[{
