@@ -38,10 +38,6 @@ let Tool = {
         return false;
     },
 
-    setPhPrefix: (val)=>{
-        return 'ph-' + val;
-    },
-
     getDeviceInfo(type){
         let u = navigator.userAgent;
         let typeList = {

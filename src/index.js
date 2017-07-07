@@ -1,11 +1,13 @@
 import Button from './Button.vue'
 import ButtonGroup from './ButtonGroup.vue'
 import Badge from './Badge.vue'
+import Star from './Star.vue'
 
 const components = [
     Button,
     ButtonGroup,
-    Badge
+    Badge,
+    Star
 ]
 
 const install = function(Vue, config = {}) {
@@ -25,5 +27,6 @@ export default {
     install,
     Button,
     ButtonGroup,
-    Badge
+    Badge,
+    Star
 }

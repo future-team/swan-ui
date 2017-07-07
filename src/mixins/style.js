@@ -131,6 +131,9 @@ export default {
                 var reg = new RegExp('(\\s|^)' + cls + '(\\s|$)');
                 obj.className = obj.className.replace(reg, ' ');
             }
+        },
+        setPhPrefix: function(val){
+            return 'ph-' + val;
         }
     }
 }
