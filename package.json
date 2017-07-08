@@ -62,7 +62,8 @@
     "vueify": "^9.4.1",
     "webpack": "^2.3.1",
     "webpack-bower-resolver": "0.0.1",
-    "webpack-dev-server": "^2.4.2"
+    "webpack-dev-server": "^2.4.2",
+    "webpack-merge": "^4.1.0"
   },
   "dependencies": {
     "classnames": "^2.2.5",

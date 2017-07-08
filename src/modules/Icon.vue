@@ -31,21 +31,6 @@
             phSize: {
                 type: String,
                 default: 'sm'
-            },
-            classMapping : {
-                type: Object,
-                default: function(){
-                    return {
-                        'primary':'primary',
-                        'info':'info',
-                        'success':'success',
-                        'error':'error',
-                        'warning':'warning',
-                        'danger':'danger',
-                        'link':'link',
-                        'gray':'gray'
-                    }
-                }
             }
         }
     }

@@ -1,17 +1,19 @@
 <script>
-    import ClassName from '../mixins/style'
+    import { getStyleProps,getClassObject } from '../utils/classUtil'
     import classnames from 'classnames'
 
     export default {
         name: 'SwBase',
-        mixins: [ClassName],
         props: ['id'],
         computed: {
+            styleProps: function(){
+                return getStyleProps(this.$props);
+            },
             classObject: function(){
-                return this.getClassObject()
+                return getClassObject(this.styleProps.classProps,this.$props.classPrefix);
             },
             styleObject: function(){
-                return this.getStyleObject();
+                return this.styleProps.styleObject;
             }
         }
     }

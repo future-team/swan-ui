@@ -7,18 +7,6 @@ function resolve(dir) {
     return path.join(process.cwd(), dir)
 }
 
-var cssOption = {
-    use: 'css-loader',
-    fallback: 'vue-style-loader'
-};
-var lessOption = {
-    use: [
-        'css-loader',
-        'less-loader'
-    ],
-    fallback: 'vue-style-loader'
-};
-
 module.exports = extend({},{
     entry: resolve('examples/src/index.js'),
     output: {
@@ -37,30 +25,23 @@ module.exports = extend({},{
         rules:[{
             test: /\.vue$/,
             loader: 'vue-loader',
-            exclude: /node_modules/,
-            options: {
-                loaders: {
-                    // 'css': ExtractTextPlugin.extract(cssOption),
-                    // 'less': ExtractTextPlugin.extract(lessOption)
-                }
-            }
+            exclude: /node_modules/
         },{
             test:/\.js$/,
             use: ['babel-loader'],
             exclude: /node_modules/
         },{
             test: /\.css$/,
-            use: ExtractTextPlugin.extract(cssOption)
+            use: ExtractTextPlugin.extract('css-loader')
         },{
             test:/\.less$/,
-            use: ExtractTextPlugin.extract(lessOption)
+            use:  ExtractTextPlugin.extract('style-loader", "css-loader!less-loader')
         },{
             test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-            use: 'file-loader?name=./dist/iconfont/[name].[ext]'
+            use: 'file-loader?name=../dist/iconfont/[name].[ext]'
         }]
     },
     plugins:[
-        // new webpack.optimize.UglifyJsPlugin(),
         new webpack.HotModuleReplacementPlugin(),
         new ExtractTextPlugin('example.css')
     ]

@@ -1,12 +1,13 @@
 <template>
     <div :class="classList">
-        <div :class="setPhPrefix('star-grey')"></div>
+        <div class="ph-star-grey"></div>
     </div>
 </template>
 
 <script>
     import SwBase from './Base.vue'
     import classnames from 'classnames'
+    import { setPhPrefix } from '../utils/classUtil'
     export default {
         name: 'SwStar',
         extends: SwBase,
@@ -33,7 +34,7 @@
         computed: {
             classList: function(){
                 let rateCls = 'star-'+ Math.round((this.rate*2)/10)*5;
-                return classnames(this.classObject,this.setPhPrefix(rateCls));
+                return classnames(this.classObject,setPhPrefix(rateCls));
             }
         }
     }

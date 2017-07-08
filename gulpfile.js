@@ -10,10 +10,9 @@ var gulp = require('gulp'),
     exampleConfig = require('./webpack/example.config.js'),
     WebpackDevServer = require("webpack-dev-server"),
     projectName = require("./package.json").name,
-    vueCompiler = require('vueify').compiler
     fs = require('fs'),
     glob = require('glob'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin'),
+    ExtractTextPlugin = require('extract-text-webpack-plugin')
     devPort = 3005;
 
 
@@ -42,7 +41,7 @@ gulp.task('babel', function () {
         .pipe(gulp.dest('lib'))
 });
 
-gulp.task('vue-webpack',function(done){
+gulp.task('component-webpack',function(done){
     let config = {
         entry: getEntry(),
         output: {
@@ -50,11 +49,13 @@ gulp.task('vue-webpack',function(done){
             filename: '[name].js'
         },
         module:webpackConfig.module,
-        plugins: webpackConfig.plugins
+        plugins: [
+            new ExtractTextPlugin('[name].css')
+        ]
     };
     webpack(config).run(function (err, stats) {
         if (err) throw new gutil.PluginError("webpack", err);
-        gutil.log("[webpack]", stats.toString({}));
+        gutil.log("[component-webpack]", stats.toString({}));
         done();
     });
 })
@@ -95,10 +96,10 @@ gulp.task('webpack', function (done) {
     });
 });
 
-gulp.task('exampleWebpack', function (done) {
+gulp.task('example-webpack', function (done) {
     webpack(exampleConfig).run(function (err, stats) {
         if (err) throw new gutil.PluginError("exampleWebpack", err);
-        gutil.log("[exampleWebpack]", stats.toString({}));
+        gutil.log("[example-webpack]", stats.toString({}));
         done();
     });
 });
@@ -128,7 +129,7 @@ gulp.task('skin', function () {
         .pipe(gulp.dest('dist'));
 });
 
-gulp.task('default', ['babel','vue-webpack','min-webpack', 'exampleWebpack','skin']);
+gulp.task('default', ['babel','component-webpack','min-webpack', 'example-webpack','skin']);
 gulp.task('demo', ['example', 'open']);
 gulp.task('min', ['min-webpack']);
 gulp.task('test',['karma']);

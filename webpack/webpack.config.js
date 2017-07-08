@@ -7,20 +7,6 @@ function resolve(dir) {
     return path.join(process.cwd(), dir)
 }
 
-var cssOption = {
-    use: [
-        'css-loader'
-    ],
-    fallback: 'vue-style-loader'
-};
-var lessOption = {
-    use: [
-        'css-loader',
-        'less-loader'
-    ],
-    fallback: 'vue-style-loader'
-};
-
 module.exports = {
     entry: [resolve('src/index.js')],
     output: {
@@ -55,8 +41,17 @@ module.exports = {
             exclude: /node_modules/,
             options: {
                 loaders: {
-                    'css': ExtractTextPlugin.extract(cssOption),
-                    'less': ExtractTextPlugin.extract(lessOption)
+                    'css': ExtractTextPlugin.extract({
+                        use: 'css-loader',
+                        fallback: 'vue-style-loader'
+                    }),
+                    'less': ExtractTextPlugin.extract({
+                        use: [
+                            'css-loader',
+                            'less-loader'
+                        ],
+                        fallback: 'vue-style-loader'
+                    })
                 }
             }
         },{
@@ -65,16 +60,16 @@ module.exports = {
             exclude: /node_modules/
         },{
             test: /\.css$/,
-            use: ExtractTextPlugin.extract(cssOption)
+            use: ExtractTextPlugin.extract('css-loader')
         },{
             test:/\.less$/,
-            use: ExtractTextPlugin.extract(lessOption)
+            use: ExtractTextPlugin.extract('style-loader", "css-loader!less-loader')
         },{
             test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
             use: 'file-loader?name=./iconfont/[name].[ext]'
         }]
     },
     plugins: [
-        new ExtractTextPlugin('[name].css')
+        new ExtractTextPlugin('swan-ui.css')
     ]
 };
