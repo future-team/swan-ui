@@ -11,9 +11,9 @@
         name: 'SwIcon',
         extends: SwBase,
         computed: {
-            classList: function () {
+            classList() {
                 return classnames('gfs-icon',this.phIcon? this.classPrefix + '-' + this.phIcon:'')
-            }
+               }
         },
         props: {
             classPrefix: {

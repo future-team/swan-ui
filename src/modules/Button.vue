@@ -12,7 +12,7 @@
         extends: SwBase,
         methods: {
             handleClick: function(evt){
-                this.$emit('click',this.id);
+                this.$emit('click',this.id)
             }
         },
         props:{

@@ -3,14 +3,15 @@ import ButtonGroup from './modules/ButtonGroup.vue'
 import Badge from './modules/Badge.vue'
 import Star from './modules/Star.vue'
 import Icon from './modules/Icon.vue'
-// import 'phoenix-styles'
+import Input from './modules/Input.vue'
 
 const components = [
     Button,
     ButtonGroup,
     Badge,
     Star,
-    Icon
+    Icon,
+    Input
 ]
 
 const install = function(Vue, config = {}) {
@@ -18,7 +19,7 @@ const install = function(Vue, config = {}) {
 
     components.map(component => {
         Vue.component(component.name, component);
-    });
+    })
 }
 
 // auto install
@@ -32,5 +33,6 @@ export default {
     ButtonGroup,
     Badge,
     Star,
-    Icon
+    Icon,
+    Input
 }

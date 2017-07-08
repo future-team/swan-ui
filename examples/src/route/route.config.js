@@ -23,6 +23,11 @@ const routes = [
         "path": "/icon",
         "name": "Icon",
         "desc": "icon"
+    },
+    {
+        "path": "/input",
+        "name": "Input",
+        "desc": ""
     }
 ]
 
