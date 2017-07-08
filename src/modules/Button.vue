@@ -11,8 +11,8 @@
         name: 'SwButton',
         extends: SwBase,
         methods: {
-            handleClick: function(evt){
-                this.$emit('click',this.id)
+            handleClick(evt){
+                this.$emit('click',this.id,evt)
             }
         },
         props:{

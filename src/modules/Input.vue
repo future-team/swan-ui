@@ -53,14 +53,12 @@
                     !placeholderShow ? setPhPrefix('input-placeholder-hide'):'')
             },
             clearStatus(){
-                console.log('clearStatus',this.clear && this.currentValue && this.focus)
                 return this.clear && this.currentValue && this.focus
             },
             visibleStatus(){
                 return this.visible && this.type == 'password'
             },
             errorState(){
-                console.log(this.error)
                 return this.error && !this.focus
             }
         },
@@ -89,6 +87,7 @@
                 this.$refs.inputRef.focus()
             },
             handleVisible(){
+                console.log('handleVisible')
                 this.canSee = !this.canSee
                 this.currentType = this.canSee ? 'text': 'password'
             }

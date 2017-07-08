@@ -32,7 +32,7 @@
             }
         },
         computed: {
-            classList: function(){
+            classList(){
                 let rateCls = 'star-'+ Math.round((this.rate*2)/10)*5
                 return classnames(this.classObject,setPhPrefix(rateCls))
             }
