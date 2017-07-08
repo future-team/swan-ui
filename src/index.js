@@ -4,6 +4,9 @@ import Badge from './modules/Badge.vue'
 import Star from './modules/Star.vue'
 import Icon from './modules/Icon.vue'
 import Input from './modules/Input.vue'
+import Grid from './modules/Grid.vue'
+import Row from './modules/Row.vue'
+import Col from './modules/Col.vue'
 
 const components = [
     Button,
@@ -11,7 +14,10 @@ const components = [
     Badge,
     Star,
     Icon,
-    Input
+    Input,
+    Grid,
+    Row,
+    Col
 ]
 
 const install = function(Vue, config = {}) {
@@ -34,5 +40,8 @@ export default {
     Badge,
     Star,
     Icon,
-    Input
+    Input,
+    Grid,
+    Row,
+    Col
 }

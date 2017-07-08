@@ -24,10 +24,8 @@
                 }else{
                     this.isError = false
                 }
-                console.log('errorValue',value)
             },
             handleInputText(value){
-                console.log('clearValue',value)
                 this.myText = value
             }
         }

@@ -89,7 +89,6 @@
                 this.$refs.inputRef.focus()
             },
             handleVisible(){
-                console.log('handleVisible')
                 this.canSee = !this.canSee
                 this.currentType = this.canSee ? 'text': 'password'
             }

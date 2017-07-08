@@ -28,6 +28,11 @@ const routes = [
         "path": "/input",
         "name": "Input",
         "desc": ""
+    },
+    {
+        "path": "/grid",
+        "name": "Grid",
+        "desc": ""
     }
 ]
 
