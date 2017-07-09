@@ -17,12 +17,7 @@ module.exports = {
     },
     devtool:'source-map',
     resolve:{
-        modules: [
-            'node_modules'
-        ],
-        alias: {
-            '~~': path.join(process.cwd(),"node_modules")
-        },
+        modules: [ 'node_modules'],
         extensions: ['.js', '.vue']
     },
     externals:[{

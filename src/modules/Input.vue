@@ -35,7 +35,6 @@
         extends: SwBase,
         components: { SwIcon },
         data() {
-            console.log( this.value)
             return {
                 currentType: this.type,
                 canSee: false,
@@ -130,10 +129,7 @@
             value: null
         }
     }
-
 </script>
 
-<style lang="less">
-    @import "~~phoenix-styles/less/public.less";
-    @import "~~phoenix-styles/less/modules/form.less";
-</style>
+<style lang="less" src="phoenix-styles/less/public.less"></style>
+<style lang="less" src="phoenix-styles/less/modules/form.less"></style>
