@@ -1,22 +1,30 @@
 <template>
     <div>
-        <sw-checkbox :checked="value == 1" label="选项一"  name="选项" value="1" @change="handleChange"/>
-        <sw-checkbox :checked="value == 2" label="选项二"  name="选项" value="2" @change="handleChange"/>
-        <sw-checkbox :checked="value == 3" label="选项三"  value="3" disabled @change="handleChange"/>
+        <sw-checkbox :checked="selected.indexOf(1) != -1" label="选项一" value="1" name="选项" @change="handleChange"/>
+        <sw-checkbox label="选项二"  value="2"  name="选项" @change="handleChange"/>
+        <sw-checkbox label="选项三"  value="3" disabled @change="handleChange"/>
+        <input type="checkbox" name="qq"/> <input type="checkbox" name="qq"/>
+        <input type="radio" name="qq1"/> <input type="radio" name="qq1"/>
     </div>
 </template>
 
 <script>
     export default {
-        name: 'checkbox',
+        name: 'Checkbox',
         data(){
             return {
-                value: ''
+                selected: [1]
             }
         },
         methods: {
             handleChange(val){
-                this.value = val
+                let index = this.selected.indexOf(val)
+                if(index == -1){
+                    this.selected.push(val)
+                }else{
+                    this.selected.splice(index,1)
+                }
+                console.log(this.selected)
             }
         }
     }

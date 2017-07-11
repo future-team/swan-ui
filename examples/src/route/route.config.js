@@ -38,6 +38,11 @@ const routes = [
         'path': '/checkbox',
         'name': 'Checkbox',
         'desc': ''
+    },
+    {
+        'path': '/radio',
+        'name': 'Radio',
+        'desc': ''
     }
 ]
 

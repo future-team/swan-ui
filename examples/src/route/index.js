@@ -1,7 +1,6 @@
 import RouteConfig from './route.config.js'
-import Buttons from '../pages/button.vue'
 const routes = RouteConfig.map((page)=>{
-    let component = require(`../pages${page.path}`);
+    let component = require(`../pages${page.path}`)
     return {
         name: page.name,
         path: page.path,

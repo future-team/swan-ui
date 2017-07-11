@@ -8,6 +8,7 @@ import Grid from './modules/Grid.vue'
 import Row from './modules/Row.vue'
 import Col from './modules/Col.vue'
 import Checkbox from './modules/Checkbox.vue'
+import Radio from './modules/Radio.vue'
 
 const components = [
     Button,
@@ -19,7 +20,8 @@ const components = [
     Grid,
     Row,
     Col,
-    Checkbox
+    Checkbox,
+    Radio
 ]
 
 const install = function(Vue, config = {}) {
@@ -46,5 +48,6 @@ export default {
     Grid,
     Row,
     Col,
-    Checkbox
+    Checkbox,
+    Radio
 }
