@@ -21,9 +21,9 @@
                 default: 0,
                 validator: function(val){
                     if(typeof val == 'string' && parseInt(val) != val){
-                        return false;
+                        return false
                     }
-                    return true;
+                    return true
                 }
             },
             phSize: {
