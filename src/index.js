@@ -7,6 +7,7 @@ import Input from './modules/Input.vue'
 import Grid from './modules/Grid.vue'
 import Row from './modules/Row.vue'
 import Col from './modules/Col.vue'
+import Checkbox from './modules/Checkbox.vue'
 
 const components = [
     Button,
@@ -17,7 +18,8 @@ const components = [
     Input,
     Grid,
     Row,
-    Col
+    Col,
+    Checkbox
 ]
 
 const install = function(Vue, config = {}) {
@@ -43,5 +45,6 @@ export default {
     Input,
     Grid,
     Row,
-    Col
+    Col,
+    Checkbox
 }
