@@ -1,3 +1,6 @@
+import 'phoenix-styles/css/reset.css'
+import 'phoenix-styles/css/global.css'
+
 import Button from './modules/Button.vue'
 import ButtonGroup from './modules/ButtonGroup.vue'
 import Badge from './modules/Badge.vue'
@@ -9,6 +12,7 @@ import Row from './modules/Row.vue'
 import Col from './modules/Col.vue'
 import Checkbox from './modules/Checkbox.vue'
 import Radio from './modules/Radio.vue'
+import Textarea from './modules/Textarea.vue'
 
 const components = [
     Button,
@@ -21,7 +25,8 @@ const components = [
     Row,
     Col,
     Checkbox,
-    Radio
+    Radio,
+    Textarea
 ]
 
 const install = function(Vue, config = {}) {
@@ -49,5 +54,6 @@ export default {
     Row,
     Col,
     Checkbox,
-    Radio
+    Radio,
+    Textarea
 }

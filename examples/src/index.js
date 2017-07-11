@@ -3,6 +3,7 @@ import App from './App.vue'
 import Router from 'vue-router'
 import routes from './route'
 import Swan from 'swan-ui'
+import 'phoenix-styles/dist/phoenix-styles.css'
 
 Vue.use(Swan)
 Vue.use(Router)
@@ -10,7 +11,7 @@ Vue.use(Router)
 const router = new Router({
     base: __dirname,
     routes
-});
+})
 
 new Vue({
     el: '#app',

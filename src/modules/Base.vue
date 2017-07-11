@@ -3,7 +3,6 @@
 
     export default {
         name: 'SwBase',
-        props: ['id'],
         computed: {
             styleProps: function(){
                 return getStyleProps(this.$props)

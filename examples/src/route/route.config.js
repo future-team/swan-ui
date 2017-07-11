@@ -37,12 +37,17 @@ const routes = [
     {
         'path': '/checkbox',
         'name': 'Checkbox',
-        'desc': ''
+        'desc': '复选框'
     },
     {
         'path': '/radio',
         'name': 'Radio',
-        'desc': ''
+        'desc': '单选框'
+    },
+    {
+        'path': '/textarea',
+        'name': 'Textarea',
+        'desc': '多行文本框'
     }
 ]
 

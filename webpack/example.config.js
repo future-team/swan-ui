@@ -38,9 +38,11 @@ module.exports = extend({},{
         },{
             test: /\.css$/,
             use: ExtractTextPlugin.extract('css-loader')
+            // use: 'css-loader'
         },{
             test:/\.less$/,
             use:  ExtractTextPlugin.extract('style-loader", "css-loader!less-loader')
+            // use: "style-loader!css-loader!less-loader"
         },{
             test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
             use: 'file-loader?name=../dist/iconfont/[name].[ext]'

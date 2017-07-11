@@ -3,8 +3,6 @@
         <sw-checkbox :checked="selected.indexOf(1) != -1" label="选项一" value="1" name="选项" @change="handleChange"/>
         <sw-checkbox label="选项二"  value="2"  name="选项" @change="handleChange"/>
         <sw-checkbox label="选项三"  value="3" disabled @change="handleChange"/>
-        <input type="checkbox" name="qq"/> <input type="checkbox" name="qq"/>
-        <input type="radio" name="qq1"/> <input type="radio" name="qq1"/>
     </div>
 </template>
 
@@ -24,7 +22,6 @@
                 }else{
                     this.selected.splice(index,1)
                 }
-                console.log(this.selected)
             }
         }
     }
