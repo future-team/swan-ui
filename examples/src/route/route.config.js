@@ -48,6 +48,11 @@ const routes = [
         'path': '/textarea',
         'name': 'Textarea',
         'desc': '多行文本框'
+    },
+    {
+        'path': '/switch',
+        'name': 'Switch',
+        'desc': '开关'
     }
 ]
 

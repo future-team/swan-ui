@@ -9,7 +9,7 @@
         <sw-button phStyle="gray" class="customClass">gray</sw-button>
         <sw-button phSize="md">md</sw-button>
         <sw-button phSize="lg">lg</sw-button>
-        <sw-button :phSize="size" v-on:click="handleClick">{{text}}</sw-button>
+        <sw-button :phSize="size" @click="handleClick">{{text}}</sw-button>
         <sw-button phSize="sm">sm</sw-button>
         <sw-button phStyle="info" :block="true">info</sw-button>
 

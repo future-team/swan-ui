@@ -13,6 +13,7 @@ import Col from './modules/Col.vue'
 import Checkbox from './modules/Checkbox.vue'
 import Radio from './modules/Radio.vue'
 import Textarea from './modules/Textarea.vue'
+import Switch from './modules/Switch.vue'
 
 const components = [
     Button,
@@ -26,10 +27,11 @@ const components = [
     Col,
     Checkbox,
     Radio,
-    Textarea
+    Textarea,
+    Switch
 ]
 
-const install = function(Vue, config = {}) {
+const install = function(Vue) {
     if (install.installed) return
 
     components.map(component => {
@@ -55,5 +57,6 @@ export default {
     Col,
     Checkbox,
     Radio,
-    Textarea
+    Textarea,
+    Switch
 }
