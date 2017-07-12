@@ -26,8 +26,7 @@ module.exports = {
             commonjs: 'vue',
             commonjs2: 'vue',
             amd: 'vue'
-        },
-        'vue-router':'VueRouter'
+        }
     }],
     module:{
         rules:[{
@@ -46,7 +45,10 @@ module.exports = {
                             'less-loader'
                         ],
                         fallback: 'vue-style-loader'
-                    })
+                    }),
+                    postLoaders: {
+                        html: 'babel-loader'
+                    }
                 }
             }
         },{

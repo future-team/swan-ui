@@ -18,6 +18,7 @@ import List from './modules/List.vue'
 import ListHeader from './modules/ListHeader.vue'
 import ListItem from './modules/ListItem.vue'
 import ListCol from './modules/ListCol.vue'
+import Dialog from './modules/Dialog.vue'
 
 
 const components = [
@@ -37,14 +38,14 @@ const components = [
     List,
     ListHeader,
     ListItem,
-    ListCol
+    ListCol,
+    Dialog
 ]
 
 const install = function(Vue) {
     if (install.installed) return
-
     components.map(component => {
-        Vue.component(component.name, component);
+        Vue.component(component.name, component)
     })
 }
 
@@ -53,7 +54,7 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue)
 }
 
-export default {
+module.exports = {
     install,
     Button,
     ButtonGroup,
@@ -71,5 +72,6 @@ export default {
     List,
     ListHeader,
     ListItem,
-    ListCol
+    ListCol,
+    Dialog
 }

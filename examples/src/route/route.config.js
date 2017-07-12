@@ -58,6 +58,11 @@ const routes = [
         'path': '/list',
         'name': 'List',
         'desc': ''
+    },
+    {
+        'path': '/dialog',
+        'name': 'Dialog',
+        'desc': ''
     }
 ]
 
