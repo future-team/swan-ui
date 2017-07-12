@@ -63,6 +63,11 @@ const routes = [
         'path': '/dialog',
         'name': 'Dialog',
         'desc': ''
+    },
+    {
+        'path': '/alert',
+        'name': 'Alert',
+        'desc': ''
     }
 ]
 

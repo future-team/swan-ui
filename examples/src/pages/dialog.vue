@@ -1,7 +1,7 @@
 <template>
     <div>
         <sw-button @click="visible = !visible">打开对话框</sw-button>
-        <sw-dialog title="对话框" v-model="visible" shadowDisabled>
+        <sw-dialog title="对话框" v-model="visible" shadowDisabled closeButton>
             <div>这里是内容</div>
             <div slot="footer">
                 <sw-button-group>

@@ -19,6 +19,7 @@ import ListHeader from './modules/ListHeader.vue'
 import ListItem from './modules/ListItem.vue'
 import ListCol from './modules/ListCol.vue'
 import Dialog from './modules/Dialog.vue'
+import Alert from './modules/Alert.vue'
 
 
 const components = [
@@ -39,7 +40,8 @@ const components = [
     ListHeader,
     ListItem,
     ListCol,
-    Dialog
+    Dialog,
+    Alert
 ]
 
 const install = function(Vue) {
@@ -73,5 +75,6 @@ module.exports = {
     ListHeader,
     ListItem,
     ListCol,
-    Dialog
+    Dialog,
+    Alert
 }

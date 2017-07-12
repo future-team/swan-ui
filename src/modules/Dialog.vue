@@ -42,7 +42,8 @@
                 }
             },
             handleClose(){
-                this.$emit('visible-change')
+                this.$emit('visible-change',false)
+                this.attachHandler && this.attachHandler()
             }
         },
         props: {
@@ -56,13 +57,14 @@
             },
             closeButton: {
                 type: Boolean,
-                default: true
+                default: false
             },
             shadowDisabled: {
                 type: Boolean,
                 default: false
             },
-            title: String
+            title: String,
+            attachHandler: Function
         }
     }
 </script>

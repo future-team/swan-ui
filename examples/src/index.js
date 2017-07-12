@@ -4,7 +4,6 @@ import Router from 'vue-router'
 import routes from './route'
 import Swan from 'swan-ui'
 import 'phoenix-styles/dist/phoenix-styles.css'
-console.dir(Swan)
 Vue.use(Swan)
 Vue.use(Router)
 
