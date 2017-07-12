@@ -53,6 +53,11 @@ const routes = [
         'path': '/switch',
         'name': 'Switch',
         'desc': '开关'
+    },
+    {
+        'path': '/list',
+        'name': 'List',
+        'desc': ''
     }
 ]
 

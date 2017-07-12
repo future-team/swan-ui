@@ -3,6 +3,7 @@
         <input ref="inputRef"
                :type="currentType"
                :value="currentValue"
+               :disabled="disabled"
                @input="handleChange"
                @focus="handleFocus"
                @blur="handleBlur"/>
@@ -11,7 +12,7 @@
             <span class="ph-input-placeholder-text">{{placeholder}}</span>
         </label>
         <sw-icon v-if="visibleStatus"
-                 :class="['gfs-icon-close',this.canSee ? 'gfs-icon-active' : '']"
+                 :class="['gfs-icon-visible',this.canSee ? 'gfs-icon-active' : '']"
                  :phIcon="this.canSee ? 'camera': 'camera-fill'"
                  @click.native="handleVisible"></sw-icon>
         <sw-icon v-show="clearStatus"
@@ -125,7 +126,8 @@
                 default: ''
             },
             placeholder: String,
-            value: null
+            value: null,
+            disabled: null
         }
     }
 </script>

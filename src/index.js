@@ -14,6 +14,11 @@ import Checkbox from './modules/Checkbox.vue'
 import Radio from './modules/Radio.vue'
 import Textarea from './modules/Textarea.vue'
 import Switch from './modules/Switch.vue'
+import List from './modules/List.vue'
+import ListHeader from './modules/ListHeader.vue'
+import ListItem from './modules/ListItem.vue'
+import ListCol from './modules/ListCol.vue'
+
 
 const components = [
     Button,
@@ -28,7 +33,11 @@ const components = [
     Checkbox,
     Radio,
     Textarea,
-    Switch
+    Switch,
+    List,
+    ListHeader,
+    ListItem,
+    ListCol
 ]
 
 const install = function(Vue) {
@@ -58,5 +67,9 @@ export default {
     Checkbox,
     Radio,
     Textarea,
-    Switch
+    Switch,
+    List,
+    ListHeader,
+    ListItem,
+    ListCol
 }

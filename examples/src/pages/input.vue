@@ -1,5 +1,6 @@
 <template>
     <div>
+        <sw-input type="text" value="disabled" disabled/>
         <sw-input type="text" value="www" placeholder="text" phIcon="search"/>
         <sw-input type="password" value="www"  placeholder="password" visible/>
         <sw-input type="text" :value="myText" @input="handleInputText" placeholder="password" clear/>

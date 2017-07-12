@@ -1,14 +1,16 @@
-<template>
-    <div :class="classObject">
-        <slot></slot>
-    </div>
-</template>
-
 <script>
     import SwBase from './Base.vue'
     export default {
         name: 'SwRow',
         extends: SwBase,
+        render: function(createElement){
+            return createElement(
+                this.componentTag,
+                {
+                    'class': this.classObject
+                },
+                this.$slots.default )
+        },
         props: {
             classPrefix: {
                 type: String,
@@ -20,6 +22,10 @@
                 validator(val){
                     return ['top','bottom','center','stretch','baseline'].indexOf(val) >= 0
                 }
+            },
+            componentTag: {
+                type: String,
+                default: 'div'
             }
         }
     }
