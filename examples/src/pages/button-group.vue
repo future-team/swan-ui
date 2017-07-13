@@ -36,14 +36,14 @@
             }
         },
         methods: {
-            handleClick1: function(id){
-                this.active1 = id
+            handleClick1: function(evt){
+                this.active1 = evt.target.id
             },
-            handleClick2: function(id){
-                this.active2 = id
+            handleClick2: function(evt){
+                this.active2 = evt.target.id
             },
-            handleClick3: function(id){
-                this.active3 = id
+            handleClick3: function(evt){
+                this.active3 = evt.target.id
             }
         }
     }
