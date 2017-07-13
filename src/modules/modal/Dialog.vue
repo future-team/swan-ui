@@ -11,7 +11,7 @@
                        @click="handleClose"></a>
                     <h2 class="ph-dialog-title">
                         <slot name="title">
-                            <span>{{title}}</span>
+                            {{title}}
                         </slot>
                     </h2>
                     <div class="ph-dialog-body">
@@ -43,7 +43,7 @@
             },
             handleClose(){
                 this.$emit('visible-change',false)
-                this.attachHandler && this.attachHandler()
+                this.closeCallback && this.closeCallback()
             }
         },
         props: {
@@ -64,7 +64,7 @@
                 default: false
             },
             title: String,
-            attachHandler: Function
+            closeCallback: Function
         }
     }
 </script>

@@ -1,6 +1,3 @@
-import 'phoenix-styles/css/reset.css'
-import 'phoenix-styles/css/global.css'
-
 import Button from './modules/button/Button.vue'
 import ButtonGroup from './modules/button/ButtonGroup.vue'
 import Badge from './modules/badge/Badge.vue'
@@ -20,7 +17,7 @@ import ListItem from './modules/list/ListItem.vue'
 import ListCol from './modules/list/ListCol.vue'
 import Dialog from './modules/modal/Dialog.vue'
 import Alert from './modules/modal/Alert.vue'
-
+import Prompt from './modules/modal/Prompt.vue'
 
 const components = [
     Button,
@@ -41,7 +38,8 @@ const components = [
     ListItem,
     ListCol,
     Dialog,
-    Alert
+    Alert,
+    Prompt
 ]
 
 const install = function(Vue) {
@@ -76,5 +74,6 @@ module.exports = {
     ListItem,
     ListCol,
     Dialog,
-    Alert
+    Alert,
+    Prompt
 }

@@ -68,6 +68,11 @@ const routes = [
         'path': '/alert',
         'name': 'Alert',
         'desc': ''
+    },
+    {
+        'path': '/prompt',
+        'name': 'Prompt',
+        'desc': ''
     }
 ]
 

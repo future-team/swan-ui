@@ -1,6 +1,6 @@
 <script>
     import SwDialog from './Dialog.vue'
-    import ButtonGroup from '../button/ButtonGroup.vue'
+    import SwButtonGroup from '../button/ButtonGroup.vue'
     import SwButton from '../button/Button.vue'
     export default {
         name: 'SwAlert',
@@ -10,12 +10,12 @@
         },
         components: {
             SwButton,
-            ButtonGroup,
+            SwButtonGroup,
             SwDialog
         },
         methods: {
             handleClose(){
-                this.$emit('visible-change')
+                this.$emit('visible-change',false)
             }
         },
         computed: {
@@ -36,19 +36,17 @@
                 )
             })
 
-            let props = {}
-            for(let key in this.$props){
-                if(SwDialog.props[key] && key != 'classPrefix'){
-                    props[key] = this.$props[key]
-                }
-            }
-
             return(
-                <sw-dialog class="ph-dialog-alert" {...{props}}  attachHandler={this.handleClose}>
+                <sw-dialog  class='ph-dialog-alert'
+                            visible={this.visible}
+                            closeButton={this.closeButton}
+                            shadowDisabled={this.shadowDisabled}
+                            closeCallback={this.handleClose}>
+                    <template slot='title'>{this.title}</template>
                     {this.content}
-                    <button-group slot="footer" phType={ buttonsType ? 'tacked': 'default'}>
+                    <sw-button-group slot="footer" phType={ buttonsType ? 'tacked': 'default'}>
                     { buttons }
-                    </button-group>
+                    </sw-button-group>
                 </sw-dialog>
             )
         },
