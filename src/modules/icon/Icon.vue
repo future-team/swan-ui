@@ -12,7 +12,7 @@
         extends: SwBase,
         computed: {
             classList() {
-                return classnames('gfs-icon',this.phIcon? this.classPrefix + '-' + this.phIcon:'')
+                return classnames('gfs-icon',this.phIcon? this.classPrefix + '-' + this.phIcon:'',this.classObject)
                }
         },
         props: {
