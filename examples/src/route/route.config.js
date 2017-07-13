@@ -91,6 +91,11 @@ const routes = [
                 'path': '/prompt',
                 'name': 'Prompt',
                 'desc': ''
+            },
+            {
+                'path': '/popup',
+                'name': 'Popup',
+                'desc': ''
             }
         ]
     }

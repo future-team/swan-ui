@@ -18,6 +18,7 @@ import ListCol from './modules/list/ListCol.vue'
 import Dialog from './modules/modal/Dialog.vue'
 import Alert from './modules/modal/Alert.vue'
 import Prompt from './modules/modal/Prompt.vue'
+import Popup from './modules/popup/Popup.vue'
 
 const components = [
     Button,
@@ -39,7 +40,8 @@ const components = [
     ListCol,
     Dialog,
     Alert,
-    Prompt
+    Prompt,
+    Popup
 ]
 
 const install = function(Vue) {
@@ -75,5 +77,6 @@ module.exports = {
     ListCol,
     Dialog,
     Alert,
-    Prompt
+    Prompt,
+    Popup
 }
