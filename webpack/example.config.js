@@ -41,7 +41,7 @@ module.exports = extend({},{
             // use: 'css-loader'
         },{
             test:/\.less$/,
-            use:  ExtractTextPlugin.extract('style-loader", "css-loader!less-loader')
+            use:  ExtractTextPlugin.extract('less-loader')
             // use: "style-loader!css-loader!less-loader"
         },{
             test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
