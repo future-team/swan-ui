@@ -98,6 +98,16 @@ const routes = [
                 'desc': ''
             }
         ]
+    },
+    {
+        title: '操作类',
+        list: [
+            {
+                'path': '/steps',
+                'name': 'Steps',
+                'desc': ''
+            }
+        ]
     }
 ]
 

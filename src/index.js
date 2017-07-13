@@ -19,7 +19,7 @@ import Dialog from './modules/modal/Dialog.vue'
 import Alert from './modules/modal/Alert.vue'
 import Prompt from './modules/modal/Prompt.vue'
 import Popup from './modules/popup/Popup.vue'
-
+import Steps from './modules/steps/Steps.vue'
 const components = [
     Button,
     ButtonGroup,
@@ -41,7 +41,8 @@ const components = [
     Dialog,
     Alert,
     Prompt,
-    Popup
+    Popup,
+    Steps
 ]
 
 const install = function(Vue) {
@@ -78,5 +79,6 @@ module.exports = {
     Dialog,
     Alert,
     Prompt,
-    Popup
+    Popup,
+    Steps
 }
