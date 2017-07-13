@@ -5,9 +5,9 @@
 </template>
 
 <script>
-    import SwBase from './Base.vue'
+    import SwBase from '../Base.vue'
     import classnames from 'classnames'
-    import { setPhPrefix } from '../utils/classUtil'
+    import { setPhPrefix } from '../../utils/classUtil'
     export default {
         name: 'SwStar',
         extends: SwBase,

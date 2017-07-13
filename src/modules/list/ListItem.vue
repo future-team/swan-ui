@@ -6,8 +6,8 @@
 </template>
 
 <script>
-    import SwBase from './Base.vue'
-    import Row from './Row.vue'
+    import SwBase from '../Base.vue'
+    import Row from '../grid/Row.vue'
     export default {
         name: 'SwListItem',
         extends: SwBase,

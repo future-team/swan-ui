@@ -1,7 +1,7 @@
 <script>
     import SwDialog from './Dialog.vue'
-    import ButtonGroup from './ButtonGroup.vue'
-    import SwButton from './Button.vue'
+    import ButtonGroup from '../button/ButtonGroup.vue'
+    import SwButton from '../button/Button.vue'
     export default {
         name: 'SwAlert',
         model: {

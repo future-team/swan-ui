@@ -26,11 +26,11 @@
 </template>
 
 <script>
-    import SwBase from './Base.vue'
-    import SwIcon from './Icon.vue'
+    import SwBase from '../Base.vue'
+    import SwIcon from '../icon/Icon.vue'
     import classnames from 'classnames'
-    import { setPhPrefix } from '../utils/classUtil'
-    import { warning } from '../utils/tool'
+    import { setPhPrefix } from '../../utils/classUtil'
+    import { warning } from '../../utils/tool'
     export default {
         name: 'SwInput',
         extends: SwBase,

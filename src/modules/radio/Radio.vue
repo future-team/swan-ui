@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import SwCheckbox from './Checkbox.vue'
+    import SwCheckbox from '../checkbox/Checkbox.vue'
     export default {
         name: 'SwRadio',
         components: {SwCheckbox},

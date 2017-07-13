@@ -5,8 +5,8 @@
 </template>
 
 <script>
-    import SwBase from './Base.vue'
-    import SwCol from './Col.vue'
+    import SwBase from '../Base.vue'
+    import SwCol from '../grid/Col.vue'
     export default {
         name: 'SwListCol',
         extends: SwBase,

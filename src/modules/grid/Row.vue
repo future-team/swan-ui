@@ -1,5 +1,5 @@
 <script>
-    import SwBase from './Base.vue'
+    import SwBase from '../Base.vue'
     export default {
         name: 'SwRow',
         extends: SwBase,

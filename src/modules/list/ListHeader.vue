@@ -5,7 +5,7 @@
 </template>
 
 <script>
-    import SwBase from './Base.vue'
+    import SwBase from '../Base.vue'
     export default {
         name: 'SwListHeader',
         extends: SwBase,
