@@ -106,6 +106,11 @@ const routes = [
                 'path': '/steps',
                 'name': 'Steps',
                 'desc': ''
+            },
+            {
+                'path': '/accordion',
+                'name': 'Accordion',
+                'desc': '手风琴'
             }
         ]
     }

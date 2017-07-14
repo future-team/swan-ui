@@ -20,7 +20,9 @@ import Alert from './modules/modal/Alert.vue'
 import Prompt from './modules/modal/Prompt.vue'
 import Popup from './modules/popup/Popup.vue'
 import Steps from './modules/steps/Steps.vue'
-const components = [
+import Accordion from './modules/accordion/Accordion.vue'
+
+const components = {
     Button,
     ButtonGroup,
     Badge,
@@ -42,14 +44,19 @@ const components = [
     Alert,
     Prompt,
     Popup,
-    Steps
-]
+    Steps,
+    Accordion
+}
+
 
 const install = function(Vue) {
     if (install.installed) return
-    components.map(component => {
-        Vue.component(component.name, component)
+    Object.keys(components).forEach((key)=>{
+        Vue.component(components[key].name, components[key])
     })
+    // components.map(component => {
+    //     Vue.component(component.name, component)
+    // })
 }
 
 // auto install
@@ -57,28 +64,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue)
 }
 
-module.exports = {
-    install,
-    Button,
-    ButtonGroup,
-    Badge,
-    Star,
-    Icon,
-    Input,
-    Grid,
-    Row,
-    Col,
-    Checkbox,
-    Radio,
-    Textarea,
-    Switch,
-    List,
-    ListHeader,
-    ListItem,
-    ListCol,
-    Dialog,
-    Alert,
-    Prompt,
-    Popup,
-    Steps
-}
+module.exports = Object.assign(components,{install})
