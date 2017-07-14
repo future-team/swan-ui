@@ -14,6 +14,7 @@
  export default {
      computed: {
          title(){
+             console.log( this.$route)
              return this.$route.meta.title
          },
          visible(){
@@ -25,10 +26,14 @@
 
 <style scoped>
     .header{
-        position: relative;
+        position: fixed;
         height: 1rem;
         line-height: 1rem;
         padding:0 .6rem;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: #fbfbfb;
     }
     .back-icon{
         position: absolute;

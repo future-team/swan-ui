@@ -2,9 +2,14 @@
     <div class="doc">
         <div class="doc-item">
             <h5>基本用法</h5>
-            <sw-button>默认按钮</sw-button>
-            <sw-button hollow >空心按钮</sw-button>
-            <sw-button phStyle="link">文字按钮</sw-button>
+            <show-more>
+                <div v-pre="html.code" ></div>
+                <sw-button>默认按钮</sw-button>
+                <sw-button hollow >空心按钮</sw-button>
+                <sw-button phStyle="link">文字按钮</sw-button>
+                <pre slot="code"><code v-html="escape2Html(html.code)" class="language-markup"></code></pre>
+            </show-more>
+
         </div>
         <div class="doc-item">
             <h5>不同颜色</h5>
@@ -59,11 +64,19 @@
 </template>
 
 <script>
+    import CodeShow from "./showmore";
     export default {
+        components: {CodeShow},
         name: 'Button',
         data: function(){
             return {
-                phIcon: ''
+                phIcon: '',
+                html: {
+                    code: `
+                        <sw-button>默认按钮</sw-button>
+                        <sw-button hollow >空心按钮</sw-button>
+                        <sw-button phStyle="link">文字按钮</sw-button>`,
+                }
             }
         },
         methods: {
@@ -74,15 +87,21 @@
                         this.phIcon = ''
                     },2000)
                 }
-                console.log(evt)
+            },
+            escape2Html(str) {
+                let  map={'<':'&lt;','>':'&gt;'}
+                return str.replace(/(<|>)/ig,function(all,t){return map[t]})
             }
         }
+
     }
 </script>
 
 <style lang="less">
-    .ph-button{
-        margin: 0 .16rem .16rem 0;
+    .doc{
+        .ph-button{
+            margin: 0 .16rem .16rem 0;
+        }
     }
 </style>
 
