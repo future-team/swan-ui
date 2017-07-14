@@ -1,15 +1,18 @@
 <template>
     <button :class="classObject"
             @click="handleClick">
+        <sw-icon v-if="phIcon" :phIcon="phIcon" :phSize="phIcon.indexOf('loading')!=-1?'sm':''"></sw-icon>
         <slot></slot>
     </button>
 </template>
 
 <script>
     import SwBase from '../Base.vue'
+    import SwIcon from '../icon/Icon.vue'
     export default {
         name: 'SwButton',
         extends: SwBase,
+        components: {SwIcon},
         methods: {
             handleClick(evt){
                 this.$emit('click',evt)
