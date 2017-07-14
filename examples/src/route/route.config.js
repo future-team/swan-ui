@@ -15,7 +15,7 @@ const routes = [
             {
                 'path': '/badge',
                 'name': 'Badge',
-                'desc': '徽章标记'
+                'desc': '徽章'
             },
             {
                 'path': '/star',
