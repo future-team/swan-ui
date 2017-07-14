@@ -1,0 +1,137 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
+    <title>Swan UI</title>
+    <link rel="stylesheet" href="./doc.css" >
+    <script>
+        (function(baseFontSize,fontscale){var _baseFontSize=baseFontSize||100;var _fontscale=fontscale||1;var win=window;var doc=win.document;var ua=navigator.userAgent;var matches=ua.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i);var UCversion=ua.match(/U3\/((\d+|\.){5,})/i);var isUCHd=UCversion&&parseInt(UCversion[1].split(".").join(""),10)>=80;var isIos=navigator.appVersion.match(/(iphone|ipad|ipod)/gi);var dpr=win.devicePixelRatio||1;if(!isIos&&!(matches&&matches[1]>534)&&!isUCHd){dpr=1}var scale=1/dpr;var metaEl=doc.querySelector('meta[name="viewport"]');if(!metaEl){metaEl=doc.createElement("meta");metaEl.setAttribute("name","viewport");doc.head.appendChild(metaEl)}metaEl.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+scale+",maximum-scale="+scale+",minimum-scale="+scale);doc.documentElement.style.fontSize=_baseFontSize/2*dpr*_fontscale+"px"})();
+    </script>
+</head>
+<body>
+    <header>
+        <h1>Component API</h1>
+    </header>
+    <nav id="category" class="category">
+        <ul>
+            <li>
+                <a href="#button" class="first_cate">Button</a>
+                <ul>
+                    <li><a href="#button_attribute">属性</a></li>
+                    <li><a href="#button_event">事件</a></li>
+                    <li><a href="#button_slot">slot</a></li>
+                </ul>
+            </li>
+        </ul>
+    </nav>
+    <main id="content" class="language-bash content">
+        <section >
+            <h2 id="button"><a href="#button">Button</a></h2>
+            <article>
+                <h3 id="button_attribute">属性</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>参数</th>
+                        <th>类型</th>
+                        <th>可选值</th>
+                        <th>默认值</th>
+                        <th>说明</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>phSize</th>
+                        <th>String</th>
+                        <th>sm、md、lg</th>
+                        <th>sm</th>
+                        <th>大小</th>
+                    </tr>
+                    <tr>
+                        <th>phStyle</th>
+                        <th>String</th>
+                        <th>primary、warning、danger、info、error、success、link、gray</th>
+                        <th>primary</th>
+                        <th>颜色</th>
+                    </tr>
+                    <tr>
+                        <th>disabled</th>
+                        <th>Boolean</th>
+                        <th>-</th>
+                        <th>false</th>
+                        <th>禁用状态</th>
+                    </tr>
+                    <tr>
+                        <th>active</th>
+                        <th>Boolean</th>
+                        <th>-</th>
+                        <th>false</th>
+                        <th>激活状态</th>
+                    </tr>
+                    <tr>
+                        <th>block</th>
+                        <th>Boolean</th>
+                        <th>-</th>
+                        <th>false</th>
+                        <th>是否占行</th>
+                    </tr>
+                    <tr>
+                        <th>phIcon</th>
+                        <th>String</th>
+                        <th>loading-gray、loading-white</th>
+                        <th>-</th>
+                        <th>图标类型</th>
+                    </tr>
+                    <tr>
+                        <th>stable</th>
+                        <th>Boolean</th>
+                        <th>-</th>
+                        <th>false</th>
+                        <th>与phIcon搭配使用，设置stable，图标不会影响文字位置</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article>
+                <h3 id="button_event">属性</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>回调参数</th>
+                        <th>说明</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>click</th>
+                        <th>evt</th>
+                        <th>按钮被点击时的回调</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+            <article>
+                <h3 id="button_slot">属性</h3>
+                <table>
+                    <thead>
+                    <tr>
+                        <th>名称</th>
+                        <th>说明</th>
+                    </tr>
+                    </thead>
+                    <tbody>
+                    <tr>
+                        <th>-</th>
+                        <th>按钮名称</th>
+                    </tr>
+                    </tbody>
+                </table>
+            </article>
+        </section>
+    </main>
+<div >
+</div>
+</body>
+</html>
