@@ -1,15 +1,15 @@
 <template>
     <div class="doc">
-        <div class="doc-item">
-            <h5>基本用法</h5>
-            <show-more>
-                <div v-pre="html.code" ></div>
-                <sw-button>默认按钮</sw-button>
-                <sw-button hollow >空心按钮</sw-button>
-                <sw-button phStyle="link">文字按钮</sw-button>
-                <pre slot="code"><code v-html="escape2Html(html.code)" class="language-markup"></code></pre>
+        <div class="doc-item" v-for="item in buttons">
+            <h5>{{item.title}}</h5>
+            <show-more :code="item.code">
+                <div>
+                    <sw-button>默认按钮</sw-button>
+                    <sw-button hollow >空心按钮</sw-button>
+                    <sw-button phStyle="link">文字按钮</sw-button>
+                </div>
+                <pre slot="code"><code v-html="escape2Html(item.code)" class="language-markup"></code></pre>
             </show-more>
-
         </div>
         <div class="doc-item">
             <h5>不同颜色</h5>
@@ -71,12 +71,16 @@
         data: function(){
             return {
                 phIcon: '',
-                html: {
-                    code: `
+                buttons: [
+                    {
+                        title: '基本用法',
+                        desc: '',
+                        code: `
                         <sw-button>默认按钮</sw-button>
                         <sw-button hollow >空心按钮</sw-button>
                         <sw-button phStyle="link">文字按钮</sw-button>`,
-                }
+                    }
+                ]
             }
         },
         methods: {

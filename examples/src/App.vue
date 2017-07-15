@@ -14,12 +14,14 @@
  export default {
      computed: {
          title(){
-             console.log( this.$route)
              return this.$route.meta.title
          },
          visible(){
              return ['/'].indexOf(this.$route.path) < 0
          }
+     },
+     updated(){
+         self.Prism.highlightAll(event)
      }
  }
 </script>
