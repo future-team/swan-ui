@@ -21,6 +21,8 @@ import Prompt from './modules/modal/Prompt.vue'
 import Popup from './modules/popup/Popup.vue'
 import Steps from './modules/steps/Steps.vue'
 import Accordion from './modules/accordion/Accordion.vue'
+import Drag from './modules/drag/Drag.vue'
+import Slider from './modules/slider/Slider.vue'
 
 const components = {
     Button,
@@ -45,7 +47,9 @@ const components = {
     Prompt,
     Popup,
     Steps,
-    Accordion
+    Accordion,
+    Drag,
+    Slider
 }
 
 
@@ -54,9 +58,6 @@ const install = function(Vue) {
     Object.keys(components).forEach((key)=>{
         Vue.component(components[key].name, components[key])
     })
-    // components.map(component => {
-    //     Vue.component(component.name, component)
-    // })
 }
 
 // auto install

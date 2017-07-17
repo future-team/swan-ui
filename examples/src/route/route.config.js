@@ -111,6 +111,11 @@ const routes = [
                 'path': '/accordion',
                 'name': 'Accordion',
                 'desc': '手风琴'
+            },
+            {
+                'path': '/slider',
+                'name': 'Slider',
+                'desc': '滑块'
             }
         ]
     }
