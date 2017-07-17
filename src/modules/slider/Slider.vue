@@ -15,7 +15,6 @@
     </div>
 </template>
 
-
 <script>
     import SwBase from '../Base.vue'
     import SwDrag from '../drag/Drag.vue'

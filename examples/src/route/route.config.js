@@ -118,6 +118,16 @@ const routes = [
                 'desc': '滑块'
             }
         ]
+    },
+    {
+        title: '辅助类',
+        list: [
+            {
+                'path': '/drag',
+                'name': 'Drag',
+                'desc': '拖拽'
+            }
+        ]
     }
 ]
 
