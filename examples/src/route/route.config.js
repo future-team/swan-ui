@@ -116,6 +116,11 @@ const routes = [
                 'path': '/slider',
                 'name': 'Slider',
                 'desc': '滑块'
+            },
+            {
+                'path': '/swipe',
+                'name': 'Swipe',
+                'desc': '左刷'
             }
         ]
     },

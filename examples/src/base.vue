@@ -29,9 +29,6 @@
             padding: 0.2rem 0;
             border-bottom: 1px solid #bbb;
         }
-        .ph-button{
-            margin: 0 .16rem .16rem 0;
-        }
         h5{
             margin-bottom: 0.1rem;
             font-size: 0.35rem;

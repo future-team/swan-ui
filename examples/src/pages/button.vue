@@ -97,5 +97,14 @@
     }
 </script>
 
+<style lang="less">
+    .demo{
+        .ph-button{
+            margin: 0 .16rem .16rem 0;
+        }
+    }
+</style>
+
+
 
 

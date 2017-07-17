@@ -1,5 +1,6 @@
 <template>
-    <div class="ph-drag-action"
+    <div ref="dragAction"
+         class="ph-drag-action"
          @touchstart.stop.prevent="handleTouchStart"
          @touchmove.stop.prevent="handleTouchMove"
          @touchend.stop.prevent="handleTouchEnd"
