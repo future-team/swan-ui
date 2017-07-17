@@ -157,10 +157,7 @@
              * */
             duration: {
                 type: Number,
-                default: 1,
-                validator(){
-                    return true
-                }
+                default: 1
             },
             /**
              * 初始及松开按钮时是否显示tooltip
