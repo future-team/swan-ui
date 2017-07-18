@@ -111,6 +111,11 @@ const routes = [
                 'path': '/accordion',
                 'name': 'Accordion',
                 'desc': '手风琴'
+            },
+            {
+                'path': '/tabset',
+                'name': 'TabSet',
+                'desc': '选项卡'
             }
         ]
     }

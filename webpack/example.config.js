@@ -14,6 +14,7 @@ module.exports = extend({},{
         path: resolve('examples/dist'),
         filename: 'examples.js'
     },
+    devtool:'source-map',
     resolve: {
         alias: { "swan-ui" : resolve('src') },
         modules: [
