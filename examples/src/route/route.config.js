@@ -126,6 +126,11 @@ const routes = [
                 'path': '/swipe',
                 'name': 'Swipe',
                 'desc': '左刷'
+            },
+            {
+                'path': '/pullup',
+                'name': 'Pullup',
+                'desc': '上拉刷新'
             }
         ]
     },

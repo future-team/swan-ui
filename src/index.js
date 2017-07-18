@@ -27,6 +27,7 @@ import Drag from './modules/drag/Drag.vue'
 import Slider from './modules/slider/Slider.vue'
 import Swipe from './modules/swipe/Swipe.vue'
 import Search from './modules/search/Search.vue'
+import Pullup from './modules/pullup/PullUp.vue'
 
 const components = {
     Button,
@@ -57,7 +58,8 @@ const components = {
     Drag,
     Slider,
     Swipe,
-    Search
+    Search,
+    Pullup
 }
 
 
