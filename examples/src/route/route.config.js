@@ -113,6 +113,11 @@ const routes = [
                 'desc': '手风琴'
             },
             {
+                'path': '/tabset',
+                'name': 'TabSet',
+                'desc': '选项卡'
+            },
+            {
                 'path': '/slider',
                 'name': 'Slider',
                 'desc': '滑块'

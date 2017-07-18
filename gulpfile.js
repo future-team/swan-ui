@@ -67,7 +67,7 @@ gulp.task('open', function () {
 
 gulp.task('example', function (done) {
     var wbpk = Object.create(exampleConfig);
-    wbpk.devtool = 'eval';
+    wbpk.devtool = 'source-map';
     wbpk.entry = [
         'webpack-dev-server/client?http://127.0.0.1:' + devPort,
         'webpack/hot/only-dev-server',
