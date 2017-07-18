@@ -10,7 +10,7 @@
         },
         {
             title: '不同颜色',
-            desc: '',
+            desc: '属性：phStyle， 默认值：primary',
             code: `
                         <sw-button phStyle="primary">primary</sw-button>
                         <sw-button phStyle="gray">gray</sw-button>
@@ -22,7 +22,7 @@
         },
         {
             title: '空心按钮',
-            desc: '',
+            desc: '属性：hollow',
             code: `
                         <sw-button hollow>hollow</sw-button>
                         <sw-button hollow phStyle="gray">hollow</sw-button>
@@ -31,29 +31,29 @@
         },
         {
             title: '不同尺寸',
-            desc: '',
+            desc: '属性：phSize，  默认：sm',
             code: `
                         <div><sw-button phSize="sm">sm</sw-button></div>
                         <div><sw-button phSize="md">md</sw-button></div>
-                        <div><sw-button phSize="lg">lg</sw-button></div>`
+                        <div><sw-button phSize="lg">md</sw-button></div>`
         },
         {
             title: '禁用状态',
-            desc: '',
+            desc: '属性：disabled',
             code: `
                         <sw-button disabled>disabled</sw-button>
                         <sw-button hollow disabled>disabled</sw-button>`
         },
         {
             title: '占行按钮',
-            desc: '',
+            desc: '属性：block',
             code: `
                         <sw-button block hollow>提交</sw-button>
                         <sw-button block>提交</sw-button>`
         },
         {
             title: '图标按钮',
-            desc: '',
+            desc: '属性：phIcon',
             code: `
                          <sw-button phIcon="loading-white"  phSize="lg" >整体居中</sw-button>
                          <sw-button phIcon="loading-white"  phSize="lg" stable>文字居中</sw-button>`
@@ -99,7 +99,7 @@
 
 <style lang="less">
     .demo{
-        .ph-button{
+        .demo-button{
             margin: 0 .16rem .16rem 0;
         }
     }
