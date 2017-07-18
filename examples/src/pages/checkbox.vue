@@ -38,7 +38,6 @@
                     }
                 }
             }
-
         }
     ]
     import Base from '../base.vue'

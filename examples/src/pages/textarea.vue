@@ -1,31 +1,48 @@
-<template>
-    <div>
-        <sw-textarea placeholder="说点什么..."></sw-textarea>
-        <sw-textarea :count="true"
-                     :maxLength="50"
-                     placeholder="说点什么...">
-        </sw-textarea>
-        <sw-textarea :value="content"
-                     :count="true"
-                     :maxLength="50"
-                     placeholder="说点什么..."
-                     @input="handleChange">
-        </sw-textarea>
-    </div>
-</template>
-
 <script>
+    const demos = [
+        {
+            title: '基本用法',
+            code: '<sw-textarea placeholder="说点什么..." />'
+        },
+        {
+            title: '显示和限制输入字符数',
+            desc: '属性：count 和 maxlength 配合使用',
+            code: `
+                   <sw-textarea count
+                                :maxlength="10"
+                                placeholder="说点什么..." />`
+        },
+        {
+            title: 'change事件',
+            desc: '属性：count 和 maxlength 配合使用',
+            code: `
+                   <sw-textarea :value="content"
+                                :count="true"
+                                :maxlength="10"
+                                placeholder="说点什么..."
+                                @change="handleChange" />`,
+            options: {
+                data(){
+                    return {
+                        content: ''
+                    }
+                },
+                methods: {
+                    handleChange(val){
+                        this.content = val
+                        alert(val)
+                    }
+                }
+            }
+        }
+    ]
+    import Base from '../base.vue'
     export default {
         name: 'Textarea',
+        extends:Base,
         data(){
             return {
-                content: ''
-            }
-        },
-        methods: {
-            handleChange(val){
-                this.content = val
-//                console.log(val)
+                demos: demos
             }
         }
     }

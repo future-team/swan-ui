@@ -14,14 +14,25 @@
         extends: SwBase,
         methods: {
             handleClick(evt){
-                this.$emit('click',evt)
+                this.$emit('click',this.checked,evt)
             }
         },
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'switch'
+             * */
             classPrefix: {
                 type: String,
                 default: 'switch'
             },
+            /**
+             * 开关值
+             * @property checked
+             * @type Boolean
+             * */
             checked: {
                 type: Boolean,
                 default: false

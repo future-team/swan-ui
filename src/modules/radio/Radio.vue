@@ -1,6 +1,5 @@
 <template>
-    <sw-checkbox v-bind="$props"
-                 @change="handleChange">
+    <sw-checkbox v-bind="$props" @change="handleChange">
     </sw-checkbox>
 </template>
 
