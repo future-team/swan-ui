@@ -12,10 +12,22 @@
         name: 'SwStar',
         extends: SwBase,
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'star'
+             * */
             classPrefix: {
                 type: String,
                 default: 'star'
             },
+            /**
+             * 星级评价分数
+             * @property rate
+             * @type number
+             * @default 默认为0，最高50
+             * */
             rate: {
                 type: [Number,String],
                 default: 0,
@@ -26,6 +38,12 @@
                     return true
                 }
             },
+            /**
+             * 星星大小
+             * @property phSize
+             * @type String
+             * @default 'sm'
+             * */
             phSize: {
                 type: String,
                 default: 'sm'

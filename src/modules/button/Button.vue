@@ -1,7 +1,9 @@
 <template>
-    <button :class="classObject"
-            @click="handleClick">
-        <sw-icon v-if="phIcon" :phIcon="phIcon" :phSize="phIcon.indexOf('loading')!=-1?'sm':''"></sw-icon>
+    <button :class="classObject"  @click="handleClick">
+        <sw-icon v-if="phIcon"
+                 :phIcon="phIcon"
+                 :phSize="phIcon.indexOf('loading')!=-1?'sm':''">
+        </sw-icon>
         <slot></slot>
     </button>
 </template>
