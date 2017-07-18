@@ -21,6 +21,8 @@ import Prompt from './modules/modal/Prompt.vue'
 import Popup from './modules/popup/Popup.vue'
 import Steps from './modules/steps/Steps.vue'
 import Accordion from './modules/accordion/Accordion.vue'
+import TabSet from './modules/tab/TabSet.vue'
+import Tab from './modules/tab/Tab.vue'
 import Drag from './modules/drag/Drag.vue'
 import Slider from './modules/slider/Slider.vue'
 import Swipe from './modules/swipe/Swipe.vue'
@@ -50,6 +52,8 @@ const components = {
     Popup,
     Steps,
     Accordion,
+    TabSet,
+    Tab,
     Drag,
     Slider,
     Swipe,
