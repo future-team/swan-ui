@@ -8,6 +8,7 @@
         </sw-drag>
         <div ref="buttons" class="ph-swipe-btns">
             <sw-button v-for="button in buttons"
+                       :key="button.text"
                        v-bind="button.otherProps"
                        :phStyle="button.phStyle"
                        @click="handleClick(button.onHandle)">
