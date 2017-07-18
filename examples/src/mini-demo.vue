@@ -9,7 +9,7 @@
         <div @click="handleClick" class="show-more">
             <div class="show-more-icon">
                 <sw-icon v-if="currentVisible" phIcon="arrow-dropup" phStyle="gray"></sw-icon>
-                <sw-icon v-else phIcon="arrow-dropdown"></sw-icon>
+                <sw-icon v-else phIcon="arrow-dropdown" phStyle="gray"></sw-icon>
             </div>
         </div>
     </div>
@@ -53,6 +53,7 @@
     }
     .show-more-icon{
         position: relative;
+        margin-top: 0.2rem;
     }
     .show-more-text{
         color: #999;

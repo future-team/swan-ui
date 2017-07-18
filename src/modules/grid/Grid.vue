@@ -1,27 +1,25 @@
 <template>
-    <div :class="classList">
+    <div :class="classObject">
         <slot></slot>
     </div>
 </template>
 
 <script>
     import SwBase from '../Base.vue'
-    import classnames from 'classnames'
-    import { setPhPrefix } from '../../utils/classUtil'
     export default {
         name: 'SwGrid',
         extends: SwBase,
-        computed: {
-            classList(){
-                return classnames(this.classObject,this.fluid ? setPhPrefix('grid-fluid'):'')
-            }
-        },
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'grid'
+             * */
             classPrefix: {
                 type: String,
                 default: 'grid'
-            },
-            fluid: String
+            }
         }
     }
 </script>
