@@ -3,10 +3,10 @@
         <input ref="inputRef"
                :type="currentType"
                :value="currentValue"
+               v-bind="nativeProps"
                @input="handleChange"
                @focus="handleFocus"
-               @blur="handleBlur"
-               v-bind="nativeProps"/>
+               @blur="handleBlur"/>
         <label :class="labelClass">
             <sw-icon v-if="phIcon" :phIcon="phIcon"></sw-icon>
             <span class="ph-input-placeholder-text">{{placeholder}}</span>

@@ -1,8 +1,7 @@
 <template>
     <label class="ph-multi-group">
         <div :class="`ph-${type}`">
-            <input v-bind="$props"
-                   @change="handleChange"/>
+            <input v-bind="$props" @change="handleChange"/>
             <i></i>
         </div>
         <span>{{label}}</span>
