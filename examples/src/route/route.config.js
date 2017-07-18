@@ -15,7 +15,7 @@ const routes = [
             {
                 'path': '/badge',
                 'name': 'Badge',
-                'desc': '徽章标记'
+                'desc': '徽章'
             },
             {
                 'path': '/star',
@@ -116,6 +116,36 @@ const routes = [
                 'path': '/tabset',
                 'name': 'TabSet',
                 'desc': '选项卡'
+            },
+            {
+                'path': '/slider',
+                'name': 'Slider',
+                'desc': '滑块'
+            },
+            {
+                'path': '/swipe',
+                'name': 'Swipe',
+                'desc': '左刷'
+            }
+        ]
+    },
+    {
+        title: '辅助类',
+        list: [
+            {
+                'path': '/drag',
+                'name': 'Drag',
+                'desc': '拖拽'
+            }
+        ]
+    },
+    {
+        title: '组合类',
+        list: [
+            {
+                'path': '/search',
+                'name': 'Search',
+                'desc': '搜索'
             }
         ]
     }

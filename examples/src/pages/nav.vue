@@ -1,5 +1,5 @@
 <template>
-    <div>
+    <div class="nav">
         <sw-list v-for="cateRoute in routes" v-bind:key="cateRoute.title">
             <sw-list-header>{{cateRoute.title}}</sw-list-header>
                 <sw-list-item navigate v-for="route in cateRoute.list" v-bind:key="route.name">
@@ -30,4 +30,8 @@
     a{
         width: 100%;
     }
+    .nav{
+        margin-top: 1rem;
+    }
+
 </style>

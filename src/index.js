@@ -23,6 +23,11 @@ import Steps from './modules/steps/Steps.vue'
 import Accordion from './modules/accordion/Accordion.vue'
 import TabSet from './modules/tab/TabSet.vue'
 import Tab from './modules/tab/Tab.vue'
+import Drag from './modules/drag/Drag.vue'
+import Slider from './modules/slider/Slider.vue'
+import Swipe from './modules/swipe/Swipe.vue'
+import Search from './modules/search/Search.vue'
+
 const components = {
     Button,
     ButtonGroup,
@@ -48,7 +53,11 @@ const components = {
     Steps,
     Accordion,
     TabSet,
-    Tab
+    Tab,
+    Drag,
+    Slider,
+    Swipe,
+    Search
 }
 
 
@@ -57,9 +66,6 @@ const install = function(Vue) {
     Object.keys(components).forEach((key)=>{
         Vue.component(components[key].name, components[key])
     })
-    // components.map(component => {
-    //     Vue.component(component.name, component)
-    // })
 }
 
 // auto install

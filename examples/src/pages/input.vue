@@ -1,33 +1,84 @@
-<template>
-    <div>
-        <sw-input type="text" value="disabled" disabled/>
-        <sw-input type="text" value="www" placeholder="text" phIcon="search"/>
-        <sw-input type="password" value="www"  placeholder="password" visible/>
-        <sw-input type="text" :value="myText" @input="handleInputText" placeholder="password" clear/>
-        <sw-input type="number" :value="errorValue"  @input="handleInput" placeholder="password" :error="isError"/>
-    </div>
-</template>
-
 <script>
-    export default {
-        name: 'Input',
-        data: function () {
-            return {
-                myText: '',
-                isError: false,
-                errorValue: ''
+    const demos = [
+        {
+            title: '基本用法',
+            desc: '',
+            code: `<sw-input placeholder='请输入...'/>`
+        },
+        {
+            title: '禁用状态',
+            desc: '属性：disabled',
+            code: `
+                    <sw-input placeholder='请输入...'
+                              disabled />`
+        },
+        {
+            title: '带图标',
+            desc: '属性：phIcon',
+            code: `
+                    <sw-input placeholder='请输入...'
+                              phIcon="search"/>`
+        },
+        {
+            title: '是否可见',
+            desc: '属性：visible，是否可见，只适用于password类型',
+            code: `
+                    <sw-input type="password"
+                              placeholder="请输入密码..."
+                              visible/>`
+        },
+        {
+            title: '一键清除',
+            desc: '属性：clear',
+            code: `
+                    <sw-input type="number"
+                              :value="123"
+                              placeholder='请输入...'
+                              clear/>`
+        },
+        {
+            title: '错误提示',
+            desc: '属性：error，此例输入值大于200会有错误提示',
+            code: `
+                    <sw-input   type="number"
+                                placeholder="请输入..."
+                                :value="errorValue"
+                                :error="isError"
+                                @input="handleInput"/>`,
+            options: {
+                data(){
+                    return {
+                        isError: false,
+                        errorValue: ''
+                    }
+                },
+                methods: {
+                    handleInput(value){
+                        if(value > 200){
+                            this.isError = true
+                        }else{
+                            this.isError = false
+                        }
+                    }
+                }
             }
         },
-        methods: {
-            handleInput(value){
-                if(value > 200){
-                    this.isError = true
-                }else{
-                    this.isError = false
-                }
-            },
-            handleInputText(value){
-                this.myText = value
+        {
+            title: '原生属性',
+            desc: 'maxlength',
+            code: `
+                    <sw-input type="text"
+                              placeholder='请输入...'
+                              :maxlength="3"/>`
+        }
+    ]
+    import Base from '../base.vue'
+    export default {
+        name: 'Input',
+        extends:Base,
+        data(){
+            return {
+                demos: demos
             }
         }
     }

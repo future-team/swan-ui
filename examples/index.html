@@ -5,19 +5,44 @@
     <meta name="viewport" content="width=device-width, user-scalable=no, initial-scale=1.0, maximum-scale=1.0, minimum-scale=1.0">
     <title>Swan UI</title>
     <link rel="stylesheet" href="./dist/example.css" >
+    <link rel="stylesheet" href="./src/prism/prism.css">
     <!--<script type="text/javascript" src="https://cdn.rawgit.com/future-team/gfs-viewport/master/gfs-viewport.js"></script>-->
     <script>
         (function(baseFontSize,fontscale){var _baseFontSize=baseFontSize||100;var _fontscale=fontscale||1;var win=window;var doc=win.document;var ua=navigator.userAgent;var matches=ua.match(/Android[\S\s]+AppleWebkit\/(\d{3})/i);var UCversion=ua.match(/U3\/((\d+|\.){5,})/i);var isUCHd=UCversion&&parseInt(UCversion[1].split(".").join(""),10)>=80;var isIos=navigator.appVersion.match(/(iphone|ipad|ipod)/gi);var dpr=win.devicePixelRatio||1;if(!isIos&&!(matches&&matches[1]>534)&&!isUCHd){dpr=1}var scale=1/dpr;var metaEl=doc.querySelector('meta[name="viewport"]');if(!metaEl){metaEl=doc.createElement("meta");metaEl.setAttribute("name","viewport");doc.head.appendChild(metaEl)}metaEl.setAttribute("content","width=device-width,user-scalable=no,initial-scale="+scale+",maximum-scale="+scale+",minimum-scale="+scale);doc.documentElement.style.fontSize=_baseFontSize/2*dpr*_fontscale+"px"})();
     </script>
+    <script src="./src/prism/prism.js"></script>
     <style type="text/css">
         body{
-            background-color: #fafafa;
+            background-color: #fbfbfb;
         }
+
+        pre code{
+            font-size: 0.25rem;
+        }
+
+        code[class*="language"]{
+            padding: 0.2rem;
+        }
+
     </style>
     <link rel="stylesheet" href="./css/common.css">
 </head>
 <body>
     <div id="app"></div>
     <script src="./dist/examples.js"></script>
+
+    <script>
+        Prism.plugins.NormalizeWhitespace.setDefaults({
+            'remove-trailing': true,
+            'remove-indent': true,
+            'left-trim': true,
+            'right-trim': true,
+            /*'break-lines': 80,
+             'indent': 2,
+             'remove-initial-line-feed': false,
+             'tabs-to-spaces': 4,
+             'spaces-to-tabs': 4*/
+        })
+    </script>
 </body>
 </html>

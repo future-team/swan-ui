@@ -1,56 +1,76 @@
-<template>
-    <div>
-        <sw-button-group >
-            <sw-button>default</sw-button>
-            <sw-button>default</sw-button>
-        </sw-button-group>
-
-        <sw-button-group phType="justify" v-model="active1">
-            <sw-button id="button1" v-bind:hollow="active1 == 'button1'" @click="handleClick1">justify1</sw-button>
-            <sw-button id="button2" v-bind:hollow="active1 == 'button2'" @click="handleClick1">justify2</sw-button>
-            <sw-button id="button3" v-bind:hollow="active1== 'button3'" @click="handleClick1">justify3</sw-button>
-        </sw-button-group>
-
-        <sw-button-group phType="tacked" v-model="active2">
-            <sw-button block  id="button4" v-bind:hollow="active2 == 'button4'" @click="handleClick2">tacked1</sw-button>
-            <sw-button block  id="button5" v-bind:hollow="active2 == 'button5'" @click="handleClick2">tacked2</sw-button>
-            <sw-button block  id="button6" v-bind:hollow="active2 == 'button6'" @click="handleClick2">tacked3</sw-button>
-        </sw-button-group>
-
-        <sw-button-group phType="tacked" v-model="active3">
-            <sw-button block  id="button7" v-bind:hollow="active3 == 'button7'" @click="handleClick3">segmente</sw-button>
-            <sw-button block  id="button8" v-bind:hollow="active3 == 'button8'" @click="handleClick3">segmente</sw-button>
-            <sw-button block  id="button9" v-bind:hollow="active3 == 'button9'" @click="handleClick3">segmente</sw-button>
-        </sw-button-group>
-    </div>
-</template>
-
 <script>
-    export default {
-        name: 'ButtonGroup',
-        data: function(){
-            return {
-                active1: 'button1',
-                active2: 'button5',
-                active3: ''
+    const demos = [
+        {
+            title: '基本用法',
+            desc: '',
+            code: `
+            <sw-button-group>
+                <sw-button hollow phStyle="gray">取消</sw-button>
+                <sw-button>保存</sw-button>
+            </sw-button-group>`
+        },
+        {
+            title: '横向满行排列',
+            desc: '属性：phType，属性值：justify',
+            code: `
+            <sw-button-group phType="justify">
+                <sw-button :hollow="active1 != 'button1'" @click="active1='button1'">美团</sw-button>
+                <sw-button :hollow="active1 != 'button2'" @click="active1='button2'">点评</sw-button>
+            </sw-button-group>`,
+            options: {
+                data(){
+                    return { active1: 'button1'}
+                }
             }
         },
-        methods: {
-            handleClick1: function(evt){
-                this.active1 = evt.target.id
-            },
-            handleClick2: function(evt){
-                this.active2 = evt.target.id
-            },
-            handleClick3: function(evt){
-                this.active3 = evt.target.id
+        {
+            title: '横向不满行',
+            desc: '属性：phType，属性值：segmente',
+            code: `
+             <sw-button-group phType="segmente" class="space">
+                <sw-button id="button7" v-bind:hollow="active3 != 'button7'" @click="active3 = 'button7'">概览</sw-button>
+                <sw-button id="button8" v-bind:hollow="active3 != 'button8'" @click="active3 = 'button8'">交易</sw-button>
+                <sw-button id="button9" v-bind:hollow="active3 != 'button9'" @click="active3 = 'button9'">流量</sw-button>
+             </sw-button-group>`,
+            options: {
+                data(){
+                    return { active3: 'button7'}
+                }
+            }
+        },
+        {
+            title: '竖向排列',
+            desc: '属性：phType， 属性值：tacked',
+            code: `
+             <sw-button-group phType="tacked">
+                <sw-button block :hollow="active2 != 'button4'" @click="active2='button4'">提交</sw-button>
+                <sw-button block :hollow="active2 != 'button5'" @click="active2='button5'">保存</sw-button>
+                <sw-button block :hollow="active2 != 'button6'" @click="active2='button6'">取消</sw-button>
+             </sw-button-group>`,
+            options: {
+                data(){
+                    return { active2: 'button5'}
+                }
+            }
+        }
+    ]
+    import Base from '../base.vue'
+    export default {
+        name: 'ButtonGroup',
+        extends:Base,
+        data(){
+            return {
+                demos: demos
             }
         }
     }
 </script>
 
-<style lang="css">
-
+<style>
+    .space {
+        font-size: 0;
+    }
 </style>
+
 
 

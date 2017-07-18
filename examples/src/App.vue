@@ -19,16 +19,23 @@
          visible(){
              return ['/'].indexOf(this.$route.path) < 0
          }
+     },
+     updated(){
+         self.Prism.highlightAll(event)
      }
  }
 </script>
 
 <style scoped>
     .header{
-        position: relative;
+        position: fixed;
         height: 1rem;
         line-height: 1rem;
         padding:0 .6rem;
+        top: 0;
+        width: 100%;
+        z-index: 100;
+        background-color: #fbfbfb;
     }
     .back-icon{
         position: absolute;

@@ -3,7 +3,7 @@
         <input ref="inputRef"
                :type="currentType"
                :value="currentValue"
-               :disabled="disabled"
+               v-bind="nativeProps"
                @input="handleChange"
                @focus="handleFocus"
                @blur="handleBlur"/>
@@ -60,6 +60,16 @@
             },
             errorState(){
                 return this.error && !this.focus
+            },
+            nativeProps(){
+                let props = ['name','maxlength','minlength','disabled','autocomplete','autofocus','min','max','readonly']
+                let nativeProps = {}
+                props.forEach((key)=>{
+                    if(this.$props[key]){
+                        nativeProps[key] = this.$props[key]
+                    }
+                })
+                return nativeProps
             }
         },
         methods: {
@@ -82,7 +92,7 @@
                 })
             },
             handleClear(){
-                clearTimeout(this.timer)
+                this.timer && clearTimeout(this.timer)
                 this.currentValue = ''
                 this.$refs.inputRef.focus()
             },
@@ -91,11 +101,31 @@
                 this.currentType = this.canSee ? 'text': 'password'
             }
         },
+        watch: {
+            value(val){
+                this.currentValue = val
+            }
+        },
+        beforeDestroy(){
+            this.timer && clearTimeout(this.timer)
+        },
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'input'
+             * */
             classPrefix: {
                 type: String,
                 default: 'input'
             },
+            /**
+             * input类型, 可选[text,search,password], 默认text
+             * @property type
+             * @type String
+             * @default 'text'
+             * */
             type: {
                 type: String,
                 default: 'text',
@@ -106,28 +136,52 @@
                     return true
                 }
             },
-            clear: {
-                type: Boolean,
-                default: false,
-                validator: function(){
-                    return true
-                }
-            },
-            visible: {
-                type: Boolean,
-                default: false
-            },
-            error: {
-                type: Boolean,
-                default: false
-            },
+            /**
+             * 是否显示[清除已经输入的内容按钮]，仅适用于text,search,password的类型
+             * @property clear
+             * @type Boolean
+             * */
+            clear: Boolean,
+            /**
+             * 是否显示[密码是否可见按钮]，仅适用于password的类型
+             * @property visible
+             * @type Boolean
+             * */
+            visible: Boolean,
+            /**
+             * 是否错误
+             * @property error
+             * @type Boolean
+             * */
+            error: Boolean,
+            /**
+             * icon符号类型
+             * @property phIcon
+             * @type String
+             * @default ''
+             **/
             phIcon: {
                 type: String,
                 default: ''
             },
+            /**
+             * 以下是input原生属性
+             * @property phIcon
+             * @type String
+             * @default ''
+             **/
             placeholder: String,
+            disabled: Boolean,
+            maxlength: Number,
+            minlength: Number,
+            autocomplete: String,
+            autofocus: Boolean,
+            readonly:Boolean,
             value: null,
-            disabled: null
+            name: null,
+            min:null,
+            max:null
+
         }
     }
 </script>
