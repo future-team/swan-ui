@@ -24,6 +24,7 @@ import Accordion from './modules/accordion/Accordion.vue'
 import Drag from './modules/drag/Drag.vue'
 import Slider from './modules/slider/Slider.vue'
 import Swipe from './modules/swipe/Swipe.vue'
+import Search from './modules/search/Search.vue'
 
 const components = {
     Button,
@@ -51,7 +52,8 @@ const components = {
     Accordion,
     Drag,
     Slider,
-    Swipe
+    Swipe,
+    Search
 }
 
 

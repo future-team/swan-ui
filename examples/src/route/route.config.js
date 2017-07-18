@@ -133,6 +133,16 @@ const routes = [
                 'desc': '拖拽'
             }
         ]
+    },
+    {
+        title: '组合类',
+        list: [
+            {
+                'path': '/search',
+                'name': 'Search',
+                'desc': '搜索'
+            }
+        ]
     }
 ]
 

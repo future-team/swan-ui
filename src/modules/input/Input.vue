@@ -82,7 +82,7 @@
                 })
             },
             handleClear(){
-                clearTimeout(this.timer)
+                this.timer && clearTimeout(this.timer)
                 this.currentValue = ''
                 this.$refs.inputRef.focus()
             },
@@ -90,6 +90,14 @@
                 this.canSee = !this.canSee
                 this.currentType = this.canSee ? 'text': 'password'
             }
+        },
+        watch: {
+            value(val){
+                this.currentValue = val
+            }
+        },
+        beforeDestroy(){
+            this.timer && clearTimeout(this.timer)
         },
         props: {
             classPrefix: {
