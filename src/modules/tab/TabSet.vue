@@ -2,7 +2,7 @@
     <div :class='tabsClassObject'>
         <ul :class='verticalClass'>
             <!--tab标题-->
-            <li class='ph-col ph-tab-nav' :class="{'active': index == activeIndex}" v-for='(item, index) in navList' :key='index' @click='onNavClick(index)'><a href='javascript:;'>{{item.heading}}</a></li>
+            <li class='ph-col ph-tab-nav' :class="{'active': item.index == activeIndex}" v-for='(item, index) in tabbarList' :key='item.index' @click='onTabClick(item.index)'><a href='javascript:;'>{{item.heading}}</a></li>
         </ul>
         <!--tab内容-->
         <div :class='contentClassObject'><slot></slot></div>
@@ -27,9 +27,9 @@
                 type: [Number, String],
                 default: 33
             },
-            activeIndex: {
+            defaultActiveIndex: {
                 type: [Number, String],
-                default: 0
+                default: undefined
             },
             onTabChange: {
                 type: Function,
@@ -38,7 +38,8 @@
         },
         data () {
             return {
-                navList: []
+                tabbarList: [],
+                activeIndex: this.defaultActiveIndex
             }
         },
         computed: {
@@ -69,8 +70,7 @@
             }
         },
         mounted () {
-            this.updateNav()
-            this.setTabs()
+            this.updateTabbar()
         },
         methods: {
             getTabs(){
@@ -79,38 +79,20 @@
                     return name == 'SwTab'
                 })
             },
-            setTabs() {
-                let self = this
-                let tags = this.getTabs()
-                tags.forEach((pane, index) => {
-                    // let newPane = Object.assign({}, pane)
-                    // newPane.index = index
-                    // newPane.activeIndex = self.activeIndex
-                    // pane = Object.assign({}, newPane)
-
-                    pane.index = index
-                    pane.activeIndex = self.activeIndex
-
-                })
-            },
-            setTabsActiveIndex() {
-                let self = this
-                let tags = this.getTabs()
-                tags.forEach((pane) => {
-                    pane.activeIndex = self.activeIndex
-                })
-            },
-            updateNav(){
-                this.navList = []
+            updateTabbar(){
+                this.tabbarList = []
                 this.getTabs().forEach((pane) => {
-                    this.navList.push({
-                        heading: pane.heading
+                    this.tabbarList.push({
+                        heading: pane.heading,
+                        index: pane.index
                     })
                 })
+                if (this.defaultActiveIndex == undefined) {
+                    this.activeIndex = this.tabbarList[0].index
+                }
             },
-            onNavClick(index){
+            onTabClick(index){
                 this.activeIndex = index
-                // this.setTabsActiveIndex()
                 this.$emit('clickCallback', this.activeIndex)
             }
         }

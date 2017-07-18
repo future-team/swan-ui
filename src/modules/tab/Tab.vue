@@ -12,13 +12,8 @@
                 type: Boolean,
                 default: false
             },
-            activeIndex: {
-                type: [Number, String],
-                default: 0
-            },
             index: {
-                type: [Number, String],
-                default: 0
+                type: [Number, String]
             },
             heading: {
                 type: String,
@@ -37,24 +32,28 @@
                 default: ''
             }
         },
+        data () {
+            return {
+                active: this.$parent.activeIndex
+            }
+        },
         computed: {
             classObject() {
                 return {
                     'ph-col': !this.vertical,
                     'ph-tab-panel': true,
-                    'active': this.index == this.activeIndex
+                    'active': this.index == this.$parent.activeIndex
                 }
             }
         },
         mounted () {
-            let self = this
-            this.$parent.$on('clickCallback', function (activeIndex) {
-                self.activeIndex = activeIndex
-                self.$emit('clickCallback', activeIndex)
-            })
+            this.active = this.$parent.activeIndex
         },
-        methods: {
-            
+        watch: {
+            '$parent.activeIndex': function (newValue) {
+                this.active = newValue
+                this.$emit('clickCallback', newValue)
+            }
         }
     }
 </script>
