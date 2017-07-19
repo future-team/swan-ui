@@ -1,19 +1,34 @@
 export function warning(format){
-    for (var _len = arguments.length, args = Array(_len > 1 ? _len - 1 : 0), _key = 1; _key < _len; _key++) {
-        args[_key - 1] = arguments[_key];
+    let _len = arguments.length
+    let args = Array(_len > 1 ? _len - 1 : 0)
+    for (let _key = 1; _key < _len; _key++) {
+        args[_key - 1] = arguments[_key]
     }
 
     if (format === undefined) {
-        throw new Error('`warning(format, ...args)` requires a warning ' + 'message argument');
+        throw new Error('`warning(format, ...args)` requires a warning ' + 'message argument')
     }
-    var argIndex = 0;
-    var message = 'Warning: ' + format.replace(/%s/g, function () {
-            return args[argIndex++];
-        });
+    let argIndex = 0
+    let message = 'Warning: ' + format.replace(/%s/g, function () {
+            return args[argIndex++]
+        })
     if (typeof console !== 'undefined') {
-        console.warn(message);
+        console.warn(message)
     }
-    try {
-        throw new Error(message);
-    } catch (x) {}
+}
+
+
+export function getClientHeight(){
+    return document.compatMode === 'BackCompat' ? document.body.clientHeight : document.documentElement.clientHeight
+}
+
+export function getOffsetTop( elem ) {
+    let location = 0
+    if (elem.offsetParent) {
+        do {
+            location += elem.offsetTop
+            elem = elem.offsetParent
+        } while (elem)
+    }
+    return location >= 0 ? location : 0
 }

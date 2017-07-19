@@ -1,23 +1,28 @@
 <template>
-    <div class="demo">
-        <div class="image-list-demo">
-            <sw-image-list :column="2">
-                <sw-image v-for="(url,index) in urls"
-                          :key="index"
-                          :src="url"
-                          :defaultSrc="defaultSrc"
-                          lazy></sw-image>
-            </sw-image-list>
-        </div>
-        <sw-pullup :status="status"></sw-pullup>
+    <div class="image-list-demo">
+        <sw-image-list :column="2">
+            <dl  v-for="(url,index) in urls"
+                 class="ph-image-item"
+                 :key="index">
+                <dt>
+                    <sw-image :src="url"
+                              :defaultSrc="defaultSrc"
+                              lazy></sw-image>
+                </dt>
+                <dd>
+                    <p class="ph-image-title">图片</p>
+                    <p class="ph-image-desp">描述</p>
+                </dd>
+            </dl>
+        </sw-image-list>
     </div>
 </template>
+
 <script>
     export default {
-        name: 'Pullup',
+        name: 'Image',
         data(){
             return {
-                status: 0,
                 defaultSrc: 'http://bpic.588ku.com/element_pic/01/47/02/12574338a640011.jpg',
                 urls: [
                     'https://fuss10.elemecdn.com/b/2e/a6c333694efb4db66c6a3ba07e9d8jpeg.jpeg?imageMogr2/thumbnail/200x200/format/webp/quality/85',

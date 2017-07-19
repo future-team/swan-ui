@@ -1,33 +1,33 @@
-import { warning } from './tool';
+import { warning } from './tool'
 
 let getVal= function(vals,val){
-    let result=(vals.join(',')+',').match(val.toLowerCase()+',' )!=null ? val: '';
+    let result=(vals.join(',')+',').match(val.toLowerCase()+',' )!=null ? val: ''
     if(!result){
         warning('属性的取值 %s 不在设定集合 %s 里',val , vals.join(','))
     }
-    return result;
-};
+    return result
+}
 
 export default {
 
     /*以下属性都是数组里固定值*/
     phType:function(val){
-        return getVal(['default','tacked','justify','segmente'],val);
+        return getVal(['default','tacked','justify','segmente'],val)
     },
     phSize:function(val){
-        return getVal(['default','lg','md','sm','xs','cover','contain'],val);
+        return getVal(['default','lg','md','sm','xs','cover','contain'],val)
     },
     phStyle:function(val){
-        return getVal(['default','primary','info','success','error','warning','danger','link','gray','light','positive','calm','balanced','energized','assertive','lightbrown','lightgray'],val);
+        return getVal(['default','primary','info','success','error','warning','danger','link','gray','light','positive','calm','balanced','energized','assertive','lightbrown','lightgray'],val)
     },
     phStatus:val=>{
         getVal(['diabled','active','enable'],val)
     },
     align:function(val){
-        return getVal(['center','left','middle','auto','top','right','bottom','stretch','baseline'],val);
+        return getVal(['center','left','middle','auto','top','right','bottom','stretch','baseline'],val)
     },
     placement:function(val){
-        return getVal(['top','bottom','right','left','left-full','right-full','full-screen'],val);
+        return getVal(['top','bottom','right','left','left-full','right-full','full-screen'],val)
     },
 
     /*以下属性没有取值，需要的时候添加对应的属性即可*/
@@ -54,33 +54,33 @@ export default {
         if(typeof(val) =='string' ){
             return {
                 zIndex:val
-            };
+            }
         }
-        return 'zindex';
+        return 'zindex'
     },
     border:val=>{
         if(typeof(val) =='string' ){
             return {
                 border:val
-            };
+            }
         }
-        return  'border';
+        return  'border'
     },
     padding:val=>{
         if(typeof(val) =='string' ){
             return {
                 padding:val
-            };
+            }
         }
-        return 'padding';
+        return 'padding'
     },
     margin:val=>{
         if(typeof(val) =='string' ){
             return {
                 margin:val
-            };
+            }
         }
-        return 'margin';
+        return 'margin'
     },
     radiusSize:val=>{
         return {
@@ -89,9 +89,9 @@ export default {
         }
     },
     width:function(val){
-        return ''+val;
+        return ''+val
     },
     offset:function(val){
-        return 'offset-'+val;
+        return 'offset-'+val
     }
 }

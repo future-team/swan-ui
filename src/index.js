@@ -28,6 +28,8 @@ import Slider from './modules/slider/Slider.vue'
 import Swipe from './modules/swipe/Swipe.vue'
 import Search from './modules/search/Search.vue'
 import Pullup from './modules/pullup/PullUp.vue'
+import Image from './modules/image/Image.vue'
+import ImageList from './modules/image/ImageList.vue'
 
 const components = {
     Button,
@@ -59,7 +61,9 @@ const components = {
     Slider,
     Swipe,
     Search,
-    Pullup
+    Pullup,
+    ImageList,
+    Image
 }
 
 

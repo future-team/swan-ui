@@ -151,6 +151,16 @@ const routes = [
                 'path': '/search',
                 'name': 'Search',
                 'desc': '搜索'
+            },
+            {
+                'path': '/image',
+                'name': 'Image',
+                'desc': ''
+            },
+            {
+                'path': '/image-list',
+                'name': 'ImageList',
+                'desc': ''
             }
         ]
     }

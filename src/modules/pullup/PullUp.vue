@@ -1,13 +1,20 @@
 <template>
-    <div ref="pullup" :class="classObject">
+    <div ref="pullupRef" :class="classObject">
         <sw-button v-if="mode=='button'"
                    :phStyle="status==3?'error':phStyle"
-                   :disabled="status==4||status==1" @click="handleLoad" >
-            <sw-icon v-if="status==1" class="gfs-icon-loading" phIcon='loading-gray' phSize='sm'></sw-icon>
+                   :disabled="status==4||status==1"
+                   @click="handleLoad" >
+            <sw-icon v-if="status==1"
+                     class="gfs-icon-loading"
+                     phIcon='loading-gray'
+                     phSize='sm'></sw-icon>
             {{tips[status]}}
         </sw-button>
         <div v-else class="ph-pullup-tip">
-            <sw-icon v-if="status==1" class="gfs-icon-loading" phIcon='loading-gray' phSize='sm'></sw-icon>
+            <sw-icon v-if="status==1"
+                     class="gfs-icon-loading"
+                     phIcon='loading-gray'
+                     phSize='sm'></sw-icon>
             {{tips[status]}}
         </div>
     </div>
@@ -15,8 +22,9 @@
 
 <script>
     import SwBase from '../Base.vue'
-    import SwButton from '../button/Button'
-    import SwIcon from '../icon/Icon'
+    import SwButton from '../button/Button.vue'
+    import SwIcon from '../icon/Icon.vue'
+    import { getClientHeight } from '../../utils/tool.js'
     export default {
         name: 'SwPullup',
         extends: SwBase,
@@ -34,7 +42,36 @@
         methods: {
             handleLoad(){
 
+            },
+            handleScroll(){
+                this.scrollTop = document.body.scrollTop
+                this.clientHeight = getClientHeight()
+                this.pullupElemOffsetTop = this.$refs.pullupRef.offsetTop
+                if(this.scrollTop + this.clientHeight >= this.pullupElemOffsetTop){
+                    this.touchBottom = true
+                    this.$emit('load')
+                }else{
+                    this.touchBottom = false
+                }
+            },
+            handleTouchStart(){
+
+            },
+            handleTouchMove(){
+
+            },
+            handleTouchEnd(){
+
             }
+        },
+        mounted(){
+            window.addEventListener('scroll', this.handleScroll)
+            this.$el.addEventListener('touchstart', this.handleTouchStart)
+            this.$el.addEventListener('touchmove', this.handleTouchMove)
+            this.$el.addEventListener('touchend', this.handleTouchEnd)
+        },
+        destroyed(){
+            window.removeEventListener('scroll', this.scrollHandle, false)
         },
         props: {
             /**

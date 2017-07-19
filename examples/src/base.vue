@@ -21,24 +21,7 @@
 </script>
 
 <style lang="less">
-    .demo{
-        padding: 0 0.5rem;
-        margin-top: 1rem;
-        .demo-item{
-            margin-bottom: 0.5rem;
-            padding: 0.2rem 0;
-            border-bottom: 1px solid #bbb;
-        }
-        h5{
-            margin-bottom: 0.1rem;
-            font-size: 0.35rem;
-        }
-        .demo-desc{
-            padding-bottom: 0.3rem;
-            font-size: 0.27rem;
-            color: #666;
-        }
-    }
+    @import "./demo.less";
 </style>
 
 

@@ -29,16 +29,6 @@
             column: {
                 type: Number,
                 default: 1
-            },
-            /**
-             * 是否懒加载
-             * @property lazy
-             * @type Boolean
-             * @default false
-             * */
-            lazy: {
-                type: Boolean,
-                default: false
             }
         }
     }

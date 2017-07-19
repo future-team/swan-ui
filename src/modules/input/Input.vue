@@ -1,5 +1,5 @@
 <template>
-    <div :class="classList">
+    <div :class="[classObject,{'ph-input-heading':phIcon}]">
         <input ref="inputRef"
                :type="currentType"
                :value="currentValue"
@@ -30,7 +30,6 @@
     import SwIcon from '../icon/Icon.vue'
     import classnames from 'classnames'
     import { setPhPrefix } from '../../utils/classUtil'
-    import { warning } from '../../utils/tool'
     export default {
         name: 'SwInput',
         extends: SwBase,
@@ -44,9 +43,6 @@
             }
         },
         computed: {
-            classList() {
-                return classnames(this.classObject,this.phIcon ? setPhPrefix('input-heading'):'')
-            },
             labelClass(){
                 let placeholderShow = !this.focus && !this.currentValue
                 return classnames(setPhPrefix('input-placeholder'),
@@ -130,10 +126,7 @@
                 type: String,
                 default: 'text',
                 validator: function(val){
-                    if(['checkbox', 'radio'].indexOf(val) >= 0){
-                        warning('Input组件: type 为 checkbox|radio 请对应使用 Checkbox|Radio 组件!')
-                    }
-                    return true
+                    return ['checkbox', 'radio'].indexOf(val) < 0
                 }
             },
             /**
