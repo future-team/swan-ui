@@ -54,15 +54,25 @@
                     this.touchBottom = false
                 }
             },
-            handleTouchStart(){
-
+            handleTouchStart(evt){
+                if(!this.touchBottom) return
+                this.distanceY = 0
+                this.starY = evt.touches[0].pageY
             },
-            handleTouchMove(){
-
+            handleTouchMove(evt){
+                if(!this.touchBottom) return
+                this.moveY = evt.touches[0].pageY
+                this.distanceY = this.moveY - this.starY
+                if(this.distanceY >= 0) return
             },
             handleTouchEnd(){
-
+                if(!this.touchBottom) return
+                console.log('emit load')
+                this.$emit('load')
             }
+        },
+        updated(){
+            console.log(this.status)
         },
         mounted(){
             window.addEventListener('scroll', this.handleScroll)
@@ -71,7 +81,7 @@
             this.$el.addEventListener('touchend', this.handleTouchEnd)
         },
         destroyed(){
-            window.removeEventListener('scroll', this.scrollHandle, false)
+            window.removeEventListener('scroll', this.handleScroll, false)
         },
         props: {
             /**
