@@ -45,7 +45,8 @@
                 this.scrollTop = document.body.scrollTop
                 this.bodyHeight = getClientHeight()
                 this.imageTop = getOffsetTop(this.$refs.imageParentRef)
-                if(!this.load && (this.scrollTop + this.bodyHeight + this.bodyHeight/2 >= this.imageTop)){
+                //this.scrollTop + this.bodyHeight + this.bodyHeight/2 >= this.imageTop
+                if(!this.load && (this.scrollTop + this.bodyHeight >= this.imageTop)){
                     this.loadImage()
                 }
             },

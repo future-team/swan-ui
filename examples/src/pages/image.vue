@@ -48,7 +48,7 @@
         },
         {
             title: '懒加载',
-            desc: '属性：lazy， 距图片还有半屏（视口高度的一半）时加载图片。批量懒加载时一定要有占位图，即设置defaultSrc属性',
+            desc: '属性：lazy，进入可视范围才加载。批量懒加载时一定要有占位图，即设置defaultSrc属性',
             code: `
                     <div class="image-demo">
                        <sw-image :src="url" phSize="contain" lazy/>

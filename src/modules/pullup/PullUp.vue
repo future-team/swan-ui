@@ -1,21 +1,21 @@
 <template>
     <div ref="pullupRef" :class="classObject">
         <sw-button v-if="mode=='button'"
-                   :phStyle="status==3?'error':phStyle"
-                   :disabled="status==4||status==1"
+                   :phStyle="currentStatus==3?'error':phStyle"
+                   :disabled="currentStatus==4||currentStatus==1"
                    @click="handleLoad" >
-            <sw-icon v-if="status==1"
+            <sw-icon v-if="currentStatus==1"
                      class="gfs-icon-loading"
                      phIcon='loading-gray'
                      phSize='sm'></sw-icon>
-            {{tips[status]}}
+            {{tips[currentStatus]}}
         </sw-button>
         <div v-else class="ph-pullup-tip">
-            <sw-icon v-if="status==1"
+            <sw-icon v-if="currentStatus==1"
                      class="gfs-icon-loading"
                      phIcon='loading-gray'
                      phSize='sm'></sw-icon>
-            {{tips[status]}}
+            {{tips[currentStatus]}}
         </div>
     </div>
 </template>
@@ -40,48 +40,31 @@
             }
         },
         methods: {
-            handleLoad(){
-
-            },
             handleScroll(){
                 this.scrollTop = document.body.scrollTop
                 this.clientHeight = getClientHeight()
                 this.pullupElemOffsetTop = this.$refs.pullupRef.offsetTop
                 if(this.scrollTop + this.clientHeight >= this.pullupElemOffsetTop){
                     this.touchBottom = true
+                    if(this.currentStatus === 1 || this.currentStatus === 4){ //加载中 或 没有更多， 返回
+                        return
+                    }
                     this.$emit('load')
                 }else{
                     this.touchBottom = false
                 }
-            },
-            handleTouchStart(evt){
-                if(!this.touchBottom) return
-                this.distanceY = 0
-                this.starY = evt.touches[0].pageY
-            },
-            handleTouchMove(evt){
-                if(!this.touchBottom) return
-                this.moveY = evt.touches[0].pageY
-                this.distanceY = this.moveY - this.starY
-                if(this.distanceY >= 0) return
-            },
-            handleTouchEnd(){
-                if(!this.touchBottom) return
-                console.log('emit load')
-                this.$emit('load')
             }
         },
-        updated(){
-            console.log(this.status)
+        watch: {
+            status(val){
+                this.currentStatus = val
+            }
         },
         mounted(){
             window.addEventListener('scroll', this.handleScroll)
-            this.$el.addEventListener('touchstart', this.handleTouchStart)
-            this.$el.addEventListener('touchmove', this.handleTouchMove)
-            this.$el.addEventListener('touchend', this.handleTouchEnd)
         },
         destroyed(){
-            window.removeEventListener('scroll', this.handleScroll, false)
+            window.removeEventListener('scroll', this.handleScroll)
         },
         props: {
             /**
@@ -95,7 +78,7 @@
                 default: 'pullup'
             },
             /**
-             * 加载更多的模式，可选[auto,buttons], 默认auto
+             * 加载更多的模式，可选[auto,button], 默认auto
              * @property mode
              * @type String
              * @default 'auto'

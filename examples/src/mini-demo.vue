@@ -16,9 +16,9 @@
 </template>
 
 <script>
+    import Vue from 'vue'
     import Stretch from './mixins/stretch.js'
     import SwIcon from '../../src/modules/icon/Icon'
-    import Vue from 'vue'
     export default {
       components: {SwIcon},
       name: 'MiniDemo',
