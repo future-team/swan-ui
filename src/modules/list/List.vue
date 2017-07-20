@@ -10,6 +10,12 @@
         name: 'SwList',
         extends: SwBase,
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'list'
+             * */
             classPrefix: {
                 type: String,
                 default: 'list'

@@ -10,6 +10,12 @@
         name: 'SwListHeader',
         extends: SwBase,
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'list-header'
+             * */
             classPrefix: {
                 type: String,
                 default: 'list-header'
