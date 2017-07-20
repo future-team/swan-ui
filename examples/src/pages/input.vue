@@ -70,6 +70,21 @@
                     <sw-input type="text"
                               placeholder='请输入...'
                               :maxlength="3"/>`
+        },
+        {
+            title: '双向绑定',
+            code: `
+                    输入值：<span>{{value}}</span>
+                    <sw-input type="text"
+                              placeholder='请输入...'
+                              v-model="value"/>`,
+            options: {
+                data(){
+                    return {
+                        value : ''
+                    }
+                }
+            }
         }
     ]
     import Base from '../base.vue'
