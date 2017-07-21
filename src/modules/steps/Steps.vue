@@ -25,29 +25,54 @@
                 currentStep_ : this.currentStep
             }
         },
-        computed:{
-
-        },
         methods: {
             handleClick(item,index){
                 if(this.readOnly){return}
-                this.currentStep_ = index
                 this.$emit('click',item,index)
             }
         },
+        watch: {
+            currentStep(val){
+                this.currentStep_ = val
+            }
+        },
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'steps'
+             * */
             classPrefix: {
                 type: String,
                 default: 'steps'
             },
+            /**
+             * 是否为只读模式（只读模式不会触发点击回调），默认为false
+             * @property readOnly
+             * @type Boolean
+             * @default false
+             **/
             readOnly: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * steps内容数组，把每一步的文案放入数组中作为list的值
+             * @property list
+             * @type Array
+             * @default []
+             **/
             list: {
                 type: Array,
                 default: ()=>[]
             },
+            /**
+             * 当前处于第几步，默认为0，也就是说所有的步骤都没有开始，如果到第一步的话将currentStep设置为1即可，注意currentStep不可以超过list数组长度
+             * @property currentStep
+             * @type Number
+             * @default 0
+             **/
             currentStep: {
                 type: Number,
                 default: 0

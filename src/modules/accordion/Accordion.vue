@@ -1,8 +1,8 @@
 <template>
     <div :class="classObject">
-        <div class="ph-accordion-header clearfix" @click="handleClick">
+        <div class="ph-accordion-header clearfix" @click="handleToggle(!visible)">
             <slot name="header"></slot>
-            <sw-icon v-if="!hideIcon" phIcon="expand-more" :class="currentVisible ? 'active':''"></sw-icon>
+            <sw-icon v-if="!hideIcon" phIcon="expand-more" :class="visible ? 'active':''"></sw-icon>
         </div>
         <div class="ph-accordion-body animated" ref="accordionBodyParent">
             <div ref="accordionBody">
@@ -19,30 +19,50 @@
         name: 'SwAccordion',
         extends: SwBase,
         components: {SwIcon},
+        model: {
+            prop: 'visible',
+            event: 'toggle'
+        },
         methods:{
-            handleClick(){
-                this.currentVisible = !this.currentVisible
-                this.$emit('click',this.currentVisible)
+            handleToggle(val){
+                this.$emit('toggle',val)
             },
             setHeight(){
-                this.$refs.accordionBodyParent.style.height = this.currentVisible ? this.height : 0
+                this.$refs.accordionBodyParent.style.height = this.visible ? this.height : 0
             }
         },
         data(){
             return {
-                currentVisible:this.visible,
                 height: 0
             }
         },
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'accordion'
+             * */
             classPrefix: {
                 type: String,
                 default: 'accordion'
             },
+            /**
+             * 是否可见标识
+             * @property visible
+             * @type Boolean
+             * @default false
+             * */
             visible: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * 向下的箭头是否可见， 默认可见
+             * @property hideIcon
+             * @type Boolean
+             * @default false
+             * */
             hideIcon : {
                 type: Boolean,
                 default: false
@@ -51,10 +71,9 @@
         mounted(){
             this.height = this.$refs.accordionBody.offsetHeight+'px'
             this.setHeight()
-
         },
         watch: {
-            currentVisible(){
+            visible(){
                 this.setHeight()
             }
         }

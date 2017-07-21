@@ -8,7 +8,7 @@
                 <div class="ph-dialog-content animated">
                     <a href="javascript:;"
                        :class="['ph-dialog-close',closeButton ? 'show':'hide','gfs-icon icon-close']"
-                       @click="handleClose"></a>
+                       @click="handleToggle(false)"></a>
                     <h2 class="ph-dialog-title">
                         <slot name="title">
                             {{title}}

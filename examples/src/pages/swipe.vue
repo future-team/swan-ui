@@ -4,39 +4,25 @@
             title: '',
             desc: '',
             code: `
-                <sw-swipe :buttons="buttons">
-                   <div class="swipe-demo">向左滑动</div>
-                </sw-swipe>
-            `,
-            options: {
-                data(){
-                    return {
-                        buttons: [
+                <sw-swipe :buttons="[
                             {text: '置顶',  phStyle: 'gray', onHandle:()=>{console.log('置顶')}},
                             {text: '标为已读',  phStyle: 'info', onHandle:()=>{console.log('标为已读')}},
                             {text: '删除',  phStyle: 'error', onHandle:()=>{console.log('删除')}}
-                        ]
-                    }
-                }
-            }
+                        ]">
+                   <div class="swipe-demo">向左滑动</div>
+                </sw-swipe>
+            `
         },
         {
             title: '',
             desc: '',
             code: `
-                <sw-swipe :buttons="buttons">
+                <sw-swipe :buttons="[
+                            {text: '删除',  phStyle: 'error'}
+                        ]">
                    <div class="swipe-demo">向左滑动</div>
                 </sw-swipe>
-            `,
-            options: {
-                data(){
-                    return {
-                        buttons: [
-                            {text: '删除',  phStyle: 'error'}
-                        ]
-                    }
-                }
-            }
+            `
         }
     ]
     import Base from '../base.vue'

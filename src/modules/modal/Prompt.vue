@@ -45,7 +45,7 @@
         computed: {
             currentButtons(){
                 return this.buttons ? this.buttons : [
-                    {text: '取消', onHandle: this.onClose || this.handleClose},
+                    {text: '取消', onHandle: this.handleToggle.bind(this.false)},
                     {text: '确定', onHandle: this.handleConfirm}
                 ]
             },
@@ -58,7 +58,7 @@
                 this.$emit('on-confirm',this.inputValue,evt)
             },
             handleClick(onHandle){
-                onHandle ? onHandle(this.inputValue) : this.handleClose()
+                onHandle ? onHandle(this.inputValue) : this.handleToggle.bind(this.false)
             },
             handleInput(value){
                 this.inputValue = value

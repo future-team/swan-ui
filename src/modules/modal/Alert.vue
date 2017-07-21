@@ -3,7 +3,7 @@
                 v-model="currentVisible"
                 :closeButton="closeButton"
                 :shadowDisabled="shadowDisabled"
-                @on-close="handleClose">
+                @on-close="handleToggle(false)">
         <template slot='title'>{{title}}</template>
         {{content}}
         <sw-button-group slot="footer" :phType=" buttonsType ? 'tacked': 'default'">
@@ -41,12 +41,12 @@
         },
         methods: {
             handleClick(onHandle){
-                onHandle ? onHandle() : this.handleClose()
+                onHandle ? onHandle() : this.handleToggle(false)
             }
         },
         computed: {
             currentButtons(){
-                return this.buttons ? this.buttons : [{text: '确定', onHandle: this.handleClose}]
+                return this.buttons ? this.buttons : [{text: '确定', onHandle: this.handleToggle.bind(this,false)}]
             },
             buttonsType(){
                 return this.currentButtons.length>2

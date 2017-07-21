@@ -1,7 +1,7 @@
 <template>
     <div :class="classObject" >
         <transition name="popup-fade">
-            <div v-if="visible" class="ph-popup-shadow popup-slide-aminate" @click="handleClose"></div>
+            <div v-if="visible" class="ph-popup-shadow popup-slide-aminate" @click="handleToggle(false)"></div>
         </transition>
         <transition :name="`popup-slide-${align}`" >
             <span v-if="visible" class="ph-popup-main popup-slide-aminate">

@@ -1,16 +1,43 @@
-<template>
-    <div>
-        <sw-steps :currentStep="0"
-                  :list="['合作信息','公司信息','资质信息']"></sw-steps>
-
-        <sw-steps readOnly
-                  :currentStep="0"
-                  :list="['合作信息','公司信息','资质信息']"></sw-steps>
-    </div>
-</template>
-
 <script>
+    const demos = [
+        {
+            title: '基本用法',
+            desc: '',
+            code: `
+                    <sw-steps :currentStep="currentStep"
+                              :list="['申请提交','财务一级审批','支付中','支付成功']"
+                              @click="handleClick"/>`,
+            options: {
+                data(){
+                    return {
+                        currentStep: 0
+                    }
+                },
+                methods: {
+                    handleClick(item,index){
+                        this.currentStep=index
+                        alert(item)
+                    }
+                }
+            }
+        },
+        {
+            title: '只读模式',
+            desc: '',
+            code: `
+                    <sw-steps readOnly
+                              :currentStep="1"
+                              :list="['申请提交','财务一级审批','支付中','支付成功']"/>`
+        }
+    ]
+    import Base from '../base.vue'
     export default {
-        name: 'Steps'
+        name: 'Steps',
+        extends:Base,
+        data(){
+            return {
+                demos: demos
+            }
+        }
     }
 </script>
