@@ -23,7 +23,7 @@
             }
         },
         {
-            title: '短边100%，不变形',
+            title: '长边100%，不变形，留有空白区',
             desc: 'phSize: cover',
             code: '<div class="image-demo"><sw-image :src="url" phSize="cover" /></div>',
             options: {
@@ -35,7 +35,7 @@
             }
         },
         {
-            title: '长边100%，不变形，留有空白区',
+            title: '短边100%，不变形',
             desc: 'phSize: contain',
             code: '<div class="image-demo"><sw-image :src="url" phSize="contain" /></div>',
             options: {

@@ -43,11 +43,13 @@
             },
             handleFocus(){
                 this.focus = true
+                this.$emit('focus')
             },
             handleBlur(){
                 this.timer = setTimeout(()=>{
                     this.focus = false
                 })
+                this.$emit('blur')
             },
             handleKeyDown(evt){
                 this.$emit('search',this.currentValue,evt)

@@ -12,7 +12,7 @@
         },
         {
             title: 'click事件',
-            desc: '点击取消，触发click',
+            desc: '点击取消，触发click，另外还有blur、focus事件',
             code: `
                 <sw-search v-model="searchValue"
                            @click="handleClick"
