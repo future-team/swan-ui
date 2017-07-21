@@ -1,3 +1,6 @@
+/**
+ * 定制弹出层类组件的 v-model
+ */
 export default {
     model: {
         prop: 'visible',
@@ -9,6 +12,14 @@ export default {
         }
     },
     props: {
-        visible: Boolean
+        /**
+         * 是否可见标识
+         * @property visible
+         * @type Boolean
+         * */
+        visible: {
+            type: Boolean,
+            default: false
+        }
     }
 }

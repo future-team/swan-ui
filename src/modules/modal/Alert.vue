@@ -25,12 +25,10 @@
     import SwDialog from './Dialog.vue'
     import SwButtonGroup from '../button/ButtonGroup.vue'
     import SwButton from '../button/Button.vue'
+    import toggle from '../../mixins/toggle'
     export default {
         name: 'SwAlert',
-        model: {
-            prop: 'visible',
-            event: 'toggle'
-        },
+        mixins: [toggle],
         data(){
             return {
                 currentVisible: this.visible
@@ -42,9 +40,6 @@
             SwDialog
         },
         methods: {
-            handleClose(){
-                this.$emit('toggle')
-            },
             handleClick(onHandle){
                 onHandle ? onHandle() : this.handleClose()
             }
@@ -66,20 +61,41 @@
             }
         },
         props: {
-            visible: {
-                type: Boolean,
-                default: false
-            },
+            /**
+             * 右上角按钮是否可见, 默认不可见
+             * @property closeButton
+             * @type Boolean
+             * */
             closeButton: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * 阴影部分是否点击可关闭弹框
+             * @property shadowDisabled
+             * @type Boolean
+             * */
             shadowDisabled: {
                 type: Boolean,
                 default: false
             },
+            /**
+             * 标题
+             * @property title
+             * @type String
+             * */
             title: null,
+            /**
+             * 内容
+             * @property title
+             * @type String
+             * */
             content: null,
+            /**
+             * 尾部按钮
+             * @property buttons
+             * @type Array
+             * */
             buttons: Array
         }
     }

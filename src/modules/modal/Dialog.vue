@@ -28,20 +28,14 @@
 
 <script>
     import SwBase from '../Base.vue'
+    import toggle from '../../mixins/toggle'
     export default {
         name: 'SwDialog',
         extends: SwBase,
-        model: {
-            prop: 'visible',
-            event: 'toggle'
-        },
+        mixins: [toggle],
         methods: {
             handleShadowClose(){
                 !this.shadowDisabled && this.handleClose()
-            },
-            handleClose(){
-                this.$emit('toggle',false)
-                this.onClose && this.onClose()
             }
         },
         props: {
@@ -54,15 +48,6 @@
             classPrefix: {
                 type: String,
                 default: 'dialog'
-            },
-            /**
-             * 是否可见标识
-             * @property visible
-             * @type Boolean
-             * */
-            visible: {
-                type: Boolean,
-                default: false
             },
             /**
              * 右上角按钮是否可见, 默认不可见
@@ -88,12 +73,6 @@
              * @type String
              * */
             title: String,
-            /**
-             * 关闭时的回调
-             * @property onClose
-             * @type Function
-             */
-            onClose: Function
         }
     }
 </script>

@@ -26,12 +26,10 @@
     import SwButtonGroup from '../button/ButtonGroup.vue'
     import SwButton from '../button/Button.vue'
     import SwInput from '../input/Input.vue'
+    import toggle from '../../mixins/toggle'
     export default {
         name: 'SwPrompt',
-        model: {
-            prop: 'visible',
-            event: 'toggle'
-        },
+        mixins: [toggle],
         components: {
             SwButton,
             SwButtonGroup,
@@ -64,9 +62,6 @@
             },
             handleInput(value){
                 this.inputValue = value
-            },
-            handleClose(){
-                this.$emit('toggle',false)
             }
         },
         watch: {
@@ -97,12 +92,6 @@
              * @type Array
              * */
             buttons: Array,
-            /**
-             * 是否可见标识
-             * @property visible
-             * @type Boolean
-             * */
-            visible: Boolean,
             /**
              * 右上角按钮是否可见, 默认不可见
              * @property closeButton

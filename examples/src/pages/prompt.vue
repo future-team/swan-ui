@@ -35,7 +35,7 @@
             code: `
                 <div>{{text}}</div>
                 <sw-button @click="visible = true">默认Prompt</sw-button>
-                <sw-prompt :visible="visible"
+                <sw-prompt v-model="visible"
                            title="这是标题"
                            content="这是内容"
                            shadowDisabled closeButton

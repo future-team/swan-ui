@@ -15,29 +15,31 @@
 
 <script>
     import SwBase from '../Base.vue'
+    import toggle from '../../mixins/toggle'
     export default {
         name: 'SwPopup',
         extends: SwBase,
-        model: {
-            prop: 'visible',
-            event: 'visible-change'
-        },
-        methods: {
-            handleClose(){
-                this.$emit('visible-change',false)
-                this.closeCallback && this.closeCallback()
-            }
-        },
+        mixins: [toggle],
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'popup'
+             * */
             classPrefix: {
                 type: String,
                 default: 'popup'
             },
+            /**
+             * 弹层的位置,默认top
+             * @property align
+             * @type String
+             * */
             align: {
                 type: String,
                 default: 'top'
-            },
-            visible: Boolean
+            }
         }
     }
 </script>
