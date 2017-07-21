@@ -19,10 +19,6 @@
                 type: Boolean,
                 default: false
             },
-            className: {
-                type: String,
-                default: ''
-            },
             width: {
                 type: [Number, String],
                 default: 33
@@ -30,10 +26,6 @@
             defaultActiveIndex: {
                 type: [Number, String],
                 default: undefined
-            },
-            onTabChange: {
-                type: Function,
-                default: null
             }
         },
         data () {
@@ -93,7 +85,7 @@
             },
             onTabClick(index){
                 this.activeIndex = index
-                this.$emit('clickCallback', this.activeIndex)
+                this.$emit('tab-change', this.activeIndex)
             }
         }
     }

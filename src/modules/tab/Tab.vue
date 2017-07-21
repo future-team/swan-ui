@@ -18,18 +18,6 @@
             heading: {
                 type: String,
                 default: 'tab'
-            },
-            changeActive: {
-                type: Function,
-                default: null
-            },
-            onTabChange: {
-                type: Function,
-                default: null
-            },
-            className: {
-                type: String,
-                default: ''
             }
         },
         data () {
@@ -40,7 +28,7 @@
         computed: {
             classObject() {
                 return {
-                    'ph-col': !this.vertical,
+                    'ph-col': !this.$parent.vertical,
                     'ph-tab-panel': true,
                     'active': this.index == this.$parent.activeIndex
                 }
@@ -52,7 +40,7 @@
         watch: {
             '$parent.activeIndex': function (newValue) {
                 this.active = newValue
-                this.$emit('clickCallback', newValue)
+                this.$emit('tab-change', newValue)
             }
         }
     }
