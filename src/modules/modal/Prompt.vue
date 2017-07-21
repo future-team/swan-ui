@@ -2,8 +2,7 @@
     <sw-dialog  class='ph-dialog-prompt'
                 v-model="currentVisible"
                 :closeButton="closeButton"
-                :shadowDisabled="shadowDisabled"
-                :onClose="onClose">
+                :shadowDisabled="shadowDisabled">
         <template slot='title'>{{title}}</template>
         <div v-if="content" class='ph-dialog-prompt-text'>{{content}}</div>
         <sw-input type='text' :value="inputValue" @input="handleInput" autofocus></sw-input>
@@ -58,10 +57,10 @@
         },
         methods: {
             handleConfirm(evt){
-                this.$emit('confirm',this.inputValue,evt)
+                this.$emit('on-confirm',this.inputValue,evt)
             },
             handleClick(onHandle){
-                onHandle ? onHandle(this.inputValue) : this.handleConfirm()
+                onHandle ? onHandle(this.inputValue) : this.handleClose()
             },
             handleInput(value){
                 this.inputValue = value
@@ -116,18 +115,6 @@
              * @type Boolean
              * */
             shadowDisabled: Boolean,
-            /**
-             * 关闭弹框的执行函数
-             * @method closeCallback
-             * @type Function
-             * */
-            onClose: Function,
-            /**
-             * 点击确定的回调函数
-             * @method confirmCallback
-             * @type Function
-             * */
-            onConfirm: Function
         }
     }
 </script>

@@ -2,6 +2,7 @@
     const demos = [
         {
             title: '基本用法',
+            desc: 'on-confirm事件默认情况下 确定 按钮的回调，用户自定义',
             code: `
                 <div>{{text}}</div>
                 <sw-button @click="visible = true">默认Prompt</sw-button>
@@ -9,8 +10,7 @@
                            title="这是标题"
                            content="这是内容"
                            shadowDisabled closeButton
-                           @confirm="handleConfirm"
-                           :onClose="handleClose"></sw-prompt>`,
+                           @on-confirm="handleConfirm"></sw-prompt>`,
             options: {
                 data(){
                     return {
@@ -26,9 +26,6 @@
                             this.text = value
                             this.visible = false
                         }
-                    },
-                    handleClose(){
-                        alert('关闭')
                     }
                 }
             }
@@ -38,7 +35,7 @@
             code: `
                 <div>{{text}}</div>
                 <sw-button @click="visible = true">默认Prompt</sw-button>
-                <sw-prompt v-model="visible"
+                <sw-prompt :visible="visible"
                            title="这是标题"
                            content="这是内容"
                            shadowDisabled closeButton

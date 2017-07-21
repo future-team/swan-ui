@@ -3,25 +3,19 @@
      {
 
          title: '基本用法',
-         desc: 'closeButton：右上角按钮是否可见\nshadowDisabled：点击蒙层是否可关闭弹框\nonClose：关闭时的回调\n',
+         desc: 'closeButton：右上角按钮是否可见\nshadowDisabled：点击蒙层是否可关闭弹框\n on-close：关闭事件是必须的\n',
          code: `
                     <sw-button @click="visible = true">打开对话框</sw-button>
                     <sw-dialog title="提示"
                                v-model="visible"
                                shadowDisabled
-                               closeButton
-                               :onClose="handleClose">
+                               closeButton>
                         您确定以及肯定要提交吗？
                     </sw-dialog>`,
          options: {
              data(){
                  return {
                      visible: false
-                 }
-             },
-             methods: {
-                 handleClose(){
-                     window.alert('关闭')
                  }
              }
          }
