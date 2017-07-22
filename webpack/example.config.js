@@ -17,7 +17,7 @@ module.exports = extend({},{
     devtool:'source-map',
     resolve: {
         alias: {
-            "swan-ui" : resolve('lib/index.js'),
+            "swan-ui" : resolve('src'),
             vue: 'vue/dist/vue.js'
         },
         modules: [

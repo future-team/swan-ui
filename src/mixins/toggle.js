@@ -1,5 +1,5 @@
 /**
- * 定制弹出层类组件的 v-model
+ * 定制隐藏/显示切换类组件的 v-model
  */
 export default {
     model: {

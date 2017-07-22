@@ -15,18 +15,13 @@
 <script>
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
+    import toggle from '../../mixins/toggle'
     export default {
         name: 'SwAccordion',
         extends: SwBase,
+        mixins: [toggle],
         components: {SwIcon},
-        model: {
-            prop: 'visible',
-            event: 'toggle'
-        },
         methods:{
-            handleToggle(val){
-                this.$emit('toggle',val)
-            },
             setHeight(){
                 this.$refs.accordionBodyParent.style.height = this.visible ? this.height : 0
             }
@@ -46,16 +41,6 @@
             classPrefix: {
                 type: String,
                 default: 'accordion'
-            },
-            /**
-             * 是否可见标识
-             * @property visible
-             * @type Boolean
-             * @default false
-             * */
-            visible: {
-                type: Boolean,
-                default: false
             },
             /**
              * 向下的箭头是否可见， 默认可见
