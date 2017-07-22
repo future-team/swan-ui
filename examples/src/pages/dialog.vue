@@ -27,7 +27,6 @@
          code: `
                     <sw-button @click="visible = true">打开对话框</sw-button>
                     <sw-dialog v-model="visible"
-                               shadowDisabled
                                closeButton>
                         <div slot="title"><span style="color: #ff6633">提示</span></div>
                         <div>成本总计<span style="color: #ff6633">1000</span>元，<br/>您确定以及肯定要提交吗？</div>

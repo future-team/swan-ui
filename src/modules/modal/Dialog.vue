@@ -35,7 +35,7 @@
         mixins: [toggle],
         methods: {
             handleShadowClose(){
-                !this.shadowDisabled && this.handleClose()
+                !this.shadowDisabled && this.handleToggle(false)
             }
         },
         props: {

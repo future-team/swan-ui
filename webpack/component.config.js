@@ -1,20 +1,34 @@
 var webpack = require('webpack'),
     path = require('path'),
-    projectName = require("../package.json").name;
+    glob = require('glob');
 
 function resolve(dir) {
     return path.join(process.cwd(), dir)
 }
 
+var getEntry = function() {
+    var webpackConfigEntry = {};
+    var basedir =resolve('src/modules');
+    var files = glob.sync(path.join(basedir, '**/*.vue'));
+
+    files.forEach(function(file) {
+        var relativePath = path.relative(basedir, file).replace(/\.vue/, '');
+        var relativePaths = relativePath.split('/')
+        var fileName = relativePaths.length > 1 ? relativePaths[relativePaths.length-1] : relativePaths[0]
+        webpackConfigEntry[fileName] = [file];
+    });
+    webpackConfigEntry['index'] = resolve('src/index.js')
+    return webpackConfigEntry;
+};
+
 module.exports = {
-    entry: resolve('src/index.js'),
+    entry: getEntry(),
     output: {
         library: 'swan',
         libraryTarget: 'umd',
-        path: resolve('dist'),
-        filename: projectName+'.js'
+        path: resolve('lib'),
+        filename: '[name].js'
     },
-    devtool:'source-map',
     resolve:{
         modules: [ 'node_modules'],
         extensions: ['.js', '.vue']

@@ -21,7 +21,7 @@
 <script>
     import SwBase from '../Base.vue'
     import SwDrag from '../drag/Drag.vue'
-    import SwButton from '../button/Button'
+    import SwButton from '../button/Button.vue'
     export default {
         name: 'SwSwipe',
         extends: SwBase,

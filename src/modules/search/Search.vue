@@ -22,7 +22,7 @@
 <script>
     import SwBase from '../Base.vue'
     import SwInput from '../input/Input.vue'
-    import SwButton from '../button/Button'
+    import SwButton from '../button/Button.vue'
     export default {
         name: 'SwSearch',
         extends: SwBase,

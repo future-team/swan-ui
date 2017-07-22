@@ -1,4 +1,3 @@
-
 var gulp = require('gulp'),
     webpack = require('webpack'),
     babel = require('gulp-babel'),
@@ -6,59 +5,18 @@ var gulp = require('gulp'),
     open = require('gulp-open'),
     path = require('path'),
     Server = require('karma').Server,
-    webpackConfig = require('./webpack/webpack.config.js'),
+    componentConfig = require('./webpack/component.config.js'),
     exampleConfig = require('./webpack/example.config.js'),
+    webpackConfig = require('./webpack/webpack.config.js'),
     WebpackDevServer = require("webpack-dev-server"),
-    projectName = require("./package.json").name,
     fs = require('fs'),
-    glob = require('glob'),
-    ExtractTextPlugin = require('extract-text-webpack-plugin')
     devPort = 3005;
 
-
-function resolve(dir) {
-    return path.join(process.cwd(), dir)
-}
-
-var getEntry = function() {
-    var webpackConfigEntry = {};
-    var basedir =resolve('src/modules');
-    var files = glob.sync(path.join(basedir, '*.vue'));
-
-    files.forEach(function(file) {
-        var relativePath = path.relative(basedir, file);
-        webpackConfigEntry[relativePath.replace(/\.vue/, '')] = [file];
-    });
-
-    webpackConfigEntry['index'] = resolve('src/index.js')
-
-    return webpackConfigEntry;
-};
-
 gulp.task('babel', function () {
-    return gulp.src(['src/**/*.js'])
+    return gulp.src(['src/?(mixins|utils)/*.js'])
         .pipe(babel())
         .pipe(gulp.dest('lib'))
 });
-
-gulp.task('component-webpack',function(done){
-    let config = {
-        entry: getEntry(),
-        output: {
-            path: resolve('lib'),
-            filename: '[name].js'
-        },
-        module:webpackConfig.module,
-        plugins: [
-            new ExtractTextPlugin('[name].css')
-        ]
-    };
-    webpack(config).run(function (err, stats) {
-        if (err) throw new gutil.PluginError("webpack", err);
-        gutil.log("[component-webpack]", stats.toString({}));
-        done();
-    });
-})
 
 gulp.task('open', function () {
     gulp.src(__filename)
@@ -104,15 +62,10 @@ gulp.task('example-webpack', function (done) {
     });
 });
 
-gulp.task('min-webpack', ['webpack'], function (done) {
-    var wbpk = Object.create(webpackConfig);
-    wbpk.output.filename = projectName+'.min.js';
-    wbpk.plugins.push(new webpack.optimize.UglifyJsPlugin());
-    webpack(wbpk).run(function (err, stats) {
-        if (err) throw new gutil.PluginError("min-webpack", err);
-        gutil.log("[min-webpack]", stats.toString({
-            // output options
-        }));
+gulp.task('component-webpack', function (done) {
+    webpack(componentConfig).run(function (err, stats) {
+        if (err) throw new gutil.PluginError("exampleWebpack", err);
+        gutil.log("[example-webpack]", stats.toString({}));
         done();
     });
 });
@@ -124,12 +77,6 @@ gulp.task('karma', function (done) {
     }, done).start();
 });
 
-gulp.task('skin', function () {
-    gulp.src(['node_modules/phoenix-styles/dist/ios-skin.css']) //多个文件以数组形式传入
-        .pipe(gulp.dest('dist'));
-});
-
-gulp.task('default', ['babel','component-webpack','min-webpack', 'example-webpack','skin']);
+gulp.task('default', ['babel','component-webpack','webpack', 'example-webpack']);
 gulp.task('demo', ['example', 'open']);
-gulp.task('min', ['min-webpack']);
 gulp.task('test',['karma']);

@@ -1,3 +1,3 @@
-# scan-ui编写规范
+# swan-ui编写规范
 
-事件处理方法： handlexxx
+事件处理方法： handleXxx

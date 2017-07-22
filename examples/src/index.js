@@ -6,10 +6,10 @@ import Swan from 'swan-ui'
 import 'phoenix-styles/dist/phoenix-styles.css'
 import CodeShow from './mini-demo.vue'
 
-Vue.component(CodeShow.name,CodeShow)
 Vue.use(Swan)
-Vue.use(Router)
+Vue.component(CodeShow.name,CodeShow)
 
+Vue.use(Router)
 const router = new Router({
     base: __dirname,
     routes
