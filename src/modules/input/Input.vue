@@ -7,7 +7,7 @@
                @input="handleChange"
                @focus="handleFocus"
                @blur="handleBlur"/>
-        <label :class="labelClass">
+        <label :class="['ph-input-placeholder',{'ph-input-placeholder-hide': focus || currentValue}]">
             <sw-icon v-if="phIcon" :phIcon="phIcon"></sw-icon>
             <span class="ph-input-placeholder-text">{{placeholder}}</span>
         </label>
@@ -28,8 +28,6 @@
 <script>
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
-    import classnames from 'classnames'
-    import { setPhPrefix } from '../../utils/classUtil'
     export default {
         name: 'SwInput',
         extends: SwBase,
@@ -43,16 +41,11 @@
             }
         },
         computed: {
-            labelClass(){
-                let placeholderShow = !this.focus && !this.currentValue
-                return classnames(setPhPrefix('input-placeholder'),
-                    !placeholderShow ? setPhPrefix('input-placeholder-hide'):'')
-            },
             clearStatus(){
                 return this.clear && this.currentValue && this.focus
             },
             visibleStatus(){
-                return this.visible && this.type == 'password'
+                return this.visible && this.type === 'password'
             },
             errorState(){
                 return this.error && !this.focus
