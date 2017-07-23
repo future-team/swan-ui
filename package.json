@@ -1,6 +1,6 @@
 {
   "name": "swan-ui",
-  "version": "0.0.1",
+  "version": "0.0.1-beta",
   "description": "Vue Components for Mobile App.",
   "main": "lib/",
   "scripts": {
