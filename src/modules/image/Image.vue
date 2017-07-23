@@ -6,7 +6,7 @@
 
 <script>
     import SwBase from '../Base.vue'
-    import { getClientHeight,getOffsetTop } from '../../utils/tool.js'
+    import { getClientHeight,getOffsetTop ,getWindowScrollTop} from '../../utils/tool.js'
     export default {
         name: 'SwImage',
         extends: SwBase,
@@ -20,7 +20,10 @@
             handleScroll(){
                 this.lazyLoadImage()
             },
-            handleLoadSuccess(){
+            handleLoadSuccess(img){
+                this.imageWidth = img.width
+                this.imageHeight = img.height
+
                 this.lazy && window.removeEventListener('scroll', this.handleScroll)
                 this.currentSrc = this.src
 
@@ -42,7 +45,7 @@
                 }
             },
             lazyLoadImage(){
-                this.scrollTop = document.body.scrollTop
+                this.scrollTop = getWindowScrollTop()
                 this.bodyHeight = getClientHeight()
                 this.imageTop = getOffsetTop(this.$refs.imageParentRef)
                 //this.scrollTop + this.bodyHeight + this.bodyHeight/2 >= this.imageTop
@@ -56,16 +59,13 @@
                     img.src = this.src
                     this.load = true
 
-                    this.imageWidth = img.width
-                    this.imageHeight = img.height
-
                     if(img.complete){
-                        this.handleLoadSuccess()
+                        this.handleLoadSuccess(img)
                         return
                     }
                     img.onload = ()=>{
                         img.onload = null
-                        this.handleLoadSuccess()
+                        this.handleLoadSuccess(img)
                     }
                 }catch(err){
                     this.$emit('load',err)

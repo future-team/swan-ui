@@ -19,16 +19,20 @@ export function warning(format){
 
 
 export function getClientHeight(){
-    return document.compatMode === 'BackCompat' ? document.body.clientHeight : document.documentElement.clientHeight
+    return  window.innerHeight ? window.innerHeight : document.compatMode === 'BackCompat' ? document.body.clientHeight : document.documentElement.clientHeight
 }
 
-export function getOffsetTop( elem ) {
-    let location = 0
+export function getWindowScrollTop(){
+    return  window.pageYOffset ?  window.pageYOffset :  document.compatMode === 'BackCompat' ? document.body.scrollTop : document.documentElement.scrollTop
+}
+
+export function getOffsetTop(elem) {
+    let offsetTop = 0
     if (elem.offsetParent) {
         do {
-            location += elem.offsetTop
+            offsetTop += elem.offsetTop
             elem = elem.offsetParent
         } while (elem)
     }
-    return location >= 0 ? location : 0
+    return offsetTop >= 0 ? offsetTop : 0
 }
