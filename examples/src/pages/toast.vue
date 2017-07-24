@@ -16,7 +16,7 @@
         },
         methods: {
             handleClick(){
-                this.$toast.success({
+                this.$success({
                     content:'保存成功',
                     callback: ()=>{
                         console.log('已提交')
