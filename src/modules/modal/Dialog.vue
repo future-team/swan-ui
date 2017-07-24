@@ -78,7 +78,7 @@
 </script>
 
 <style>
-    .dialog-fade-enter-active{
+    .dialog-fade-enter-active,dialog-fade-enter-active-fade-leave-active{
         transition: opacity .5s
     }
     .dialog-fade-enter, .dialog-fade-leave-to {

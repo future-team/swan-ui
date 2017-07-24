@@ -15,7 +15,7 @@ export default {
         return getVal(['default','tacked','justify','segmente'],val)
     },
     phSize:function(val){
-        return getVal(['default','lg','md','sm','xs','cover','contain'],val)
+        return getVal(['default','xlg','lg','md','sm','xs','cover','contain'],val)
     },
     phStyle:function(val){
         return getVal(['default','primary','info','success','error','warning','danger','link','gray','light','positive','calm','balanced','energized','assertive','lightbrown','lightgray'],val)

@@ -1,5 +1,5 @@
 <template>
-    <span :class="['gfs-icon',{[`${classPrefix}-${phIcon}`]:phIcon}, classObject]">
+    <span :class="['gfs-icon',{[`${classPrefix}-${phIcon}`]:phIcon,'gfs-icon-loading':phIcon && phIcon.indexOf('loading')>=0}, classObject]">
         <slot></slot>
     </span>
 </template>
@@ -38,7 +38,7 @@
              * */
             phStyle: {
                 type: String,
-                default: 'primary'
+                default: 'default'
             },
             /**
              * 按钮尺寸[xs、sm、md、lg], 默认为sm

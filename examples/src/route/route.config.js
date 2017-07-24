@@ -96,6 +96,11 @@ const routes = [
                 'path': '/popup',
                 'name': 'Popup',
                 'desc': ''
+            },
+            {
+                'path': '/toast',
+                'name': 'Toast',
+                'desc': '飘字'
             }
         ]
     },

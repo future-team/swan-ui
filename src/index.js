@@ -19,6 +19,7 @@ import Dialog from './modules/modal/Dialog.vue'
 import Alert from './modules/modal/Alert.vue'
 import Prompt from './modules/modal/Prompt.vue'
 import Popup from './modules/popup/Popup.vue'
+import Toast from './modules/toast/index'
 import Steps from './modules/steps/Steps.vue'
 import Accordion from './modules/accordion/Accordion.vue'
 import TabSet from './modules/tab/TabSet.vue'
@@ -53,6 +54,7 @@ const components = {
     Alert,
     Prompt,
     Popup,
+    Toast,
     Steps,
     Accordion,
     TabSet,
@@ -72,6 +74,13 @@ const install = function(Vue) {
     Object.keys(components).forEach((key)=>{
         Vue.component(components[key].name, components[key])
     })
+
+    Vue.prototype.$toast = Toast
+    Vue.prototype.$info = Toast.info
+    Vue.prototype.$success = Toast.success
+    Vue.prototype.$fail = Toast.fail
+    Vue.prototype.$tip = Toast.tip
+    Vue.prototype.$loading = Toast.loading
 }
 
 // auto install

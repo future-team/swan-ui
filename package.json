@@ -72,12 +72,12 @@
     "webpack": "^2.3.1",
     "webpack-bower-resolver": "0.0.1",
     "webpack-dev-server": "^2.4.2",
-    "webpack-merge": "^4.1.0"
+    "webpack-merge": "^4.1.0",
+    "vue": "^2.3.4"
   },
   "dependencies": {
     "classnames": "^2.2.5",
     "extend": "^3.0.1",
-    "phoenix-styles": "^1.5.2",
-    "vue": "^2.3.4"
+    "phoenix-styles": "^1.5.2"
   }
 }
