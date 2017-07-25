@@ -20,6 +20,7 @@ import Alert from './modules/modal/Alert.vue'
 import Prompt from './modules/modal/Prompt.vue'
 import Popup from './modules/popup/Popup.vue'
 import Toast from './modules/toast/index'
+import Popover from './modules/popover/Popover.vue'
 import Steps from './modules/steps/Steps.vue'
 import Accordion from './modules/accordion/Accordion.vue'
 import TabSet from './modules/tab/TabSet.vue'
@@ -54,6 +55,7 @@ const components = {
     Alert,
     Prompt,
     Popup,
+    Popover,
     Toast,
     Steps,
     Accordion,

@@ -100,7 +100,12 @@ const routes = [
             {
                 'path': '/toast',
                 'name': 'Toast',
-                'desc': '飘字'
+                'desc': '轻提示'
+            },
+            {
+                'path': '/popover',
+                'name': 'Popover',
+                'desc': '气泡'
             }
         ]
     },
