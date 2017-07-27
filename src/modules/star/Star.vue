@@ -25,7 +25,7 @@
             /**
              * 星级评价分数
              * @property rate
-             * @type number
+             * @type Number
              * @default 默认为0，最高50
              * */
             rate: {

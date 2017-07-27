@@ -4,7 +4,7 @@
             title: '基本用法',
             desc: 'phIcon: 图标类型，phStyle：图标颜色',
             code: `
-                <sw-icon phIcon="search"/>
+                <sw-icon phIcon="search">搜索</sw-icon>
                 <sw-icon phIcon="search" phStyle="gray"/>
                 <sw-icon phIcon="search" phStyle="info"/>
             `

@@ -1,16 +1,19 @@
 # Button
-## Usage
+## Import
 ```javascript
 import Vue from 'vue'
 import { Button } from 'swan-ui'
+
 Vue.component(Button.name, Button)
 ```
 
+## Usage
 ```xml
 <sw-button>默认按钮</sw-button>
 <sw-button hollow >空心按钮</sw-button>
 <sw-button phStyle="link">文字按钮</sw-button>
 ```
+
 ## Attributes
 
 |参数|说明|类型|默认值|可选值
@@ -32,3 +35,7 @@ Vue.component(Button.name, Button)
 
 
 ## Slot
+
+|名称|说明
+|:--|:--|
+|-|按钮名称

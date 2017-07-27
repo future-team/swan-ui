@@ -3,7 +3,7 @@
         {
             title: '活动类型',
             code: `
-            <sw-badge><span>惠</span></sw-badge>
+            <sw-badge>惠</sw-badge>
             <sw-badge phStyle="success">团</sw-badge>
             <sw-badge phStyle="info">团</sw-badge>
             <sw-badge phStyle="danger">预</sw-badge>

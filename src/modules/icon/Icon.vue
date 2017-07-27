@@ -41,7 +41,7 @@
                 default: 'default'
             },
             /**
-             * 按钮尺寸[xs、sm、md、lg], 默认为sm
+             * 按钮尺寸[xs、sm、md、lg、xlg], 默认为sm
              * @property phSize
              * @type String
              * @default 'sm'
