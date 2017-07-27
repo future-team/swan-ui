@@ -66,8 +66,8 @@
                 this.focus = true
                 let value = evt.target.value
                 this.currentValue = value
-                this.$emit('input',value)
-                this.$emit('change',value)
+                this.$emit('input',value,evt)
+                this.$emit('change',value,evt)
             },
             handleFocus(){
                 this.focus = true
@@ -110,7 +110,7 @@
                 default: 'input'
             },
             /**
-             * input类型, 可选[text,search,password], 默认text
+             * input类型, 除checkbox和radio之外的原生input类型, 默认text
              * @property type
              * @type String
              * @default 'text'

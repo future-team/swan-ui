@@ -17,21 +17,63 @@
             }
         },
         props: {
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default 'input'
+             * */
             classPrefix: {
                 type: String,
                 default: 'input'
             },
+            /**
+             * 展示的文字信息
+             * @property label
+             * @type String
+             * @default ''
+             * */
             label: {
                 type: String,
                 default: ''
             },
+            /**
+             * 类型
+             * @property type
+             * @type String
+             * @default checkbox
+             * */
             type: {
                 type: String,
                 default: 'checkbox'
             },
+            /**
+             * 是否禁用
+             * @property disabled
+             * @type Boolean
+             * @default false
+             * */
             disabled: Boolean,
+            /**
+             * 名称
+             * @property name
+             * @type String
+             * @default ''
+             * */
             name: String,
+            /**
+             * 是否选中
+             * @property checked
+             * @type Boolean
+             * @default false
+             * */
             checked: Boolean,
+            /**
+             * 值
+             * @property value
+             * @type
+             * @default false
+             * */
             value: null
         }
     }

@@ -33,6 +33,11 @@
                 this.$emit('change',this.currentValue,evt)
             }
         },
+        watch: {
+            value(val){
+                this.currentValue = val
+            }
+        },
         props: {
             /**
              * 样式前缀
@@ -45,7 +50,7 @@
                 default: 'textarea'
             },
             /**
-             * 初始值
+             * 值
              * @property value
              * @type String
              * */
@@ -57,7 +62,7 @@
              * */
             count: Boolean,
             /**
-             * 可输入的总长度
+             * 可输入的字符总数
              * @property maxLength
              * @type Number
              * */

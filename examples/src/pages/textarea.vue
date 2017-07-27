@@ -34,6 +34,22 @@
                     }
                 }
             }
+        },
+        {
+            title: '双向绑定',
+            code: `
+                   {{content}}
+                   <sw-textarea v-model="content"
+                                :count="true"
+                                :maxlength="10"
+                                placeholder="说点什么..."/>`,
+            options: {
+                data(){
+                    return {
+                        content: ''
+                    }
+                }
+            }
         }
     ]
     import Base from '../base.vue'
