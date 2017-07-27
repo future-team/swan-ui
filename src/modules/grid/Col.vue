@@ -23,19 +23,19 @@
             /**
              * 占100份的多少份，目前支持5-100之间5的倍数、33（1\3）和66(2\3)
              * @property width
-             * @type Integer
+             * @type Number
              * */
             width: Number,
             /**
-             * 偏移多少，目前支持5-100之间5的倍数、33（1\3）和66(2\3)，默认不偏移
+             * 偏移量
              * @property offset
-             * @type Integer
+             * @type Number
              * */
             offset: Number,
             /**
-             * 竖直方向的排列是靠上、居中还是靠下
+             * 竖直方向的排列是靠上、居中还是靠下 ['top', 'bottom','center']
              * @property align
-             * @type Integer
+             * @type String
              * */
             align: {
                 type: String

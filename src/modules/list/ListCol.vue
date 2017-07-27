@@ -23,13 +23,13 @@
                 default: 'list-col'
             },
             /**
-             * 是否为标题，表现为仿行内元素
+             * 是否靠左
              * @property heading
              * @type Boolean
              * */
             heading: Boolean,
             /**
-             * 是否为右边的项目，表现为内部的元素全部靠右
+             * 是否靠右
              * @property right
              * @type Boolean
              * */
