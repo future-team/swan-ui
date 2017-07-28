@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "93e8794400dbd69d4800"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "b80432fbb16547f2fea7"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -19664,6 +19664,10 @@ exports.default = {
 //
 //
 
+/**
+ * https://future-team.github.io/gfs-icons/index.html
+ */
+
 /***/ }),
 /* 126 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -21442,7 +21446,7 @@ exports.default = {
     },
 
     methods: {
-        handleDrag: function handleDrag(evt, position) {
+        handleDrag: function handleDrag(position) {
             var newProgress = void 0,
                 nowSec = void 0;
 
@@ -21826,7 +21830,7 @@ exports.default = {
     },
 
     methods: {
-        handleDrag: function handleDrag(evt, position) {
+        handleDrag: function handleDrag(position, evt) {
             if (!this.btnsWidth) return;
             this.translateX = this.preTranslateX + position.move.x - position.start.x;
 
@@ -21839,7 +21843,7 @@ exports.default = {
             this.distance = position.move.x - position.start.x; //<0：左刷  >0: 右刷
             this.setSwipePosition(evt.currentTarget, this.translateX);
         },
-        handleDrop: function handleDrop(evt) {
+        handleDrop: function handleDrop(position, evt) {
             if (!this.btnsWidth) return;
             if (Math.abs(this.distance) < this.btnsWidth / 3) {
                 //未滑过按钮的三分之一，则保持不变
