@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "da78dc538c8a89745521"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "93e8794400dbd69d4800"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11358,7 +11358,7 @@ exports = module.exports = __webpack_require__(5)(true);
 
 
 // module
-exports.push([module.i, "\n.demo .demo-button {\n  margin: 0 .16rem .16rem 0;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/pages/button.vue"],"names":[],"mappings":";AAAA;EACE,0BAA0B;CAC3B","file":"button.vue","sourcesContent":[".demo .demo-button {\n  margin: 0 .16rem .16rem 0;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.demo .button-demo .ph-button {\n  margin: 0 .16rem .16rem 0;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/pages/button.vue"],"names":[],"mappings":";AAAA;EACE,0BAA0B;CAC3B","file":"button.vue","sourcesContent":[".demo .button-demo .ph-button {\n  margin: 0 .16rem .16rem 0;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -11442,7 +11442,7 @@ exports = module.exports = __webpack_require__(5)(true);
 
 
 // module
-exports.push([module.i, "\n.accordion-demo-list{\n    margin-left: 0.32rem;\n}\n.accordion-demo-item{\n    height: 0.88rem;\n    line-height: 0.88rem;\n    border-bottom: 1px solid #eee;\n    font-size: 0.28rem;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/pages/accordion.vue?4e87695a"],"names":[],"mappings":";AAmEA;IACA,qBAAA;CACA;AAEA;IACA,gBAAA;IACA,qBAAA;IACA,8BAAA;IACA,mBAAA;CACA","file":"accordion.vue","sourcesContent":["<script>\n    const demos = [\n        {\n            title: '基本用法',\n            desc: '查看静态数据',\n            code: `\n                   <sw-accordion v-model=\"visible\">\n                    <template slot=\"header\">\n                        <label>销售量</label>\n                    </template>\n                    <sw-list>\n                        <sw-list-item>\n                            <sw-list-col>1月： 5000份</sw-list-col>\n                        </sw-list-item>\n                        <sw-list-item>\n                            <sw-list-col>2月： 4500份</sw-list-col>\n                        </sw-list-item>\n                    </sw-list>\n                </sw-accordion>`,\n            options: {\n                data(){\n                    return {\n                        visible: false\n                    }\n                }\n            }\n        },\n        {\n            title: '选择',\n            desc: '',\n            code: `\n                   <sw-accordion v-model=\"visible\">\n                        <template slot=\"header\">{{selected}}</template>\n                        <ul class=\"accordion-demo-list\">\n                               <li v-for=\"item in list\" class=\"accordion-demo-item\" @click=\"handleClick(item)\">{{item}}</li>\n                        </ul>\n                   </sw-accordion>`,\n            options: {\n                data(){\n                    return {\n                        visible: false,\n                        list: ['单店','连锁店'],\n                        selected: '请选择'\n                    }\n                },\n                methods: {\n                    handleClick(item){\n                        this.selected=item\n                        this.visible = false\n                    }\n                }\n            }\n        }\n    ]\n    import Base from '../base.vue'\n    export default {\n        name: 'Accordion',\n        extends:Base,\n        data(){\n            return {\n                demos: demos\n            }\n        }\n    }\n</script>\n\n<style>\n    .accordion-demo-list{\n        margin-left: 0.32rem;\n    }\n\n    .accordion-demo-item{\n        height: 0.88rem;\n        line-height: 0.88rem;\n        border-bottom: 1px solid #eee;\n        font-size: 0.28rem;\n    }\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.accordion-demo-list{\n    margin-left: 0.32rem;\n}\n.accordion-demo-item{\n    height: 0.88rem;\n    line-height: 0.88rem;\n    border-bottom: 1px solid #eee;\n    font-size: 0.28rem;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/pages/accordion.vue?05089db5"],"names":[],"mappings":";AAqEA;IACA,qBAAA;CACA;AAEA;IACA,gBAAA;IACA,qBAAA;IACA,8BAAA;IACA,mBAAA;CACA","file":"accordion.vue","sourcesContent":["<script>\n    const demos = [\n        {\n            title: '基本用法',\n            desc: '查看静态数据',\n            code: `\n                   <sw-accordion v-model=\"visible\">\n                    <template slot=\"header\">\n                        <label>销售量</label>\n                    </template>\n                    <sw-list>\n                        <sw-list-item>\n                            <sw-list-col>1月： 5000份</sw-list-col>\n                        </sw-list-item>\n                        <sw-list-item>\n                            <sw-list-col>2月： 4500份</sw-list-col>\n                        </sw-list-item>\n                    </sw-list>\n                </sw-accordion>`,\n            options: {\n                data(){\n                    return {\n                        visible: false\n                    }\n                }\n            }\n        },\n        {\n            title: '基本用法',\n            desc: '从下拉列表选择',\n            code: `\n                   <sw-accordion v-model=\"visible\">\n                        <template slot=\"header\">{{selected}}</template>\n                        <ul class=\"accordion-demo-list\">\n                               <li v-for=\"item in list\"\n                                   class=\"accordion-demo-item\"\n                                   @click=\"handleClick(item)\">{{item}}</li>\n                        </ul>\n                   </sw-accordion>`,\n            options: {\n                data(){\n                    return {\n                        visible: false,\n                        list: ['单店','连锁店'],\n                        selected: '请选择'\n                    }\n                },\n                methods: {\n                    handleClick(item){\n                        this.selected=item\n                        this.visible = false\n                    }\n                }\n            }\n        }\n    ]\n    import Base from '../base.vue'\n    export default {\n        name: 'Accordion',\n        extends:Base,\n        data(){\n            return {\n                demos: demos\n            }\n        }\n    }\n</script>\n\n<style>\n    .accordion-demo-list{\n        margin-left: 0.32rem;\n    }\n\n    .accordion-demo-item{\n        height: 0.88rem;\n        line-height: 0.88rem;\n        border-bottom: 1px solid #eee;\n        font-size: 0.28rem;\n    }\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -11526,7 +11526,7 @@ exports = module.exports = __webpack_require__(5)(true);
 
 
 // module
-exports.push([module.i, "\n.header[data-v-ae65ed06]{\n    position: fixed;\n    height: 1rem;\n    line-height: 1rem;\n    padding:0 .6rem;\n    top: 0;\n    width: 100%;\n    z-index: 100;\n    background-color: #fbfbfb;\n}\n.back-icon[data-v-ae65ed06]{\n    position: absolute;\n    top:0;\n    left: .2rem;\n}\nh2[data-v-ae65ed06]{\n    display: inline-block;\n    text-align: center;\n    width: 100%;\n    font-size: 0.4rem;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/App.vue?572f9717"],"names":[],"mappings":";AA6BA;IACA,gBAAA;IACA,aAAA;IACA,kBAAA;IACA,gBAAA;IACA,OAAA;IACA,YAAA;IACA,aAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,MAAA;IACA,YAAA;CACA;AACA;IACA,sBAAA;IACA,mBAAA;IACA,YAAA;IACA,kBAAA;CACA","file":"App.vue","sourcesContent":["<template>\n    <div>\n        <div class=\"header\">\n            <router-link class=\"page-back\" v-if=\"visible\" :to=\"'/'\">\n                <sw-icon class=\"back-icon\" phIcon=\"chevron-left\" phSize=\"md\"></sw-icon>\n            </router-link>\n            <h2><a :href=\"`./doc${$route.path}.html`\">{{title}}</a></h2>\n        </div>\n        <router-view></router-view>\n    </div>\n</template>\n\n<script >\n export default {\n     computed: {\n         title(){\n             return this.$route.meta.title\n         },\n         visible(){\n             return ['/'].indexOf(this.$route.path) < 0\n         }\n     },\n     updated(){\n         self.Prism.highlightAll(event)\n     }\n }\n</script>\n\n<style scoped>\n    .header{\n        position: fixed;\n        height: 1rem;\n        line-height: 1rem;\n        padding:0 .6rem;\n        top: 0;\n        width: 100%;\n        z-index: 100;\n        background-color: #fbfbfb;\n    }\n    .back-icon{\n        position: absolute;\n        top:0;\n        left: .2rem;\n    }\n    h2{\n        display: inline-block;\n        text-align: center;\n        width: 100%;\n        font-size: 0.4rem;\n    }\n</style>"],"sourceRoot":""}]);
+exports.push([module.i, "\n.header[data-v-ae65ed06]{\n    position: fixed;\n    height: 1rem;\n    line-height: 1rem;\n    padding:0 .6rem;\n    top: 0;\n    width: 100%;\n    z-index: 100;\n    background-color: #fbfbfb;\n}\n.back-icon[data-v-ae65ed06]{\n    position: absolute;\n    top:0;\n    left: .2rem;\n}\nh2[data-v-ae65ed06]{\n    display: inline-block;\n    text-align: center;\n    width: 100%;\n    font-size: 0.4rem;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/App.vue?17ed661b"],"names":[],"mappings":";AAgCA;IACA,gBAAA;IACA,aAAA;IACA,kBAAA;IACA,gBAAA;IACA,OAAA;IACA,YAAA;IACA,aAAA;IACA,0BAAA;CACA;AACA;IACA,mBAAA;IACA,MAAA;IACA,YAAA;CACA;AACA;IACA,sBAAA;IACA,mBAAA;IACA,YAAA;IACA,kBAAA;CACA","file":"App.vue","sourcesContent":["<template>\n    <div>\n        <div class=\"header\">\n            <router-link class=\"page-back\" v-if=\"visible\" :to=\"'/'\">\n                <sw-icon class=\"back-icon\" phIcon=\"chevron-left\" phSize=\"md\"></sw-icon>\n            </router-link>\n            <h2>\n                <a v-if=\"$route.path !== '/'\" :href=\"`./doc${$route.path}.md`\">{{title}}</a>\n                <span v-else>{{title}}</span>\n            </h2>\n        </div>\n        <router-view></router-view>\n    </div>\n</template>\n\n<script >\n export default {\n     computed: {\n         title(){\n             return this.$route.meta.title\n         },\n         visible(){\n             return ['/'].indexOf(this.$route.path) < 0\n         }\n     },\n     updated(){\n         self.Prism.highlightAll(event)\n     }\n }\n</script>\n\n<style scoped>\n    .header{\n        position: fixed;\n        height: 1rem;\n        line-height: 1rem;\n        padding:0 .6rem;\n        top: 0;\n        width: 100%;\n        z-index: 100;\n        background-color: #fbfbfb;\n    }\n    .back-icon{\n        position: absolute;\n        top:0;\n        left: .2rem;\n    }\n    h2{\n        display: inline-block;\n        text-align: center;\n        width: 100%;\n        font-size: 0.4rem;\n    }\n</style>"],"sourceRoot":""}]);
 
 // exports
 
@@ -16881,6 +16881,9 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
 
 exports.default = {
     computed: {
@@ -17024,9 +17027,9 @@ var demos = [{
         }
     }
 }, {
-    title: '选择',
-    desc: '',
-    code: '\n               <sw-accordion v-model="visible">\n                    <template slot="header">{{selected}}</template>\n                    <ul class="accordion-demo-list">\n                           <li v-for="item in list" class="accordion-demo-item" @click="handleClick(item)">{{item}}</li>\n                    </ul>\n               </sw-accordion>',
+    title: '基本用法',
+    desc: '从下拉列表选择',
+    code: '\n               <sw-accordion v-model="visible">\n                    <template slot="header">{{selected}}</template>\n                    <ul class="accordion-demo-list">\n                           <li v-for="item in list"\n                               class="accordion-demo-item"\n                               @click="handleClick(item)">{{item}}</li>\n                    </ul>\n               </sw-accordion>',
     options: {
         data: function data() {
             return {
@@ -17249,19 +17252,19 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var demos = [{
     title: '基本用法',
     desc: '',
-    code: '\n                    <sw-button>\u9ED8\u8BA4\u6309\u94AE</sw-button>\n                    <sw-button hollow >\u7A7A\u5FC3\u6309\u94AE</sw-button>\n                    <sw-button phStyle="link">\u6587\u5B57\u6309\u94AE</sw-button>'
+    code: '\n                    <div class="button-demo">\n                         <sw-button>\u9ED8\u8BA4\u6309\u94AE</sw-button>\n                         <sw-button hollow >\u7A7A\u5FC3\u6309\u94AE</sw-button>\n                         <sw-button phStyle="link">\u6587\u5B57\u6309\u94AE</sw-button>\n                    </div>\n                   '
 }, {
     title: '不同颜色',
     desc: '属性：phStyle， 默认值：primary',
-    code: '\n                    <sw-button phStyle="primary">primary</sw-button>\n                    <sw-button phStyle="gray">gray</sw-button>\n                    <sw-button phStyle="danger">danger</sw-button>\n                    <sw-button phStyle="success">success</sw-button>\n                    <sw-button phStyle="warning">warning</sw-button>\n                    <sw-button phStyle="error">error</sw-button>\n                    <sw-button phStyle="info">info</sw-button>'
+    code: '\n                <div class="button-demo">\n                    <sw-button phStyle="primary">primary</sw-button>\n                    <sw-button phStyle="gray">gray</sw-button>\n                    <sw-button phStyle="danger">danger</sw-button>\n                    <sw-button phStyle="success">success</sw-button>\n                    <sw-button phStyle="warning">warning</sw-button>\n                    <sw-button phStyle="error">error</sw-button>\n                    <sw-button phStyle="info">info</sw-button>\n                </div>'
 }, {
     title: '空心按钮',
     desc: '属性：hollow',
-    code: '\n                    <sw-button hollow>hollow</sw-button>\n                    <sw-button hollow phStyle="gray">hollow</sw-button>\n                    <sw-button hollow phStyle="success">hollow</sw-button>\n                    <sw-button hollow phStyle="warning">hollow</sw-button>'
+    code: '\n                    <div class="button-demo">\n                        <sw-button hollow>hollow</sw-button>\n                        <sw-button hollow phStyle="gray">hollow</sw-button>\n                        <sw-button hollow phStyle="success">hollow</sw-button>\n                        <sw-button hollow phStyle="warning">hollow</sw-button>\n                    </div>'
 }, {
     title: '不同尺寸',
     desc: '属性：phSize，  默认：sm',
-    code: '\n                    <div><sw-button phSize="sm">sm</sw-button></div>\n                    <div><sw-button phSize="md">md</sw-button></div>\n                    <div><sw-button phSize="lg">md</sw-button></div>'
+    code: '\n                    <div class="button-demo"><sw-button phSize="sm">sm</sw-button></div>\n                    <div class="button-demo"><sw-button phSize="md">md</sw-button></div>\n                    <div class="button-demo"><sw-button phSize="lg">md</sw-button></div>'
 }, {
     title: '禁用状态',
     desc: '属性：disabled',
@@ -17269,15 +17272,15 @@ var demos = [{
 }, {
     title: '占行按钮',
     desc: '属性：block',
-    code: '\n                    <sw-button block hollow>\u63D0\u4EA4</sw-button>\n                    <sw-button block>\u63D0\u4EA4</sw-button>'
+    code: '\n                    <sw-button block hollow>\u63D0\u4EA4</sw-button><br/>\n                    <sw-button block>\u63D0\u4EA4</sw-button>'
 }, {
     title: '图标按钮',
     desc: '属性：phIcon',
-    code: '\n                     <sw-button phIcon="loading-white"  phSize="lg" >\u6574\u4F53\u5C45\u4E2D</sw-button>\n                     <sw-button phIcon="loading-white"  phSize="lg" stable>\u6587\u5B57\u5C45\u4E2D</sw-button>'
+    code: '\n                     <sw-button phIcon="loading-white"  phSize="lg" >\u6574\u4F53\u5C45\u4E2D</sw-button><br/>\n                     <sw-button phIcon="loading-white"  phSize="lg" stable>\u6587\u5B57\u5C45\u4E2D</sw-button>'
 }, {
     title: '点击事件',
     desc: '',
-    code: '\n                    <sw-button :phIcon="phIcon" block @click="handleClick">{{phIcon?\'\u52A0\u8F7D\u4E2D\':\'\u70B9\u6211\u63D0\u4EA4\'}}</sw-button>\n                    <sw-button :phIcon="phIcon" block @click.native="handleClick">{{phIcon?\'\u52A0\u8F7D\u4E2D\':\'\u70B9\u6211\u63D0\u4EA4\'}}</sw-button>',
+    code: '\n                    <sw-button :phIcon="phIcon" block @click="handleClick">{{phIcon?\'\u52A0\u8F7D\u4E2D\':\'\u70B9\u6211\u63D0\u4EA4\'}}</sw-button><br/>',
     options: {
         data: function data() {
             return {
@@ -17578,7 +17581,7 @@ var demos = [{
         },
 
         methods: {
-            handleDrag: function handleDrag(event, position) {
+            handleDrag: function handleDrag(position) {
                 var prePosition = position.start;
                 var nowPosition = position.move;
 
@@ -17613,7 +17616,7 @@ var demos = [{
         },
 
         methods: {
-            handleDrag: function handleDrag(event, position) {
+            handleDrag: function handleDrag(position) {
                 var prePosition = position.start;
                 var nowPosition = position.move;
 
@@ -18267,6 +18270,10 @@ function _toConsumableArray(arr) { if (Array.isArray(arr)) { for (var i = 0, arr
 //
 //
 //
+//
+//
+//
+//
 
 exports.default = {
     name: 'Pullup',
@@ -18427,7 +18434,7 @@ var demos = [{
 }, {
     title: 'search事件',
     desc: '点击回车，触发search',
-    code: '\n            <sw-search @search="handleSearch"\n                       @click="handleSearch"\n                       buttonText="\u786E\u5B9A">\n            </sw-search>\n        ',
+    code: '\n            <sw-search @search="handleSearch"\n                       @click="handleSearch"\n                       buttonText="\u786E\u5B9A" />\n        ',
     options: {
         methods: {
             handleSearch: function handleSearch(val) {
@@ -18594,7 +18601,7 @@ var demos = [{
     }
 }, {
     title: '只读模式',
-    desc: '',
+    desc: '属性：readOnly',
     code: '\n                <sw-steps readOnly\n                          :currentStep="1"\n                          :list="[\'\u7533\u8BF7\u63D0\u4EA4\',\'\u8D22\u52A1\u4E00\u7EA7\u5BA1\u6279\',\'\u652F\u4ED8\u4E2D\',\'\u652F\u4ED8\u6210\u529F\']"/>'
 }];
 exports.default = {
@@ -18625,13 +18632,13 @@ var _base2 = _interopRequireDefault(_base);
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var demos = [{
-    title: '',
-    desc: '',
-    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u7F6E\u9876\',  phStyle: \'gray\', onHandle:()=>{console.log(\'\u7F6E\u9876\')}},\n                        {text: \'\u6807\u4E3A\u5DF2\u8BFB\',  phStyle: \'info\', onHandle:()=>{console.log(\'\u6807\u4E3A\u5DF2\u8BFB\')}},\n                        {text: \'\u5220\u9664\',  phStyle: \'error\', onHandle:()=>{console.log(\'\u5220\u9664\')}}\n                    ]">\n               <div class="swipe-demo">\u5411\u5DE6\u6ED1\u52A8</div>\n            </sw-swipe>\n        '
+    title: '向左滑动',
+    desc: '未滑过按钮的三分之一,撤回',
+    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u7F6E\u9876\',  phStyle: \'gray\', onHandle:()=>{console.log(\'\u7F6E\u9876\')}},\n                        {text: \'\u6807\u4E3A\u5DF2\u8BFB\',  phStyle: \'info\', onHandle:()=>{console.log(\'\u6807\u4E3A\u5DF2\u8BFB\')}},\n                        {text: \'\u5220\u9664\',  phStyle: \'error\', onHandle:()=>{console.log(\'\u5220\u9664\')}}\n                    ]">\n               <div class="swipe-demo">\u5FEB\u6ED1\u6211\uFF0C\u5411\u5DE6\u6ED1</div>\n            </sw-swipe>\n        '
 }, {
-    title: '',
+    title: '向左滑动',
     desc: '',
-    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u5220\u9664\',  phStyle: \'error\'}\n                    ]">\n               <div class="swipe-demo">\u5411\u5DE6\u6ED1\u52A8</div>\n            </sw-swipe>\n        '
+    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u5220\u9664\',  phStyle: \'error\'}\n                    ]">\n               <div class="swipe-demo">\u5FEB\u6ED1\u6211\uFF0C\u5411\u5DE6\u6ED1</div>\n            </sw-swipe>\n        '
 }];
 exports.default = {
     name: 'Swipe',
@@ -18888,12 +18895,12 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var demos = [{
     title: '基本用法',
-    desc: '默认停留时间：2s',
-    code: '\n                   <sw-button @click="$info(\'\u8BF7\u81F3\u5C11\u9009\u62E9\u4E00\u9879\')">\u6253\u5F00</sw-button>'
+    desc: '默认停留时间：2s，两种参数传递方式',
+    code: '\n                   <sw-button @click="$info(\'\u8BF7\u81F3\u5C11\u9009\u62E9\u4E00\u9879\')">\u4F20\u9012\u5B57\u7B26\u4E32</sw-button>\n                   <sw-button @click="$success({\n                        content:\'\u4FDD\u5B58\u6210\u529F\',\n                        callback: ()=>{\n                            console.log(\'\u5DF2\u63D0\u4EA4\')\n                        }\n                    })">\u4F20\u9012\u53C2\u6570\u5BF9\u8C61</sw-button>'
 }, {
     title: '提示成功',
     desc: '',
-    code: '\n                   <sw-button @click="$success({\n                        content:\'\u4FDD\u5B58\u6210\u529F\',\n                        callback: ()=>{\n                            console.log(\'\u5DF2\u63D0\u4EA4\')\n                        }\n                    })">\u6253\u5F00</sw-button>'
+    code: '<sw-button @click="$success(\'\u4FDD\u5B58\u6210\u529F\')">\u6253\u5F00</sw-button>'
 }, {
     title: '提示失败',
     desc: '',
@@ -18998,7 +19005,7 @@ exports.default = {
             default: 'accordion'
         },
         /**
-         * 向下的箭头是否可见， 默认可见
+         * 是否隐藏向下的箭头
          * @property hideIcon
          * @type Boolean
          * @default false
@@ -19361,6 +19368,43 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 
+/**
+ * 拖拽组件<br/>
+ *
+ * 事件
+ * - drag：回调参数(position,evt)，拖动时时触发<br/>position: {start:{x:12,y:312},move:{x:12,y:312}}
+ * - drop：回调参数(position,evt)，松开时触发<br/><br/>position: {start:{x:12,y:312},end:{x:12,y:312}}
+ *
+ * 示例:
+ * ```code
+ *     <sw-drag @drag="handleDrag" @drop="handleDrop">
+ *          <div class="drag-demo">拖我出去</div>
+ *     </sw-drag>
+ * ```
+ * ```code
+ *  handleDrag(position){
+ *       let prePosition = position.start
+ *       let nowPosition = position.move
+ *
+ *       this.distanceX = this.preDistanceX + nowPosition.x - prePosition.x
+ *       this.distanceY = this.preDistanceY + nowPosition.y - prePosition.y
+ *
+ *       this.setBoxPosition(this.distanceX,this.distanceY)
+ *   },
+ *   handleDrop(){
+ *       this.preDistanceX = this.distanceX
+ *       this.preDistanceY = this.distanceY
+ *   }
+ * ```
+ *
+ * @class Drag
+ * @module 辅助组件
+ * @extends Component
+ * @constructor
+ * @since 0.0.1
+ * @demo drag|drag.js {展示}
+ * @show true
+ * */
 exports.default = {
     name: 'SwDrag',
     data: function data() {
@@ -19374,17 +19418,17 @@ exports.default = {
         handleTouchStart: function handleTouchStart(evt) {
             this.position.start = { x: evt.touches[0].pageX, y: evt.touches[0].pageY };
             this.position.move = this.position.start;
-            this.$emit('drag', evt, this.position);
-            this.$emit('drag-start', evt, this.position);
+            this.$emit('drag', this.position, evt);
+            this.$emit('drag-start', this.position, evt);
         },
         handleTouchMove: function handleTouchMove(evt) {
             this.position.move = { x: evt.touches[0].pageX, y: evt.touches[0].pageY };
-            this.$emit('drag', evt, this.position);
+            this.$emit('drag', this.position, evt);
         },
         handleTouchEnd: function handleTouchEnd(evt) {
             this.position.end = { x: evt.changedTouches[0].pageX, y: evt.changedTouches[0].pageY };
             this.position.start = this.position.move;
-            this.$emit('drop', evt, this.position);
+            this.$emit('drop', this.position, evt);
         },
         handleTouchCancel: function handleTouchCancel() {
             // 触屏取消:忽然来电话等情况
@@ -19646,6 +19690,31 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
+/**
+ * 图片组件<br/>
+ * - 和普通图片使用方式一致，src为必填选项，可自行添加alt属性。
+ * - 可通过defaultSrc添加默认图片地址，在图片未加载出来之前显示。
+ * - 可通过phSize设置图片大小，default为宽高和父级一致；cover为覆盖，不变形，没有空白区域；contain包含，不变形，可能有空白区域。
+ * - 可通过lazy设置图片为懒加载的模式，当图片进入视口之后才开始加载，可配合ImageList使用。
+ * - cover和contain必须设置定高。
+ *
+ * 属性：
+ * - src: 图片地址。<br/>
+ * - defaultSrc: 默认图片地址。<br/>
+ * - phSize: 图片大小。<br/>
+ * - lazy: 是否懒加载<br/>
+ *
+ * 事件：
+ * - load: 图片加载完成时触发
+ *
+ * @class Image
+ * @module 基础组件
+ * @extends Component
+ * @constructor
+ * @since 0.0.1
+ * @demo image|image.js {展示}
+ * @show true
+ * */
 exports.default = {
     name: 'SwImage',
     extends: _Base2.default,
@@ -19683,6 +19752,7 @@ exports.default = {
                     this.image.style.width = '100%';
                     this.image.style.height = '100%';
             }
+            this.$emit('load');
         },
         lazyLoadImage: function lazyLoadImage() {
             this.scrollTop = (0, _tool.getWindowScrollTop)();
@@ -19759,7 +19829,7 @@ exports.default = {
          * 图片地址
          * @property src
          * @type String
-         * @default null
+         * @default
          * */
         src: String,
         /**
@@ -19824,7 +19894,7 @@ exports.default = {
             default: 'image-list'
         },
         /**
-         * 图片列数，默认1列
+         * 图片列数
          * @property column
          * @type Number
          * @default 1
@@ -19840,6 +19910,40 @@ exports.default = {
 //
 //
 //
+
+/**
+ * 图片列表组件<br/>
+ * - 通过column设置图片列表的列数，1-8列。
+ * - 若需要懒加载，请配合Image组件使用。
+ *
+ * 属性：
+ * - column:列表的列数，默认1列。<br>
+ * ```code
+ * <sw-image-list :column="2">
+ *    <dl   v-for="(url,index) in urls"
+ *          class="ph-image-item"
+ *          :key="index">
+ *       <dt>
+ *            <sw-image  :src="url"
+ *                       :defaultSrc="defaultSrc"
+ *                       lazy></sw-image>
+ *        </dt>
+ *        <dd>
+ *            <p class="ph-image-title">图片</p>
+ *            <p class="ph-image-desp">描述</p>
+ *        </dd>
+ *    </dl>
+ *</sw-image-list>
+ * ```
+ *
+ * @class ImageList
+ * @module 操作类组件
+ * @extends Component
+ * @constructor
+ * @since 0.0.1
+ * @demo imagelist|image-list.js {展示}
+ * @show true
+ * */
 
 /***/ }),
 /* 128 */
@@ -20957,6 +21061,37 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 //
 //
 
+/**
+ * 加载更多组件<br/>
+ * - 书写时Pullup组件在可加载列表的后面。
+ * - 通过mode设置加载更多的模式，有点击按钮加载更多，以及滑到最底端自动加载，可选 [auto,button] 2种参数。
+ * - 通过status设置当前状态，只需要在请求结束返回相应状态，包含请求成功返回2，请求成功并再没有数据返回4，请求失败返回3。
+ * - 可通过tips设置按钮文字和状态提示语，默认['加载更多','','加载成功','加载失败','没有更多']，分别对应status的状态。
+ * - 可通过phStyle设置按钮的样式，如果当前mode为auto设置无效。
+ *
+ * 属性：
+ * - mode:加载更多的模式，默认auto。
+ * - status:当前状态:0加载更多, 1加载中, 2数据加载成功, 3数据加载失败, 4没有更多
+ * - tips:按钮文字和状态提示语，默认['加载更多','','加载成功','加载失败','没有更多']
+ * - phStyle:按钮的样式，默认'primary'
+ *
+ * 事件：
+ * - load：点击按钮加载或滑到底部自动加载时触发
+ *
+ * 示例：
+ * ```code
+ *  // 可加载列表的尾部
+ *  <sw-pullup :status="status" @load="handleLoad"></sw-pullup>
+ * ```
+ *
+ * @class Pullup
+ * @module 操作类组件
+ * @extends Component
+ * @constructor
+ * @since 0.0.1
+ * @demo pullup {展示}
+ * @show true
+ * */
 exports.default = {
     name: 'SwPullup',
     extends: _Base2.default,
@@ -20973,6 +21108,9 @@ exports.default = {
     },
 
     methods: {
+        handleLoad: function handleLoad(evt) {
+            this.$emit('load', evt);
+        },
         handleScroll: function handleScroll() {
             this.scrollTop = document.body.scrollTop;
             this.clientHeight = (0, _tool.getClientHeight)();
@@ -20983,7 +21121,7 @@ exports.default = {
                     //加载中 或 没有更多， 返回
                     return;
                 }
-                this.$emit('load');
+                this.handleLoad();
             } else {
                 this.touchBottom = false;
             }
@@ -20995,10 +21133,10 @@ exports.default = {
         }
     },
     mounted: function mounted() {
-        window.addEventListener('scroll', this.handleScroll);
+        this.mode !== 'button' && window.addEventListener('scroll', this.handleScroll);
     },
     destroyed: function destroyed() {
-        window.removeEventListener('scroll', this.handleScroll);
+        this.mode !== 'button' && window.removeEventListener('scroll', this.handleScroll);
     },
 
     props: {
@@ -21046,7 +21184,7 @@ exports.default = {
         },
         /**
          * 按钮颜色，默认primary
-         * @property btnStyle
+         * @property phStyle
          * @type String
          * @default 'primary'
          **/
@@ -21134,9 +21272,10 @@ exports.default = {
     },
 
     methods: {
-        handleInput: function handleInput(value) {
+        handleInput: function handleInput(value, evt) {
             this.currentValue = value;
-            this.$emit('input', value);
+            this.$emit('input', value, evt);
+            this.$emit('change', value, evt);
         },
         handleFocus: function handleFocus() {
             this.focus = true;
@@ -21191,7 +21330,7 @@ exports.default = {
          * 输入提示
          * @property placeholder
          * @type String
-         * @default '取消'
+         * @default '搜索'
          * */
         placeholder: {
             type: String,
@@ -21226,6 +21365,30 @@ exports.default = {
 //
 //
 //
+
+/**
+ * SearchBar<br/>
+ * - 可通过buttonText设置按钮的文字
+ *
+ * 属性：
+ * - buttonText: 按钮文字 <br/>
+ * - placeholder: 输入提示
+ *
+ * 事件：
+ * - input／change: 回调参数(value,evt)，输入时触发 <br/>
+ * - focus: 聚焦时触发 <br/>
+ * - blur: 失去焦点时触发 <br/>
+ * - search: 回调参数(value,evt)，按下回车时触发 <br/>
+ * - click: 回调参数(value,evt)，按钮被点击时触发
+ *
+ * @class SearchBar
+ * @module 搜索组件
+ * @extends Component
+ * @constructor
+ * @since 0.0.1
+ * @demo search|search.js {展示}
+ * @show true
+ * */
 
 /***/ }),
 /* 141 */
@@ -21348,16 +21511,17 @@ exports.default = {
             default: 'slider'
         },
         /**
-         * 初始进程,默认0
+         * 初始进度
          * @property progress
          * @type Number
+         * @default 0
          * */
         progress: {
             type: Number,
             default: 0
         },
         /**
-         * 进程提示的位置,默认top
+         * 进度提示的位置
          * @property placement
          * @type String
          * @default 'top'
@@ -21367,7 +21531,7 @@ exports.default = {
             default: 'top'
         },
         /**
-         * 范围，默认0-100，可传固定范围的数组如：[25,50]
+         * 范围，可传固定范围的数组如：[25,50]
          * @property range
          * @type Array
          * @default [0,100]
@@ -21402,7 +21566,7 @@ exports.default = {
             default: 'default'
         },
         /**
-         * 每次移动的固定距离，默认1
+         * 每次移动的固定距离
          * @property duration
          * @type Number
          * @default 1
@@ -21570,7 +21734,7 @@ exports.default = {
             default: 'steps'
         },
         /**
-         * 是否为只读模式（只读模式不会触发点击回调），默认为false
+         * 是否为只读模式（只读模式不会触发点击回调）
          * @property readOnly
          * @type Boolean
          * @default false
@@ -21679,9 +21843,9 @@ exports.default = {
             if (!this.btnsWidth) return;
             if (Math.abs(this.distance) < this.btnsWidth / 3) {
                 //未滑过按钮的三分之一，则保持不变
-                this.translateX = this.distance < 0 ? 0 : -this.btnsWidth;
+                this.translateX = this.distance <= 0 ? 0 : -this.btnsWidth;
             } else {
-                this.translateX = this.distance < 0 ? -this.btnsWidth : 0;
+                this.translateX = this.distance <= 0 ? -this.btnsWidth : 0;
             }
             this.preTranslateX = this.translateX;
             this.setSwipePosition(evt.currentTarget, this.translateX);
@@ -25220,11 +25384,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
       "phIcon": "chevron-left",
       "phSize": "md"
     }
-  })], 1) : _vm._e(), _vm._v(" "), _c('h2', [_c('a', {
+  })], 1) : _vm._e(), _vm._v(" "), _c('h2', [(_vm.$route.path !== '/') ? _c('a', {
     attrs: {
-      "href": ("./doc" + (_vm.$route.path) + ".html")
+      "href": ("./doc" + (_vm.$route.path) + ".md")
     }
-  }, [_vm._v(_vm._s(_vm.title))])])], 1), _vm._v(" "), _c('router-view')], 1)
+  }, [_vm._v(_vm._s(_vm.title))]) : _c('span', [_vm._v(_vm._s(_vm.title))])])], 1), _vm._v(" "), _c('router-view')], 1)
 }
 var staticRenderFns = []
 render._withStripped = true
@@ -25245,12 +25409,14 @@ if (true) {
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', [_c('div', {
     staticClass: "demo"
-  }, [_c('pre', [_c('code', {
+  }, [_c('div', {
+    staticClass: "demo-item"
+  }, [_c('h5', [_vm._v("上拉加载更多")]), _vm._v(" "), _vm._m(0), _vm._v(" "), _c('pre', [_c('code', {
     staticClass: "language-markup",
     domProps: {
       "innerHTML": _vm._s(_vm.escape2Html(_vm.code))
     }
-  })])]), _vm._v(" "), _c('div', {
+  })])])]), _vm._v(" "), _c('div', {
     staticClass: "image-list-demo"
   }, [_c('sw-image-list', {
     attrs: {
@@ -25274,7 +25440,11 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     }
   })], 1)
 }
-var staticRenderFns = []
+var staticRenderFns = [function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
+  return _c('p', {
+    staticClass: "demo-desc"
+  }, [_vm._v("组件置于列表末端"), _c('br'), _vm._v("status: 当前加载状态"), _c('br'), _vm._v("tips：加载过程提示文案`")])
+}]
 render._withStripped = true
 var esExports = { render: render, staticRenderFns: staticRenderFns }
 /* harmony default export */ __webpack_exports__["a"] = (esExports);
