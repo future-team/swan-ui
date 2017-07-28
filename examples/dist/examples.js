@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "e9a27f4130e83446e877"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "db4e657f698808391b5a"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -18595,7 +18595,7 @@ var demos = [{
         methods: {
             handleClick: function handleClick(item, index) {
                 this.currentStep = index;
-                alert(item);
+                this.$info(item);
             }
         }
     }
