@@ -96,16 +96,17 @@
                 default: 'slider'
             },
             /**
-             * 初始进程,默认0
+             * 初始进度
              * @property progress
              * @type Number
+             * @default 0
              * */
             progress: {
                 type: Number,
                 default: 0
             },
             /**
-             * 进程提示的位置,默认top
+             * 进度提示的位置
              * @property placement
              * @type String
              * @default 'top'
@@ -115,7 +116,7 @@
                 default: 'top'
             },
             /**
-             * 范围，默认0-100，可传固定范围的数组如：[25,50]
+             * 范围，可传固定范围的数组如：[25,50]
              * @property range
              * @type Array
              * @default [0,100]
@@ -150,7 +151,7 @@
                 default: 'default'
             },
             /**
-             * 每次移动的固定距离，默认1
+             * 每次移动的固定距离
              * @property duration
              * @type Number
              * @default 1

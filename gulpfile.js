@@ -5,6 +5,7 @@ var gulp = require('gulp'),
     open = require('gulp-open'),
     path = require('path'),
     Server = require('karma').Server,
+    markdown = require('gulp-markdown')
     componentConfig = require('./webpack/component.config.js'),
     exampleConfig = require('./webpack/example.config.js'),
     webpackConfig = require('./webpack/webpack.config.js'),

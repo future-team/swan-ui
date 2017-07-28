@@ -83,6 +83,7 @@ const install = function(Vue) {
     Vue.prototype.$fail = Toast.fail
     Vue.prototype.$tip = Toast.tip
     Vue.prototype.$loading = Toast.loading
+    Vue.prototype.$remove = Toast.remove
 }
 
 // auto install

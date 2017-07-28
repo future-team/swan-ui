@@ -23,7 +23,7 @@
         },
         {
             title: '只读模式',
-            desc: '',
+            desc: '属性：readOnly',
             code: `
                     <sw-steps readOnly
                               :currentStep="1"

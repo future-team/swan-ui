@@ -54,9 +54,9 @@
             handleDrop(evt){
                 if(!this.btnsWidth) return
                 if(Math.abs(this.distance) < this.btnsWidth / 3){  //未滑过按钮的三分之一，则保持不变
-                    this.translateX = this.distance < 0 ? 0 : -this.btnsWidth
+                    this.translateX = this.distance <= 0 ? 0 : -this.btnsWidth
                 }else{
-                    this.translateX = this.distance < 0 ? -this.btnsWidth : 0
+                    this.translateX = this.distance <= 0 ? -this.btnsWidth : 0
                 }
                 this.preTranslateX = this.translateX
                 this.setSwipePosition(evt.currentTarget,this.translateX)

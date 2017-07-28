@@ -43,7 +43,7 @@
                 default: 'accordion'
             },
             /**
-             * 向下的箭头是否可见， 默认可见
+             * 是否隐藏向下的箭头
              * @property hideIcon
              * @type Boolean
              * @default false

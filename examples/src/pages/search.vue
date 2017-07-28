@@ -38,8 +38,7 @@
             code: `
                 <sw-search @search="handleSearch"
                            @click="handleSearch"
-                           buttonText="确定">
-                </sw-search>
+                           buttonText="确定" />
             `,
             options: {
                 methods: {

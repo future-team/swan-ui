@@ -48,7 +48,7 @@
                 default: 'steps'
             },
             /**
-             * 是否为只读模式（只读模式不会触发点击回调），默认为false
+             * 是否为只读模式（只读模式不会触发点击回调）
              * @property readOnly
              * @type Boolean
              * @default false

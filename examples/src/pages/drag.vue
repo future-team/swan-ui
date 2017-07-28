@@ -20,7 +20,7 @@
                     }
                 },
                 methods:{
-                    handleDrag(event,position){
+                    handleDrag(position){
                         let prePosition = position.start
                         let nowPosition = position.move
 
@@ -60,7 +60,7 @@
                     }
                 },
                 methods:{
-                    handleDrag(event,position){
+                    handleDrag(position){
                         let prePosition = position.start
                         let nowPosition = position.move
 

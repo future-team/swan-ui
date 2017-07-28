@@ -9,15 +9,13 @@ Vue.component(Toast.name, Toast)
 ```
 
 ### Usage
-```xml
+两种参数传递方式
+
+```javascript
 Toast.info('哈哈哈');
-Toast.info({
-        content:'保存成功',
-        duration: '5000',
-        callback: ()=>{
-            console.log('保存成功')
-        }
-});
+```
+
+```javascript
 Toast.error({
         content:'保存失败',
         duration: '5000',
@@ -37,6 +35,16 @@ Toast.error({
 |callback|关闭后回调|Function|-|-
 
 
+## Methods
+|方法|说明|
+|:--|:--|
+|Toast.info()|普通提示|
+|Toast.success()|成功提示|
+|Toast.fail()|失败提示|
+|Toast.tip()|警告提示|
+|Toast.loading|加载提示|
+|Toast.remove|移除toast|
+
 ## Events
 
 无
@@ -45,3 +53,14 @@ Toast.error({
 ## Slot
 
 无
+
+## 注
+
+全局注册插件时，可以直接调用this.$info()
+
+```javascript
+import Vue from 'vue'
+import SwanUI from 'swan-ui'
+
+Vue.use(SwanUI)
+```
