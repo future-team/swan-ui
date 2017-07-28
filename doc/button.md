@@ -31,7 +31,7 @@ Vue.component(Button.name, Button)
 
 |名称|回调参数|说明
 |:--|:--|:--|
-|click|evt|按钮被点击时的回调
+|click|evt|按钮被点击时触发
 
 
 ## Slot

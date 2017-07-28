@@ -45,8 +45,20 @@
                  * @default ''
                  **/
                 phIcon: '',
+                /**
+                 * 提示内容
+                 * @property content
+                 * @type String
+                 * @default ''
+                 **/
                 content: '',
-                callback: null
+                /**
+                 * 关闭后回调
+                 * @property callback
+                 * @type Function
+                 * @default
+                 **/
+                callback: Function
             }
         },
         computed: {

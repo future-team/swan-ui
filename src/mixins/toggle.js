@@ -7,8 +7,8 @@ export default {
         event: 'toggle'
     },
     methods: {
-        handleToggle(val){
-            this.$emit('toggle',val)
+        handleToggle(val,evt){
+            this.$emit('toggle',val,evt)
         }
     },
     props: {

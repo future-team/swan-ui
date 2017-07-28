@@ -32,9 +32,10 @@
                 default: 'popup'
             },
             /**
-             * 弹层的位置,默认top
+             * 弹层的位置,可选值['top','bottom']
              * @property align
              * @type String
+             * @default 'top'
              * */
             align: {
                 type: String,

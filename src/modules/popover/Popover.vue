@@ -184,7 +184,7 @@
                 default: 'bottom'
             },
             /**
-             * 气泡距离点击物的位置,默认5
+             * 气泡距离点击物的距离
              * @property distance
              * @type Number
              * @default 5
