@@ -27,7 +27,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Swipe',
+        name: 'PageSwipe',
         extends:Base,
         data(){
             return {

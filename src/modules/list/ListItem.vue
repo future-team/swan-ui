@@ -62,6 +62,16 @@
             navigate: {
                 type: Boolean,
                 default: false
+            },
+            /**
+             * 激活状态
+             * @property active
+             * @type Boolean
+             * @default false
+             * */
+            active: {
+                type: Boolean,
+                default: false
             }
         }
     }

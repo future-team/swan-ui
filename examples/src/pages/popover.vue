@@ -83,7 +83,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Popover',
+        name: 'PagePopover',
         extends:Base,
         data(){
             return {

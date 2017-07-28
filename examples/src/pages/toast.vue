@@ -35,7 +35,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Toast',
+        name: 'PageToast',
         extends:Base,
         data(){
             return {

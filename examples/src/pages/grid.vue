@@ -92,7 +92,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Grid',
+        name: 'PageGrid',
         extends:Base,
         data(){
             return {

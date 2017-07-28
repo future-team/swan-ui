@@ -55,7 +55,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Radio',
+        name: 'PageRadio',
         extends:Base,
         data(){
             return {

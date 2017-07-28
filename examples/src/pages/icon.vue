@@ -131,7 +131,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Icon',
+        name: 'PageIcon',
         extends:Base,
         data(){
             return {

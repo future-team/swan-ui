@@ -42,7 +42,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Checkbox',
+        name: 'PageCheckbox',
         extends:Base,
         data(){
             return {

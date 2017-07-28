@@ -51,7 +51,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Search',
+        name: 'PageSearch',
         extends:Base,
         data(){
             return {

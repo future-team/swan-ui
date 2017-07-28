@@ -56,7 +56,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Accordion',
+        name: 'PageAccordion',
         extends:Base,
         data(){
             return {

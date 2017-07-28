@@ -89,7 +89,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Input',
+        name: 'PageInput',
         extends:Base,
         data(){
             return {

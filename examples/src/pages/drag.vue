@@ -102,7 +102,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Drag',
+        name: 'PageDrag',
         extends:Base,
         data(){
             return {

@@ -32,6 +32,9 @@ gulp.task('example', function (done) {
         'webpack/hot/only-dev-server',
         './examples/src/index.js'
     ];
+    wbpk.plugins.push(new webpack.HotModuleReplacementPlugin());
+    wbpk.plugins.push(new webpack.NoEmitOnErrorsPlugin());
+
     var compiler = webpack(wbpk);
     new WebpackDevServer(compiler, {
         publicPath: '/examples/dist/',

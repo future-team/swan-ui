@@ -93,7 +93,7 @@
 
     import Base from '../base.vue'
     export default {
-        name: 'Button',
+        name: 'PageButton',
         extends:Base,
         data(){
             return {

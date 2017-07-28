@@ -32,7 +32,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Steps',
+        name: 'PageSteps',
         extends:Base,
         data(){
             return {

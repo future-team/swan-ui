@@ -29,7 +29,7 @@
 
     import Base from '../base.vue'
     export default {
-        name: 'Badge',
+        name: 'PageBadge',
         extends:Base,
         data(){
             return {

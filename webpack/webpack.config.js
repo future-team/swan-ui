@@ -14,7 +14,7 @@ module.exports = {
         path: resolve('dist'),
         filename: projectName+'.js'
     },
-    devtool:'source-map',
+    devtool:'eval',
     resolve:{
         modules: [ 'node_modules'],
         extensions: ['.js', '.vue']

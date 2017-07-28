@@ -6,13 +6,20 @@
             code: `
                 <sw-button @click="visible=true">top</sw-button>
                 <sw-popup v-model="visible">
-                    <div class='ph-action-sheet'>
-                        <ul>
-                            <li class='ph-popup-item ph-popup-tip'>确认 删除此作品？</li>
-                            <li class='ph-popup-item ph-popup-delete' @click="visible=false">删除作品</li>
-                        </ul>
-                        <div class='ph-popup-operate' @click="visible=false">取消</div>
-                    </div>
+                    <sw-list>
+                        <sw-list-item>
+                            <sw-list-col>未上线单店</sw-list-col>
+                        </sw-list-item>
+                        <sw-list-item active>
+                            <sw-list-col>未上线连锁店</sw-list-col>
+                        </sw-list-item>
+                        <sw-list-item >
+                            <sw-list-col>在线单店</sw-list-col>
+                        </sw-list-item>
+                        <sw-list-item >
+                            <sw-list-col>在线连锁店</sw-list-col>
+                        </sw-list-item>
+                    </sw-list>
                 </sw-popup>`,
             options: {
                 data(){
@@ -47,7 +54,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Popup',
+        name: 'PagePopup',
         extends:Base,
         data(){
             return {
@@ -59,6 +66,6 @@
 
 <style>
     .demo .ph-popup-main{
-        margin-top: 1.2rem;
+        margin-top: 1rem;
     }
 </style>

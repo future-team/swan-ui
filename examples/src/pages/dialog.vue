@@ -56,7 +56,7 @@
    ]
    import Base from '../base.vue'
    export default {
-       name: 'Dialog',
+       name: 'PageDialog',
        extends:Base,
        data(){
            return {

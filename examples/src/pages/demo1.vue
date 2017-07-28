@@ -96,7 +96,7 @@
 
 <script>
     export default {
-        name: 'List',
+        name: 'PageList',
         methods: {
             handleClick(){
                 window.open('https://cn.vuejs.org/v2/api/#v-on','_blank')

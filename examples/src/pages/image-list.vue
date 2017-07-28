@@ -20,7 +20,7 @@
 
 <script>
     export default {
-        name: 'Image',
+        name: 'PageImage',
         data(){
             return {
                 defaultSrc: 'http://bpic.588ku.com/element_pic/01/47/02/12574338a640011.jpg',

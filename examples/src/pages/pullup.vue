@@ -21,7 +21,7 @@
 </template>
 <script>
     export default {
-        name: 'Pullup',
+        name: 'PagePullup',
         data(){
             return {
                 status: 0,
