@@ -16,7 +16,7 @@
                 methods: {
                     handleClick(item,index){
                         this.currentStep=index
-                        alert(item)
+                        this.$info(item)
                     }
                 }
             }
