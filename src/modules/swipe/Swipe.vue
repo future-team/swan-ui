@@ -38,7 +38,7 @@
             }
         },
         methods:{
-            handleDrag(evt, position){
+            handleDrag(position,evt){
                 if(!this.btnsWidth) return
                 this.translateX = this.preTranslateX + position.move.x -  position.start.x
 
@@ -51,7 +51,7 @@
                 this.distance = position.move.x - position.start.x  //<0：左刷  >0: 右刷
                 this.setSwipePosition(evt.currentTarget,this.translateX)
             },
-            handleDrop(evt){
+            handleDrop(position,evt){
                 if(!this.btnsWidth) return
                 if(Math.abs(this.distance) < this.btnsWidth / 3){  //未滑过按钮的三分之一，则保持不变
                     this.translateX = this.distance <= 0 ? 0 : -this.btnsWidth

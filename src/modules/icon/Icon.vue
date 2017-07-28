@@ -5,6 +5,9 @@
 </template>
 
 <script>
+    /**
+     * https://future-team.github.io/gfs-icons/index.html
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwIcon',

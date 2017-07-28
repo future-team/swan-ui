@@ -30,7 +30,7 @@
             }
         },
         methods:{
-            handleDrag(evt,position){
+            handleDrag(position){
                 let newProgress, nowSec
 
                 this.preX = position.start.x
