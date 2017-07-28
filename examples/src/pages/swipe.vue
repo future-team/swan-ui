@@ -9,7 +9,7 @@
                             {text: '标为已读',  phStyle: 'info', onHandle:()=>{console.log('标为已读')}},
                             {text: '删除',  phStyle: 'error', onHandle:()=>{console.log('删除')}}
                         ]">
-                   <div class="swipe-demo">快滑我，向左滑</div>
+                   <div class="swipe-demo">向左滑</div>
                 </sw-swipe>
             `
         },
@@ -20,7 +20,7 @@
                 <sw-swipe :buttons="[
                             {text: '删除',  phStyle: 'error'}
                         ]">
-                   <div class="swipe-demo">快滑我，向左滑</div>
+                   <div class="swipe-demo">向左滑</div>
                 </sw-swipe>
             `
         }

@@ -69,7 +69,7 @@ return /******/ (function(modules) { // webpackBootstrap
 /******/ 	
 /******/ 	
 /******/ 	var hotApplyOnUpdate = true;
-/******/ 	var hotCurrentHash = "b80432fbb16547f2fea7"; // eslint-disable-line no-unused-vars
+/******/ 	var hotCurrentHash = "e9a27f4130e83446e877"; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentModuleData = {};
 /******/ 	var hotCurrentChildModule; // eslint-disable-line no-unused-vars
 /******/ 	var hotCurrentParents = []; // eslint-disable-line no-unused-vars
@@ -11582,7 +11582,7 @@ exports = module.exports = __webpack_require__(5)(true);
 
 
 // module
-exports.push([module.i, "\n.drag-demo-container {\n  margin: auto;\n}\n.drag-demo {\n  position: relative;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.ph-drag-action {\n  display: inline-block;\n}\n.fixed-drag-demo {\n  position: fixed;\n  bottom: 0.2rem;\n  right: 0.2rem;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.drag-uni {\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/pages/drag.vue"],"names":[],"mappings":";AAAA;EACE,aAAa;CACd;AACD;EACE,mBAAmB;EACnB,aAAa;EACb,oBAAoB;EACpB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,mBAAmB;CACpB;AACD;EACE,sBAAsB;CACvB;AACD;EACE,gBAAgB;EAChB,eAAe;EACf,cAAc;EACd,aAAa;EACb,oBAAoB;EACpB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,mBAAmB;CACpB;AACD;EACE,aAAa;EACb,oBAAoB;EACpB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,mBAAmB;CACpB","file":"drag.vue","sourcesContent":[".drag-demo-container {\n  margin: auto;\n}\n.drag-demo {\n  position: relative;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.ph-drag-action {\n  display: inline-block;\n}\n.fixed-drag-demo {\n  position: fixed;\n  bottom: 0.2rem;\n  right: 0.2rem;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.drag-uni {\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n"],"sourceRoot":""}]);
+exports.push([module.i, "\n.drag-demo-container {\n  margin: auto;\n}\n.drag-demo-container .ph-drag-action {\n  display: inline-block;\n}\n.drag-demo {\n  position: relative;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.fixed-drag-demo {\n  position: fixed;\n  bottom: 0.2rem;\n  right: 0.2rem;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.drag-uni {\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n", "", {"version":3,"sources":["/Users/chang/chang20159/swan-ui/examples/src/pages/drag.vue"],"names":[],"mappings":";AAAA;EACE,aAAa;CACd;AACD;EACE,sBAAsB;CACvB;AACD;EACE,mBAAmB;EACnB,aAAa;EACb,oBAAoB;EACpB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,mBAAmB;CACpB;AACD;EACE,gBAAgB;EAChB,eAAe;EACf,cAAc;EACd,aAAa;EACb,oBAAoB;EACpB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,mBAAmB;CACpB;AACD;EACE,aAAa;EACb,oBAAoB;EACpB,YAAY;EACZ,mBAAmB;EACnB,YAAY;EACZ,aAAa;EACb,mBAAmB;EACnB,mBAAmB;CACpB","file":"drag.vue","sourcesContent":[".drag-demo-container {\n  margin: auto;\n}\n.drag-demo-container .ph-drag-action {\n  display: inline-block;\n}\n.drag-demo {\n  position: relative;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.fixed-drag-demo {\n  position: fixed;\n  bottom: 0.2rem;\n  right: 0.2rem;\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n.drag-uni {\n  z-index: 999;\n  background: #ff6633;\n  color: #fff;\n  text-align: center;\n  width: 2rem;\n  height: 2rem;\n  line-height: 2rem ;\n  font-size: 0.25rem;\n}\n"],"sourceRoot":""}]);
 
 // exports
 
@@ -18634,11 +18634,11 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var demos = [{
     title: '向左滑动',
     desc: '未滑过按钮的三分之一,撤回',
-    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u7F6E\u9876\',  phStyle: \'gray\', onHandle:()=>{console.log(\'\u7F6E\u9876\')}},\n                        {text: \'\u6807\u4E3A\u5DF2\u8BFB\',  phStyle: \'info\', onHandle:()=>{console.log(\'\u6807\u4E3A\u5DF2\u8BFB\')}},\n                        {text: \'\u5220\u9664\',  phStyle: \'error\', onHandle:()=>{console.log(\'\u5220\u9664\')}}\n                    ]">\n               <div class="swipe-demo">\u5FEB\u6ED1\u6211\uFF0C\u5411\u5DE6\u6ED1</div>\n            </sw-swipe>\n        '
+    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u7F6E\u9876\',  phStyle: \'gray\', onHandle:()=>{console.log(\'\u7F6E\u9876\')}},\n                        {text: \'\u6807\u4E3A\u5DF2\u8BFB\',  phStyle: \'info\', onHandle:()=>{console.log(\'\u6807\u4E3A\u5DF2\u8BFB\')}},\n                        {text: \'\u5220\u9664\',  phStyle: \'error\', onHandle:()=>{console.log(\'\u5220\u9664\')}}\n                    ]">\n               <div class="swipe-demo">\u5411\u5DE6\u6ED1</div>\n            </sw-swipe>\n        '
 }, {
     title: '向左滑动',
     desc: '',
-    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u5220\u9664\',  phStyle: \'error\'}\n                    ]">\n               <div class="swipe-demo">\u5FEB\u6ED1\u6211\uFF0C\u5411\u5DE6\u6ED1</div>\n            </sw-swipe>\n        '
+    code: '\n            <sw-swipe :buttons="[\n                        {text: \'\u5220\u9664\',  phStyle: \'error\'}\n                    ]">\n               <div class="swipe-demo">\u5411\u5DE6\u6ED1</div>\n            </sw-swipe>\n        '
 }];
 exports.default = {
     name: 'Swipe',
@@ -19356,7 +19356,6 @@ exports.default = {
 Object.defineProperty(exports, "__esModule", {
     value: true
 });
-//
 //
 //
 //
@@ -21868,7 +21867,7 @@ exports.default = {
     },
     mounted: function mounted() {
         this.btnsWidth = this.$refs.buttons.offsetWidth;
-        this.dragActionRef = this.$refs.swipeDrag.$refs.dragAction;
+        this.dragActionRef = this.$refs.swipeDrag;
     },
 
     props: {
@@ -24671,7 +24670,6 @@ if (true) {
 "use strict";
 var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._self._c||_h;
   return _c('div', {
-    ref: "dragAction",
     staticClass: "ph-drag-action",
     on: {
       "touchstart": function($event) {

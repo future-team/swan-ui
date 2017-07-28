@@ -115,14 +115,15 @@
 <style lang="less">
     .drag-demo-container{
         margin:auto;
+        .ph-drag-action{
+            display: inline-block;
+        }
     }
     .drag-demo{
         position: relative;
         .drag-uni;
     }
-    .ph-drag-action{
-        display: inline-block;
-    }
+
     .fixed-drag-demo{
         position: fixed;
         bottom: 0.2rem;

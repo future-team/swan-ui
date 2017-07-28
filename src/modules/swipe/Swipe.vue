@@ -75,7 +75,7 @@
         },
         mounted(){
             this.btnsWidth = this.$refs.buttons.offsetWidth
-            this.dragActionRef = this.$refs.swipeDrag.$refs.dragAction
+            this.dragActionRef = this.$refs.swipeDrag
         },
         props: {
             /**
