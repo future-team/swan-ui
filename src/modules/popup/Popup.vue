@@ -14,6 +14,15 @@
 </template>
 
 <script>
+    /**
+     * @class Popup
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo popup|popup.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import toggle from '../../mixins/toggle'
     export default {

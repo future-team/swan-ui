@@ -11,6 +11,16 @@
 </template>
 
 <script>
+    /**
+     * 按钮组件
+     * @class Button
+     * @module 基础组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo button|button.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
     export default {

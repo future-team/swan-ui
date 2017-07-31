@@ -5,6 +5,15 @@
 </template>
 
 <script>
+    /**
+     * @class ListHeader
+     * @module 列表组件
+     * @extends Base
+     * @constructor
+     * @since 0.0.1
+     * @demo list|list.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwListHeader',

@@ -46,10 +46,10 @@
      *
      * @class Pullup
      * @module 操作类组件
-     * @extends Component
-     * @constructor
+     * @extends Base
+     * @Constructor
      * @since 0.0.1
-     * @demo pullup {展示}
+     * @demo pullup | pullup.vue
      * @show true
      * */
     import SwBase from '../Base.vue'

@@ -16,6 +16,15 @@
 </template>
 
 <script>
+    /**
+     * @class Steps
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo steps|steps.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwSteps',

@@ -13,6 +13,16 @@
 </template>
 
 <script>
+    /**
+     * 手风琴组件
+     * @class Accordion
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo accordion | accordion.vue
+     * @show true
+     * */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
     import toggle from '../../mixins/toggle'
@@ -37,6 +47,7 @@
              * @property classPrefix
              * @type String
              * @default 'accordion'
+             * @method clickCallback
              * */
             classPrefix: {
                 type: String,

@@ -26,6 +26,16 @@
 </template>
 
 <script>
+    /**
+     * 输入框组件
+     * @class Input
+     * @module 表单组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo input|input.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
     export default {

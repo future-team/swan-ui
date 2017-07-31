@@ -5,6 +5,15 @@
 </template>
 
 <script>
+    /**
+     * @class Star
+     * @module 基础组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo star|star.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import classnames from 'classnames'
     import { setPhPrefix } from '../../utils/classUtil'

@@ -32,10 +32,10 @@
      *
      * @class ImageList
      * @module 操作类组件
-     * @extends Component
-     * @constructor
+     * @extends Base
+     * @Constructor
      * @since 0.0.1
-     * @demo imagelist|image-list.js {展示}
+     * @demo imagelist|image-list.vue
      * @show true
      * */
     import SwBase from '../Base.vue'

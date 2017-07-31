@@ -40,10 +40,9 @@
      *
      * @class Drag
      * @module 辅助组件
-     * @extends Component
-     * @constructor
+     * @Constructor
      * @since 0.0.1
-     * @demo drag|drag.js {展示}
+     * @demo drag|drag.vue
      * @show true
      * */
     export default {

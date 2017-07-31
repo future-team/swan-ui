@@ -9,6 +9,15 @@
 </template>
 
 <script>
+    /**
+     * 复选框组件
+     * @class Checkbox
+     * @module 表单组件
+     * @Constructor
+     * @since 0.0.1
+     * @demo checkbox|checkbox.vue
+     * @show true
+     */
     export default {
         name: 'SwCheckbox',
         methods: {

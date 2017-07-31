@@ -16,6 +16,15 @@
 </template>
 
 <script>
+    /**
+     * @class Slider
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo slider|slider.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwDrag from '../drag/Drag.vue'
     export default {

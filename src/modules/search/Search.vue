@@ -37,10 +37,10 @@
      *
      * @class SearchBar
      * @module 搜索组件
-     * @extends Component
-     * @constructor
+     * @Constructor
+     * @extends Base
      * @since 0.0.1
-     * @demo search|search.js {展示}
+     * @demo search|search.vue
      * @show true
      * */
     import SwBase from '../Base.vue'

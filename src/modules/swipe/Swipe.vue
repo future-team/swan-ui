@@ -19,6 +19,15 @@
 </template>
 
 <script>
+    /**
+     * @class Swipe
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo swipe|swipe.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwDrag from '../drag/Drag.vue'
     import SwButton from '../button/Button.vue'

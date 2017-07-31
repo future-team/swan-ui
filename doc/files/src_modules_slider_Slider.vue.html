@@ -1,0 +1,665 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimal-ui" />
+    <title>src/modules/slider/Slider.vue - swan-ui</title>
+  
+    <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
+    <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
+    <link rel="stylesheet" href="../assets/css/main.css" id="site_styles">
+    <link rel="shortcut icon" type="image/png" href="../assets/favicon.png">
+</head>
+<body class="yui3-smart" _assetsPath="../assets">
+ <nav class="navbar navbar-inverse navbar-fixed-top custom-navbar" role="navigation">
+        <div class="container-fluid">
+            <div class="navbar-header">
+                <button type="button" class="navbar-toggle collapsed" data-toggle="collapse" data-target="#navbar" aria-expanded="false" aria-controls="navbar">
+                    <span class="sr-only">Toggle navigation</span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                    <span class="icon-bar"></span>
+                </button>
+               <a class="navbar-brand mainlogo" href="">
+             
+            <img alt="swan-ui" src="../assets/css/logo.png" title="swan-ui">
+            
+                swan-ui
+          </a>
+            </div>
+            <div id="navbar" class="navbar-collapse collapse">
+                 <ul class="nav navbar-nav">
+                    
+                    <li><a href="index.html">主页</a>
+                    </li>
+                    
+                </ul>
+               <div class="navbar-form navbar-right filterAPi" autocomplete="off">
+                <input type="text" id='txtSearchAPI' class="form-control search-query" placeholder="Search for API" />
+                 <ul id="filterList" class="filterItems dropdown-menu" role="menu"></ul>
+                </div>
+            </div>
+        </div>
+    </nav>
+    <div id="sidebar">
+    <h3>模块/类</h3>
+        <div id="api-tabview-filter">
+            <input id='txtSearch' type="search" class="form-control" placeholder="Type to filter Modules/Classes">
+        </div>
+        <dl id="sidebar_list">
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/列表组件.html">列表组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/List.html">List</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/ListCol.html">ListCol</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/ListHeader.html">ListHeader</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/ListItem.html">ListItem</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/基础组件.html">基础组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Image.html">Image</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Star.html">Star</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Button.html">Button</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/ButtonGroup.html">ButtonGroup</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/布局组件.html">布局组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Col.html">Col</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Grid.html">Grid</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Row.html">Row</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/弹出框组件.html">弹出框组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Alert.html">Alert</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Dialog.html">Dialog</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Prompt.html">Prompt</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/提示组件.html">提示组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Popover.html">Popover</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/搜索组件.html">搜索组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/SearchBar.html">SearchBar</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/操作类组件.html">操作类组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/ImageList.html">ImageList</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Popup.html">Popup</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Slider.html">Slider</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Steps.html">Steps</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Toast.html">Toast</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Accordion.html">Accordion</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Pullup.html">Pullup</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Swipe.html">Swipe</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/标签组件.html">标签组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Icon.html">Icon</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Badge.html">Badge</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/表单组件.html">表单组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Input.html">Input</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Radio.html">Radio</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Switch.html">Switch</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/TextArea.html">TextArea</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Checkbox.html">Checkbox</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/辅助组件.html">辅助组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Drag.html">Drag</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/选项卡.html">选项卡</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/Tab.html">Tab</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
+                           <a href="../classes/Tabset.html">Tabset</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+        </dl>
+    <div class="icon-sidebar-btn icon-sidebar-btn-open"><span class="glyphicon glyphicon-chevron-left"></span>收起</div>
+</div>
+   
+    <div class="stdoc-content">
+        <div class="apidocs">
+            <div id="docs-main">
+                <div class="content">
+                    <div class="page-header">
+    <h1>src/modules/slider/Slider.vue <small>File</small></h1>
+</div>
+
+<div class="file">
+    <pre class="prettyprint linenums" id='src_code'>
+&lt;template&gt;
+    &lt;div :class=&quot;[classObject,{&#x27;ph-keep-range&#x27;:showRange}]&quot;&gt;
+        &lt;div v-if=&quot;showTipMode&quot; class=&quot;ph-slider-text&quot;&gt;{{currentProgress}}&lt;/div&gt;
+        &lt;div v-if=&quot;showRange&quot; class=&quot;ph-slider-range&quot;&gt;
+            &lt;strong class=&quot;ph-slider-range-start&quot;&gt;{{range[0]}}&lt;/strong&gt;
+            &lt;strong class=&quot;ph-slider-range-end&quot;&gt;{{range[1]}}&lt;/strong&gt;
+        &lt;/div&gt;
+        &lt;div class=&quot;ph-slider-line&quot; ref=&quot;sliderLine&quot;&gt;
+            &lt;div class=&quot;ph-slider-progress&quot; ref=&quot;sliderProgress&quot;&gt;&lt;/div&gt;
+            &lt;div class=&quot;ph-slider-content&quot; ref=&quot;sliderBtn&quot;&gt;
+                &lt;div :class=&quot;[&#x27;ph-slider-tip&#x27;,tipVisible &amp;&amp; !showTipMode ? &#x27;show&#x27;:&#x27;hide&#x27;]&quot;&gt;{{currentProgress}}&lt;/div&gt;
+                &lt;sw-drag class=&quot;ph-slider-btn&quot; @drag=&quot;handleDrag&quot; @drop=&quot;handleDrop&quot;&gt;&lt;/sw-drag&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+    /**
+     * @class Slider
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo slider|slider.vue
+     * @show true
+     */
+    import SwBase from &#x27;../Base.vue&#x27;
+    import SwDrag from &#x27;../drag/Drag.vue&#x27;
+    export default {
+        name: &#x27;SwSlider&#x27;,
+        extends: SwBase,
+        components: {SwDrag},
+        data(){
+            return {
+                showTipMode: this.tipMode === &#x27;default&#x27;,
+                currentProgress: this.progress || this.range[0],
+                tipVisible: this.tipStay || false
+            }
+        },
+        methods:{
+            handleDrag(position){
+                let newProgress, nowSec
+
+                this.preX = position.start.x
+                this.X = position.move.x
+                this.distance = this.X - this.preX
+
+                this.prevProgressWidth = this.newProgressWidth + this.distance
+
+                if(this.prevProgressWidth &lt;= 0) this.prevProgressWidth = 0
+                if(this.prevProgressWidth &gt;= this.sliderLength) this.prevProgressWidth = this.sliderLength
+                nowSec = Math.round(this.prevProgressWidth / this.eachSection, 0)
+                this.prevProgressWidth = this.eachSection * nowSec
+
+                newProgress = this.prevProgressWidth/this.sliderLength * this.rangeDiff + this.range[0]
+
+                this.setSliderPosition(this.prevProgressWidth + &#x27;px&#x27;)
+
+                this.tipVisible = true
+                this.currentProgress = parseInt(newProgress)
+            },
+            handleDrop(){
+                if(!this.tipStay){
+                    this.tipVisible = false
+                }
+                this.newProgressWidth = this.prevProgressWidth
+                this.$emit(&#x27;slide-end&#x27;,this.currentProgress)
+            },
+            getNewProgressWidth(currentProgress){ // 保留2位小数
+                return this.sliderLength * (Math.round((currentProgress-this.range[0])/this.rangeDiff*100)/100)
+            },
+            setSliderPosition(distance){
+                this.$refs.sliderProgress.style.width = distance
+                this.$refs.sliderBtn.style.left = distance
+            }
+        },
+        computed:{
+            rangeDiff(){
+                return this.range[1]-this.range[0]
+            }
+        },
+        mounted(){
+            this.sliderLength = parseInt(this.$refs.sliderLine.offsetWidth)
+            this.eachSection = this.sliderLength/this.rangeDiff * this.duration
+            this.newProgressWidth = this.getNewProgressWidth(this.currentProgress)
+            this.setSliderPosition(this.newProgressWidth + &#x27;px&#x27;)
+        },
+        watch: {
+            progress(val){
+                this.currentProgress = val
+                this.newProgressWidth = this.getNewProgressWidth(val)
+                this.setSliderPosition(this.newProgressWidth + &#x27;px&#x27;)
+            }
+        },
+        props:{
+            /**
+             * 样式前缀
+             * @property classPrefix
+             * @type String
+             * @default &#x27;slider&#x27;
+             * */
+            classPrefix: {
+                type: String,
+                default: &#x27;slider&#x27;
+            },
+            /**
+             * 初始进度
+             * @property progress
+             * @type Number
+             * @default 0
+             * */
+            progress: {
+                type: Number,
+                default: 0
+            },
+            /**
+             * 进度提示的位置
+             * @property placement
+             * @type String
+             * @default &#x27;top&#x27;
+             * */
+            placement: {
+                type: String,
+                default: &#x27;top&#x27;
+            },
+            /**
+             * 范围，可传固定范围的数组如：[25,50]
+             * @property range
+             * @type Array
+             * @default [0,100]
+             * */
+            range: {
+                type: Array,
+                default: function () {
+                    return [0,100]
+                },
+                validator(val){
+                    return val.length === 2 &amp;&amp; val[0] &lt;= val[1]
+                }
+            },
+            /**
+             * 是否在进度条前后显示范围
+             * @property showRange
+             * @type Boolean
+             * @default false
+             * */
+            showRange: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * 显示提示的模式，可选[default,tooltip]
+             * @property tipMode
+             * @type String
+             * @default &#x27;default&#x27;
+             * */
+            tipMode: {
+                type: String,
+                default: &#x27;default&#x27;
+            },
+            /**
+             * 每次移动的固定距离
+             * @property duration
+             * @type Number
+             * @default 1
+             * */
+            duration: {
+                type: Number,
+                default: 1
+            },
+            /**
+             * 初始及松开按钮时是否显示tooltip
+             * @property tipStay
+             * @type Boolean
+             * @default false
+             * */
+            tipStay: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * 进度条是否只读
+             * @property disabled
+             * @type Boolean
+             * @default false
+             * */
+            disabled: Boolean,
+            classMapping: {
+                type: Object,
+                default: function() {
+                    return {
+                        &#x27;disabled&#x27;: &#x27;disabled&#x27;,
+                        &#x27;top&#x27;: &#x27;tip-top&#x27;,
+                        &#x27;bottom&#x27;: &#x27;tip-bottom&#x27;
+                    }
+                }
+            }
+
+        }
+    }
+&lt;/script&gt;
+    </pre>
+</div>
+
+                </div>
+            </div>
+        </div>
+    </div>
+<a id="gotoTop" class='well well-small' href='#'>
+</a>
+<script src="../assets/vendor/jquery/jquery-1.8.2.js"></script>
+<script src="../assets/vendor/bootstrap/js/bootstrap.js"></script>
+<script src="../assets/vendor/prettify/prettify-min.js"></script>
+<script src="../assets/js/config.js"></script>
+<script src="../assets/js/doc.js"></script>
+
+</body>
+</html>
