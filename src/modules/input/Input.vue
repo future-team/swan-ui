@@ -3,7 +3,7 @@
         <input ref="inputRef"
                :type="currentType"
                :value="currentValue"
-               v-bind="nativeProps"
+               v-bind="$attrs"
                @input="handleChange"
                @focus="handleFocus"
                @blur="handleBlur"/>
@@ -31,6 +31,7 @@
     export default {
         name: 'SwInput',
         extends: SwBase,
+        inheritAttrs: false,
         components: { SwIcon },
         data() {
             return {
@@ -157,17 +158,7 @@
              * @default ''
              **/
             placeholder: String,
-            disabled: Boolean,
-            maxlength: Number,
-            minlength: Number,
-            autocomplete: String,
-            autofocus: Boolean,
-            readonly:Boolean,
-            value: null,
-            name: null,
-            min:null,
-            max:null
-
+            disabled: Boolean
         }
     }
 </script>

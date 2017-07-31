@@ -8,7 +8,7 @@
                        <sw-button @click="$success({
                             content:'保存成功',
                             callback: ()=>{
-                                console.log('已提交')
+
                             }
                         })">传递参数对象</sw-button>`
         },

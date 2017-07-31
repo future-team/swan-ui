@@ -1,5 +1,5 @@
 <template>
-    <sw-checkbox v-bind="$props" @change="handleChange">
+    <sw-checkbox :type="type" v-bind="$attrs" @change="handleChange">
     </sw-checkbox>
 </template>
 
@@ -7,17 +7,18 @@
     import SwCheckbox from '../checkbox/Checkbox.vue'
     export default {
         name: 'SwRadio',
+        inheritAttrs: false,
         components: {SwCheckbox},
         methods: {
             handleChange(value,evt){
                 this.$emit('change',value,evt)
             }
         },
-        props: Object.assign({},SwCheckbox.props,{
+        props: {
             type: {
                 type: String,
                 default: 'radio'
             }
-        })
+        }
     }
 </script>

@@ -1,10 +1,12 @@
 <template>
     <button :class="classObject"  @click="handleClick">
-        <sw-icon v-if="phIcon"
-                 :phIcon="phIcon"
-                 :phSize="phIcon.indexOf('loading')!=-1?'sm':''">
-        </sw-icon>
-        <slot></slot>
+        <span class="ph-button-inner">
+            <sw-icon v-if="phIcon"
+                     :phIcon="phIcon"
+                     :phSize="phIcon.indexOf('loading')!=-1?'sm':''">
+            </sw-icon>
+            <slot></slot>
+        </span>
     </button>
 </template>
 

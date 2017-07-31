@@ -72,7 +72,7 @@
              * 值
              * @property value
              * @type
-             * @default false
+             * @default
              * */
             value: null
         }

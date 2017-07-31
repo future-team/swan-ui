@@ -52,6 +52,13 @@
                         <sw-button hollow disabled>disabled</sw-button>`
         },
         {
+            title: '激活状态',
+            desc: '属性：active',
+            code: `
+                        <sw-button active>active</sw-button>
+                        <sw-button hollow active>active</sw-button>`
+        },
+        {
             title: '占行按钮',
             desc: '属性：block',
             code: `
