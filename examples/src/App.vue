@@ -4,7 +4,10 @@
             <router-link class="page-back" v-if="visible" :to="'/'">
                 <sw-icon class="back-icon" phIcon="chevron-left" phSize="md"></sw-icon>
             </router-link>
-            <h2>{{title}}</h2>
+            <h2>
+                <a v-if="$route.path !== '/'" :href="`./doc${$route.path}.md`">{{title}}</a>
+                <span v-else>{{title}}</span>
+            </h2>
         </div>
         <router-view></router-view>
     </div>

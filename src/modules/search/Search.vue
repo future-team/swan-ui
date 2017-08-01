@@ -20,6 +20,29 @@
 </template>
 
 <script>
+    /**
+     * SearchBar<br/>
+     * - 可通过buttonText设置按钮的文字
+     *
+     * 属性：
+     * - buttonText: 按钮文字 <br/>
+     * - placeholder: 输入提示
+     *
+     * 事件：
+     * - input／change: 回调参数(value,evt)，输入时触发 <br/>
+     * - focus: 聚焦时触发 <br/>
+     * - blur: 失去焦点时触发 <br/>
+     * - search: 回调参数(value,evt)，按下回车时触发 <br/>
+     * - click: 回调参数(value,evt)，按钮被点击时触发
+     *
+     * @class SearchBar
+     * @module 搜索组件
+     * @Constructor
+     * @extends Base
+     * @since 0.0.1
+     * @demo search|search.vue
+     * @show true
+     * */
     import SwBase from '../Base.vue'
     import SwInput from '../input/Input.vue'
     import SwButton from '../button/Button.vue'
@@ -37,9 +60,10 @@
             }
         },
         methods:{
-            handleInput(value){
+            handleInput(value,evt){
                 this.currentValue = value
-                this.$emit('input',value)
+                this.$emit('input',value,evt)
+                this.$emit('change',value,evt)
             },
             handleFocus(){
                 this.focus = true
@@ -91,7 +115,7 @@
              * 输入提示
              * @property placeholder
              * @type String
-             * @default '取消'
+             * @default '搜索'
              * */
             placeholder: {
                 type: String,

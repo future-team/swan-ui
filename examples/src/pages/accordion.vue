@@ -26,13 +26,15 @@
             }
         },
         {
-            title: '选择',
-            desc: '',
+            title: '基本用法',
+            desc: '从下拉列表选择',
             code: `
                    <sw-accordion v-model="visible">
                         <template slot="header">{{selected}}</template>
                         <ul class="accordion-demo-list">
-                               <li v-for="item in list" class="accordion-demo-item" @click="handleClick(item)">{{item}}</li>
+                               <li v-for="item in list"
+                                   class="accordion-demo-item"
+                                   @click="handleClick(item)">{{item}}</li>
                         </ul>
                    </sw-accordion>`,
             options: {
@@ -54,7 +56,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Accordion',
+        name: 'PageAccordion',
         extends:Base,
         data(){
             return {

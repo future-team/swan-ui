@@ -56,7 +56,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'ButtonGroup',
+        name: 'PageButtonGroup',
         extends:Base,
         data(){
             return {

@@ -27,6 +27,15 @@
 </template>
 
 <script>
+    /**
+     * @class Dialog
+     * @module 弹出框组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo dialog|dialog.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import toggle from '../../mixins/toggle'
     export default {

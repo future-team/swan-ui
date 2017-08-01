@@ -61,7 +61,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Slider',
+        name: 'PageSlider',
         extends:Base,
         data(){
             return {

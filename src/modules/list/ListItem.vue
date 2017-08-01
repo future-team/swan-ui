@@ -6,6 +6,15 @@
 </template>
 
 <script>
+    /**
+     * @class ListItem
+     * @module 列表组件
+     * @extends Base
+     * @constructor
+     * @since 0.0.1
+     * @demo list|list.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import Row from '../grid/Row.vue'
     export default {
@@ -60,6 +69,16 @@
              * @default false
              * */
             navigate: {
+                type: Boolean,
+                default: false
+            },
+            /**
+             * 激活状态
+             * @property active
+             * @type Boolean
+             * @default false
+             * */
+            active: {
                 type: Boolean,
                 default: false
             }

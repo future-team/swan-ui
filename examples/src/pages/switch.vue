@@ -30,7 +30,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Switch',
+        name: 'PageSwitch',
         extends:Base,
         data(){
             return {

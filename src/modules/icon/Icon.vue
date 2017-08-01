@@ -5,6 +5,16 @@
 </template>
 
 <script>
+    /**
+     * Icon https://future-team.github.io/gfs-icons/index.html
+     * @class Icon
+     * @module 标签组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo icon|icon.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwIcon',

@@ -1,14 +1,26 @@
 <template>
     <button :class="classObject"  @click="handleClick">
-        <sw-icon v-if="phIcon"
-                 :phIcon="phIcon"
-                 :phSize="phIcon.indexOf('loading')!=-1?'sm':''">
-        </sw-icon>
-        <slot></slot>
+        <span class="ph-button-inner">
+            <sw-icon v-if="phIcon"
+                     :phIcon="phIcon"
+                     :phSize="phIcon.indexOf('loading')!=-1?'sm':''">
+            </sw-icon>
+            <slot></slot>
+        </span>
     </button>
 </template>
 
 <script>
+    /**
+     * 按钮组件
+     * @class Button
+     * @module 基础组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo button|button.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
     export default {

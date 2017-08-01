@@ -12,6 +12,15 @@
     </div>
 </template>
 <script>
+    /**
+     * @class TextArea
+     * @module 表单组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo textarea|textarea.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwTextarea',

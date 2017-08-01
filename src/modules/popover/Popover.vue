@@ -18,6 +18,14 @@
 </template>
 
 <script>
+    /**
+     * @class Popover
+     * @module 提示组件
+     * @Constructor
+     * @since 0.0.1
+     * @demo popover|popover.vue
+     * @show true
+     */
     import { getWindowScrollTop,getWindowScrollLeft,getClientHeight,getClientWidth,getOffset} from '../../utils/tool'
     export default {
         name: 'SwPopover',

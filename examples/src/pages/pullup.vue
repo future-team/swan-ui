@@ -1,7 +1,11 @@
 <template>
     <div>
         <div class="demo">
-            <pre><code v-html="escape2Html(code)" class="language-markup"></code></pre>
+            <div class="demo-item">
+                <h5>上拉加载更多</h5>
+                <p class="demo-desc">组件置于列表末端<br/>status: 当前加载状态<br/>tips：加载过程提示文案`</p>
+                <pre><code v-html="escape2Html(code)" class="language-markup"></code></pre>
+            </div>
         </div>
         <div class="image-list-demo">
             <sw-image-list :column="2">
@@ -17,7 +21,7 @@
 </template>
 <script>
     export default {
-        name: 'Pullup',
+        name: 'PagePullup',
         data(){
             return {
                 status: 0,

@@ -5,6 +5,16 @@
 </template>
 
 <script>
+    /**
+     * 列组件
+     * @class Col
+     * @module 布局组件
+     * @extends Base
+     * @Constructor
+     * @demo grid|grid.vue
+     * @since 0.0.1
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwCol',

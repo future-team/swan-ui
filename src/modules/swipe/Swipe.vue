@@ -19,6 +19,15 @@
 </template>
 
 <script>
+    /**
+     * @class Swipe
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo swipe|swipe.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwDrag from '../drag/Drag.vue'
     import SwButton from '../button/Button.vue'
@@ -38,7 +47,7 @@
             }
         },
         methods:{
-            handleDrag(evt, position){
+            handleDrag(position,evt){
                 if(!this.btnsWidth) return
                 this.translateX = this.preTranslateX + position.move.x -  position.start.x
 
@@ -51,12 +60,12 @@
                 this.distance = position.move.x - position.start.x  //<0：左刷  >0: 右刷
                 this.setSwipePosition(evt.currentTarget,this.translateX)
             },
-            handleDrop(evt){
+            handleDrop(position,evt){
                 if(!this.btnsWidth) return
                 if(Math.abs(this.distance) < this.btnsWidth / 3){  //未滑过按钮的三分之一，则保持不变
-                    this.translateX = this.distance < 0 ? 0 : -this.btnsWidth
+                    this.translateX = this.distance <= 0 ? 0 : -this.btnsWidth
                 }else{
-                    this.translateX = this.distance < 0 ? -this.btnsWidth : 0
+                    this.translateX = this.distance <= 0 ? -this.btnsWidth : 0
                 }
                 this.preTranslateX = this.translateX
                 this.setSwipePosition(evt.currentTarget,this.translateX)
@@ -75,7 +84,7 @@
         },
         mounted(){
             this.btnsWidth = this.$refs.buttons.offsetWidth
-            this.dragActionRef = this.$refs.swipeDrag.$refs.dragAction
+            this.dragActionRef = this.$refs.swipeDrag
         },
         props: {
             /**

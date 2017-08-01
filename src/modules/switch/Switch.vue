@@ -8,6 +8,15 @@
 </template>
 
 <script>
+    /**
+     * @class Switch
+     * @module 表单组件
+     * @extends Base
+     * @constructor
+     * @since 0.1.0
+     * @demo switch|switch.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwSwitch',

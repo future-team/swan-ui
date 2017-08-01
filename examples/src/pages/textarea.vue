@@ -54,7 +54,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Textarea',
+        name: 'PageTextarea',
         extends:Base,
         data(){
             return {

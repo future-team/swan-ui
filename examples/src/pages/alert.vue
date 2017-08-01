@@ -70,7 +70,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Alert',
+        name: 'PageAlert',
         extends:Base,
         data(){
             return {

@@ -16,6 +16,15 @@
 </template>
 
 <script>
+    /**
+     * @class Toast
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo toast|toast.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
     export default {

@@ -22,7 +22,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Star',
+        name: 'PageStar',
         extends:Base,
         data(){
             return {

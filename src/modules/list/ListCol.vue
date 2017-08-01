@@ -5,6 +5,15 @@
 </template>
 
 <script>
+    /**
+     * @class ListCol
+     * @module 列表组件
+     * @extends Base
+     * @constructor
+     * @since 0.0.1
+     * @demo list|list.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwCol from '../grid/Col.vue'
     export default {

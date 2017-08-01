@@ -3,6 +3,15 @@
 </template>
 
 <script>
+    /**
+     * @class Tab
+     * @module 选项卡
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo tab|tab.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwTab',

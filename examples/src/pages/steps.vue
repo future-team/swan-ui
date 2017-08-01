@@ -16,14 +16,14 @@
                 methods: {
                     handleClick(item,index){
                         this.currentStep=index
-                        alert(item)
+                        this.$info(item)
                     }
                 }
             }
         },
         {
             title: '只读模式',
-            desc: '',
+            desc: '属性：readOnly',
             code: `
                     <sw-steps readOnly
                               :currentStep="1"
@@ -32,7 +32,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Steps',
+        name: 'PageSteps',
         extends:Base,
         data(){
             return {

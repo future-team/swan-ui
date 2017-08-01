@@ -3,7 +3,7 @@
         <input ref="inputRef"
                :type="currentType"
                :value="currentValue"
-               v-bind="nativeProps"
+               v-bind="$attrs"
                @input="handleChange"
                @focus="handleFocus"
                @blur="handleBlur"/>
@@ -26,11 +26,22 @@
 </template>
 
 <script>
+    /**
+     * 输入框组件
+     * @class Input
+     * @module 表单组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo input|input.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
     export default {
         name: 'SwInput',
         extends: SwBase,
+        inheritAttrs: false,
         components: { SwIcon },
         data() {
             return {
@@ -157,17 +168,7 @@
              * @default ''
              **/
             placeholder: String,
-            disabled: Boolean,
-            maxlength: Number,
-            minlength: Number,
-            autocomplete: String,
-            autofocus: Boolean,
-            readonly:Boolean,
-            value: null,
-            name: null,
-            min:null,
-            max:null
-
+            disabled: Boolean
         }
     }
 </script>

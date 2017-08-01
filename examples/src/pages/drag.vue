@@ -20,7 +20,7 @@
                     }
                 },
                 methods:{
-                    handleDrag(event,position){
+                    handleDrag(position){
                         let prePosition = position.start
                         let nowPosition = position.move
 
@@ -60,7 +60,7 @@
                     }
                 },
                 methods:{
-                    handleDrag(event,position){
+                    handleDrag(position){
                         let prePosition = position.start
                         let nowPosition = position.move
 
@@ -102,7 +102,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Drag',
+        name: 'PageDrag',
         extends:Base,
         data(){
             return {
@@ -115,14 +115,15 @@
 <style lang="less">
     .drag-demo-container{
         margin:auto;
+        .ph-drag-action{
+            display: inline-block;
+        }
     }
     .drag-demo{
         position: relative;
         .drag-uni;
     }
-    .ph-drag-action{
-        display: inline-block;
-    }
+
     .fixed-drag-demo{
         position: fixed;
         bottom: 0.2rem;

@@ -17,7 +17,7 @@
 <script>
     import routes from '../route/route.config.js'
     export default {
-        name: 'Index',
+        name: 'PageIndex',
         computed: {
             routes(){
                 return routes

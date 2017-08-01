@@ -38,8 +38,7 @@
             code: `
                 <sw-search @search="handleSearch"
                            @click="handleSearch"
-                           buttonText="确定">
-                </sw-search>
+                           buttonText="确定" />
             `,
             options: {
                 methods: {
@@ -52,7 +51,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Search',
+        name: 'PageSearch',
         extends:Base,
         data(){
             return {

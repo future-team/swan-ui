@@ -22,6 +22,14 @@
 </template>
 
 <script>
+    /**
+     * @class Prompt
+     * @module 弹出框组件
+     * @Constructor
+     * @since 0.0.1
+     * @demo prompt|prompt.vue
+     * @show true
+     */
     import SwDialog from './Dialog.vue'
     import SwButtonGroup from '../button/ButtonGroup.vue'
     import SwButton from '../button/Button.vue'

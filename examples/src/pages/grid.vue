@@ -71,7 +71,7 @@
             code: `
                   <sw-grid>
                         <sw-row class="row-demo">
-                            <sw-col width="25">占比25%</sw-col>
+                            <sw-col :width="25">占比25%</sw-col>
                             <sw-col>第二列</sw-col>
                         </sw-row>
                   </sw-grid>
@@ -83,8 +83,8 @@
             code: `
                   <sw-grid>
                         <sw-row class="row-demo">
-                            <sw-col width="25" >第一列</sw-col>
-                            <sw-col offset="10">偏移10%</sw-col>
+                            <sw-col :width="25" >第一列</sw-col>
+                            <sw-col :offset="10">偏移10%</sw-col>
                         </sw-row>
                   </sw-grid>
             `
@@ -92,7 +92,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Grid',
+        name: 'PageGrid',
         extends:Base,
         data(){
             return {

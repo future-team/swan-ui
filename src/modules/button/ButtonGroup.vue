@@ -5,6 +5,16 @@
 </template>
 
 <script>
+    /**
+     * 按钮组组件
+     * @class ButtonGroup
+     * @module 基础组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo buttongroup|button-group.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwButtonGroup',

@@ -16,6 +16,15 @@
 </template>
 
 <script>
+    /**
+     * @class Steps
+     * @module 操作类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo steps|steps.vue
+     * @show true
+     */
     import SwBase from '../Base.vue'
     export default {
         name: 'SwSteps',
@@ -48,7 +57,7 @@
                 default: 'steps'
             },
             /**
-             * 是否为只读模式（只读模式不会触发点击回调），默认为false
+             * 是否为只读模式（只读模式不会触发点击回调）
              * @property readOnly
              * @type Boolean
              * @default false

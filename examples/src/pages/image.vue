@@ -65,7 +65,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'Image',
+        name: 'PageImage',
         extends:Base,
         data(){
             return {

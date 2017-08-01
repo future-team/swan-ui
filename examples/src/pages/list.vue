@@ -102,7 +102,7 @@
     ]
     import Base from '../base.vue'
     export default {
-        name: 'List',
+        name: 'PageList',
         extends:Base,
         data(){
             return {
