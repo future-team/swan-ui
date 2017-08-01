@@ -173,6 +173,16 @@ const routes = [
                 'desc': ''
             }
         ]
+    },
+    {
+        title: '控件',
+        list: [
+            {
+                'path': '/filtercheckbox',
+                'name': 'FilterCheckbox',
+                'desc': '筛选'
+            }
+        ]
     }
 ]
 
