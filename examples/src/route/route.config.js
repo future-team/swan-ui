@@ -180,7 +180,8 @@ const routes = [
             {
                 'path': '/filtercheckbox',
                 'name': 'FilterCheckbox',
-                'desc': '筛选'
+                'desc': '筛选',
+                'hiddenHeader': true
             }
         ]
     }
