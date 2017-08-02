@@ -46,7 +46,7 @@
 </template>
 <script>
     import SwBase from '../../Base.vue'
-    import Item from './FilterItem'
+    import Item from './FilterItemCheckBox'
     import ItemGroup from './FilterItemGroup'
     import uniq from '../../../utils/uniq.js'
     export default {

@@ -1,7 +1,7 @@
 <template>
-    <div :class="itemClassObject" @click="onItemClick">
+    <div :class="itemClassObject">
         <list-col>
-            {{label}}
+            <checkbox :label="label" :disabled="disabled" @change="onCheckboxChange" :checked="checked && !disabled"></checkbox>
         </list-col>
     </div>
 </template>
@@ -9,23 +9,28 @@
 <script>
     import SwBase from '../../Base.vue'
     import ListCol from '../../list/ListCol.vue'
+    import Checkbox from '../../checkbox/Checkbox.vue'
     export default {
-        name: 'SwFilterItem',
+        name: 'SwFilterItemCheckbox',
         extends: SwBase,
         components: {
-            ListCol
+            ListCol,
+            Checkbox
         },
-        props: {    
-            itemKey: {
+        props: {               
+            itemIndex: {
                 type: [Number, String]
             },
-            label: {
-                type: String,
-                default: ''
-            },
-            active: {
+            disabled: {
                 type: Boolean,
                 default: false
+            },
+            checked: {
+                type: Boolean,
+                default: false
+            },
+            label: {
+                type: String
             }
         },
         data () {
@@ -36,15 +41,16 @@
             itemClassObject(){
                 return {
                     'ph-row ph-list-item': true,
-                    'active': this.active
+                    'active': this.active,
+                    'disabled': this.disabled
                 }
             }
         },
         mounted () {
         },
         methods: {
-            onItemClick(){
-                this.$emit('itemKey-change', this.itemKey, this.label)
+            onCheckboxChange(){
+                this.$emit('itemIndex-change', this.itemIndex)
             }
         }
     }
