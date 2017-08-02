@@ -1,26 +1,41 @@
 var webpack = require('webpack'),
-    extend = require('extend');
+    extend = require('extend'),
+    path = require('path');
 
 module.exports =extend({},{
-    devtoll:'inline-source-map',
+    devtool:'inline-source-map',
     output:{
         pathinfo:true
     },
+    resolve: {
+        alias:{
+            'vue$': 'vue/dist/vue.common.js'
+        }
+    },
     module:{
-        loaders:[
-            {
-                test: /\.js$/,
-                loaders: ['babel?cacheDirectory'],
-                exclude: /node_modules/
-            },
-            {
-                test: /\.less$/,
-                loader: "style-loader!css-loader!less-loader"
-            },
-            {
-                test: /\.json$/,
-                loader: 'json',
+        rules:[{
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            exclude: /node_modules/,
+            options: {
+                loaders: {
+                    'js': 'isparta-loader'
+                }
             }
-        ]
+        },{
+            test:/\.js$/,
+            use: ['babel-loader'],
+            exclude: /node_modules/
+        },{
+            test: /\.css$/,
+            use: 'css-loader'
+        },{
+            test:/\.less$/,
+            use: 'less-loader'
+        },{
+            test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+            use: 'file-loader?name=./iconfont/[name].[ext]'
+        }]
     }
+
 });
