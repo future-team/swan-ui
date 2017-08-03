@@ -1,9 +1,11 @@
 <template>
+<div>
     <sw-filter-checkbox-container 
         :data='filterData' 
         :defaultActiveItemGroupIndex='2'
         @confirmBtn-click="onConfirmBtnClick">
     </sw-filter-checkbox-container>
+</div>
 </template>
 
 <script>

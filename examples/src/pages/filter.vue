@@ -1,7 +1,10 @@
 <template>
+<div>
+    <h2 class="filter-header">Filter</h2>
     <sw-filter-container
         :filterData="filterData" @valid-filter-change="onValidFilterChange">
     </sw-filter-container>
+</div>
 </template>
 
 <script>
@@ -81,6 +84,19 @@ export default {
                             ]
                         }
                     ]
+                },
+                {   
+                    type: 'single-row',
+                    activeKey: '1',
+                    activeValue: '智能排序',
+                    panelData: [
+                        {key:'1',value:'智能排序'},
+                        {key:'2',value:'离我最近'},
+                        {key:'3',value:'人气最高'},
+                        {key:'4',value:'评价最好'},
+                        {key:'5',value:'人均最低'},
+                        {key:'6',value:'人均最高'}
+                    ]
                 }
             ]
         }
@@ -94,3 +110,11 @@ export default {
     }
 }
 </script>
+<style lang="less" scoped>
+    .filter-header{
+        background-color: #e1e1e1;
+        line-height: 0.88rem;
+        font-size: 0.32rem;
+        text-align: center;
+    }
+</style>
