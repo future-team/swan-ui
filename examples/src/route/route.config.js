@@ -173,6 +173,23 @@ const routes = [
                 'desc': ''
             }
         ]
+    },
+    {
+        title: '控件',
+        list: [
+            {
+                'path': '/filter',
+                'name': 'Filter',
+                'desc': '筛选',
+                'hiddenHeader': true
+            },
+            {
+                'path': '/filtercheckbox',
+                'name': 'FilterCheckbox',
+                'desc': '筛选checkbox',
+                'hiddenHeader': true
+            }
+        ]
     }
 ]
 

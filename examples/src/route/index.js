@@ -11,7 +11,8 @@ const genRoutes = (routeConfig)=>{
                 component: component.default,
                 meta: {
                     title: pageConfig.name,
-                    description: pageConfig.desc
+                    description: pageConfig.desc,
+                    hiddenHeader: pageConfig.hiddenHeader || false
                 }
             })
         })
