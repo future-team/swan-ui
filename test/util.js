@@ -10,7 +10,7 @@ const createElem = ()=>{
  * @param vm
  */
 exports.destroyVm = (vm)=>{
-    vm.$el &&
+    vm && vm.$el &&
     vm.$el.parentNode &&
     vm.$el.parentNode.removeChild(vm.$el)
 }

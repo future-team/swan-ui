@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for modules/icon/Icon.vue</title>
+    <title>Code coverage report for modules/checkbox/Checkbox.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,36 +16,32 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">modules/icon/</a> Icon.vue
+      <a href="../../index.html">all files</a> / <a href="index.html">modules/checkbox/</a> Checkbox.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">66.67% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>2/3</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>0/0</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">0% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>0/1</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">50% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
-      </div>
-      <div class='fl pad1y'>
-        <span class="strong">1 branch</span>
-        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class='fraction'>1/2</span>
       </div>
     </div>
   </div>
-  <div class='status-line high'></div>
+  <div class='status-line medium'></div>
 <pre><table class="coverage">
 <tr><td class="line-count quiet">1
 2
@@ -112,7 +108,31 @@
 63
 64
 65
-66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88
+89
+90</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -129,7 +149,31 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,62 +227,86 @@
 //
 //
 //
+//
+//
+//
+//
 &nbsp;
 /**
- * Icon https://future-team.github.io/gfs-icons/index.html
- * @class Icon
- * @module 标签组件
- * @extends Base
+ * 复选框组件
+ * @class Checkbox
+ * @module 表单组件
  * @Constructor
  * @since 0.0.1
- * @demo icon|icon.vue
+ * @demo checkbox|checkbox.vue
  * @show true
  */
-import SwBase from '../Base.vue'
 export default {
-    name: 'SwIcon',
-    extends: SwBase,
+    name: 'SwCheckbox',
+    methods: <span class="fstat-no" title="function not covered" >{</span>
+        handleChange(evt){
+<span class="cstat-no" title="statement not covered" >            t</span>his.$emit('change',evt.target.value,evt)
+        }
+    },
     props: {
         /**
          * 样式前缀
          * @property classPrefix
          * @type String
-         * @default 'icon'
+         * @default 'input'
          * */
         classPrefix: {
             type: String,
-            default: 'icon'
+            default: 'input'
         },
         /**
-         * icon符号类型
-         * @property phIcon
+         * 展示的文字信息
+         * @property label
          * @type String
          * @default ''
-         **/
-        phIcon: {
+         * */
+        label: {
             type: String,
             default: ''
         },
         /**
-         * 按钮颜色[primary、warning、danger、info、error、success], 默认primary
-         * @property phStyle
-         * @type Boolean
-         * @default 'default'
+         * 类型
+         * @property type
+         * @type String
+         * @default checkbox
          * */
-        phStyle: {
+        type: {
             type: String,
-            default: 'default'
+            default: 'checkbox'
         },
         /**
-         * 按钮尺寸[xs、sm、md、lg、xlg], 默认为sm
-         * @property phSize
-         * @type String
-         * @default 'sm'
+         * 是否禁用
+         * @property disabled
+         * @type Boolean
+         * @default false
          * */
-        phSize: {
-            type: String,
-            default: 'sm'
-        }
+        disabled: Boolean,
+        /**
+         * 名称
+         * @property name
+         * @type String
+         * @default ''
+         * */
+        name: String,
+        /**
+         * 是否选中
+         * @property checked
+         * @type Boolean
+         * @default false
+         * */
+        checked: Boolean,
+        /**
+         * 值
+         * @property value
+         * @type
+         * @default
+         * */
+        value: null
     }
 }
 &nbsp;

@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for modules/icon/Icon.vue</title>
+    <title>Code coverage report for modules/button/ButtonGroup.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">modules/icon/</a> Icon.vue
+      <a href="../../index.html">all files</a> / <a href="index.html">modules/button/</a> ButtonGroup.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -92,27 +92,7 @@
 43
 44
 45
-46
-47
-48
-49
-50
-51
-52
-53
-54
-55
-56
-57
-58
-59
-60
-61
-62
-63
-64
-65
-66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+46</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,26 +137,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
 //
 //
@@ -185,59 +145,39 @@
 //
 &nbsp;
 /**
- * Icon https://future-team.github.io/gfs-icons/index.html
- * @class Icon
- * @module 标签组件
+ * 按钮组组件
+ * @class ButtonGroup
+ * @module 基础组件
  * @extends Base
  * @Constructor
  * @since 0.0.1
- * @demo icon|icon.vue
+ * @demo buttongroup|button-group.vue
  * @show true
  */
 import SwBase from '../Base.vue'
 export default {
-    name: 'SwIcon',
+    name: 'SwButtonGroup',
     extends: SwBase,
     props: {
         /**
          * 样式前缀
          * @property classPrefix
          * @type String
-         * @default 'icon'
+         * @default 'button-group'
          * */
-        classPrefix: {
+        classPrefix : {
             type: String,
-            default: 'icon'
+            default: 'button-group'
         },
         /**
-         * icon符号类型
-         * @property phIcon
+         * 是否有自适应宽度，垂直排列等属性，取值为default(用于双按钮)、justify(水平排列)、tacked(垂直排列)、segmente(分割排列)、footer(尾部按钮)
+         * @property phType
          * @type String
-         * @default ''
-         **/
-        phIcon: {
-            type: String,
-            default: ''
-        },
-        /**
-         * 按钮颜色[primary、warning、danger、info、error、success], 默认primary
-         * @property phStyle
-         * @type Boolean
          * @default 'default'
          * */
-        phStyle: {
+        phType: {
             type: String,
             default: 'default'
-        },
-        /**
-         * 按钮尺寸[xs、sm、md、lg、xlg], 默认为sm
-         * @property phSize
-         * @type String
-         * @default 'sm'
-         * */
-        phSize: {
-            type: String,
-            default: 'sm'
         }
     }
 }

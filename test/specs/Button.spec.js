@@ -8,7 +8,7 @@ describe('Button', function() {
         destroyVm(vm)
     })
 
-    it('create', function (){
+    it('init', function (){
         vm = createVm(Button)
         expect(vm.$el.classList.contains('ph-button')).toBe(true)
     })

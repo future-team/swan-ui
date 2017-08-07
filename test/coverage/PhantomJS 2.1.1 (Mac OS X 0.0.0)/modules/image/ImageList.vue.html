@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for modules/icon/Icon.vue</title>
+    <title>Code coverage report for modules/image/ImageList.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,7 +16,7 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">modules/icon/</a> Icon.vue
+      <a href="../../index.html">all files</a> / <a href="index.html">modules/image/</a> ImageList.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
@@ -112,7 +112,33 @@
 63
 64
 65
-66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+66
+67
+68
+69</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -157,26 +183,6 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span></td><td class="text"><pre class="prettyprint lang-js">//
 //
 //
@@ -185,59 +191,62 @@
 //
 &nbsp;
 /**
- * Icon https://future-team.github.io/gfs-icons/index.html
- * @class Icon
- * @module 标签组件
+ * 图片列表组件&lt;br/&gt;
+ * - 通过column设置图片列表的列数，1-8列。
+ * - 若需要懒加载，请配合Image组件使用。
+ *
+ * 属性：
+ * - column:列表的列数，默认1列。&lt;br&gt;
+ * ```code
+ * &lt;sw-image-list :column="2"&gt;
+ *    &lt;dl   v-for="(url,index) in urls"
+ *          class="ph-image-item"
+ *          :key="index"&gt;
+ *       &lt;dt&gt;
+ *            &lt;sw-image  :src="url"
+ *                       :defaultSrc="defaultSrc"
+ *                       lazy&gt;&lt;/sw-image&gt;
+ *        &lt;/dt&gt;
+ *        &lt;dd&gt;
+ *            &lt;p class="ph-image-title"&gt;图片&lt;/p&gt;
+ *            &lt;p class="ph-image-desp"&gt;描述&lt;/p&gt;
+ *        &lt;/dd&gt;
+ *    &lt;/dl&gt;
+ *&lt;/sw-image-list&gt;
+ * ```
+ *
+ * @class ImageList
+ * @module 操作类组件
  * @extends Base
  * @Constructor
  * @since 0.0.1
- * @demo icon|icon.vue
+ * @demo imagelist|image-list.vue
  * @show true
- */
+ * */
 import SwBase from '../Base.vue'
 export default {
-    name: 'SwIcon',
+    name: 'SwImageList',
     extends: SwBase,
     props: {
         /**
          * 样式前缀
          * @property classPrefix
          * @type String
-         * @default 'icon'
+         * @default 'image-list'
          * */
         classPrefix: {
             type: String,
-            default: 'icon'
+            default: 'image-list'
         },
         /**
-         * icon符号类型
-         * @property phIcon
-         * @type String
-         * @default ''
-         **/
-        phIcon: {
-            type: String,
-            default: ''
-        },
-        /**
-         * 按钮颜色[primary、warning、danger、info、error、success], 默认primary
-         * @property phStyle
-         * @type Boolean
-         * @default 'default'
+         * 图片列数
+         * @property column
+         * @type Number
+         * @default 1
          * */
-        phStyle: {
-            type: String,
-            default: 'default'
-        },
-        /**
-         * 按钮尺寸[xs、sm、md、lg、xlg], 默认为sm
-         * @property phSize
-         * @type String
-         * @default 'sm'
-         * */
-        phSize: {
-            type: String,
-            default: 'sm'
+        column: {
+            type: Number,
+            default: 1
         }
     }
 }

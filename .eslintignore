@@ -3,3 +3,4 @@ webpack/*
 lib/*
 /*.js
 dist/
+test/

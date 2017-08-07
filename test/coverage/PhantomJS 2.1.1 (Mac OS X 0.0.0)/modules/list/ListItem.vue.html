@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for modules/icon/Icon.vue</title>
+    <title>Code coverage report for modules/list/ListItem.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,13 +16,13 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">modules/icon/</a> Icon.vue
+      <a href="../../index.html">all files</a> / <a href="index.html">modules/list/</a> ListItem.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>8/8</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
@@ -37,7 +37,7 @@
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y'>
         <span class="strong">1 branch</span>
@@ -112,7 +112,29 @@
 63
 64
 65
-66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+66
+67
+68
+69
+70
+71
+72
+73
+74
+75
+76
+77
+78
+79
+80
+81
+82
+83
+84
+85
+86
+87
+88</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -130,6 +152,28 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -183,61 +227,83 @@
 //
 //
 //
+//
 &nbsp;
 /**
- * Icon https://future-team.github.io/gfs-icons/index.html
- * @class Icon
- * @module 标签组件
+ * @class ListItem
+ * @module 列表组件
  * @extends Base
- * @Constructor
+ * @constructor
  * @since 0.0.1
- * @demo icon|icon.vue
+ * @demo list|list.vue
  * @show true
  */
 import SwBase from '../Base.vue'
+import Row from '../grid/Row.vue'
 export default {
-    name: 'SwIcon',
+    name: 'SwListItem',
     extends: SwBase,
+    components: {Row},
     props: {
         /**
          * 样式前缀
          * @property classPrefix
          * @type String
-         * @default 'icon'
+         * @default 'list-item'
          * */
         classPrefix: {
             type: String,
-            default: 'icon'
+            default: 'list-item'
         },
         /**
-         * icon符号类型
-         * @property phIcon
-         * @type String
-         * @default ''
-         **/
-        phIcon: {
-            type: String,
-            default: ''
-        },
-        /**
-         * 按钮颜色[primary、warning、danger、info、error、success], 默认primary
-         * @property phStyle
+         * 是否不可用
+         * @property disabled
          * @type Boolean
-         * @default 'default'
+         * @default false
          * */
-        phStyle: {
-            type: String,
-            default: 'default'
+        disabled: {
+            type: Boolean,
+            default: false
         },
         /**
-         * 按钮尺寸[xs、sm、md、lg、xlg], 默认为sm
-         * @property phSize
-         * @type String
-         * @default 'sm'
+         * 是否是输入有误
+         * @property error
+         * @type Boolean
+         * @default false
          * */
-        phSize: {
-            type: String,
-            default: 'sm'
+        error: {
+            type: Boolean,
+            default: false
+        },
+        /**
+         * 是否必选项
+         * @property required
+         * @type Boolean
+         * @default false
+         * */
+        required: {
+            type: Boolean,
+            default: false
+        },
+        /**
+         * 是否需要右箭头
+         * @property navigate
+         * @type Boolean
+         * @default false
+         * */
+        navigate: {
+            type: Boolean,
+            default: false
+        },
+        /**
+         * 激活状态
+         * @property active
+         * @type Boolean
+         * @default false
+         * */
+        active: {
+            type: Boolean,
+            default: false
         }
     }
 }

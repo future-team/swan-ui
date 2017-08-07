@@ -1,7 +1,7 @@
 <!doctype html>
 <html lang="en">
 <head>
-    <title>Code coverage report for modules/icon/Icon.vue</title>
+    <title>Code coverage report for modules/star/Star.vue</title>
     <meta charset="utf-8" />
     <link rel="stylesheet" href="../../prettify.css" />
     <link rel="stylesheet" href="../../base.css" />
@@ -16,32 +16,28 @@
 <div class='wrapper'>
   <div class='pad1'>
     <h1>
-      <a href="../../index.html">all files</a> / <a href="index.html">modules/icon/</a> Icon.vue
+      <a href="../../index.html">all files</a> / <a href="index.html">modules/star/</a> Star.vue
     </h1>
     <div class='clearfix'>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">92.86% </span>
         <span class="quiet">Statements</span>
-        <span class='fraction'>6/6</span>
+        <span class='fraction'>13/14</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">75% </span>
         <span class="quiet">Branches</span>
-        <span class='fraction'>4/4</span>
+        <span class='fraction'>6/8</span>
       </div>
       <div class='fl pad1y space-right2'>
         <span class="strong">100% </span>
         <span class="quiet">Functions</span>
-        <span class='fraction'>1/1</span>
+        <span class='fraction'>3/3</span>
       </div>
       <div class='fl pad1y space-right2'>
-        <span class="strong">100% </span>
+        <span class="strong">88.89% </span>
         <span class="quiet">Lines</span>
-        <span class='fraction'>2/2</span>
-      </div>
-      <div class='fl pad1y'>
-        <span class="strong">1 branch</span>
-        <span class="quiet">Ignored</span>  &nbsp;&nbsp;&nbsp;&nbsp;
+        <span class='fraction'>8/9</span>
       </div>
     </div>
   </div>
@@ -112,7 +108,10 @@
 63
 64
 65
-66</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
+66
+67
+68
+69</td><td class="line-coverage quiet"><span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -128,7 +127,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">1×</span>
+<span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-yes">1×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -154,6 +154,10 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-no">&nbsp;</span>
+<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -169,10 +173,8 @@
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
-<span class="cline-any cline-neutral">&nbsp;</span>
+<span class="cline-any cline-yes">3×</span>
+<span class="cline-any cline-yes">3×</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
 <span class="cline-any cline-neutral">&nbsp;</span>
@@ -185,52 +187,49 @@
 //
 &nbsp;
 /**
- * Icon https://future-team.github.io/gfs-icons/index.html
- * @class Icon
- * @module 标签组件
+ * @class Star
+ * @module 基础组件
  * @extends Base
  * @Constructor
  * @since 0.0.1
- * @demo icon|icon.vue
+ * @demo star|star.vue
  * @show true
  */
 import SwBase from '../Base.vue'
+import classnames from 'classnames'
+import { setPhPrefix } from '../../utils/classUtil'
 export default {
-    name: 'SwIcon',
+    name: 'SwStar',
     extends: SwBase,
     props: {
         /**
          * 样式前缀
          * @property classPrefix
          * @type String
-         * @default 'icon'
+         * @default 'star'
          * */
         classPrefix: {
             type: String,
-            default: 'icon'
+            default: 'star'
         },
         /**
-         * icon符号类型
-         * @property phIcon
-         * @type String
-         * @default ''
-         **/
-        phIcon: {
-            type: String,
-            default: ''
-        },
-        /**
-         * 按钮颜色[primary、warning、danger、info、error、success], 默认primary
-         * @property phStyle
-         * @type Boolean
-         * @default 'default'
+         * 星级评价分数
+         * @property rate
+         * @type Number
+         * @default 默认为0，最高50
          * */
-        phStyle: {
-            type: String,
-            default: 'default'
+        rate: {
+            type: [Number,String],
+            default: 0,
+            validator: function(val){
+                <span class="missing-if-branch" title="if path not taken" >I</span>i</span>f(typeof val == 'string' &amp;&amp; <span class="branch-1 cbranch-no" title="branch not covered" >parseInt(val) != val){
+<span class="cstat-no" title="statement not covered" >                    r</span>eturn false
+                }
+                return true
+            }
         },
         /**
-         * 按钮尺寸[xs、sm、md、lg、xlg], 默认为sm
+         * 星星大小
          * @property phSize
          * @type String
          * @default 'sm'
@@ -238,6 +237,12 @@ export default {
         phSize: {
             type: String,
             default: 'sm'
+        }
+    },
+    computed: {
+        classList(){
+            let rateCls = 'star-'+ Math.round((this.rate*2)/10)*5
+            return classnames(this.classObject,setPhPrefix(rateCls))
         }
     }
 }

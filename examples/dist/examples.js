@@ -18618,6 +18618,12 @@ Object.defineProperty(exports, "__esModule", {
 //
 //
 //
+//
+//
+//
+//
+//
+//
 
 /**
  * 复选框组件
@@ -18635,6 +18641,10 @@ exports.default = {
       this.$emit('change', evt.target.value, evt);
     }
   },
+  created: function created() {
+    console.log(this.$props);
+  },
+
   props: {
     /**
      * 样式前缀
@@ -24285,11 +24295,21 @@ var render = function () {var _vm=this;var _h=_vm.$createElement;var _c=_vm._sel
     staticClass: "ph-multi-group"
   }, [_c('div', {
     class: ("ph-" + _vm.type)
-  }, [_c('input', _vm._b({
+  }, [_c('input', {
+    attrs: {
+      "type": _vm.type,
+      "disabled": _vm.disabled,
+      "name": _vm.name,
+      "label": _vm.label
+    },
+    domProps: {
+      "checked": _vm.checked,
+      "value": _vm.value
+    },
     on: {
       "change": _vm.handleChange
     }
-  }, 'input', _vm.$props, false)), _vm._v(" "), _c('i')]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.label))])])
+  }), _vm._v(" "), _c('i')]), _vm._v(" "), _c('span', [_vm._v(_vm._s(_vm.label))])])
 }
 var staticRenderFns = []
 render._withStripped = true
