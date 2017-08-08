@@ -10,7 +10,7 @@ npm install swan-ui --save
 ## Usage
 
 
-```
+```xml
 <!-- 引入样式 -->
 <link rel="stylesheet" href="http://future-team.github.io/phoenix-styles/dist/phoenix-styles.min.css" />
 <!-- 移动端适配 -->
@@ -21,7 +21,7 @@ npm install swan-ui --save
 <script src="http://future-team.github.io/swan-ui/lib/index.js"></script>
 ```
 
-```
+```xml
 <div id="app">
     <sw-button @click="visible = true" block>按钮</sw-button>
     <sw-dialog v-model="visible" title="Hello world">
@@ -42,7 +42,7 @@ npm install swan-ui --save
 
 or
 
-```
+```javascript
 import Vue from 'vue'
 import SwanUI from 'swan-ui'
 
@@ -51,10 +51,11 @@ Vue.use(SwanUI)
 
 or
 
-```
+```javascript
 import Vue from 'vue'
 import { Button, Star} from 'swan-ui'
 
 Vue.component(Button.name,Button)
 Vue.component(Star.name,Star)
 ```
+
