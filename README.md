@@ -54,8 +54,34 @@ Vue.use(SwanUI)
 ```javascript
 import Vue from 'vue'
 import { Button, Star} from 'swan-ui'
-
 Vue.component(Button.name,Button)
 Vue.component(Star.name,Star)
 ```
+
+## 注意
+
+swan-ui需要与[phoenix-styles](http://future-team.github.io/phoenix-styles/example/index.html)样式库配合使用
+
+phoenix-styles引入方式：
+
+```xml
+<!-- html引入 -->
+<link rel="stylesheet" href="http://future-team.github.io/phoenix-styles/dist/phoenix-styles.min.css" />
+```
+```javascript
+<!-- 全部引入 -->
+import 'phoenix-styles/dist/phoenix-styles.min.css'
+<!-- 按需引入 -->
+import 'phoenix-styles/less/modules/buttons.less'
+<!-- 全部引入 -->
+import 'phoenix-styles/less/phoenix-styles.less'
+```
+
+如果要换成ios主题的皮肤，可引入
+
+```javascript
+import 'phoenix-styles/dist/ios-skin.min.css'
+```
+
+
 
