@@ -16,7 +16,7 @@
      * @extends Base
      * @Constructor
      * @since 0.0.1
-     * @demo tab|tab.vue
+     * @demo Tabset|Tabset.vue
      * @show true
      */
     import SwBase from '../Base.vue'

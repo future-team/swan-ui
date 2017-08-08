@@ -13,6 +13,15 @@
 </div>
 </template>
 <script>
+    /**
+     * @class FilterContainer
+     * @module 控件类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo FilterContainer|FilterContainer.vue
+     * @show true
+     */
     import SwBase from '../../Base.vue'
     import FilterSingleRow from './FilterSingleRow.vue'
     import FilterDoubleRow from './FilterDoubleRow.vue'

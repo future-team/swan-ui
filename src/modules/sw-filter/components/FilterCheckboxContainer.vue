@@ -45,6 +45,15 @@
 </div>
 </template>
 <script>
+    /**
+     * @class FilterCheckboxContainer
+     * @module 控件类组件
+     * @extends Base
+     * @Constructor
+     * @since 0.0.1
+     * @demo FilterCheckboxContainer|FilterCheckboxContainer.vue
+     * @show true
+     */
     import SwBase from '../../Base.vue'
     import Item from './FilterItemCheckBox'
     import ItemGroup from './FilterItemGroup'
