@@ -36,7 +36,7 @@
     * @extends Component
     * @constructor
     * @since 0.0.1
-    * @demo filter|filter.js
+    * @demo filter|filter.vue
     * @show true
     * */
     import SwBase from '../../Base.vue'

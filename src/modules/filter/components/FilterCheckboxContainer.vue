@@ -53,7 +53,7 @@
     * @extends Component
     * @constructor
     * @since 0.0.1
-    * @demo filter-checkbox|filter-checkbox.js
+    * @demo filter-checkbox|filter-checkbox.vue
     * @show true
     * */
     import SwBase from '../../Base.vue'
