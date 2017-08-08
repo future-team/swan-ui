@@ -9,7 +9,7 @@ npm install swan-ui --save
 
 ## Usage
 
-
+### script标签引入
 ```xml
 <!-- 引入样式 -->
 <link rel="stylesheet" href="http://future-team.github.io/phoenix-styles/dist/phoenix-styles.min.css" />
@@ -40,7 +40,7 @@ npm install swan-ui --save
 
 ```
 
-or
+### 全局注册
 
 ```javascript
 import Vue from 'vue'
@@ -49,7 +49,7 @@ import SwanUI from 'swan-ui'
 Vue.use(SwanUI)
 ```
 
-or
+### 按需引入
 
 ```javascript
 import Vue from 'vue'
