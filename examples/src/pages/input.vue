@@ -4,8 +4,7 @@
             title: '基本用法',
             desc: '',
             code: `
-                   <sw-input :autofocus="true"
-                             :maxlength="5"
+                   <sw-input :maxlength="5"
                              placeholder='请输入...'/>`
         },
         {

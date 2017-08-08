@@ -4,6 +4,8 @@
                :type="currentType"
                :value="currentValue"
                v-bind="$attrs"
+               :disabled="disabled"
+               :autofocus="autofocus"
                @input="handleChange"
                @focus="handleFocus"
                @blur="handleBlur"/>
@@ -168,7 +170,9 @@
              * @default ''
              **/
             placeholder: String,
-            disabled: Boolean
+            disabled: Boolean,
+            autofocus: Boolean,
+            value: null
         }
     }
 </script>

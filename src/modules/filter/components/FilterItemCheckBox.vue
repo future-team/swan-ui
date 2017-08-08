@@ -1,7 +1,10 @@
 <template>
     <div :class="itemClassObject">
         <list-col>
-            <checkbox :label="label" :disabled="disabled" @change="onCheckboxChange" :checked="checked && !disabled"></checkbox>
+            <checkbox :label="label" 
+                      :disabled="disabled" 
+                      @change="onCheckboxChange" 
+                      :checked="checked && !disabled"></checkbox>
         </list-col>
     </div>
 </template>
@@ -31,10 +34,6 @@
             },
             label: {
                 type: String
-            }
-        },
-        data () {
-            return {
             }
         },
         computed: {

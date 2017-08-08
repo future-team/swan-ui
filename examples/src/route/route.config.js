@@ -184,10 +184,25 @@ const routes = [
                 'hiddenHeader': true
             },
             {
-                'path': '/filtercheckbox',
+                'path': '/filter-checkbox',
                 'name': 'FilterCheckbox',
                 'desc': '筛选checkbox',
                 'hiddenHeader': true
+            }
+        ]
+    },
+    {
+        title: '例子',
+        list: [
+            {
+                'path': '/list-demo',
+                'name': '列表',
+                'desc': ''
+            },
+            {
+                'path': '/edit-demo',
+                'name': '立减编辑页',
+                'desc': ''
             }
         ]
     }

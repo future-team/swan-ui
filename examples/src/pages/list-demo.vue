@@ -1,12 +1,7 @@
 <template>
-    <div>
+    <div class="all-list-demo">
         <sw-list>
             <sw-list-header>列表标题</sw-list-header>
-            <sw-list-item>
-                <sw-list-col>
-                    <sw-input type="text" value="请输入" />
-                </sw-list-col>
-            </sw-list-item>
             <sw-list-item required>
                 <sw-list-col>
                     <sw-input type="text" placeholder="请输入姓名"/>
@@ -104,3 +99,9 @@
         }
     }
 </script>
+
+<style scoped>
+    .all-list-demo{
+        margin-top: 1rem;
+    }
+</style>

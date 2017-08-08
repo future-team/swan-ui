@@ -2,7 +2,13 @@
     <div :class='tabsClassObject'>
         <ul :class='verticalClass'>
             <!--tab标题-->
-            <li class='ph-col ph-tab-nav' :class="{'active': item.index == activeIndex}" v-for='(item, index) in tabbarList' :key='item.index' @click='onTabClick(item.index)'><a href='javascript:;'>{{item.heading}}</a></li>
+            <li class='ph-col ph-tab-nav' 
+                :class="{'active': item.index == activeIndex}" 
+                v-for='(item, index) in tabbarList' 
+                :key='item.index' 
+                @click='onTabClick(item.index)'>
+                <a href='javascript:;'>{{item.heading}}</a>
+            </li>
         </ul>
         <!--tab内容-->
         <div :class='contentClassObject'><slot></slot></div>
@@ -24,17 +30,34 @@
         name: 'SwTabSet',
         extends: SwBase,
         props: {
+           /**
+            * 是否竖排
+            * @property vertical
+            * @type Boolean
+            * @default false || null
+            * */
             vertical: {
                 type: Boolean,
                 default: false
             },
+           /**
+            * 设置选项卡头部的宽度，只有竖排的情况下才起作用
+            * @property width
+            * @type Number
+            * @default 20
+            * */
             width: {
-                type: [Number, String],
-                default: 33
+                type: Number,
+                default: 20
             },
+           /**
+            * 指定默认选中的选项卡，默认为0
+            * @property index
+            * @type Number
+            * @default 
+            * */
             defaultActiveIndex: {
-                type: [Number, String],
-                default: undefined
+                type: [Number, String]
             }
         },
         data () {

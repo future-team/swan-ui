@@ -1,10 +1,9 @@
 <template>
-<div>
-    <h2 class="filter-header">Filter</h2>
-    <sw-filter-container
-        :filterData="filterData" @valid-filter-change="onValidFilterChange">
-    </sw-filter-container>
-</div>
+    <div class="demo-top">
+        <sw-filter-container
+            :filterData="filterData" @valid-filter-change="onValidFilterChange">
+        </sw-filter-container>
+    </div>
 </template>
 
 <script>
@@ -111,10 +110,5 @@ export default {
 }
 </script>
 <style lang="less" scoped>
-    .filter-header{
-        background-color: #e1e1e1;
-        line-height: 0.88rem;
-        font-size: 0.32rem;
-        text-align: center;
-    }
+    @import '../demo.less';
 </style>

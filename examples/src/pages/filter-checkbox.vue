@@ -1,11 +1,11 @@
 <template>
-<div>
-    <sw-filter-checkbox-container 
-        :data='filterData' 
-        :defaultActiveItemGroupIndex='2'
-        @confirmBtn-click="onConfirmBtnClick">
-    </sw-filter-checkbox-container>
-</div>
+    <div class="demo-top">
+        <sw-filter-checkbox-container 
+            :data='filterData' 
+            :defaultActiveItemGroupIndex='2'
+            @confirmBtn-click="onConfirmBtnClick">
+        </sw-filter-checkbox-container>
+    </div>
 </template>
 
 <script>
@@ -166,3 +166,7 @@ export default {
     }
 }
 </script>
+
+<style lang="less" scoped>
+    @import '../demo.less';
+</style>

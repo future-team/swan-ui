@@ -17,13 +17,31 @@
         name: 'SwTab',
         extends: SwBase,
         props: {
+            /**
+            * 是否竖排显示
+            * @property vertical
+            * @type Boolean
+            * @default false
+            * */
             vertical: {
                 type: Boolean,
                 default: false
             },
+            /**
+            * 选项卡序号
+            * @property vertical
+            * @type Boolean
+            * @default false
+            * */
             index: {
                 type: [Number, String]
             },
+           /**
+            * 选项卡的标题文字，默认为‘tab’
+            * @property heading
+            * @type String
+            * @default 'tab'
+            * */
             heading: {
                 type: String,
                 default: 'tab'

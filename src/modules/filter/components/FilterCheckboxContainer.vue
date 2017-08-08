@@ -37,7 +37,9 @@
 		            </div>
 		        </div>
 		        <div class="ph-button-group ph-button-group-footer clearfix">
-		            <button class="ph-button ph-button-lg ph-button-primary" @click="onConfirmBtnClick"><span>确定</span></button>
+		            <button class="ph-button ph-button-lg ph-button-primary" @click="onConfirmBtnClick">
+                        <span>确定</span>
+                    </button>
 		        </div>
 		    </div>
 		</div>
@@ -45,6 +47,15 @@
 </div>
 </template>
 <script>
+   /**
+    * @class FilterCheckbox
+    * @module 筛选控件
+    * @extends Component
+    * @constructor
+    * @since 0.0.1
+    * @demo filter-checkbox|filter-checkbox.js
+    * @show true
+    * */
     import SwBase from '../../Base.vue'
     import Item from './FilterItemCheckBox'
     import ItemGroup from './FilterItemGroup'
@@ -57,6 +68,12 @@
             ItemGroup
         },
         props: {
+           /**
+            * 数据
+            * @property data
+            * @type Array
+            * @default []
+            * */
             data: {
                 type: Array,
                 default(){
@@ -68,7 +85,7 @@
                 default: 0
             }
         },
-        data () {
+        data() {
             return {
                 activeItemGroupIndex: this.defaultActiveItemGroupIndex // 激活的ItemGroup的索引值
             }
@@ -99,8 +116,6 @@
                 }
                 return totalItemChecked
             }
-        },
-        mounted () {
         },
         methods: {
             // 点击确定按钮

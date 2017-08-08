@@ -1,30 +1,30 @@
 <template>
-<div v-if='show' class="ph-filter-selector"  >
-    <div class="ph-row ph-tabs ph-tabs-vertical"  >
-        <div class="ph-col ph-col-33 ph-tab-navs" >
-            <!--一级筛选数据  -->
-            <item-group
-                v-for="(item, index) in data.panelData" 
-                :itemGroupIndex="index" 
-                :key="index" 
-                :active="index == activeItemGroupIndex" 
-                :label="item.value"
-                @activeItemGroupIndex-change="onActiveItemGroupIndexChange">
-            </item-group>
-        </div>
-        <div class="ph-col ph-tab-bd">
-            <!--二级筛选数据  -->
-            <item 
-                v-for="(item, index) in activeItemGroupItems"
-                :key="item.key"
-                :itemKey="item.key"
-                :label="item.value"
-                :active="item.key == data.activeKey"
-                @itemKey-change="onItemKeyChange">
-            </item>
+    <div v-if='show' class="ph-filter-selector"  >
+        <div class="ph-row ph-tabs ph-tabs-vertical"  >
+            <div class="ph-col ph-col-33 ph-tab-navs" >
+                <!--一级筛选数据  -->
+                <item-group
+                    v-for="(item, index) in data.panelData" 
+                    :itemGroupIndex="index" 
+                    :key="index" 
+                    :active="index == activeItemGroupIndex" 
+                    :label="item.value"
+                    @activeItemGroupIndex-change="onActiveItemGroupIndexChange">
+                </item-group>
+            </div>
+            <div class="ph-col ph-tab-bd">
+                <!--二级筛选数据  -->
+                <item 
+                    v-for="(item, index) in activeItemGroupItems"
+                    :key="item.key"
+                    :itemKey="item.key"
+                    :label="item.value"
+                    :active="item.key == data.activeKey"
+                    @itemKey-change="onItemKeyChange">
+                </item>
+            </div>
         </div>
     </div>
-</div>
 </template>
 
 <script>
@@ -63,8 +63,6 @@ export default {
             }
             return activeItemGroupItems
         }
-    },
-    mounted () {
     },
     methods: {
         // 激活的itemGroup的索引

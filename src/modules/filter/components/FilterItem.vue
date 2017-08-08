@@ -28,10 +28,6 @@
                 default: false
             }
         },
-        data () {
-            return {
-            }
-        },
         computed: {
             itemClassObject(){
                 return {
@@ -39,8 +35,6 @@
                     'active': this.active
                 }
             }
-        },
-        mounted () {
         },
         methods: {
             onItemClick(){

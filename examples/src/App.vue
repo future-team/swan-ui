@@ -1,6 +1,6 @@
 <template>
     <div>
-        <div v-if="!this.$route.meta.hiddenHeader" class="header">
+        <div class="header">
             <router-link class="page-back" v-if="visible" :to="'/'">
                 <sw-icon class="back-icon" phIcon="chevron-left" phSize="md"></sw-icon>
             </router-link>
