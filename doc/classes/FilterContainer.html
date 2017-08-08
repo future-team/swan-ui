@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimal-ui" />
-    <title>ListHeader - swan-ui</title>
+    <title>FilterContainer - swan-ui</title>
   
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
@@ -475,7 +475,7 @@
             <div id="docs-main">
                 <div class="content">
                     <div class="page-header">
-    <h1>ListHeader</h1>
+    <h1>FilterContainer</h1>
 </div>
  <div class="well well-small sign-left3">
       <div class="stdoc-code"></div>
@@ -495,7 +495,7 @@
                     <ul class="index-list properties extends">
                         
                             <li class="index-item property">
-                                <a href="#" data-tabid="#property" data-anchor="#property_classPrefix" data-tablink="classPrefix">classPrefix</a>
+                                <a href="#" data-tabid="#property" data-anchor="#property_data" data-tablink="data">data</a>
 
                                 
                                 
@@ -530,19 +530,19 @@
 
             
                 <div class="extends">
-                    Extends Base
+                    Extends Component
                 </div>
             
 
             
                 <div class="foundat">
-                    Defined in: <a href="../files/src_modules_list_ListHeader.vue.html#l8"><code>src&#x2F;modules&#x2F;list&#x2F;ListHeader.vue:8</code></a>
+                    Defined in: <a href="../files/src_modules_sw-filter_components_FilterContainer.vue.html#l16"><code>src&#x2F;modules&#x2F;sw-filter&#x2F;components&#x2F;FilterContainer.vue:16</code></a>
                 </div>
             
 
             
                 
-                    Module: <a href="../modules/列表组件.html">列表组件</a>
+                    Module: <a href="../modules/控件类组件.html">控件类组件</a>
                 
             
 
@@ -555,10 +555,10 @@
             
                 <div class="constructor">
                     <h2>Constructor</h2>
-                    <div id="method_ListHeader" class="method item">
-    <h3 class="name">ListHeader</h3>
+                    <div id="method_FilterContainer" class="method item">
+    <h3 class="name">FilterContainer</h3>
     <code>
-    ListHeader
+    FilterContainer
     
         <span class="paren">()</span>
     
@@ -589,7 +589,7 @@
             
         
         
-        <a href="../files/src_modules_list_ListHeader.vue.html#l8"><code>src&#x2F;modules&#x2F;list&#x2F;ListHeader.vue:8</code></a>
+        <a href="../files/src_modules_sw-filter_components_FilterContainer.vue.html#l16"><code>src&#x2F;modules&#x2F;sw-filter&#x2F;components&#x2F;FilterContainer.vue:16</code></a>
         
         </p>
 
@@ -614,123 +614,124 @@
             <h4>Example:</h4>
             <ul class="nav nav-tabs example-list">
                 
-                <li role="presentation"  class="active"  data-demo="https://future-team.github.io/swan-ui/examples/index.html#/list"  _no='0'> <a>list</a></li>
+                <li role="presentation"  class="active"  data-demo="https://future-team.github.io/swan-ui/examples/index.html#/filter"  _no='0'> <a>filter</a></li>
                 
             </ul>
             <div class="example-content  showdemo ">
-                <div class="stdoc-code"><pre class="code prettyprint"><code>&lt;script&gt;
-    const demos = [
-        {
-            title: &#39;基本用法&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                        &lt;sw-list-header&gt;列表标题&lt;/sw-list-header&gt;
-                        &lt;sw-list-item&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" value="请输入" /&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;居左居右&#39;,
-            desc: &#39;属性：heading、tail&#39;,
-            code: `
-                    &lt;sw-list style="color: #fff;"&gt;
-                        &lt;sw-list-item&gt;
-                            &lt;sw-list-col heading style="background: #ff6633"&gt;
-                                &lt;label&gt;heading&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col tail style="background: #bbb"&gt;
-                                 &lt;label&gt;tail&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                        &lt;sw-list-item&gt;
-                            &lt;sw-list-col style="background: #ff6633"&gt;
-                                &lt;label&gt;无heading&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col style="background: #bbb"&gt;
-                                 &lt;label&gt; 无tail&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;禁用状态&#39;,
-            desc: &#39;属性：disabled&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                        &lt;sw-list-item disabled&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" value="请输入" /&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;Error状态&#39;,
-            desc: &#39;属性：error，文本为红色&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                         &lt;sw-list-item error&gt;
-                            &lt;sw-list-col heading&gt;
-                                &lt;label&gt;姓名&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" placeholder="请输入" value="error" clear error/&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;是否必需&#39;,
-            desc: &#39;属性：required，前面有红色星&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                          &lt;sw-list-item required&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" placeholder="请输入姓名"/&gt;
-                            &lt;/sw-list-col&gt;
-                          &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;右箭头&#39;,
-            desc: &#39;属性：navigate&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                          &lt;sw-list-item navigate&gt;
-                            &lt;sw-list-col heading&gt;
-                                &lt;label&gt;性别&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col tail&gt;
-                                &lt;sw-input type="text" p
-                                          placeholder="男/女"
-                                          @click.native="handleClick"
-                                          disabled/&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`,
-            options: {
-                methods: {
-                    handleClick(){
-                        window.open(&#39;https://cn.vuejs.org/v2/api/#v-on&#39;,&#39;_blank&#39;)
-                    }
+                <div class="stdoc-code"><pre class="code prettyprint"><code>&lt;template&gt;
+    &lt;div class="demo-top"&gt;
+        &lt;sw-filter-container
+            :filterData="filterData" @valid-filter-change="onValidFilterChange"&gt;
+        &lt;/sw-filter-container&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+
+&lt;script&gt;
+import Base from &#39;../base.vue&#39;
+export default {
+    name: &#39;filter&#39;,
+    extends: Base,
+    data() {
+        return {
+            filterData: [
+                {   
+                    type: &#39;single-row&#39;,
+                    activeKey: &#39;-1&#39;,
+                    activeValue: &#39;选择商区&#39;,
+                    panelData: [
+                        {key:&#39;sjgy&#39;,value:&#39;世纪公园&#39;},
+                        {key:&#39;ljz&#39;,value:&#39;陆家嘴&#39;},
+                        {key:&#39;bbb&#39;,value:&#39;八佰伴&#39;},
+                        {key:&#39;pdxq&#39;,value:&#39;浦东新区&#39;},
+                        {key:&#39;zb&#39;,value:&#39;闸北&#39;},
+                        {key:&#39;ja&#39;,value:&#39;静安&#39;},
+                        {key:&#39;yp&#39;,value:&#39;杨浦&#39;},
+                        {key:&#39;sjgy1&#39;,value:&#39;世纪公园1&#39;},
+                        {key:&#39;ljz1&#39;,value:&#39;陆家嘴1&#39;},
+                        {key:&#39;bbb1&#39;,value:&#39;八佰伴1&#39;},
+                        {key:&#39;pdxq1&#39;,value:&#39;浦东新区1&#39;},
+                        {key:&#39;zb1&#39;,value:&#39;闸北1&#39;},
+                        {key:&#39;ja1&#39;,value:&#39;静安1&#39;},
+                        {key:&#39;yp1&#39;,value:&#39;杨浦1&#39;}
+                    ]
+                },
+                {   
+                    type: &#39;double-row&#39;,
+                    activeKey: &#39;2082&#39;,
+                    activeValue: &#39;雅思&#39;,
+                    panelData: [
+                        {
+                            key:&#39;2072&#39;,
+                            value:&#39;外语&#39;,
+                            subPanelData: [
+                                {
+                                    key:&#39;2082&#39;,
+                                    value:&#39;雅思&#39;
+                                },
+                                {
+                                    key:&#39;2083&#39;,
+                                    value:&#39;英语&#39;
+                                },
+                                {
+                                    key:&#39;2084&#39;,
+                                    value:&#39;托福&#39;
+                                }
+                            ]
+
+                        },
+                        {
+                            key: &#39;2033&#39;,
+                            value: &#39;音乐&#39;,
+                            subPanelData: []
+                        },
+                        {
+                            key: &#39;2055&#39;,
+                            value: &#39;美术&#39;,
+                            subPanelData: [
+                                {
+                                    key:&#39;2066&#39;,
+                                    value:&#39;素描&#39;
+                                },
+                                {
+                                    key:&#39;2067&#39;,
+                                    value:&#39;写生&#39;
+                                },
+                                {
+                                    key:&#39;2068&#39;,
+                                    value:&#39;油彩&#39;
+                                }
+                            ]
+                        }
+                    ]
+                },
+                {   
+                    type: &#39;single-row&#39;,
+                    activeKey: &#39;1&#39;,
+                    activeValue: &#39;智能排序&#39;,
+                    panelData: [
+                        {key:&#39;1&#39;,value:&#39;智能排序&#39;},
+                        {key:&#39;2&#39;,value:&#39;离我最近&#39;},
+                        {key:&#39;3&#39;,value:&#39;人气最高&#39;},
+                        {key:&#39;4&#39;,value:&#39;评价最好&#39;},
+                        {key:&#39;5&#39;,value:&#39;人均最低&#39;},
+                        {key:&#39;6&#39;,value:&#39;人均最高&#39;}
+                    ]
                 }
-            }
+            ]
         }
-    ]
-    import Base from &#39;../base.vue&#39;
-    export default {
-        name: &#39;PageList&#39;,
-        extends:Base,
-        data(){
-            return {
-                demos: demos
-            }
+    },
+    mounted() {
+    },
+    methods: {
+        onValidFilterChange(validFilterData){
+            console.log(validFilterData)
         }
     }
-&lt;/script&gt;</code></pre>
+}
+&lt;/script&gt;
+&lt;style lang="less" scoped&gt;
+    @import &#39;../demo.less&#39;;
+&lt;/style&gt;</code></pre>
 </div>
             </div>
             <div class="btn-method-box">
@@ -754,9 +755,9 @@
                 <h2 class="off-left">属性</h2>
 
                 
-                    <div id="property_classPrefix" class="property item">
-    <h3 class="name"><code>classPrefix</code></h3>
-    <span class="type">String</span>
+                    <div id="property_data" class="property item">
+    <h3 class="name"><code>data</code></h3>
+    <span class="type">Array</span>
 
     
 
@@ -770,6 +771,8 @@
         
             
                 
+                    <p>Provided by the <a href="../modules/筛选控件.html">筛选控件</a> module.</p>
+                
                 <p class="foundat">
                 
                 Defined in
@@ -777,7 +780,7 @@
             
         
         
-        <a href="../files/src_modules_list_ListHeader.vue.html#l22"><code>src&#x2F;modules&#x2F;list&#x2F;ListHeader.vue:22</code></a>
+        <a href="../files/src_modules_filter_components_FilterContainer.vue.html#l53"><code>src&#x2F;modules&#x2F;filter&#x2F;components&#x2F;FilterContainer.vue:53</code></a>
         
         </p>
 
@@ -787,13 +790,13 @@
     </div>
 
     <div class="description">
-        <div class="stdoc-code"><p>样式前缀</p>
+        <div class="stdoc-code"><p>数据</p>
 </div>
     </div>
 
     
         <p><strong>Default:</strong></p>
-         <code> &#x27;list-header&#x27;</code>
+         <code> []</code>
     
 
     

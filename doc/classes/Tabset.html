@@ -202,6 +202,24 @@
              
                 <dt>
                     <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/控件类组件.html">控件类组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/FilterContainer.html">FilterContainer</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
                     <a href="../modules/提示组件.html">提示组件</a>
                 </dt>
                 <dd>
@@ -277,6 +295,14 @@
                     
                        <li>
                             
+                           <a href="../classes/Swipe.html">Swipe</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
                            <a href="../classes/Toast.html">Toast</a>
                            <ul>
                                 
@@ -294,14 +320,6 @@
                        <li>
                             
                            <a href="../classes/Pullup.html">Pullup</a>
-                           <ul>
-                                
-                           </ul>
-                       </li>
-                    
-                       <li>
-                            
-                           <a href="../classes/Swipe.html">Swipe</a>
                            <ul>
                                 
                            </ul>
@@ -328,6 +346,24 @@
                        <li>
                             
                            <a href="../classes/Badge.html">Badge</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/筛选控件.html">筛选控件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/FilterCheckbox.html">FilterCheckbox</a>
                            <ul>
                                 
                            </ul>
@@ -456,6 +492,31 @@
             <div class="index-section properties col-sm-4">
                 <h3>属性</h3>
                 
+                    <ul class="index-list properties extends">
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#property" data-anchor="#property_index" data-tablink="index">index</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#property" data-anchor="#property_vertical" data-tablink="vertical">vertical</a>
+
+                                
+                                
+                            </li>
+                        
+                            <li class="index-item property">
+                                <a href="#" data-tabid="#property" data-anchor="#property_width" data-tablink="width">width</a>
+
+                                
+                                
+                            </li>
+                        
+                    </ul>
+                
             </div>
 
             <div class="index-section events col-sm-4">
@@ -470,6 +531,8 @@
         <ul id="itemTab" class="nav nav-tabs">
             <li class="active"><a data-toggle="tab" href="#class">详情</a></li>
             
+            
+                <li class=""><a data-toggle="tab" href="#property">属性</a></li>
             
             
         </ul>
@@ -487,7 +550,7 @@
 
             
                 <div class="foundat">
-                    Defined in: <a href="../files/src_modules_tab_TabSet.vue.html#l13"><code>src&#x2F;modules&#x2F;tab&#x2F;TabSet.vue:13</code></a>
+                    Defined in: <a href="../files/src_modules_tab_TabSet.vue.html#l19"><code>src&#x2F;modules&#x2F;tab&#x2F;TabSet.vue:19</code></a>
                 </div>
             
 
@@ -540,7 +603,7 @@
             
         
         
-        <a href="../files/src_modules_tab_TabSet.vue.html#l13"><code>src&#x2F;modules&#x2F;tab&#x2F;TabSet.vue:13</code></a>
+        <a href="../files/src_modules_tab_TabSet.vue.html#l19"><code>src&#x2F;modules&#x2F;tab&#x2F;TabSet.vue:19</code></a>
         
         </p>
 
@@ -561,6 +624,137 @@
     
 
     
+        <div class="example app-example">
+            <h4>Example:</h4>
+            <ul class="nav nav-tabs example-list">
+                
+                <li role="presentation"  class="active"  data-demo="https://future-team.github.io/swan-ui/examples/index.html#/Tabset"  _no='0'> <a>Tabset</a></li>
+                
+            </ul>
+            <div class="example-content  showdemo ">
+                <div class="stdoc-code"><pre class="code prettyprint"><code>&lt;script&gt;
+    const demos = [
+        {
+            title: &#39;基本用法&#39;,
+            desc: `heading: 标题，
+                   defaultActiveIndex 默认选中的tab`,
+            code: `
+                    &lt;sw-tab-set defaultActiveIndex="1"&gt;
+                        &lt;sw-tab heading="标题1" :index="1"&gt;
+                            横向内容1
+                        &lt;/sw-tab&gt;
+                        &lt;sw-tab heading="标题2" :index="2"&gt;
+                            横向内容2
+                        &lt;/sw-tab&gt;
+                    &lt;/sw-tab-set&gt;`
+        },
+        {
+            title: &#39;横排竖排&#39;,
+            desc: &#39;vertical(默认false) 设置选项卡竖排&#39;,
+            code: `
+                    &lt;sw-tab-set vertical&gt;
+                        &lt;sw-tab heading="标题1"  :index="1"&gt;
+                            &lt;sw-list&gt;
+                                &lt;sw-list-item&gt;
+                                    &lt;sw-list-col&gt;竖向内容1&lt;/sw-list-col&gt;
+                                &lt;/sw-list-item&gt;
+                            &lt;/sw-list&gt;
+                        &lt;/sw-tab&gt;
+                        &lt;sw-tab heading="标题2" :index="2"&gt;
+                            竖向内容2
+                        &lt;/sw-tab&gt;
+                        &lt;sw-tab heading="标题3" :index="3"&gt;
+                            竖向内容3
+                        &lt;/sw-tab&gt;
+                    &lt;/sw-tab-set&gt;`
+        },
+        {
+            title: &#39;设置标题的占比40%&#39;,
+            desc: &#39;width(默认20) 设置vertical之后标题的占比&#39;,
+            code: `
+                    &lt;sw-tab-set vertical :width="40"&gt;
+                        &lt;sw-tab heading="标题1" :index="1"&gt;
+                            &lt;sw-list&gt;
+                                &lt;sw-list-item&gt;
+                                    &lt;sw-list-col&gt;竖向内容1&lt;/sw-list-col&gt;
+                                &lt;/sw-list-item&gt;
+                            &lt;/sw-list&gt;
+                        &lt;/sw-tab&gt;
+                        &lt;sw-tab heading="标题2" :index="2"&gt;
+                            &lt;sw-list&gt;
+                                &lt;sw-list-item&gt;
+                                    &lt;sw-list-col&gt;竖向内容2&lt;/sw-list-col&gt;
+                                &lt;/sw-list-item&gt;
+                            &lt;/sw-list&gt;
+                        &lt;/sw-tab&gt;
+                    &lt;/sw-tab-set&gt;`
+        },
+        {
+            title: &#39;选项卡点击事件&#39;,
+            desc: &#39;tab-change 回调参数：选中的index&#39;,
+            code: `
+                    &lt;sw-tab-set @tab-change="tabsetChange"&gt;
+                        &lt;sw-tab heading="标题1" :index="1"&gt;
+                            横向内容1
+                        &lt;/sw-tab&gt;
+                        &lt;sw-tab heading="标题2" :index="2"&gt;
+                            横向内容2
+                        &lt;/sw-tab&gt;
+                    &lt;/sw-tab-set&gt;`,
+            options: {
+                methods: {
+                    tabsetChange(index){
+                        alert("测试tabset回调 index: " + index);
+                    }
+                }
+            }
+        },
+        {
+            title: &#39;单个选项卡点击事件&#39;,
+            desc: &#39;tab-change 回调参数：选项卡的index&#39;,
+            code: `
+                     &lt;sw-tab-set&gt;
+                        &lt;sw-tab heading="标题1" @tab-change="tabChange" :index="1"&gt;
+                            横向内容1
+                        &lt;/sw-tab&gt;
+                        &lt;sw-tab heading="标题2" :index="2"&gt;
+                            横向内容2
+                        &lt;/sw-tab&gt;
+                    &lt;/sw-tab-set&gt;`,
+            options: {
+                methods: {
+                    tabChange(index){
+                        alert("测试tab回调 index: " + index);
+                    }
+                }
+            }
+        }
+    ]
+    import Base from &#39;../base.vue&#39;
+    export default {
+        name: &#39;PageAccordion&#39;,
+        extends:Base,
+        data(){
+            return {
+                demos: demos
+            }
+        }
+    }
+&lt;/script&gt;
+
+&lt;style&gt;
+    @import &#39;../demo.less&#39;
+&lt;/style&gt;</code></pre>
+</div>
+            </div>
+            <div class="btn-method-box">
+                <button class="btn btn-info btn-viewDemo" type="button">查看示例</button>
+                <button class="btn btn-info btn-editDemo" type="button">编辑代码</button>
+            </div>
+
+            <div class="device"></div>
+        </div>
+    
 </div>
 
                 </div>
@@ -569,6 +763,153 @@
 
         
 
+        
+            <div id="property" class="tab-pane">
+                <h2 class="off-left">属性</h2>
+
+                
+                    <div id="property_index" class="property item">
+    <h3 class="name"><code>index</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p class="foundat">
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_modules_tab_TabSet.vue.html#l53"><code>src&#x2F;modules&#x2F;tab&#x2F;TabSet.vue:53</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <div class="stdoc-code"><p>指定默认选中的选项卡，默认为0</p>
+</div>
+    </div>
+
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_vertical" class="property item">
+    <h3 class="name"><code>vertical</code></h3>
+    <span class="type">Boolean</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p class="foundat">
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_modules_tab_TabSet.vue.html#l33"><code>src&#x2F;modules&#x2F;tab&#x2F;TabSet.vue:33</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <div class="stdoc-code"><p>是否竖排</p>
+</div>
+    </div>
+
+    
+        <p><strong>Default:</strong></p>
+         <code> false || null</code>
+    
+
+    
+
+    
+</div>
+
+                
+                    <div id="property_width" class="property item">
+    <h3 class="name"><code>width</code></h3>
+    <span class="type">Number</span>
+
+    
+
+    
+
+    
+
+    
+
+    <div class="meta">
+        
+            
+                
+                <p class="foundat">
+                
+                Defined in
+                
+            
+        
+        
+        <a href="../files/src_modules_tab_TabSet.vue.html#l43"><code>src&#x2F;modules&#x2F;tab&#x2F;TabSet.vue:43</code></a>
+        
+        </p>
+
+        
+
+        
+    </div>
+
+    <div class="description">
+        <div class="stdoc-code"><p>设置选项卡头部的宽度，只有竖排的情况下才起作用</p>
+</div>
+    </div>
+
+    
+        <p><strong>Default:</strong></p>
+         <code> 20</code>
+    
+
+    
+
+    
+</div>
+
+                
+            </div>
         
 
         

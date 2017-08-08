@@ -202,6 +202,24 @@
              
                 <dt>
                     <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/控件类组件.html">控件类组件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/FilterContainer.html">FilterContainer</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
                     <a href="../modules/提示组件.html">提示组件</a>
                 </dt>
                 <dd>
@@ -277,6 +295,14 @@
                     
                        <li>
                             
+                           <a href="../classes/Swipe.html">Swipe</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                       <li>
+                            
                            <a href="../classes/Toast.html">Toast</a>
                            <ul>
                                 
@@ -294,14 +320,6 @@
                        <li>
                             
                            <a href="../classes/Pullup.html">Pullup</a>
-                           <ul>
-                                
-                           </ul>
-                       </li>
-                    
-                       <li>
-                            
-                           <a href="../classes/Swipe.html">Swipe</a>
                            <ul>
                                 
                            </ul>
@@ -328,6 +346,24 @@
                        <li>
                             
                            <a href="../classes/Badge.html">Badge</a>
+                           <ul>
+                                
+                           </ul>
+                       </li>
+                    
+                    </ul>
+                </dd>
+             
+                <dt>
+                    <span class="glyphicon glyphicon-minus"></span>
+                    <a href="../modules/筛选控件.html">筛选控件</a>
+                </dt>
+                <dd>
+                    <ul>
+                   
+                       <li>
+                            
+                           <a href="../classes/FilterCheckbox.html">FilterCheckbox</a>
                            <ul>
                                 
                            </ul>
@@ -448,7 +484,13 @@
     &lt;div :class=&#x27;tabsClassObject&#x27;&gt;
         &lt;ul :class=&#x27;verticalClass&#x27;&gt;
             &lt;!--tab标题--&gt;
-            &lt;li class=&#x27;ph-col ph-tab-nav&#x27; :class=&quot;{&#x27;active&#x27;: item.index == activeIndex}&quot; v-for=&#x27;(item, index) in tabbarList&#x27; :key=&#x27;item.index&#x27; @click=&#x27;onTabClick(item.index)&#x27;&gt;&lt;a href=&#x27;javascript:;&#x27;&gt;{{item.heading}}&lt;/a&gt;&lt;/li&gt;
+            &lt;li class=&#x27;ph-col ph-tab-nav&#x27; 
+                :class=&quot;{&#x27;active&#x27;: item.index == activeIndex}&quot; 
+                v-for=&#x27;(item, index) in tabbarList&#x27; 
+                :key=&#x27;item.index&#x27; 
+                @click=&#x27;onTabClick(item.index)&#x27;&gt;
+                &lt;a href=&#x27;javascript:;&#x27;&gt;{{item.heading}}&lt;/a&gt;
+            &lt;/li&gt;
         &lt;/ul&gt;
         &lt;!--tab内容--&gt;
         &lt;div :class=&#x27;contentClassObject&#x27;&gt;&lt;slot&gt;&lt;/slot&gt;&lt;/div&gt;
@@ -462,7 +504,7 @@
      * @extends Base
      * @Constructor
      * @since 0.0.1
-     * @demo tab|tab.vue
+     * @demo Tabset|Tabset.vue
      * @show true
      */
     import SwBase from &#x27;../Base.vue&#x27;
@@ -470,17 +512,34 @@
         name: &#x27;SwTabSet&#x27;,
         extends: SwBase,
         props: {
+           /**
+            * 是否竖排
+            * @property vertical
+            * @type Boolean
+            * @default false || null
+            * */
             vertical: {
                 type: Boolean,
                 default: false
             },
+           /**
+            * 设置选项卡头部的宽度，只有竖排的情况下才起作用
+            * @property width
+            * @type Number
+            * @default 20
+            * */
             width: {
-                type: [Number, String],
-                default: 33
+                type: Number,
+                default: 20
             },
+           /**
+            * 指定默认选中的选项卡，默认为0
+            * @property index
+            * @type Number
+            * @default 
+            * */
             defaultActiveIndex: {
-                type: [Number, String],
-                default: undefined
+                type: [Number, String]
             }
         },
         data () {

@@ -10,6 +10,8 @@ YUI.add("yuidoc-meta", function(Y) {
         "Col",
         "Dialog",
         "Drag",
+        "FilterCheckbox",
+        "FilterContainer",
         "Grid",
         "Icon",
         "Image",
@@ -41,10 +43,12 @@ YUI.add("yuidoc-meta", function(Y) {
         "基础组件",
         "布局组件",
         "弹出框组件",
+        "控件类组件",
         "提示组件",
         "搜索组件",
         "操作类组件",
         "标签组件",
+        "筛选控件",
         "表单组件",
         "辅助组件",
         "选项卡"
@@ -119,6 +123,15 @@ YUI.add("yuidoc-meta", function(Y) {
             ]
         },
         {
+            "displayName": "控件类组件",
+            "name": "控件类组件",
+            "classes": [
+                {
+                    "name": "FilterContainer"
+                }
+            ]
+        },
+        {
             "displayName": "提示组件",
             "name": "提示组件",
             "classes": [
@@ -154,6 +167,9 @@ YUI.add("yuidoc-meta", function(Y) {
                     "name": "Steps"
                 },
                 {
+                    "name": "Swipe"
+                },
+                {
                     "name": "Toast"
                 },
                 {
@@ -161,9 +177,6 @@ YUI.add("yuidoc-meta", function(Y) {
                 },
                 {
                     "name": "Pullup"
-                },
-                {
-                    "name": "Swipe"
                 }
             ]
         },
@@ -177,6 +190,15 @@ YUI.add("yuidoc-meta", function(Y) {
                 },
                 {
                     "name": "Badge"
+                }
+            ]
+        },
+        {
+            "displayName": "筛选控件",
+            "name": "筛选控件",
+            "classes": [
+                {
+                    "name": "FilterCheckbox"
                 }
             ]
         },

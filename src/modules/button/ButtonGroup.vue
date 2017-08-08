@@ -12,7 +12,7 @@
      * @extends Base
      * @Constructor
      * @since 0.0.1
-     * @demo buttongroup|button-group.vue
+     * @demo button-group|button-group.vue
      * @show true
      */
     import SwBase from '../Base.vue'

@@ -3,7 +3,7 @@
 <head>
     <meta charset="utf-8">
     <meta name="viewport" content="width=device-width, initial-scale=1, maximum-scale=1.0, minimal-ui" />
-    <title>ListHeader - swan-ui</title>
+    <title>src/modules/filter/components/FilterContainer.vue - swan-ui</title>
   
     <link rel="stylesheet" href="../assets/vendor/prettify/prettify-min.css">
     <link rel="stylesheet" href="../assets/vendor/bootstrap/css/bootstrap.css">
@@ -475,338 +475,107 @@
             <div id="docs-main">
                 <div class="content">
                     <div class="page-header">
-    <h1>ListHeader</h1>
+    <h1>src/modules/filter/components/FilterContainer.vue <small>File</small></h1>
 </div>
- <div class="well well-small sign-left3">
-      <div class="stdoc-code"></div>
- </div>
 
-    <div class="well well-small sign-left2 container-fluid" id="classesItems">
-        <div class="row">
-
-            <div class="index-section methods col-sm-4">
-                <h3>方法</h3>
-                
-            </div>
-
-            <div class="index-section properties col-sm-4">
-                <h3>属性</h3>
-                
-                    <ul class="index-list properties extends">
-                        
-                            <li class="index-item property">
-                                <a href="#" data-tabid="#property" data-anchor="#property_classPrefix" data-tablink="classPrefix">classPrefix</a>
-
-                                
-                                
-                            </li>
-                        
-                    </ul>
-                
-            </div>
-
-            <div class="index-section events col-sm-4">
-                <h3>事件</h3>
-                
-            </div>
-        </div>
-    </div>
-
-<div class="">
-    
-        <ul id="itemTab" class="nav nav-tabs">
-            <li class="active"><a data-toggle="tab" href="#class">详情</a></li>
-            
-            
-                <li class=""><a data-toggle="tab" href="#property">属性</a></li>
-            
-            
-        </ul>
-    
-    <div class="tab-content">
-        <div id="class" class="tab-pane active">
-            <div class="well well-small classDetail sign-left1">
-            
-
-            
-                <div class="extends">
-                    Extends Base
-                </div>
-            
-
-            
-                <div class="foundat">
-                    Defined in: <a href="../files/src_modules_list_ListHeader.vue.html#l8"><code>src&#x2F;modules&#x2F;list&#x2F;ListHeader.vue:8</code></a>
-                </div>
-            
-
-            
-                
-                    Module: <a href="../modules/列表组件.html">列表组件</a>
-                
-            
-
-            
-                <p>Available since 0.0.1</p>
-            
-        </div>
-
-        
-            
-                <div class="constructor">
-                    <h2>Constructor</h2>
-                    <div id="method_ListHeader" class="method item">
-    <h3 class="name">ListHeader</h3>
-    <code>
-    ListHeader
-    
-        <span class="paren">()</span>
-    
-    </code>
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p class="foundat">
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_modules_list_ListHeader.vue.html#l8"><code>src&#x2F;modules&#x2F;list&#x2F;ListHeader.vue:8</code></a>
-        
-        </p>
-
-
-        
-
-        
-            <p>Available since 0.0.1</p>
-        
-    </div>
-
-    <div class="description well well-small sign-left3">
-        
-    </div>
-
-    
-
-    
-
-    
-        <div class="example app-example">
-            <h4>Example:</h4>
-            <ul class="nav nav-tabs example-list">
-                
-                <li role="presentation"  class="active"  data-demo="https://future-team.github.io/swan-ui/examples/index.html#/list"  _no='0'> <a>list</a></li>
-                
-            </ul>
-            <div class="example-content  showdemo ">
-                <div class="stdoc-code"><pre class="code prettyprint"><code>&lt;script&gt;
-    const demos = [
-        {
-            title: &#39;基本用法&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                        &lt;sw-list-header&gt;列表标题&lt;/sw-list-header&gt;
-                        &lt;sw-list-item&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" value="请输入" /&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;居左居右&#39;,
-            desc: &#39;属性：heading、tail&#39;,
-            code: `
-                    &lt;sw-list style="color: #fff;"&gt;
-                        &lt;sw-list-item&gt;
-                            &lt;sw-list-col heading style="background: #ff6633"&gt;
-                                &lt;label&gt;heading&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col tail style="background: #bbb"&gt;
-                                 &lt;label&gt;tail&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                        &lt;sw-list-item&gt;
-                            &lt;sw-list-col style="background: #ff6633"&gt;
-                                &lt;label&gt;无heading&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col style="background: #bbb"&gt;
-                                 &lt;label&gt; 无tail&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;禁用状态&#39;,
-            desc: &#39;属性：disabled&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                        &lt;sw-list-item disabled&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" value="请输入" /&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;Error状态&#39;,
-            desc: &#39;属性：error，文本为红色&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                         &lt;sw-list-item error&gt;
-                            &lt;sw-list-col heading&gt;
-                                &lt;label&gt;姓名&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" placeholder="请输入" value="error" clear error/&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;是否必需&#39;,
-            desc: &#39;属性：required，前面有红色星&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                          &lt;sw-list-item required&gt;
-                            &lt;sw-list-col&gt;
-                                &lt;sw-input type="text" placeholder="请输入姓名"/&gt;
-                            &lt;/sw-list-col&gt;
-                          &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`
-        },
-        {
-            title: &#39;右箭头&#39;,
-            desc: &#39;属性：navigate&#39;,
-            code: `
-                    &lt;sw-list&gt;
-                          &lt;sw-list-item navigate&gt;
-                            &lt;sw-list-col heading&gt;
-                                &lt;label&gt;性别&lt;/label&gt;
-                            &lt;/sw-list-col&gt;
-                            &lt;sw-list-col tail&gt;
-                                &lt;sw-input type="text" p
-                                          placeholder="男/女"
-                                          @click.native="handleClick"
-                                          disabled/&gt;
-                            &lt;/sw-list-col&gt;
-                        &lt;/sw-list-item&gt;
-                    &lt;/sw-list&gt;`,
-            options: {
-                methods: {
-                    handleClick(){
-                        window.open(&#39;https://cn.vuejs.org/v2/api/#v-on&#39;,&#39;_blank&#39;)
-                    }
-                }
-            }
-        }
-    ]
-    import Base from &#39;../base.vue&#39;
+<div class="file">
+    <pre class="prettyprint linenums" id='src_code'>
+&lt;template&gt;
+    &lt;div class=&quot;ph-filter-occupy&quot;  &gt;
+        &lt;div class=&quot;ph-filter-container&quot; :class=&quot;{&#x27;ph-filter-container-shadow&#x27;: activeNavIndex != -1}&quot;&gt;
+            &lt;div class=&quot;ph-filter-shadow&quot; @click=&quot;onShadowClick&quot;&gt;&lt;/div&gt;
+            &lt;ul class=&quot;cat ph-row ph-filter-header&quot; &gt;
+                &lt;li v-for=&quot;(item, index) in filterData&quot; 
+                    class=&quot;ph-col ph-filter-header-item&quot; 
+                    :key=&quot;index&quot; 
+                    :class=&quot;{&#x27;active&#x27;: index == activeNavIndex}&quot; 
+                    @click=&quot;onNavClick(index)&quot;&gt;
+                    &lt;a href=&quot;javascript:;&quot;&gt;
+                        &lt;span class=&quot;ph-filter-header-text&quot;&gt;{{item.activeValue}}&lt;/span&gt;
+                        &lt;span class=&quot;gfs-icon ph-icon ph-icon-sm ph-icon-default icon-expand-more&quot;&gt;&lt;/span&gt;
+                    &lt;/a&gt;
+                &lt;/li&gt;
+            &lt;/ul&gt;
+            &lt;div v-for=&quot;(item, index) in filterData&quot; :key=&quot;index&quot;&gt;
+                &lt;filter-single-row v-if=&quot;item.type == &#x27;single-row&#x27;&quot; 
+                                   :data=&quot;item&quot; 
+                                   :show=&quot;activeNavIndex == index&quot; 
+                                   @close-shadow=&quot;onShadowClick&quot; 
+                                   @valid-filter=&quot;onValidFilterChange&quot;&gt;&lt;/filter-single-row&gt;
+                &lt;filter-double-row v-if=&quot;item.type == &#x27;double-row&#x27;&quot; 
+                                   :data=&quot;item&quot; 
+                                   :show=&quot;activeNavIndex == index&quot; 
+                                   @close-shadow=&quot;onShadowClick&quot; 
+                                   @valid-filter=&quot;onValidFilterChange&quot;&gt;&lt;/filter-double-row&gt;
+            &lt;/div&gt;
+        &lt;/div&gt;
+    &lt;/div&gt;
+&lt;/template&gt;
+&lt;script&gt;
+   /**
+    * @class FilterContainer
+    * @module 筛选控件
+    * @extends Component
+    * @constructor
+    * @since 0.0.1
+    * @demo filter|filter.vue
+    * @show true
+    * */
+    import SwBase from &#x27;../../Base.vue&#x27;
+    import FilterSingleRow from &#x27;./FilterSingleRow.vue&#x27;
+    import FilterDoubleRow from &#x27;./FilterDoubleRow.vue&#x27;
     export default {
-        name: &#39;PageList&#39;,
-        extends:Base,
-        data(){
+        name: &#x27;SwFilterContainer&#x27;,
+        extends: SwBase,
+        components: {
+            FilterSingleRow,
+            FilterDoubleRow
+        },
+        props: {
+           /**
+            * 数据
+            * @property data
+            * @type Array
+            * @default []
+            * */
+            filterData: {
+                type: Array,
+                default: []
+            }
+        },
+        data() {
             return {
-                demos: demos
+                activeNavIndex: -1
+            }
+        },
+        methods: {
+            onNavClick(activeNavIndex){
+                if (activeNavIndex == this.activeNavIndex) {
+                    this.activeNavIndex = -1
+                } else {
+                    this.activeNavIndex = activeNavIndex
+                }
+            },
+            onShadowClick(){
+                this.activeNavIndex = -1
+            },
+            onValidFilterChange(){
+                let activeFilterData = []
+                if (this.filterData &amp;&amp; this.filterData.length) {
+                    this.filterData.forEach(function(panelData) {
+                        let activePanelData = {
+                            key: panelData.activeKey,
+                            value: panelData.activeValue
+                        }
+                        activeFilterData.push(activePanelData)
+                    }, this)
+                }
+                this.$emit(&#x27;valid-filter-change&#x27;, activeFilterData)
             }
         }
     }
-&lt;/script&gt;</code></pre>
-</div>
-            </div>
-            <div class="btn-method-box">
-                <button class="btn btn-info btn-viewDemo" type="button">查看示例</button>
-                <button class="btn btn-info btn-editDemo" type="button">编辑代码</button>
-            </div>
-
-            <div class="device"></div>
-        </div>
-    
-</div>
-
-                </div>
-            
-        </div>
-
-        
-
-        
-            <div id="property" class="tab-pane">
-                <h2 class="off-left">属性</h2>
-
-                
-                    <div id="property_classPrefix" class="property item">
-    <h3 class="name"><code>classPrefix</code></h3>
-    <span class="type">String</span>
-
-    
-
-    
-
-    
-
-    
-
-    <div class="meta">
-        
-            
-                
-                <p class="foundat">
-                
-                Defined in
-                
-            
-        
-        
-        <a href="../files/src_modules_list_ListHeader.vue.html#l22"><code>src&#x2F;modules&#x2F;list&#x2F;ListHeader.vue:22</code></a>
-        
-        </p>
-
-        
-
-        
-    </div>
-
-    <div class="description">
-        <div class="stdoc-code"><p>样式前缀</p>
-</div>
-    </div>
-
-    
-        <p><strong>Default:</strong></p>
-         <code> &#x27;list-header&#x27;</code>
-    
-
-    
-
-    
-</div>
-
-                
-            </div>
-        
-
-        
-    </div>
+&lt;/script&gt;
+    </pre>
 </div>
 
                 </div>
