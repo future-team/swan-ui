@@ -57,7 +57,6 @@ const components = {
     Prompt,
     Popup,
     Popover,
-    Toast,
     Steps,
     Accordion,
     TabSet,

@@ -1,24 +1,24 @@
 <template>
     <div :class="itemClassObject">
-        <list-col>
-            <checkbox :label="label" 
+        <sw-list-col>
+            <sw-checkbox :label="label" 
                       :disabled="disabled" 
                       @change="onCheckboxChange" 
-                      :checked="checked && !disabled"></checkbox>
-        </list-col>
+                      :checked="checked && !disabled"></sw-checkbox>
+        </sw-list-col>
     </div>
 </template>
 
 <script>
     import SwBase from '../../Base.vue'
-    import ListCol from '../../list/ListCol.vue'
-    import Checkbox from '../../checkbox/Checkbox.vue'
+    import SwListCol from '../../list/ListCol.vue'
+    import SwCheckbox from '../../checkbox/Checkbox.vue'
     export default {
         name: 'SwFilterItemCheckbox',
         extends: SwBase,
         components: {
-            ListCol,
-            Checkbox
+            SwListCol,
+            SwCheckbox
         },
         props: {               
             itemIndex: {

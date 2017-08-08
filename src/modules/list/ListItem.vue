@@ -16,11 +16,11 @@
      * @show true
      */
     import SwBase from '../Base.vue'
-    import Row from '../grid/Row.vue'
+    import SwRow from '../grid/Row.vue'
     export default {
         name: 'SwListItem',
         extends: SwBase,
-        components: {Row},
+        components: {SwRow},
         props: {
             /**
              * 样式前缀
