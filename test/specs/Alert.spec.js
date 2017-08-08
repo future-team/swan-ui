@@ -9,7 +9,7 @@ describe('Alert', function() {
         destroyVm(vm)
     })
 
-    it('title', function (){
+    it('title,content', function (){
          vm = createVue({
             template: `
                 <sw-alert v-model="true"
@@ -22,6 +22,29 @@ describe('Alert', function() {
             }
         })
         expect(vm.$el.querySelector('.ph-dialog-title').textContent).toBe('这是标题')
+        expect(vm.$el.querySelector('.ph-dialog-body').textContent.trim()).toBe('这是内容')
+    })
+
+    it('buttons', function (){
+         vm = createVue({
+            template: `
+                <sw-alert v-model="true"
+                          title="这是标题"
+                          content="这是内容"
+                          :buttons="buttons"></sw-alert>
+            `,
+            data(){
+                return {
+                    buttons: [
+                        {text: '取消', phStyle: 'gray', otherProps: {hollow: true}}
+                    ]
+                }
+            },
+            components: {
+                'sw-alert': Alert
+            }
+        })
+        expect(vm.$el.querySelector('.ph-button-inner').textContent.trim()).toBe('取消')
     })
 
 })
