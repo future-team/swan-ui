@@ -32,8 +32,8 @@ import Search from './modules/search/Search.vue'
 import Pullup from './modules/pullup/PullUp.vue'
 import Image from './modules/image/Image.vue'
 import ImageList from './modules/image/ImageList.vue'
-import FilterContainer from './modules/sw-filter/components/FilterContainer.vue'
-import FilterCheckboxContainer from './modules/sw-filter/components/FilterCheckboxContainer.vue'
+import FilterContainer from './modules/filter/components/FilterContainer.vue'
+import FilterCheckboxContainer from './modules/filter/components/FilterCheckboxContainer.vue'
 const components = {
     Button,
     ButtonGroup,
