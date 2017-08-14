@@ -36,7 +36,11 @@
         let Demo = Vue.extend(Object.assign({},{
             template: `<div>${this.code}</div>`
         },this.options))
-        new Demo().$mount('#demo')
+        this.demoVm = new Demo().$mount('#demo')
+      },
+      destroyed(){
+          this.demoVm && this.demoVm.$el && this.demoVm.$el.parentNode &&
+          this.demoVm.$el.parentNode.removeChild(this.demoVm.$el)
       }
   }
 </script>

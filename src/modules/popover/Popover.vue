@@ -47,7 +47,7 @@
                     height: this.targetElem.clientHeight,
                     offsetTop: getOffset(this.targetElem).offsetTop
                 }
-                document.addEventListener('click', this.handleDocumentClick)
+                // document.addEventListener('click', this.handleDocumentClick)
             },
             handleClick(){
                 this.visible = !this.visible
@@ -168,7 +168,7 @@
             this.init()
         },
         destroyed(){
-            document.removeEventListener('click', this.handleDocumentClick)
+            // document.removeEventListener('click', this.handleDocumentClick)
         },
         props: {
             /**

@@ -53,7 +53,7 @@
         computed: {
             currentButtons(){
                 return this.buttons ? this.buttons : [
-                    {text: '取消', onHandle: this.handleToggle.bind(this.false)},
+                    {text: '取消'},
                     {text: '确定', onHandle: this.handleConfirm}
                 ]
             },
