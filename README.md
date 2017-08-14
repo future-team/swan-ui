@@ -3,7 +3,7 @@ Vue Components for Mobile App.
 
 - [示例](https://future-team.github.io/swan-ui/examples/index.html#/)
 - [文档](http://future-team.github.io/swan-ui/doc/index.html) 文档工具开发中，后续会做迁移
-- [临时文档](https://github.com/future-team/swan-ui/tree/master/examples/doc﻿)
+- [临时文档](https://github.com/future-team/swan-ui/tree/master/examples/doc)
 
 ## Install
 
