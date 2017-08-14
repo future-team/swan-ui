@@ -58,8 +58,8 @@ Vue.use(SwanUI)
 ```javascript
 import Vue from 'vue'
 import { Button, Star} from 'swan-ui'
-<!-- import Button from 'swan-ui/lib/Button' -->
-<!-- import Star from 'swan-ui/lib/Star' -->
+//import Button from 'swan-ui/lib/Button'
+//import Star from 'swan-ui/lib/Star'
 Vue.component(Button.name,Button)
 Vue.component(Star.name,Star)
 ```
