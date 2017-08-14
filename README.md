@@ -1,6 +1,8 @@
 # swan-ui
 Vue Components for Mobile App.
 
+[示例](https://future-team.github.io/swan-ui/examples/index.html#/)
+
 ## Install
 
 ```
