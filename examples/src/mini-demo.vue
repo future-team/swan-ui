@@ -28,19 +28,27 @@
           escape2Html(str) {
               let  map={'<':'&lt;','>':'&gt;'}
               return str.replace(/(<|>)/ig,function(all,t){return map[t]})
+          },
+          createVm(){
+            // 需要在resolve.alias中配置 vue: 'vue/dist/vue.js'，否则会报错：
+            // [Vue warn]: You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build.
+            let Demo = Vue.extend(Object.assign({},{
+                template: `<div>${this.code}</div>`
+            },this.options))
+            this.demoVm = new Demo().$mount('#demo')
+          },
+          destroyVm(){
+             this.demoVm 
+             && this.demoVm.$el 
+             && this.demoVm.$el.parentNode 
+             && this.demoVm.$el.parentNode.removeChild(this.demoVm.$el)
           }
       },
       mounted(){
-        //  需要在resolve.alias中配置 vue: 'vue/dist/vue.js'，否则会报错：
-        // [Vue warn]: You are using the runtime-only build of Vue where the template compiler is not available. Either pre-compile the templates into render functions, or use the compiler-included build.
-        let Demo = Vue.extend(Object.assign({},{
-            template: `<div>${this.code}</div>`
-        },this.options))
-        this.demoVm = new Demo().$mount('#demo')
+       this.createVm()
       },
       destroyed(){
-          this.demoVm && this.demoVm.$el && this.demoVm.$el.parentNode &&
-          this.demoVm.$el.parentNode.removeChild(this.demoVm.$el)
+          this.destroyVm()
       }
   }
 </script>
