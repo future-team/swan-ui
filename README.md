@@ -98,7 +98,7 @@ Vue.component(Star.name,Star)
 
 在.vue文件中
 ```xml
-<style src="phoenix-styles/less/modules/buttons.less"></style>
+<style src="phoenix-styles/less/phoenix-styles.less"></style>
 ```
 或者
 ```javascript
