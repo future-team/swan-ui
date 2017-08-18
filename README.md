@@ -6,15 +6,15 @@ Vue Components for Mobile App.
 - [临时文档](https://github.com/future-team/swan-ui/tree/master/examples/doc)
 
 
-swan-ui需要与[phoenix-styles](http://future-team.github.io/phoenix-styles/example/index.html)样式库配合使用
+swan-ui需要与[phoenix-styles](http://future-team.github.io/phoenix-styles/example/index.html)样式库配合使用，分别引入组件和样式。
 
-组件引入方式有：
+组件引入方式：
 
 - script标签引入
 - 全局注册
 - 按需引入注册
 
-样式引入方式有：
+样式引入方式：
 
 - html中link标签引入
 - 中从npm包引入
