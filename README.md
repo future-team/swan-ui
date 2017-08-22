@@ -120,4 +120,93 @@ import 'phoenix-styles/dist/ios-skin.min.css'
 
 可参考文档 [vue-loader  webpack配置](https://vue-loader.vuejs.org/zh-cn/options.html)
 
+### webpack2配置
+
+#### 不分离css
+
+```javascript
+module.exports = {
+    // other options...
+    resolve: {
+        extensions: ['.js','.vue']
+    },
+    module: {
+        rules:[{
+                enforce: 'pre',
+                test: /\.vue$/,
+                loader: 'eslint-loader'
+        },{
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            exclude: /node_modules/
+        },{
+            test:/\.js$/,
+            use: ['babel-loader'],
+            exclude: /node_modules/
+        },{
+            test: /\.css$/,
+            use: 'css-loader'
+        },{
+            test:/\.less$/,
+            use: "style-loader!css-loader!less-loader"
+        },{
+            test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+            use: 'file-loader?name=../dist/iconfont/[name].[ext]'
+        }]
+    }
+}
+```
+
+#### 分离css
+
+```javascript
+var ExtractTextPlugin = require("extract-text-webpack-plugin")
+
+module.exports = {
+    // other options...
+    resolve: {
+        extensions: ['.js','.vue']
+    },
+    module: {
+        rules:[{
+            enforce: 'pre',
+            test: /\.vue$/,
+            loader: 'eslint-loader'
+        },{
+            test: /\.vue$/,
+            loader: 'vue-loader',
+            exclude: /node_modules/,
+            options: {
+                loaders: {
+                    css: ExtractTextPlugin.extract({
+                        use: 'css-loader',
+                        fallback: 'vue-style-loader' 
+                    }),
+                    less: ExtractTextPlugin.extract({
+                        use: 'less-loader',
+                        fallback: 'vue-style-loader'
+                    })
+                }
+            }
+        },{
+            test:/\.js$/,
+            use: ['babel-loader'],
+            exclude: /node_modules/
+        },{
+            test: /\.css$/,
+            use: ExtractTextPlugin.extract('css-loader')
+        },{
+            test:/\.less$/,
+            use:  ExtractTextPlugin.extract('less-loader')
+        },{
+            test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
+            use: 'file-loader?name=../dist/iconfont/[name].[ext]'
+        }]
+    },
+    plugins: [
+        new ExtractTextPlugin("style.css")
+    ]
+}
+```
+
 
