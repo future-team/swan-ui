@@ -47,7 +47,5 @@ module.exports = {
             use: 'file-loader?name=./iconfont/[name].[ext]'
         }]
     },
-    plugins: [
-        new webpack.optimize.UglifyJsPlugin()
-    ]
+    plugins: []
 };

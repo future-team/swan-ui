@@ -10,6 +10,7 @@ var gulp = require('gulp'),
     exampleConfig = require('./webpack/example.config.js'),
     webpackConfig = require('./webpack/webpack.config.js'),
     WebpackDevServer = require("webpack-dev-server"),
+    projectName = require("./package.json").name,
     fs = require('fs'),
     devPort = 3005;
 
@@ -58,6 +59,19 @@ gulp.task('webpack', function (done) {
     });
 });
 
+gulp.task('min-webpack', ['webpack'], function (done) {
+    var wbpk = Object.create(webpackConfig);
+    wbpk.output.filename = projectName+'.min.js';
+    wbpk.plugins.push(new webpack.optimize.UglifyJsPlugin());
+    webpack(wbpk).run(function (err, stats) {
+        if (err) throw new gutil.PluginError("min-webpack", err);
+        gutil.log("[min-webpack]", stats.toString({
+            // output options
+        }));
+        done();
+    });
+});
+
 gulp.task('example-webpack', function (done) {
     webpack(exampleConfig).run(function (err, stats) {
         if (err) throw new gutil.PluginError("exampleWebpack", err);
@@ -81,6 +95,6 @@ gulp.task('karma', function (done) {
     }, done).start();
 });
 
-gulp.task('default', ['babel','component-webpack','webpack', 'example-webpack']);
+gulp.task('default', ['babel','component-webpack','min-webpack', 'example-webpack']);
 gulp.task('demo', ['example', 'open']);
 gulp.task('test',['karma']);
