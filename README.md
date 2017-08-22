@@ -98,9 +98,10 @@ Vue.component(Star.name,Star)
 
 在.vue文件中
 ```xml
-<style src="phoenix-styles/less/phoenix-styles.less"></style>
+<style lang="less" src="phoenix-styles/less/phoenix-styles.less"></style>
 ```
-或者
+或者在js文件中引入：
+
 ```javascript
 <!-- 全部引入 -->
 import 'phoenix-styles/dist/phoenix-styles.min.css'
