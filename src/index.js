@@ -93,4 +93,4 @@ if (typeof window !== 'undefined' && window.Vue) {
     install(window.Vue)
 }
 
-module.exports = Object.assign(components,{install})
+module.exports = Object.assign(components,{install,Toast})
