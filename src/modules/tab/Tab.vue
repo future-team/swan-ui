@@ -30,8 +30,8 @@
             /**
             * 选项卡序号
             * @property vertical
-            * @type Boolean
-            * @default false
+            * @type [Number, String]
+            * @default 
             * */
             index: {
                 type: [Number, String]
@@ -62,12 +62,16 @@
             }
         },
         mounted () {
+            this.$parent.updateTabbar()
             this.active = this.$parent.activeIndex
         },
         watch: {
             '$parent.activeIndex': function (newValue) {
                 this.active = newValue
                 this.$emit('tab-change', newValue)
+            },
+            heading: function(){
+                this.$parent.updateTabbar()
             }
         }
     }

@@ -123,7 +123,7 @@ import 'phoenix-styles/dist/ios-skin.min.css'
 
 ### webpack2配置
 
-#### 不分离css
+#### 不提取css
 
 ```javascript
 module.exports = {
@@ -158,7 +158,7 @@ module.exports = {
 }
 ```
 
-#### 分离css
+#### 提取css
 
 ```javascript
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
@@ -210,4 +210,7 @@ module.exports = {
 }
 ```
 
+# 版本更新
 
+- v1.0.2 提供压缩/未压缩打包文件
+- v1.0.3 修复TabSet组件无法动态更新的问题

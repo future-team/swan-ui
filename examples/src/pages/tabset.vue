@@ -19,7 +19,7 @@
             desc: 'vertical(默认false) 设置选项卡竖排',
             code: `
                     <sw-tab-set vertical>
-                        <sw-tab heading="标题1"  :index="1">
+                        <sw-tab heading="标题1"  :index="1" vertical>
                             <sw-list>
                                 <sw-list-item>
                                     <sw-list-col>竖向内容1</sw-list-col>
@@ -70,7 +70,7 @@
             options: {
                 methods: {
                     tabsetChange(index){
-                        alert("测试tabset回调 index: " + index);
+                        // alert("测试tabset回调 index: " + index);
                     }
                 }
             }
@@ -90,7 +90,65 @@
             options: {
                 methods: {
                     tabChange(index){
-                        alert("测试tab回调 index: " + index);
+                        // alert("测试tab回调 index: " + index);
+                    }
+                }
+            }
+        },
+        {
+            title: '动态传值',
+            code: `
+                    <sw-button @click="handleClick">更新</sw-button>
+                    <sw-tab-set :defaultActiveIndex="activeIndex" vertical @tab-change="tabsetChange">
+                        <sw-tab v-for="item in tabs" :heading="item.heading" :index="item.index" :key="item.key">
+                            {{item.content}}
+                        </sw-tab>
+                    </sw-tab-set>`,
+            options: {
+                data(){
+                    return {
+                        activeIndex: 1,
+                        tabs: []
+                    }
+                },
+                methods:{
+                    handleClick(){
+                        if(this.tabs.length == 0){
+                            this.tabs = [
+                                {
+                                    heading: '标题1',
+                                    index: 1,
+                                    content: '内容1'
+                                },
+                                {
+                                    heading: '标题2',
+                                    index: 2,
+                                    content: '内容2'
+                                }
+                            ]
+                        }else{
+                            this.tabs = [
+                                {
+                                    heading: '标题3',
+                                    index: 3,
+                                    content: '内容3'
+                                },
+                                {
+                                    heading: '标题4',
+                                    index: 4,
+                                    content: '内容4'
+                                },
+                                {
+                                    heading: '标题5',
+                                    index: 5,
+                                    content: '内容5'
+                                }
+                            ]
+                        }
+                        this.activeIndex = this.tabs[1].index
+                    },
+                    tabsetChange(index){
+                        console.log("测试tabset回调 index: " + index);
                     }
                 }
             }

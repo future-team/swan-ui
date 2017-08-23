@@ -119,6 +119,11 @@
                 this.activeIndex = index
                 this.$emit('tab-change', this.activeIndex)
             }
+        },
+        watch: {
+            defaultActiveIndex(val){
+                this.activeIndex = val
+            }
         }
     }
 </script>
