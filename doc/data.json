@@ -2578,7 +2578,7 @@
             "name": "on-confirm",
             "params": [
                 {
-                    "name": "24890244,24830245",
+                    "name": "24890244,24830245\\",
                     "description": "",
                     "type": "Array",
                     "optional": true
