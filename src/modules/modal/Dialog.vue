@@ -29,10 +29,10 @@
 <script>
     /**
      * @class Dialog
-     * @module 弹出框组件
+     * @module 弹出类组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo dialog|dialog.vue
      * @show true
      */
@@ -44,6 +44,11 @@
         mixins: [toggle],
         methods: {
             handleShadowClose(){
+                /**
+                 * 打开/关闭时触发
+                 * @event on-toggle
+                 * @param {Boolean} 组件打开/关闭状态
+                 */
                 !this.shadowDisabled && this.handleToggle(false)
             }
         },

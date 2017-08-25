@@ -3,7 +3,7 @@
         <div class="ph-filter-container" :class="{'ph-filter-container-shadow': activeNavIndex != -1}">
             <div class="ph-filter-shadow" @click="onShadowClick"></div>
             <ul class="cat ph-row ph-filter-header" >
-                <li v-for="(item, index) in filterData" 
+                <li v-for="(item, index) in data" 
                     class="ph-col ph-filter-header-item" 
                     :key="index" 
                     :class="{'active': index == activeNavIndex}" 
@@ -14,7 +14,7 @@
                     </a>
                 </li>
             </ul>
-            <div v-for="(item, index) in filterData" :key="index">
+            <div v-for="(item, index) in data" :key="index">
                 <filter-single-row v-if="item.type == 'single-row'" 
                                    :data="item" 
                                    :show="activeNavIndex == index" 
@@ -31,11 +31,64 @@
 </template>
 <script>
    /**
-    * @class FilterContainer
+    * 筛选
+    * ```code
+    * <sw-filter :data="filterData"></sw-filter>
+    * ```
+    * data数据结构,type: 'single-row'表示单列，type: 'double-row'表示双列
+    * ```code
+    *[
+    *    {   
+    *        type: 'single-row',
+    *        activeKey: '-1',
+    *        activeValue: '选择商区',
+    *        panelData: [
+    *            {key:'sjgy',value:'世纪公园'},
+    *            {key:'ljz',value:'陆家嘴'}
+    *        ]
+    *    },
+    *    {   
+    *        type: 'double-row',
+    *        activeKey: '2082',
+    *        activeValue: '雅思',
+    *        panelData: [
+    *            {
+    *                key:'2072',
+    *                value:'外语',
+    *                subPanelData: [
+    *                    {
+    *                        key:'2082',
+    *                        value:'雅思'
+    *                    }
+    *                ]
+    *            },
+    *            {
+    *                key: '2033',
+    *                value: '音乐',
+    *                subPanelData: []
+    *            }
+    *        ]
+    *    },
+    *    {   
+    *        type: 'single-row',
+    *        activeKey: '1',
+    *        activeValue: '智能排序',
+    *        panelData: [
+    *            {key:'1',value:'智能排序'},
+    *            {key:'2',value:'离我最近'},
+    *            {key:'3',value:'人气最高'},
+    *            {key:'4',value:'评价最好'},
+    *            {key:'5',value:'人均最低'},
+    *            {key:'6',value:'人均最高'}
+    *        ]
+    *    }
+    *]
+    * ```
+    * @class Filter
     * @module 筛选控件
     * @extends Component
     * @constructor
-    * @since 0.0.1
+    * @since 1.0.0
     * @demo filter|filter.vue
     * @show true
     * */
@@ -43,7 +96,7 @@
     import FilterSingleRow from './FilterSingleRow.vue'
     import FilterDoubleRow from './FilterDoubleRow.vue'
     export default {
-        name: 'SwFilterContainer',
+        name: 'SwFilter',
         extends: SwBase,
         components: {
             FilterSingleRow,
@@ -56,7 +109,7 @@
             * @type Array
             * @default []
             * */
-            filterData: {
+            data: {
                 type: Array,
                 default: []
             }
@@ -77,10 +130,15 @@
             onShadowClick(){
                 this.activeNavIndex = -1
             },
+            /**
+             * 点击某一项触发
+             * @event on-select
+             * @param {Array} 当前选中的所有选项，例如：[{key: "ljz", value: "陆家嘴"}]
+             */
             onValidFilterChange(){
                 let activeFilterData = []
-                if (this.filterData && this.filterData.length) {
-                    this.filterData.forEach(function(panelData) {
+                if (this.data && this.data.length) {
+                    this.data.forEach(function(panelData) {
                         let activePanelData = {
                             key: panelData.activeKey,
                             value: panelData.activeValue
@@ -88,7 +146,7 @@
                         activeFilterData.push(activePanelData)
                     }, this)
                 }
-                this.$emit('valid-filter-change', activeFilterData)
+                this.$emit('on-select', activeFilterData)
             }
         }
     }

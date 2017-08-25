@@ -18,10 +18,10 @@
 <script>
     /**
      * @class Toast
-     * @module 操作类组件
+     * @module 弹出类组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo toast|toast.vue
      * @show true
      */

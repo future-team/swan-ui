@@ -6,12 +6,12 @@
 
 <script>
     /**
-     * 按钮组组件
+     * 按钮组
      * @class ButtonGroup
      * @module 基础组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo button-group|button-group.vue
      * @show true
      */

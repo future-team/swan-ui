@@ -1,10 +1,10 @@
 <template>
     <div class="demo-top">
-        <sw-filter-checkbox-container 
+        <sw-filter-checkbox
             :data='filterData' 
-            :defaultActiveItemGroupIndex='2'
-            @confirmBtn-click="onConfirmBtnClick">
-        </sw-filter-checkbox-container>
+            :activeIndex='2'
+            @on-confirm="handleConfirm">
+        </sw-filter-checkbox>
     </div>
 </template>
 
@@ -17,150 +17,148 @@ export default {
         return {
             filterData: [
                 {
-                    "itemGroupKey": 1,
-                    "itemGroupLabel": "上海",
-                    "itemList": [
-                        {
-                            "itemKey": 8067981,
-                            "itemLabel": "金悦医疗美容",
-                            "disabled": false,
-                            "selected": true 
-                        },
-                        {
-                            "itemKey": 3244945,
-                            "itemLabel": "韩辉整形外科诊所",
-                            "disabled": false,
-                            "selected": true 
-                        },
-                        {
-                            "itemKey": 3326527,
-                            "itemLabel": "刘娟美甲沙龙",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 13893492,
-                            "itemLabel": "CS",
-                            "disabled": true,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 21591999,
-                            "itemLabel": "上海伊美尔港华整形美容医院",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 2368135,
-                            "itemLabel": "诗泥SPA",
-                            "disabled": true,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 5687880,
-                            "itemLabel": "吉吉靓甲美睫",
-                            "disabled": true,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 23136039,
-                            "itemLabel": "京世沙龙",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 1799866,
-                            "itemLabel": "爱慕整形",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 4175103,
-                            "itemLabel": "Berrymay健康管理",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 18418332,
-                            "itemLabel": "安娜美甲美睫沙龙",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 23136018,
-                            "itemLabel": "京世沙龙",
-                            "disabled": true,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 184183322,
-                            "itemLabel": "安娜美甲美睫沙龙",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 231360181,
-                            "itemLabel": "京世沙龙",
-                            "disabled": true,
-                            "selected": false 
-                        }
-                    ]
-                },
-                {
-                    "itemGroupKey": 5,
-                    "itemGroupLabel": "南京",
-                    "itemList": [
-                        {
-                            "itemKey": 5602119,
-                            "itemLabel": "花子形象",
-                            "disabled": true,
-                            "selected": false 
-                        }
-                    ]
-                },
-                {
-                    "itemGroupKey": 3,
-                    "itemGroupLabel": "杭州",
-                    "itemList": [
-                        {
-                            "itemKey": 27294361,
-                            "itemLabel": "杜尚发型",
-                            "disabled": false,
-                            "selected": false 
-                        },
-                        {
-                            "itemKey": 6210703,
-                            "itemLabel": "杜尚发型",
-                            "disabled": false,
-                            "selected": false 
-                        }
-                    ]
-                },
-                {
-                    "itemGroupKey": 11,
-                    "itemGroupLabel": "宁波",
-                    "itemList": [
-                        {
-                            "itemKey": 24890244,
-                            "itemLabel": "乐在（LOKA）舞蹈工作室",
-                            "disabled": false,
-                            "selected": true 
-                        },
-                        {
-                            "itemKey": 24277786,
-                            "itemLabel": "兰芝",
-                            "disabled": true,
-                            "selected": true 
-                        }
-                    ]
-                }
-            ]
+                    "key": 1,
+                    "value": "上海",
+                    "children": [
+                                    {
+                                        "key": 8067981,
+                                        "value": "金悦医疗美容",
+                                        "disabled": false,
+                                        "selected": true 
+                                    },
+                                    {
+                                        "key": 3244945,
+                                        "value": "韩辉整形外科诊所",
+                                        "disabled": false,
+                                        "selected": true 
+                                    },
+                                    {
+                                        "key": 3326527,
+                                        "value": "刘娟美甲沙龙",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 13893492,
+                                        "value": "CS",
+                                        "disabled": true,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 21591999,
+                                        "value": "上海伊美尔港华整形美容医院",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 2368135,
+                                        "value": "诗泥SPA",
+                                        "disabled": true,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 5687880,
+                                        "value": "吉吉靓甲美睫",
+                                        "disabled": true,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 23136039,
+                                        "value": "京世沙龙",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 1799866,
+                                        "value": "爱慕整形",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 4175103,
+                                        "value": "Berrymay健康管理",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 18418332,
+                                        "value": "安娜美甲美睫沙龙",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 23136018,
+                                        "value": "京世沙龙",
+                                        "disabled": true,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 184183322,
+                                        "value": "安娜美甲美睫沙龙",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 231360181,
+                                        "value": "京世沙龙",
+                                        "disabled": true,
+                                        "selected": false 
+                                    }
+                                ]
+                                },
+                                {
+                                "key": 5,
+                                "value": "南京",
+                                "children": [
+                                    {
+                                        "key": 5602119,
+                                        "value": "花子形象",
+                                        "disabled": true,
+                                        "selected": false 
+                                    }
+                                ]
+                                },
+                                {
+                                "key": 3,
+                                "value": "杭州",
+                                "children": [
+                                    {
+                                        "key": 27294361,
+                                        "value": "杜尚发型",
+                                        "disabled": false,
+                                        "selected": false 
+                                    },
+                                    {
+                                        "key": 6210703,
+                                        "value": "杜尚发型",
+                                        "disabled": false,
+                                        "selected": false 
+                                    }
+                                ]
+                                },
+                                {
+                                "key": 11,
+                                "value": "宁波",
+                                "children": [
+                                    {
+                                        "key": 24890244,
+                                        "value": "乐在（LOKA）舞蹈工作室",
+                                        "disabled": false,
+                                        "selected": true 
+                                    },
+                                    {
+                                        "key": 24277786,
+                                        "value": "兰芝",
+                                        "disabled": true,
+                                        "selected": true 
+                                    }
+                                ]
+                                }
+                            ]
         }
     },
-    mounted() {
-    },
     methods: {
-        onConfirmBtnClick(choose){
+        handleConfirm(choose){
             console.log(choose)
         }
     }

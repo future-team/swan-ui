@@ -1,8 +1,9 @@
 <template>
     <div class="demo-top">
-        <sw-filter-container
-            :filterData="filterData" @valid-filter-change="onValidFilterChange">
-        </sw-filter-container>
+        <sw-filter
+            :data="filterData" 
+            @on-select="onValidFilterChange">
+        </sw-filter>
     </div>
 </template>
 

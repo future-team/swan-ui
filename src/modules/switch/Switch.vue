@@ -13,7 +13,7 @@
      * @module 表单组件
      * @extends Base
      * @constructor
-     * @since 0.1.0
+     * @since 1.0.0
      * @demo switch|switch.vue
      * @show true
      */
@@ -22,6 +22,11 @@
         name: 'SwSwitch',
         extends: SwBase,
         methods: {
+            /**
+             * 点击时触发
+             * @event click
+             * @param {Boolean} checked
+             */
             handleClick(evt){
                 this.$emit('click',this.checked,evt)
             }
@@ -41,6 +46,7 @@
              * 开关值
              * @property checked
              * @type Boolean
+             * @default false
              * */
             checked: {
                 type: Boolean,

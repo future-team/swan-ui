@@ -5,10 +5,11 @@
 
 <script>
     /**
+     * 开关
      * @class Radio
      * @module 表单组件
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo radio|radio.vue
      * @show true
      */
@@ -18,6 +19,11 @@
         inheritAttrs: false,
         components: {SwCheckbox},
         methods: {
+            /**
+             * 输入时触发
+             * @event change
+             * @param 输入值 value
+             */
             handleChange(value,evt){
                 this.$emit('change',value,evt)
             }

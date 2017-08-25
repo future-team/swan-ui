@@ -4,11 +4,11 @@
 export default {
     model: {
         prop: 'visible',
-        event: 'toggle'
+        event: 'on-toggle'
     },
     methods: {
-        handleToggle(val,evt){
-            this.$emit('toggle',val,evt)
+        handleToggle(val){
+            this.$emit('on-toggle',val)
         }
     },
     props: {

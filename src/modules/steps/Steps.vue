@@ -21,7 +21,7 @@
      * @module 操作类组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo steps|steps.vue
      * @show true
      */
@@ -35,6 +35,11 @@
             }
         },
         methods: {
+            /**
+            * 节点被点击时触发
+            * @event click
+            * @param （item,index）对应名称和索引
+            */
             handleClick(item,index){
                 if(this.readOnly){return}
                 this.$emit('click',item,index)

@@ -10,11 +10,8 @@
 
 <script>
     /**
-     * 拖拽组件<br/>
-     *
-     * 事件
-     * - drag：回调参数(position,evt)，拖动时时触发<br/>position: {start:{x:12,y:312},move:{x:12,y:312}}
-     * - drop：回调参数(position,evt)，松开时触发<br/><br/>position: {start:{x:12,y:312},end:{x:12,y:312}}
+     * 拖拽组件  
+     * - 要在移动端查看效果： https://future-team.github.io/swan-ui/examples/index.html#/drag
      *
      * 示例:
      * ```code
@@ -54,6 +51,11 @@
             }
         },
         methods:{
+            /**
+            * 拖动时时触发
+            * @event drag
+            * @param 位置 position
+            */
             handleTouchStart(evt){
                 this.position.start = { x: evt.touches[0].pageX, y: evt.touches[0].pageY }
                 this.position.move = this.position.start
@@ -64,6 +66,11 @@
                 this.position.move = { x: evt.touches[0].pageX, y: evt.touches[0].pageY }
                 this.$emit('drag',this.position,evt)
             },
+            /**
+            * 松开时触发
+            * @event drop
+            * @param 位置 position
+            */
             handleTouchEnd(evt){
                 this.position.end = { x: evt.changedTouches[0].pageX, y: evt.changedTouches[0].pageY }
                 this.position.start = this.position.move

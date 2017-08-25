@@ -21,7 +21,7 @@
      * @module 选项卡
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo Tabset|Tabset.vue
      * @show true
      */
@@ -115,6 +115,11 @@
                     this.activeIndex = this.tabbarList[0].index
                 }
             },
+            /**
+             * 点击tab时触发
+             * @event tab-change
+             * @param 被点击的tab的index（传入的index,不是索引）
+             */
             onTabClick(index){
                 this.activeIndex = index
                 this.$emit('tab-change', this.activeIndex)

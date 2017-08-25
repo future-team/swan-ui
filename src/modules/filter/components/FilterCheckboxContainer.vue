@@ -12,7 +12,7 @@
                             :itemGroupIndex="index" 
                             :key="index" 
                             :active="activeItemGroupIndex == index" 
-                            :label="itemGroup.itemGroupLabel"
+                            :label="itemGroup.value"
                             @activeItemGroupIndex-change="onActiveItemGroupIndexChange">
                         </item-group>
 		            </div>
@@ -26,12 +26,12 @@
                             @itemIndex-change="onItemIndexChange">
                         </item>
 		                <item 
-                            v-for="(item, index) in activeItemGroupItems.itemList"
+                            v-for="(item, index) in activeItemGroupItems.children"
                             :key="index"
                             :itemIndex="index"
                             :disabled="item.disabled"
                             :checked="item.selected"
-                            :label="item.itemLabel"
+                            :label="item.value"
                             @itemIndex-change="onItemIndexChange">
                         </item>
 		            </div>
@@ -48,11 +48,47 @@
 </template>
 <script>
    /**
+    * 筛选
+    * ```code
+    *    <sw-filter-checkbox
+    *        :data='filterData' 
+    *        :activeIndex='2'>
+    *    </sw-filter-checkbox>
+    * ```
+    * data数据结构：
+    * ```code
+    * [
+    *   {
+    *       "key": 3,
+    *       "value": "杭州",
+    *       "children": [
+    *           {
+    *               "key": 27294361,
+    *                "value": "杜尚发型",
+    *                "disabled": false,
+    *               "selected": false
+    *            }
+    *       ]
+    *   },
+    *   {
+    *        "key": 11,
+    *        "value": "宁波",
+    *        "children": [
+    *           {
+    *               "key": 24890244,
+    *               "value": "乐在（LOKA）舞蹈工作室",
+    *               "disabled": false,
+    *               "selected": true
+    *           }
+    *       ]
+    *   }
+    * ]
+    *```
     * @class FilterCheckbox
     * @module 筛选控件
     * @extends Component
     * @constructor
-    * @since 0.0.1
+    * @since 1.0.0
     * @demo filter-checkbox|filter-checkbox.vue
     * @show true
     * */
@@ -61,7 +97,7 @@
     import ItemGroup from './FilterItemGroup'
     import uniq from '../../../utils/uniq.js'
     export default {
-        name: 'SwFilterCheckboxContainer',
+        name: 'SwFilterCheckbox',
         extends: SwBase,
         components: {
             Item,
@@ -80,14 +116,14 @@
                     return []
                 }
             },
-            defaultActiveItemGroupIndex: { // 初始激活的ItemGroup的索引值
+            activeIndex: { // 初始激活的ItemGroup的索引值
                 type: [String, Number],
                 default: 0
             }
         },
         data() {
             return {
-                activeItemGroupIndex: this.defaultActiveItemGroupIndex // 激活的ItemGroup的索引值
+                activeItemGroupIndex: this.activeIndex // 激活的ItemGroup的索引值
             }
         },
         computed: {
@@ -102,8 +138,8 @@
             // 全部是否选中
             totalItemChecked(){
                 let totalItemChecked = false
-                if (this.activeItemGroupItems && this.activeItemGroupItems.itemList && this.activeItemGroupItems.itemList.length) {
-                    let validItemList = this.activeItemGroupItems.itemList.filter((item) => item.disabled == false)
+                if (this.activeItemGroupItems && this.activeItemGroupItems.children && this.activeItemGroupItems.children.length) {
+                    let validItemList = this.activeItemGroupItems.children.filter((item) => item.disabled == false)
                     let validCheckedNum = 0
                     validItemList.forEach(function(element) {
                         if (element.selected) {
@@ -135,8 +171,8 @@
                     } else {
                         totalItemChecked = true  // 之前没有全部选中，再次点击全部则全部选中
                     }
-                    if (this.activeItemGroupItems && this.activeItemGroupItems.itemList && this.activeItemGroupItems.itemList.length) {
-                        this.activeItemGroupItems.itemList.forEach(function(element) {
+                    if (this.activeItemGroupItems && this.activeItemGroupItems.children && this.activeItemGroupItems.children.length) {
+                        this.activeItemGroupItems.children.forEach(function(element) {
                             if (totalItemChecked) {
                                 element.selected = true
                             } else {
@@ -145,23 +181,27 @@
                         }, this)
                     }
                 } else {
-                    this.activeItemGroupItems.itemList[itemIndex].selected = !this.activeItemGroupItems.itemList[itemIndex].selected
+                    this.activeItemGroupItems.children[itemIndex].selected = !this.activeItemGroupItems.children[itemIndex].selected
                 }
             },
-            // 确定按钮点击
+            /**
+             * 点击确定触发
+             * @event on-confirm
+             * @param {Array} 选中的每个子项的key，例如：[24890244,24830245]
+             */
             onConfirmBtnClick(){
                 let choose = []
                 if (this.data && this.data.length) {
                     this.data.forEach(function(itemGroup) {
-                        itemGroup.itemList.forEach(function(item) {
+                        itemGroup.children.forEach(function(item) {
                             if (item.selected && !item.disabled) {
-                                choose.push(item.itemKey)
+                                choose.push(item.key)
                             }
                         }, this)
                     }, this)
                 }
                 choose = uniq(choose)
-                this.$emit('confirmBtn-click', choose)
+                this.$emit('on-confirm', choose)
             }
         }
     }

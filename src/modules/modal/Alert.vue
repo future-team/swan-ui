@@ -23,10 +23,14 @@
 
 <script>
     /**
+     * slot
+     * - title  标题
+     * - footer 底部内容，比如按钮
+     * - defalut 正文内容
      * @class Alert
-     * @module 弹出框组件
+     * @module 弹出类组件
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo alert|alert.vue
      * @show true
      */
@@ -65,7 +69,12 @@
                 this.currentVisible = val
             },
             currentVisible(val){
-                this.$emit('toggle',val)
+                /**
+                 * 打开/关闭时触发
+                 * @event on-toggle
+                 * @param {Boolean} 组件打开/关闭状态
+                 */
+                this.$emit('on-toggle',val)
             }
         },
         props: {

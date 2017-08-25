@@ -20,9 +20,9 @@
 <script>
     /**
      * @class Popover
-     * @module 提示组件
+     * @module 弹出类组件
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo popover|popover.vue
      * @show true
      */

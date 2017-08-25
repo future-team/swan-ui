@@ -36,7 +36,7 @@
             title: 'search事件',
             desc: '点击回车，触发search',
             code: `
-                <sw-search @search="handleSearch"
+                <sw-search @on-search="handleSearch"
                            @click="handleSearch"
                            buttonText="确定" />
             `,

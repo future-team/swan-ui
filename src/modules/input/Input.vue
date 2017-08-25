@@ -29,12 +29,12 @@
 
 <script>
     /**
-     * 输入框组件
+     * 输入框
      * @class Input
      * @module 表单组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo input|input.vue
      * @show true
      */
@@ -75,6 +75,11 @@
             }
         },
         methods: {
+            /**
+             * 输入时触发
+             * @event input／change
+             * @param 输入值 value 
+             */
             handleChange(evt){
                 this.focus = true
                 let value = evt.target.value
@@ -82,10 +87,20 @@
                 this.$emit('input',value,evt)
                 this.$emit('change',value,evt)
             },
+            /**
+             * 聚焦时触发
+             * @event focus
+             * @param 
+             */
             handleFocus(){
                 this.focus = true
                 this.$emit('focus')
             },
+            /**
+             * 失焦时触发
+             * @event blur
+             * @param 
+             */
             handleBlur(){
                 this.$emit('blur')
                 //点击清除icon时会触发handleBlur，使this.focus为false,而无法触发handleClear，所以需要添加setTimeout
@@ -139,18 +154,21 @@
              * 是否显示[清除已经输入的内容按钮]，仅适用于text,search,password的类型
              * @property clear
              * @type Boolean
+             * @default false
              * */
             clear: Boolean,
             /**
              * 是否显示[密码是否可见按钮]，仅适用于password的类型
              * @property visible
              * @type Boolean
+             * @default false
              * */
             visible: Boolean,
             /**
              * 是否错误
              * @property error
              * @type Boolean
+             * @default false
              * */
             error: Boolean,
             /**
@@ -164,14 +182,32 @@
                 default: ''
             },
             /**
-             * 以下是input原生属性
-             * @property phIcon
+             * placeholder
+             * @property placeholder
              * @type String
              * @default ''
              **/
             placeholder: String,
+            /**
+             * 是否禁用
+             * @property disabled
+             * @type Boolean
+             * @default false
+             **/
             disabled: Boolean,
+            /**
+             * 是否自动聚焦
+             * @property autofocus
+             * @type Boolean
+             * @default false
+             **/
             autofocus: Boolean,
+            /**
+             * 值
+             * @property value
+             * @type 
+             * @default 
+             **/
             value: null
         }
     }

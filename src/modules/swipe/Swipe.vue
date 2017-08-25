@@ -20,11 +20,12 @@
 
 <script>
     /**
+     * 需要在移动端查看效果 点击：https://future-team.github.io/swan-ui/examples/index.html#/swipe
      * @class Swipe
      * @module 操作类组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo swipe|swipe.vue
      * @show true
      */

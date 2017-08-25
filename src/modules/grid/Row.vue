@@ -1,12 +1,15 @@
 <script>
     /**
-     * 行组件
+     * Grid
+     * - Row
+     * - Col
+     *
      * @class Row
-     * @module 布局组件
+     * @module 栅格组件
      * @extends Base
      * @Constructor
      * @demo grid|grid.vue
-     * @since 0.0.1
+     * @since 1.0.0
      * @show true
      */
     import SwBase from '../Base.vue'

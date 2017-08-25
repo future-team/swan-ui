@@ -23,10 +23,14 @@
 
 <script>
     /**
+     * slot
+     * - title  标题
+     * - footer 底部内容，比如按钮
+     * - defalut 正文内容
      * @class Prompt
-     * @module 弹出框组件
+     * @module 弹出类组件
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo prompt|prompt.vue
      * @show true
      */
@@ -62,10 +66,20 @@
             }
         },
         methods: {
-            handleConfirm(evt){
-                this.$emit('on-confirm',this.inputValue,evt)
+            /**
+            * 点击确定时触发
+            * @event on-confirm
+            * @param 输入值
+            */
+            handleConfirm(){
+                this.$emit('on-confirm',this.inputValue)
             },
             handleClick(onHandle){
+                /**
+                 * 打开/关闭时触发
+                 * @event on-toggle
+                 * @param {Boolean} 组件打开/关闭状态
+                 */
                 onHandle ? onHandle(this.inputValue) : this.handleToggle.bind(this.false)
             },
             handleInput(value){
@@ -78,7 +92,7 @@
             },
             currentVisible(val){
                 this.inputValue = ''
-                this.$emit('toggle',val)
+                this.$emit('on-toggle',val)
             }
         },
         props: {

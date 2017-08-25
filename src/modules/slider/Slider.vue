@@ -17,11 +17,13 @@
 
 <script>
     /**
+     * Slider
+     * - 需要在移动端查看效果：https://future-team.github.io/swan-ui/examples/index.html#/slider
      * @class Slider
      * @module 操作类组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo slider|slider.vue
      * @show true
      */
@@ -60,6 +62,11 @@
                 this.tipVisible = true
                 this.currentProgress = parseInt(newProgress)
             },
+            /**
+            * 松开时触发
+            * @event slide-end
+            * @param 当前值 currentProgress
+            */
             handleDrop(){
                 if(!this.tipStay){
                     this.tipVisible = false

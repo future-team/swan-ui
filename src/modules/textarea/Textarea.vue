@@ -13,11 +13,11 @@
 </template>
 <script>
     /**
-     * @class TextArea
+     * @class Textarea
      * @module 表单组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo textarea|textarea.vue
      * @show true
      */
@@ -36,6 +36,11 @@
             }
         },
         methods: {
+            /**
+             * 输入时触发
+             * @event input／change
+             * @param 输入值 value
+             */
             handleChange(evt){
                 this.currentValue = evt.target.value
                 this.$emit('input',this.currentValue,evt)
@@ -68,6 +73,7 @@
              * 是否显示输入计数
              * @property count
              * @type Boolean
+             * @default false
              * */
             count: Boolean,
             /**

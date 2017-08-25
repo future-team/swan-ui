@@ -8,8 +8,8 @@
      * @module 选项卡
      * @extends Base
      * @Constructor
-     * @since 0.0.1
-     * @demo Tab|Tab.vue
+     * @since 1.0.0
+     * @demo tabset|tabset.vue
      * @show true
      */
     import SwBase from '../Base.vue'
@@ -29,7 +29,7 @@
             },
             /**
             * 选项卡序号
-            * @property vertical
+            * @property index
             * @type [Number, String]
             * @default 
             * */
@@ -66,6 +66,11 @@
             this.active = this.$parent.activeIndex
         },
         watch: {
+            /**
+             * 点击tab时触发
+             * @event tab-change
+             * @param 被点击的tab的index（传入的index,不是索引）
+             */
             '$parent.activeIndex': function (newValue) {
                 this.active = newValue
                 this.$emit('tab-change', newValue)

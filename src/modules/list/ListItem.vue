@@ -7,11 +7,16 @@
 
 <script>
     /**
+     * List
+     * - ListHeader
+     * - ListItem
+     * - ListCol
+     *
      * @class ListItem
      * @module 列表组件
      * @extends Base
      * @constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo list|list.vue
      * @show true
      */

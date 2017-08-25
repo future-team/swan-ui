@@ -14,12 +14,15 @@
 
 <script>
     /**
-     * 手风琴组件
+     * 手风琴
+     * slot
+     * - header 标题
+     * - default 展开的内容
      * @class Accordion
      * @module 操作类组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo accordion | accordion.vue
      * @show true
      * */
@@ -47,7 +50,6 @@
              * @property classPrefix
              * @type String
              * @default 'accordion'
-             * @method clickCallback
              * */
             classPrefix: {
                 type: String,

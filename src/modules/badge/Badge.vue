@@ -8,10 +8,10 @@
     /**
      * Badge标记
      * @class Badge
-     * @module 标签组件
+     * @module 基础组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo badge|badge.vue
      * @show true
      */

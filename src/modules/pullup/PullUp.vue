@@ -22,33 +22,13 @@
 
 <script>
     /**
-     * 加载更多组件<br/>
-     * - 书写时Pullup组件在可加载列表的后面。
-     * - 通过mode设置加载更多的模式，有点击按钮加载更多，以及滑到最底端自动加载，可选 [auto,button] 2种参数。
-     * - 通过status设置当前状态，只需要在请求结束返回相应状态，包含请求成功返回2，请求成功并再没有数据返回4，请求失败返回3。
-     * - 可通过tips设置按钮文字和状态提示语，默认['加载更多','','加载成功','加载失败','没有更多']，分别对应status的状态。
-     * - 可通过phStyle设置按钮的样式，如果当前mode为auto设置无效。
-     *
-     * 属性：
-     * - mode:加载更多的模式，默认auto。
-     * - status:当前状态:0加载更多, 1加载中, 2数据加载成功, 3数据加载失败, 4没有更多
-     * - tips:按钮文字和状态提示语，默认['加载更多','','加载成功','加载失败','没有更多']
-     * - phStyle:按钮的样式，默认'primary'
-     *
-     * 事件：
-     * - load：点击按钮加载或滑到底部自动加载时触发
-     *
-     * 示例：
-     * ```code
-     *  // 可加载列表的尾部
-     *  <sw-pullup :status="status" @load="handleLoad"></sw-pullup>
-     * ```
+     * 加载更多
      *
      * @class Pullup
      * @module 操作类组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo pullup | pullup.vue
      * @show true
      * */
@@ -71,8 +51,12 @@
             }
         },
         methods: {
-            handleLoad(evt){
-                this.$emit('load',evt)
+            /**
+             * 点击按钮加载或滑到底部自动加载时触发
+             * @event load
+             */
+            handleLoad(){
+                this.$emit('load')
             },
             handleScroll(){
                 this.scrollTop = document.body.scrollTop

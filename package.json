@@ -29,7 +29,7 @@
   },
   "homepage": "https://github.com/future-team/swan-ui#readme",
   "peerDependencies": {
-     "vue": "^2.4.2"
+    "vue": "^2.4.2"
   },
   "devDependencies": {
     "babel": "^6.23.0",
@@ -50,7 +50,7 @@
     "extract-text-webpack-plugin": "^2.1.0",
     "file-loader": "^0.11.2",
     "fs": "0.0.1-security",
-    "gfs-doc": "^0.1.35",
+    "gfs-doc": "^0.1.44",
     "glob": "^7.1.2",
     "gulp": "^3.9.1",
     "gulp-babel": "^6.1.2",

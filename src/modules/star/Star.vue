@@ -10,7 +10,7 @@
      * @module 基础组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo star|star.vue
      * @show true
      */

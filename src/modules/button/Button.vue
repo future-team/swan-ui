@@ -12,12 +12,12 @@
 
 <script>
     /**
-     * 按钮组件
+     * 按钮
      * @class Button
      * @module 基础组件
      * @extends Base
      * @Constructor
-     * @since 0.0.1
+     * @since 1.0.0
      * @demo button|button.vue
      * @show true
      */
@@ -28,6 +28,11 @@
         extends: SwBase,
         components: {SwIcon},
         methods: {
+            /**
+             * 点击时触发
+             * @event click
+             * @param {Event} 事件对象
+             */
             handleClick(evt){
                 this.$emit('click',evt)
             }
