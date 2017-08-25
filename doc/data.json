@@ -2578,10 +2578,9 @@
             "name": "on-confirm",
             "params": [
                 {
-                    "name": "24890244,24830245\\",
+                    "name": "选中的每个子项的key",
                     "description": "",
-                    "type": "Array",
-                    "optional": true
+                    "type": "Array"
                 }
             ],
             "class": "FilterCheckbox",

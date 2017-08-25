@@ -187,7 +187,7 @@
             /**
              * 点击确定触发
              * @event on-confirm
-             * @param {Array} 选中的每个子项的key，例如：\[24890244,24830245\]
+             * @param {Array} 选中的每个子项的key
              */
             onConfirmBtnClick(){
                 let choose = []
