@@ -74,13 +74,13 @@
             handleConfirm(){
                 this.$emit('on-confirm',this.inputValue)
             },
+            /**
+            * 打开/关闭时触发
+            * @event on-toggle
+            * @param {Boolean} 组件打开/关闭状态
+            */
             handleClick(onHandle){
-                /**
-                 * 打开/关闭时触发
-                 * @event on-toggle
-                 * @param {Boolean} 组件打开/关闭状态
-                 */
-                onHandle ? onHandle(this.inputValue) : this.handleToggle.bind(this.false)
+                onHandle ? onHandle(this.inputValue) : this.handleToggle(false)
             },
             handleInput(value){
                 this.inputValue = value
