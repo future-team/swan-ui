@@ -1,5 +1,5 @@
 <template>
-    <div class="demo-top">
+    <div>
         <sw-filter
             :data="filterData" 
             @on-select="onValidFilterChange">
