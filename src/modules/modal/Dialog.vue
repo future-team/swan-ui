@@ -28,6 +28,7 @@
 
 <script>
     /**
+     * 对话框
      * @class Dialog
      * @module 弹出类组件
      * @extends Base

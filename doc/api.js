@@ -55,7 +55,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "列表组件",
             "name": "列表组件",
-            "description": "List\n- ListHeader\n- ListItem\n- ListCol",
+            "description": "列表\n\nList\n- ListHeader\n- ListItem\n- ListCol",
             "classes": [
                 {
                     "name": "List"
@@ -87,6 +87,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "基础组件",
             "name": "基础组件",
+            "description": "星星",
             "classes": [
                 {
                     "name": "Icon"
@@ -108,6 +109,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "弹出类组件",
             "name": "弹出类组件",
+            "description": "飘字组件",
             "classes": [
                 {
                     "name": "Toast"
@@ -142,6 +144,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "操作类组件",
             "name": "操作类组件",
+            "description": "步骤组件",
             "classes": [
                 {
                     "name": "Pullup"
@@ -163,7 +166,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "栅格组件",
             "name": "栅格组件",
-            "description": "Grid\n- Row\n- Col",
+            "description": "栅格布局-列\n\nGrid\n- Row\n- Col",
             "classes": [
                 {
                     "name": "Col"
@@ -192,6 +195,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "表单组件",
             "name": "表单组件",
+            "description": "多行文本框组件",
             "classes": [
                 {
                     "name": "Input"
@@ -223,6 +227,7 @@ YUI.add("yuidoc-meta", function(Y) {
         {
             "displayName": "选项卡",
             "name": "选项卡",
+            "description": "选项卡组件",
             "classes": [
                 {
                     "name": "Tab"

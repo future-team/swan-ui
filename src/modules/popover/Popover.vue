@@ -19,6 +19,7 @@
 
 <script>
     /**
+     * 气泡
      * @class Popover
      * @module 弹出类组件
      * @Constructor

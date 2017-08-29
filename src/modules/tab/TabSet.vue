@@ -17,6 +17,7 @@
 
 <script>
     /**
+     * 选项卡容器组件
      * @class Tabset
      * @module 选项卡
      * @extends Base

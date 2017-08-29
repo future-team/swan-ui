@@ -4,6 +4,7 @@
 
 <script>
     /**
+     * 选项卡组件
      * @class Tab
      * @module 选项卡
      * @extends Base

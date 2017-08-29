@@ -13,6 +13,7 @@
 </template>
 <script>
     /**
+     * 多行文本框组件
      * @class Textarea
      * @module 表单组件
      * @extends Base

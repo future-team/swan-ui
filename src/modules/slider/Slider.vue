@@ -17,7 +17,7 @@
 
 <script>
     /**
-     * Slider
+     * 滑动输入条组件
      * - 需要在移动端查看效果：https://future-team.github.io/swan-ui/examples/index.html#/slider
      * @class Slider
      * @module 操作类组件

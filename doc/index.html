@@ -458,15 +458,105 @@
                             <div class="apidocs" id="gfs-index">
         <div id="docs-main" class="content">
             
-                <div style="position:relative; margin: -15px -20px 15px;padding: 50px 24px 60px 24px;box-sizing: border-box;background-color: #333;overflow: hidden;text-align:center; color:#fff;">
-    <a style="color:#fff;position: absolute;right:25px;top:15px;" href="http://future-team.github.io/phoenix-ui/doc_v1/index.html">Version 1.0.4 文档</a>
-    <h1>swan-ui</h1>
-    <p style="margin-top:15px">Version 1.0.4</p>
-    <p style="margin-top:15px">基于Vue框架实现的移动端UI组件库</p>
-    <p style="margin-top:15px">
-        <a style="color:#fff" href="https://github.com/future-team/swan-ui">Github</a> |
-        <a style="color:#fff" href="http://future-team.github.io/swan-ui/examples/index.html">Examples</a>
-    </p>
+                <div>
+    <div style="position:relative; margin: -15px -20px 15px;padding: 50px 24px 60px 24px;box-sizing: border-box;background-color: #333;overflow: hidden;text-align:center; color:#fff;">
+            <a style="color:#fff;position: absolute;right:25px;top:15px;" href="http://future-team.github.io/phoenix-ui/doc_v1/index.html">Version 1.0.4 文档</a>
+            <h1>swan-ui</h1>
+            <p style="margin-top:15px">Version 1.0.4</p>
+            <p style="margin-top:15px">基于Vue框架实现的移动端UI组件库</p>
+            <p style="margin-top:15px">
+                <a style="color:#fff" href="https://github.com/future-team/swan-ui">Github</a> |
+                <a style="color:#fff" href="http://future-team.github.io/swan-ui/examples/index.html">Examples</a>
+            </p>
+    </div>
+</div>
+
+
+<p>swan-ui需要与<a href="http://future-team.github.io/phoenix-styles/example/index.html">phoenix-styles</a>样式库配合使用，分别引入组件和样式。</p>
+<div>
+    <div>
+        <h3>组件引入方式</h3>
+        <ul>
+            <li>script标签引入</li>
+            <li>全局注册</li>
+            <li>按需引入注册</li>
+        </ul>
+    </div>
+    <div>
+        <h3>样式引入方式</h3>
+        <ul>
+            <li>html中link标签引入</li>
+            <li>从npm包引入</li>
+        </ul>
+    </div>
+    <p style="color: #ff6633;">推荐组件用按需引入的方式，样式可根据需要选择合适的方式。</p>
+</div>
+
+<div>
+    <h3>引入组件</h3>
+    <div >
+    <h5>script标签引入</h5>
+    <pre class="prettyprint lang-html">&lt;!-- 引入样式 -->
+&lt;link rel="stylesheet" href="http://future-team.github.io/phoenix-styles/dist/phoenix-styles.min.css" />
+&lt;!-- 移动端适配 -->
+&lt;script type="text/javascript" src="https://www.dpfile.com/app/gfs-viewport/gfs-viewport.js">&lt;/script>
+&lt;!-- 引入Vue -->
+&lt;script src="https://unpkg.com/vue/dist/vue.js">&lt;/script>
+&lt;!-- 引入组件库 -->
+&lt;script src="http://future-team.github.io/swan-ui/lib/index.js">&lt;/script></pre>
+    <pre class="prettyprint lang-html">&lt;template>
+    &lt;div id="app">
+        &lt;sw-button @click="visible = true" block>按钮&lt;/sw-button>
+        &lt;sw-dialog v-model="visible" title="Hello world">
+            &lt;p>欢迎使用 Swan UI&lt;/p>
+        &lt;/sw-dialog>
+    &lt;/div>
+&lt;template>
+&lt;script>
+    new Vue({
+        el: '#app',
+        data: function(){
+            return { visible: false }
+        }
+    })
+&lt;/script></pre>
+    </div>
+    <div>
+    <h5>从npm包引入</h5>
+    <h5>安装</h5>
+    <pre class="prettyprint lang-javascript">$ npm install swan-ui --save</pre>
+    <pre class="prettyprint lang-javascript">$ npm install phoenix-styles --save</pre>
+    <h5>全局注册</h5>
+    <pre class="prettyprint lang-javascript">import Vue from 'vue'
+import SwanUI from 'swan-ui'
+
+Vue.use(SwanUI)</pre>
+    <h5>按需引入</h5>
+    <pre class="prettyprint lang-javascript">import Vue from 'vue'
+import { Button, Star} from 'swan-ui'
+//import Button from 'swan-ui/lib/Button'
+//import Star from 'swan-ui/lib/Star'
+Vue.component(Button.name,Button)
+Vue.component(Star.name,Star)</pre>
+    </div>
+    <div>
+        <h3>引入样式</h3>
+        <h5>link标签引入</h5>
+        <pre class="prettyprint lang-html">&lt;!-- html引入 -->
+&lt;link rel="stylesheet" href="http://future-team.github.io/phoenix-styles/dist/phoenix-styles.min.css" /></pre>
+        <h5>从npm包导入</h5>
+        .vue文件中
+        <pre class="prettyprint lang-html">&lt;style lang="less" src="phoenix-styles/less/phoenix-styles.less"></style>       </pre>
+        或者在js文件中引入
+        <pre class="prettyprint lang-javascript">&lt;!-- 全部引入 -->
+import 'phoenix-styles/dist/phoenix-styles.min.css'
+&lt;!-- 按需引入 -->
+import 'phoenix-styles/less/modules/buttons.less'
+&lt;!-- 全部引入 -->
+import 'phoenix-styles/less/phoenix-styles.less'</pre>
+         另外，如果要换成ios主题的皮肤，可引入
+         <pre class="prettyprint lang-javascript">import 'phoenix-styles/dist/ios-skin.min.css'</pre>
+    </div>
 </div>
 
             

@@ -17,6 +17,7 @@
 
 <script>
     /**
+     * 步骤组件
      * @class Steps
      * @module 操作类组件
      * @extends Base

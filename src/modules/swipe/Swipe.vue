@@ -20,6 +20,8 @@
 
 <script>
     /**
+     * 左滑组件
+     *
      * 需要在移动端查看效果 点击：https://future-team.github.io/swan-ui/examples/index.html#/swipe
      * @class Swipe
      * @module 操作类组件

@@ -17,6 +17,7 @@
 
 <script>
     /**
+     * 飘字组件
      * @class Toast
      * @module 弹出类组件
      * @extends Base
