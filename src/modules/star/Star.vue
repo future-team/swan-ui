@@ -6,6 +6,7 @@
 
 <script>
     /**
+     * 星星
      * @class Star
      * @module 基础组件
      * @extends Base

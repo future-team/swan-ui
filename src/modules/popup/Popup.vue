@@ -15,6 +15,7 @@
 
 <script>
     /**
+     * 顶部/底部弹出
      * @class Popup
      * @module 弹出类组件
      * @extends Base

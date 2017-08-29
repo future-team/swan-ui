@@ -6,6 +6,8 @@
 
 <script>
     /**
+     * 栅格布局-列
+     *
      * Grid
      * - Row
      * - Col

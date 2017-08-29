@@ -23,6 +23,8 @@
 
 <script>
     /**
+     * 提示框
+     *
      * slot
      * - title  标题
      * - footer 底部内容，比如按钮

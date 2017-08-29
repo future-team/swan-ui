@@ -16,7 +16,7 @@ swan-ui需要与[phoenix-styles](http://future-team.github.io/phoenix-styles/exa
 样式引入方式：
 
 - html中link标签引入
-- 中从npm包引入
+- 从npm包引入
 
 推荐组件用按需引入的方式，样式可根据需要选择合适的方式。
 
@@ -50,7 +50,6 @@ swan-ui需要与[phoenix-styles](http://future-team.github.io/phoenix-styles/exa
         }
     })
 </script>
-</body>
 
 ```
 

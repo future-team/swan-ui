@@ -5,7 +5,7 @@
 
 <script>
     /**
-     * 开关
+     * 单选框
      * @class Radio
      * @module 表单组件
      * @Constructor

@@ -6,6 +6,8 @@
 
 <script>
     /**
+     * 列表列
+     *
      * List
      * - ListHeader
      * - ListItem
@@ -37,13 +39,13 @@
                 default: 'list-col'
             },
             /**
-             * 是否靠左
+             * 是否为标题，表现为仿行内元素
              * @property heading
              * @type Boolean
              * */
             heading: Boolean,
             /**
-             * 是否靠右
+             * 是否为右边的项目，表现为内部的元素全部靠右
              * @property right
              * @type Boolean
              * */

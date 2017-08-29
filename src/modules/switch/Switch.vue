@@ -9,6 +9,7 @@
 
 <script>
     /**
+     * 开关组件
      * @class Switch
      * @module 表单组件
      * @extends Base
