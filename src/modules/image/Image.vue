@@ -65,7 +65,7 @@
                 this.bodyHeight = getClientHeight()
                 this.imageTop = getOffsetTop(this.$refs.imageParentRef)
                 //this.scrollTop + this.bodyHeight + this.bodyHeight/2 >= this.imageTop
-                if(!this.load && (this.scrollTop + this.bodyHeight >= this.imageTop)){
+                if(this.scrollTop + this.bodyHeight >= this.imageTop){
                     this.loadImage()
                 }
             },
@@ -73,7 +73,6 @@
                 try{
                     let img = new Image()
                     img.src = this.src
-                    this.load = true
 
                     if(img.complete){
                         this.handleLoadSuccess(img)
@@ -86,6 +85,11 @@
                 }catch(err){
                     this.$emit('load',err)
                 }
+            }
+        },
+        watch: {
+            src(){
+                this.lazy ? this.lazyLoadImage() : this.loadImage()
             }
         },
         created(){

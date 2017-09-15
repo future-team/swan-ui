@@ -171,12 +171,7 @@ const routes = [
                 'path': '/image-list',
                 'name': 'ImageList',
                 'desc': ''
-            }
-        ]
-    },
-    {
-        title: '控件',
-        list: [
+            },
             {
                 'path': '/filter',
                 'name': 'Filter',

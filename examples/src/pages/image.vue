@@ -50,15 +50,24 @@
             title: '懒加载',
             desc: '属性：lazy，进入可视范围才加载。批量懒加载时一定要有占位图，即设置defaultSrc属性',
             code: `
+                    <sw-button @click="handleClick">更换图片</sw-button>
                     <div class="image-demo">
-                       <sw-image :src="url" phSize="contain" lazy/>
+                       <sw-image :src="url1" phSize="contain" lazy/>
                     </div>
             `,
             options: {
                 data(){
                     return {
-                        url: 'http://p1.meituan.net/activityback/f3ea984898f4c6db83b40032abdb95b0839353.png'
+                        url1: 'http://p1.meituan.net/activityback/f3ea984898f4c6db83b40032abdb95b0839353.png',
+                        url2: 'https://www.dpfile.com/sc/ares_pics/f6f4d77d040d9a0ab77e94059d1772c8.png'
                     }
+                },
+                methods: {
+                    handleClick(){
+                        let temp = this.url1
+                        this.url1 = this.url2
+                        this.url2 = temp
+                    }    
                 }
             }
         }

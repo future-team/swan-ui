@@ -53,7 +53,6 @@ module.exports = extend({},{
         }]
     },
     plugins:[
-        new webpack.optimize.UglifyJsPlugin(),
         new ExtractTextPlugin('example.css')
     ]
 });
