@@ -18,7 +18,7 @@ Swan UI 是一个基于vuejs的移动端组件库，包含丰富的css和js组�
 - IOS 8+
 - Chrome
 
-###vue版本
+### vue版本
 - 要求`v2.4.0`及以上
 
 ### 基础知识
@@ -76,8 +76,11 @@ import 'phoenix-styles/less/phoenix-less'
 
 比如，下面宽750的视觉稿和宽375的视觉稿
 
+<div>
 <img src="./image/mark.png" height="400">
 <img src="./image/sketch.png" height="400">
+</div>
+
 
 如果是左边宽750的视觉稿，顶部高度128，css样式直接除以100
 
