@@ -1,7 +1,5 @@
 ## 介绍
 
-### 关于Swan UI
-
 Swan UI 是一个基于vuejs的移动端组件库，包含丰富的css和js组件。我们的初衷是开发一套展现一致、与业务相契合的组件库，与 [pheonix-styles](https://future-team.github.io/phoenix-styles/example/index.html) 样式库配合使用。组件库在github上开源，也欢迎大家来共同开发。
 
 
