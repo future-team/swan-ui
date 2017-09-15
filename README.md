@@ -1,217 +1,432 @@
-# swan-ui
-Vue Components for Mobile App.
+## 介绍
 
-- [示例](https://future-team.github.io/swan-ui/examples/index.html#/)
-- [文档](http://future-team.github.io/swan-ui/doc/index.html) 文档工具开发中，后续会做迁移
+### 关于Swan UI
+
+Swan UI 是一个基于vuejs的移动端组件库，包含丰富的css和js组件。我们的初衷是开发一套展现一致、与业务相契合的组件库，与 [pheonix-styles](https://future-team.github.io/phoenix-styles/example/index.html) 样式库配合使用。组件库在github上开源，也欢迎大家来共同开发。
 
 
-swan-ui需要与[phoenix-styles](http://future-team.github.io/phoenix-styles/example/index.html)样式库配合使用，分别引入组件和样式。
+### 组件
 
-组件引入方式：
+- 基础类
+- 表单类
+- 布局类
+- 弹框类
+- 操作类
+- 组合类
 
-- script标签引入
-- 全局注册
-- 按需引入注册
+### 兼容性
 
-样式引入方式：
+- Android 4.4 +
+- IOS 8+
+- Chrome
 
-- html中link标签引入
-- 从npm包引入
+###vue版本
+- 要求`v2.4.0`及以上
 
-推荐组件用按需引入的方式，样式可根据需要选择合适的方式。
+### 基础知识
 
-## 引入组件
-### script标签引入
-```xml
-<!-- 引入样式 -->
-<link rel="stylesheet" href="http://future-team.github.io/phoenix-styles/dist/phoenix-styles.min.css" />
-<!-- 移动端适配 -->
-<script type="text/javascript" src="https://www.dpfile.com/app/gfs-viewport/gfs-viewport.js"></script>
-<!-- 引入Vue -->
-<script src="https://unpkg.com/vue/dist/vue.js"></script>
-<!-- 引入组件库 -->
-<script src="http://future-team.github.io/swan-ui/lib/index.js"></script>
-```
+- [vue](https://cn.vuejs.org/v2/guide/)
+- [vue-loader](https://vue-loader.vuejs.org/zh-cn/)
+- [webpack](https://doc.webpack-china.org/concepts/)
 
-```xml
-<template>
-    <div id="app">
-        <sw-button @click="visible = true" block>按钮</sw-button>
-        <sw-dialog v-model="visible" title="Hello world">
-            <p>欢迎使用 Swan UI</p>
-        </sw-dialog>
-    </div>
-<template>
-<script>
-    new Vue({
-        el: '#app',
-        data: function(){
-            return { visible: false }
-        }
-    })
-</script>
-
-```
-
-### 从npm包引入
-
-#### 安装
+### 安装
 
 ```
 npm install swan-ui --save
+npm install pheonix-styles --save
 ```
 
-```
-npm install phoenix-styles --save
-```
-#### 全局注册
+## CSS样式
 
-```javascript
-import Vue from 'vue'
-import SwanUI from 'swan-ui'
+### 关于pheonix-styles
+pheonix-styles是一套遵循视觉规范的样式库，我们的vue组件库swan-ui和react组件库pheonix-ui都是基于pheonix-styles的dom结构编写的。在使用组件库时，需要引入样式库phoenix-styles。
 
-Vue.use(SwanUI)
-```
+可以在html中引入：
 
-#### 按需引入
-
-```javascript
-import Vue from 'vue'
-import { Button, Star} from 'swan-ui'
-//import Button from 'swan-ui/lib/Button'
-//import Star from 'swan-ui/lib/Star'
-Vue.component(Button.name,Button)
-Vue.component(Star.name,Star)
-```
-
-## 引入样式
-
-### link标签引入
 ```xml
-<!-- html引入 -->
 <link rel="stylesheet" href="http://future-team.github.io/phoenix-styles/dist/phoenix-styles.min.css" />
 ```
 
-### 从npm包导入
+也可以在js文件中引入：
 
-在.vue文件中
+```javascript
+import 'phoenix-styles/dist/phoenix-styles.css'
+//或者
+import 'phoenix-styles/less/phoenix-less'
+```
+
+或者在.vue文件用style标签引入：
+
 ```xml
 <style lang="less" src="phoenix-styles/less/phoenix-styles.less"></style>
 ```
-或者在js文件中引入：
 
-```javascript
-<!-- 全部引入 -->
-import 'phoenix-styles/dist/phoenix-styles.min.css'
-<!-- 按需引入 -->
-import 'phoenix-styles/less/modules/buttons.less'
-<!-- 全部引入 -->
-import 'phoenix-styles/less/phoenix-styles.less'
+### 关于CSS样式
+布局、颜色、字体、图标等都有一套完整的视觉规范。以布局为例，布局是页面构成的基础，规定了一些规则来保证同类产品的一致性。
+
+我们的视觉稿基准是iphone6(750 x 1334)，遵循苹果尺寸规范，且原则上保持栅格最小相对距离为8px。
+
+<img src="./image/layout.png"/>
+
+**需要注意的是**，为了适配各种屏幕，我们的组件样式库均使用viewport + rem布局，css样式单位使用rem + px。在使用我们的组件库时，需要引入js文件:
+
+```xml
+<script type="text/javascript" src="https://www.dpfile.com/app/gfs-viewport/gfs-viewport.js"></script>
 ```
 
-另外，如果要换成ios主题的皮肤，可引入
+并且，**您的业务代码中，css样式都需要使用rem作为单位。**
 
-```javascript
-import 'phoenix-styles/dist/ios-skin.min.css'
+比如，下面宽750的视觉稿和宽375的视觉稿
+
+<img src="./image/mark.png" height="400">
+<img src="./image/sketch.png" height="400">
+
+如果是左边宽750的视觉稿，顶部高度128，css样式直接除以100
+
+```css
+div{
+	height: 1.28rem;
+}
 ```
+如果是右边宽375的视觉稿，顶部高度64，css样式直接除以50
 
-## webpack配置
-
-可参考文档 [vue-loader  webpack配置](https://vue-loader.vuejs.org/zh-cn/options.html)
-
-### webpack2配置
-
-#### 不提取css
-
-```javascript
-module.exports = {
-    // other options...
-    resolve: {
-        extensions: ['.js','.vue']
-    },
-    module: {
-        rules:[{
-                enforce: 'pre',
-                test: /\.vue$/,
-                loader: 'eslint-loader'
-        },{
-            test: /\.vue$/,
-            loader: 'vue-loader',
-            exclude: /node_modules/
-        },{
-            test:/\.js$/,
-            use: ['babel-loader'],
-            exclude: /node_modules/
-        },{
-            test: /\.css$/,
-            use: 'css-loader'
-        },{
-            test:/\.less$/,
-            use: "style-loader!css-loader!less-loader"
-        },{
-            test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-            use: 'file-loader?name=../dist/iconfont/[name].[ext]'
-        }]
-    }
+```css
+div{
+	height: 1.28rem;
 }
 ```
 
-#### 提取css
+### 自定义组件样式
+在使用组件时，我们可以自定义样式，覆盖组件样式：
+
+```xml
+<sw-button class="bg-color">按钮</sw-button>
+```
+如果无法覆盖，可以写成动态样式的形式：
+
+```xml
+<sw-button :class="{'bg-color':true}">默认按钮</sw-button>
+```
+
+另一种方式是直接修改phoenix-styles的样式：
+
+```css
+.ph-button-primary{
+	background-color: red;
+}
+```
+
+还有一种方式就是使用内联样式：
+
+```xml
+<sw-button style="background-color: red;">按钮</sw-button>
+```
+## 组件命名规范
+
+**事件命名**
+ 
+- 自定义事件以 	`on-xx`开头，最多三个单词，例如 `@on-before-close`
+- 自定义原生事件直接使用原声事件名，方便使用。例如 `@click`、`@change`、`@input`、`@drag`
+
+**事件处理器命名**
+ 
+ - 以`handleXXX`命名，例如 handleClick、handleChange、handleInput
+
+ 
+**slot插槽命名**
+ 
+ 主体内容一般使用默认名defalut，不需要设置。其他slot命名一般是：
+
+ - title
+ - header
+ - footer
+
+## 整体结构
+<img src="./image/swan-vue-webpack.png"/>
+
+## 快速上手
+可以使用官方提供的脚手架工具 [vue-cli](https://github.com/vuejs/vue-cli)来创建项目，也可以跟着下面的步骤来创建项目。
+
+### 新建项目
+
+目录结构
+
+```
+.
+├── .babelrc
+├── README.md
+├── index.html
+├── package.json
+├── src
+│   ├── App.vue
+│   └── main.js
+└── webpack.config.js
+```
+
+配置文件
+
+.babelrc
 
 ```javascript
+{
+  "presets": [
+  		["es2015", { "modules": false }]
+  ],
+  "plugins": ["transform-vue-jsx"]
+}
+
+```
+
+webpack.config.js
+
+```javascript
+var path = require('path')
+var webpack = require('webpack')
 var ExtractTextPlugin = require("extract-text-webpack-plugin")
 
 module.exports = {
-    // other options...
-    resolve: {
-        extensions: ['.js','.vue']
-    },
-    module: {
-        rules:[{
-            enforce: 'pre',
-            test: /\.vue$/,
-            loader: 'eslint-loader'
-        },{
-            test: /\.vue$/,
-            loader: 'vue-loader',
-            exclude: /node_modules/,
-            options: {
-                loaders: {
-                    css: ExtractTextPlugin.extract({
-                        use: 'css-loader',
-                        fallback: 'vue-style-loader' 
-                    }),
-                    less: ExtractTextPlugin.extract({
-                        use: 'less-loader',
-                        fallback: 'vue-style-loader'
-                    })
-                }
-            }
-        },{
-            test:/\.js$/,
-            use: ['babel-loader'],
-            exclude: /node_modules/
-        },{
-            test: /\.css$/,
-            use: ExtractTextPlugin.extract('css-loader')
-        },{
-            test:/\.less$/,
-            use:  ExtractTextPlugin.extract('less-loader')
-        },{
-            test:/\.(ttf|eot|svg|woff(2)?)(\?[a-z0-9]+)?$/,
-            use: 'file-loader?name=../dist/iconfont/[name].[ext]'
-        }]
-    },
-    plugins: [
-        new ExtractTextPlugin("style.css")
+  entry: './src/main.js',
+  output: {
+    path: path.resolve(__dirname, './dist'),
+    publicPath: '/dist/',
+    filename: 'build.js'
+  },
+  module: {
+    rules: [
+      {
+        test: /\.vue$/,
+        loader: 'vue-loader',
+        options: {
+          extractCSS: true
+        }
+      },
+      {
+        test: /\.js$/,
+        use: 'babel-loader',
+        exclude: /node_modules/
+      },
+      {
+        test: /\.css$/,
+        use: ExtractTextPlugin.extract('css-loader')
+      },
+      {
+          test:/\.less$/,
+          use:  ExtractTextPlugin.extract('less-loader')
+      },
+      {
+        test: /\.(eot|svg|ttf|woff|woff2)(\?\S*)?$/,
+        use: 'file-loader?name=../dist/iconfont/[name].[ext]'
+      }
     ]
+  },
+  devServer: {
+    historyApiFallback: true,
+    noInfo: true
+  },
+  devtool: '#eval-source-map',
+  plugins: [
+    new ExtractTextPlugin("style.css")
+  ]
+}
+
+if (process.env.NODE_ENV === 'production') {
+  module.exports.devtool = '#source-map'
+  module.exports.plugins = (module.exports.plugins || []).concat([
+    new webpack.DefinePlugin({
+      'process.env': {
+        NODE_ENV: '"production"'
+      }
+    }),
+    new webpack.optimize.UglifyJsPlugin({
+      compress: {
+        warnings: false
+      }
+    })
+  ])
 }
 ```
 
-# 版本更新
+package.json
+
+```javascript
+{
+  "name": "swan-quick-start",
+  "version": "1.0.0",
+  "description": "",
+  "scripts": {
+    "dev": "webpack-dev-server --inline --hot --port 4000",
+    "build": "webpack"
+  },
+  "author": "chang20159@foxmail.com",
+  "devDependencies": {
+    "babel-core": "^6.26.0",
+    "babel-loader": "^7.1.2",
+    "babel-preset-es2015": "^6.24.1",
+    "css-loader": "^0.28.7",
+    "extract-text-webpack-plugin": "^3.0.0",
+    "file-loader": "^0.11.2",
+    "less": "^2.7.2",
+    "less-loader": "^4.0.5",
+    "style-loader": "^0.18.2",
+    "vue-loader": "^13.0.4",
+    "vue-template-compiler": "^2.4.3",
+    "webpack": "^3.5.6",
+    "webpack-dev-server": "^2.7.1"
+  },
+  "dependencies": {
+    "phoenix-styles": "^2.0.6",
+    "swan-ui": "^1.0.5",
+    "vue": "^2.4.3"
+  }
+}
+
+```
+
+### 引入组件
+
+在main.js中可通过如下几种方式引入需要的组件：
+
+**整体引入**
+
+```javascript
+import Vue from 'vue'
+import App from './App.vue'
+import 'phoenix-styles/dist/phoenix-styles.css'
+
+import SwanUI from 'swan-ui'
+Vue.use(SwanUI)
+```
+
+**按需引入**
+
+```javascript
+import Vue from 'vue'
+import App from './App.vue'
+import 'phoenix-styles/dist/phoenix-styles.css'
+
+import {Button,Image,ImageList} from 'swan-ui'
+Vue.component(Button.name,Button)
+Vue.component(Image.name,Image)
+Vue.component(ImageList.name,ImageList)
+```
+
+**按需引入**
+
+```javascript
+import Vue from 'vue'
+import App from './App.vue'
+import 'phoenix-styles/dist/phoenix-styles.css'
+
+import Button from 'swan-ui/lib/Button'
+import Image from 'swan-ui/lib/Image'
+import ImageList from 'swan-ui/lib/ImageList'
+Vue.component(Button.name,Button)
+Vue.component(Image.name,Image)
+Vue.component(ImageList.name,ImageList)
+```
+
+或者在App.vue中局部注册：
+
+```javascript
+import {Button,Image,ImageList} from 'swan-ui'
+export default {
+	name: 'App',
+	components: {
+	    [Button.name]:Button,
+	    [Image.name]:Image,
+	    [ImageList.name]: ImageList
+	}
+}
+```
+
+### 使用组件
+然后在App.vue中使用组件：
+
+```
+<template>
+    <div class="container">
+        <h4>Hello, Swan UI</h4>
+        <sw-image-list :column="2">
+            <sw-image v-for="(item,index) in images" 
+                      :key="index"
+                      :src="item"></sw-image>
+        </sw-image-list>
+        <sw-button class="fix-bottom" 
+                   block 
+                   @click="handleClick">点我查看图片</sw-button>
+    </div>
+</template>
+
+<script>
+    import {Button,Image,ImageList} from 'swan-ui'
+    export default {
+        components: {
+            [Button.name]:Button,
+            [Image.name]:Image,
+            [ImageList.name]: ImageList
+        },
+        data(){
+            return{
+                images: null
+            }
+        },
+        methods:{
+            handleClick(){
+                this.images = [
+                    'https://fuss10.elemecdn.com/b/2e/a6c333694efb4db66c6a3ba07e9d8jpeg.jpeg?imageMogr2/thumbnail/200x200/format/webp/quality/85',
+                    'https://fuss10.elemecdn.com/e/6c/0de9d18ef47292380826be8d8cfe8jpeg.jpeg?imageMogr2/thumbnail/200x200/format/webp/quality/85',
+                    'https://fuss10.elemecdn.com/9/78/f449290a86fb3ca7d793a5cc50344jpeg.jpeg?imageMogr2/thumbnail/200x200/format/webp/quality/85',
+                    'https://fuss10.elemecdn.com/b/ce/fdff43a9ea94d46706be48f50bc26jpeg.jpeg?imageMogr2/thumbnail/200x200/format/webp/quality/85'
+                ]
+            }
+        }
+    }
+</script>
+
+<style lang="less">
+    .container{
+        h4{
+            text-align: center;
+            margin-top: 20px;
+        }
+    }
+    .fix-bottom{
+        position: fixed;
+        bottom: 15px;
+    }
+</style>
+```
+
+
+最后在main.js中将节点添加到id为app的dom节点：
+
+```
+new Vue({
+  el: '#app',
+  render: h => h(App)
+})
+```
+
+### 运行
+
+```
+npm run build
+```
+
+```
+npm run dev
+```
+
+## 版本更新
 
 - v1.0.2 提供压缩/未压缩打包文件
 - v1.0.3 修复TabSet组件无法动态更新的问题
 - v1.0.4 统一事件名称、filter组件数据结构、补充文档
 - v1.0.5 修复prompt默认取消按钮无法关闭问题
 - v1.0.6 修复Image无法动态更新
+
+## 更多
+
+- 基于React的移动端组件库 [phoenix-ui](https://future-team.github.io/phoenix-ui/doc/)
+- 图标库 [gfs-icons](https://future-team.github.io/gfs-icons/index.html)
+
