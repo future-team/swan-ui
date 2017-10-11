@@ -30,6 +30,7 @@
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
     import toggle from '../../mixins/toggle'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwAccordion',
         extends: SwBase,
@@ -66,6 +67,9 @@
                 type: Boolean,
                 default: false
             }
+        },
+        created(){
+            new Logger('Accordion')
         },
         mounted(){
             this.height = this.$refs.accordionBody.offsetHeight+'px'

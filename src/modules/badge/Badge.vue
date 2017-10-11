@@ -16,9 +16,13 @@
      * @show true
      */
    import SwBase from '../Base.vue'
+   import Logger from '../../utils/logger.js'
    export default {
        name: 'SwBadge',
        extends: SwBase,
+       created(){
+            new Logger('Badge')
+       },
        props: {
            /**
             * 样式前缀

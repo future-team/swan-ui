@@ -18,6 +18,7 @@
      * @demo checkbox|checkbox.vue
      * @show true
      */
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwCheckbox',
         methods: {
@@ -29,6 +30,9 @@
             handleChange(evt){
                 this.$emit('change',evt.target.value,evt)
             }
+        },
+        created(){
+            new Logger('Checkbox')
         },
         props: {
             /**

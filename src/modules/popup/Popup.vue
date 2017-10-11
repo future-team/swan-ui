@@ -26,10 +26,14 @@
      */
     import SwBase from '../Base.vue'
     import toggle from '../../mixins/toggle'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwPopup',
         extends: SwBase,
         mixins: [toggle],
+        created(){
+            new Logger('Popup')
+        },
         props: {
             /**
              * 样式前缀

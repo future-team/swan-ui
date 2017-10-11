@@ -27,6 +27,7 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwSteps',
         extends: SwBase,
@@ -34,6 +35,9 @@
             return {
                 currentStep_ : this.currentStep
             }
+        },
+        created(){
+            new Logger('Steps')
         },
         methods: {
             /**

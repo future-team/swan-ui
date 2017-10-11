@@ -15,6 +15,7 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwRow',
         extends: SwBase,
@@ -25,6 +26,9 @@
                     'class': this.classObject
                 },
                 this.$slots.default )
+        },
+        created(){
+            new Logger('Row')
         },
         props: {
             /**

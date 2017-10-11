@@ -1,6 +1,6 @@
 {
   "name": "swan-ui",
-  "version": "1.0.6",
+  "version": "1.0.7",
   "description": "Vue Components for Mobile App.",
   "main": "lib/",
   "scripts": {
@@ -89,7 +89,8 @@
   "dependencies": {
     "classnames": "^2.2.5",
     "extend": "^3.0.1",
-    "phoenix-styles": "^1.5.2",
+    "phoenix-styles": "^2.0.10",
+    "pmlogger": "^1.0.5",
     "popper.js": "^1.10.8"
   }
 }

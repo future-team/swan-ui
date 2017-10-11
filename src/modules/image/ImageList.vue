@@ -19,9 +19,13 @@
      * @show true
      * */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwImageList',
         extends: SwBase,
+        created(){
+            new Logger('ImageList')
+        },
         props: {
             /**
              * 样式前缀

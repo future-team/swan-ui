@@ -3,7 +3,7 @@ import App from './App.vue'
 import Router from 'vue-router'
 import routes from './route'
 import Swan from 'swan-ui'
-import 'phoenix-styles/dist/phoenix-styles.css'
+import 'phoenix-styles/less/phoenix-styles.less'
 import CodeShow from './mini-demo.vue'
 
 Vue.use(Swan)

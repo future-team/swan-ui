@@ -40,6 +40,7 @@
      */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwInput',
         extends: SwBase,
@@ -73,6 +74,9 @@
                 })
                 return nativeProps
             }
+        },
+        created(){
+            new Logger('Input')
         },
         methods: {
             /**

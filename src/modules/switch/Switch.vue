@@ -19,6 +19,7 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwSwitch',
         extends: SwBase,
@@ -31,6 +32,9 @@
             handleClick(evt){
                 this.$emit('click',this.checked,evt)
             }
+        },
+        created(){
+            new Logger('Switch')
         },
         props: {
             /**

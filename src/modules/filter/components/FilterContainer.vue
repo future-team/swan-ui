@@ -95,6 +95,7 @@
     import SwBase from '../../Base.vue'
     import FilterSingleRow from './FilterSingleRow.vue'
     import FilterDoubleRow from './FilterDoubleRow.vue'
+    import Logger from '../../../utils/logger.js'
     export default {
         name: 'SwFilter',
         extends: SwBase,
@@ -118,6 +119,9 @@
             return {
                 activeNavIndex: -1
             }
+        },
+        created(){
+            new Logger('Filter')
         },
         methods: {
             onNavClick(activeNavIndex){

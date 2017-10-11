@@ -18,6 +18,7 @@
      * */
     import SwBase from '../Base.vue'
     import { getClientHeight,getOffsetTop ,getWindowScrollTop} from '../../utils/tool.js'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwImage',
         extends: SwBase,
@@ -97,6 +98,7 @@
                 this.defaultImg = new Image()
                 this.defaultImg.src = this.defaultSrc
             }
+            new Logger('Image')
         },
         mounted(){
             this.lazy && window.addEventListener('scroll', this.handleScroll)

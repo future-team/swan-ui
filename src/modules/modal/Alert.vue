@@ -40,6 +40,7 @@
     import SwButtonGroup from '../button/ButtonGroup.vue'
     import SwButton from '../button/Button.vue'
     import toggle from '../../mixins/toggle'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwAlert',
         mixins: [toggle],
@@ -78,6 +79,9 @@
                  */
                 this.$emit('on-toggle',val)
             }
+        },
+        created(){
+            new Logger('Alert')
         },
         props: {
             /**

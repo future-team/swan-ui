@@ -27,6 +27,7 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwTabSet',
         extends: SwBase,
@@ -93,6 +94,9 @@
                 }
                 return verticalClass
             }
+        },
+        created(){
+            new Logger('TabSet')
         },
         mounted () {
             this.updateTabbar()

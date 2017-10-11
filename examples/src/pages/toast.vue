@@ -6,7 +6,8 @@
             code: `
                        <sw-button @click="$info('请至少选择一项')">传递字符串</sw-button>
                        <sw-button @click="$success({
-                            content:'保存成功',
+                            content:'保存成功保存成功保存成功保存成功保存成功保存成功',
+                            duration: 5000,
                             callback: ()=>{
 
                             }

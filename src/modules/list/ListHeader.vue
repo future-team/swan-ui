@@ -22,9 +22,13 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwListHeader',
         extends: SwBase,
+        created(){
+            new Logger('ListHeader')
+        },
         props: {
             /**
              * 样式前缀

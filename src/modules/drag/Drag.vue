@@ -42,6 +42,7 @@
      * @demo drag|drag.vue
      * @show true
      * */
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwDrag',
         data(){
@@ -49,6 +50,9 @@
                 position: {},
                 isMouseDown: false
             }
+        },
+        created(){
+            new Logger('Drag')
         },
         methods:{
             /**

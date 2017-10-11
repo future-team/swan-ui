@@ -22,9 +22,13 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwList',
         extends: SwBase,
+        created(){
+            new Logger('List')
+        },
         props: {
             /**
              * 样式前缀

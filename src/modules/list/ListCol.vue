@@ -23,10 +23,14 @@
      */
     import SwBase from '../Base.vue'
     import SwCol from '../grid/Col.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwListCol',
         extends: SwBase,
         components: {SwCol},
+        created(){
+            new Logger('ListCol')
+        },
         props: {
             /**
              * 样式前缀

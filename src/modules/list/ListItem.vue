@@ -24,10 +24,14 @@
      */
     import SwBase from '../Base.vue'
     import SwRow from '../grid/Row.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwListItem',
         extends: SwBase,
         components: {SwRow},
+        created(){
+            new Logger('ListItem')
+        },
         props: {
             /**
              * 样式前缀

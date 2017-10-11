@@ -4,9 +4,9 @@
             <div class="ph-toast-shadow"></div>
             <div class="ph-toast-main">
                 <div :class="['ph-toast-content',{'ph-toast-rect':phIcon}]">
-                    <div v-if="phIcon" class="ph-toast-body">
+                    <div v-if="phIcon" :class="['ph-toast-body',content?'':'ph-toast-only-icon']">
                         <sw-icon :phIcon="phIcon" :phSize="isLoading ? 'lg':'xlg'"></sw-icon>
-                        <slot>{{content}}</slot>
+                        <slot><p v-if="content">{{content}}</p></slot>
                     </div>
                     <slot v-else>{{content}}</slot>
                 </div>
@@ -28,6 +28,7 @@
      */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwToast',
         extends: SwBase,
@@ -94,6 +95,9 @@
                 this.$destroy()
                 this.$el.parentNode.removeChild(this.$el)
             }
+        },
+        created(){
+            new Logger('Toast')
         },
         mounted(){
             this.startTimer()

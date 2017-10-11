@@ -14,6 +14,7 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwTab',
         extends: SwBase,
@@ -61,6 +62,9 @@
                     'active': this.index == this.$parent.activeIndex
                 }
             }
+        },
+        created(){
+            new Logger('Tab')
         },
         mounted () {
             this.$parent.updateTabbar()

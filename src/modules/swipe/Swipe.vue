@@ -34,6 +34,7 @@
     import SwBase from '../Base.vue'
     import SwDrag from '../drag/Drag.vue'
     import SwButton from '../button/Button.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwSwipe',
         extends: SwBase,
@@ -48,6 +49,9 @@
                 preTranslateX: 0,
                 distance: 0
             }
+        },
+        created(){
+            new Logger('Swipe')
         },
         methods:{
             handleDrag(position,evt){

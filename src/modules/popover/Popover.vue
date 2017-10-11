@@ -28,6 +28,7 @@
      * @show true
      */
     import { getWindowScrollTop,getWindowScrollLeft,getClientHeight,getClientWidth,getOffset} from '../../utils/tool'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwPopover',
         data(){
@@ -37,6 +38,9 @@
                 currentPlacement: this.placement,
                 flag: false
             }
+        },
+        created(){
+            new Logger('Popover')
         },
         methods: {
             init(){

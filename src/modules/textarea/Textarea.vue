@@ -23,6 +23,7 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwTextarea',
         extends: SwBase,
@@ -52,6 +53,9 @@
             value(val){
                 this.currentValue = val
             }
+        },
+        created(){
+            new Logger('Textarea')
         },
         props: {
             /**

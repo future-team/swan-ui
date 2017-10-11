@@ -16,9 +16,9 @@ var Toast = (options)=>{
 
 let toastMap = {
     'info' : '',
-    'success' : 'success',
-    'fail': 'fail',
-    'tip': 'tip',
+    'success' : 'success-circle',
+    'fail': 'fail-circle',
+    'tip': 'warning-circle',
     'loading': 'loading-white'
 }
 

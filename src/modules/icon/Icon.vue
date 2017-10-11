@@ -17,9 +17,13 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwIcon',
         extends: SwBase,
+        created(){
+            new Logger('Icon')
+        },
         props: {
             /**
              * 样式前缀

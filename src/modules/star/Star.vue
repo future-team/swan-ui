@@ -18,9 +18,13 @@
     import SwBase from '../Base.vue'
     import classnames from 'classnames'
     import { setPhPrefix } from '../../utils/classUtil'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwStar',
         extends: SwBase,
+        created(){
+            new Logger('Star')
+        },
         props: {
             /**
              * 样式前缀

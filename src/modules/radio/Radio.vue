@@ -14,10 +14,14 @@
      * @show true
      */
     import SwCheckbox from '../checkbox/Checkbox.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwRadio',
         inheritAttrs: false,
         components: {SwCheckbox},
+        created(){
+            new Logger('Radio')
+        },
         methods: {
             /**
              * 输入时触发

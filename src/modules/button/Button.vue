@@ -23,6 +23,7 @@
      */
     import SwBase from '../Base.vue'
     import SwIcon from '../icon/Icon.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwButton',
         extends: SwBase,
@@ -36,6 +37,9 @@
             handleClick(evt){
                 this.$emit('click',evt)
             }
+        },
+        created(){
+            new Logger('Button')
         },
         props:{
             /**

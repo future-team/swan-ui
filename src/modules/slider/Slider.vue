@@ -29,6 +29,7 @@
      */
     import SwBase from '../Base.vue'
     import SwDrag from '../drag/Drag.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwSlider',
         extends: SwBase,
@@ -86,6 +87,9 @@
             rangeDiff(){
                 return this.range[1]-this.range[0]
             }
+        },
+        created(){
+            new Logger('Slider')
         },
         mounted(){
             this.sliderLength = parseInt(this.$refs.sliderLine.offsetWidth)

@@ -36,6 +36,7 @@
     import SwButton from '../button/Button.vue'
     import SwIcon from '../icon/Icon.vue'
     import { getClientHeight } from '../../utils/tool.js'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwPullup',
         extends: SwBase,
@@ -49,6 +50,9 @@
                 touchBottom: false,
                 distanceY: 0
             }
+        },
+        created(){
+            new Logger('Pullup')
         },
         methods: {
             /**

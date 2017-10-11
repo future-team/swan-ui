@@ -16,9 +16,13 @@
      * @show true
      */
     import SwBase from '../Base.vue'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwButtonGroup',
         extends: SwBase,
+        created(){
+            new Logger('ButtonGroup')
+        },
         props: {
             /**
              * 样式前缀

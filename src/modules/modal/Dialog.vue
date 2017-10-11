@@ -39,6 +39,7 @@
      */
     import SwBase from '../Base.vue'
     import toggle from '../../mixins/toggle'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwDialog',
         extends: SwBase,
@@ -52,6 +53,9 @@
                  */
                 !this.shadowDisabled && this.handleToggle(false)
             }
+        },
+        created(){
+            new Logger('Dialog')
         },
         props: {
             /**

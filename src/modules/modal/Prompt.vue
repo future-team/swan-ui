@@ -41,6 +41,7 @@
     import SwButton from '../button/Button.vue'
     import SwInput from '../input/Input.vue'
     import toggle from '../../mixins/toggle'
+    import Logger from '../../utils/logger.js'
     export default {
         name: 'SwPrompt',
         mixins: [toggle],
@@ -55,6 +56,9 @@
                 inputValue: ' ',
                 currentVisible: this.visible
             }
+        },
+        created(){
+            new Logger('Prompt')
         },
         computed: {
             currentButtons(){
