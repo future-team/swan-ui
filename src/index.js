@@ -1,3 +1,4 @@
+import 'babel-polyfill'
 import Button from './modules/button/Button.vue'
 import ButtonGroup from './modules/button/ButtonGroup.vue'
 import Badge from './modules/badge/Badge.vue'

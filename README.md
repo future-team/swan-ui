@@ -61,44 +61,6 @@ import 'phoenix-styles/less/phoenix-less'
 <style lang="less" src="phoenix-styles/less/phoenix-styles.less"></style>
 ```
 
-### 关于CSS样式
-布局、颜色、字体、图标等都有一套完整的视觉规范。以布局为例，布局是页面构成的基础，规定了一些规则来保证同类产品的一致性。
-
-我们的视觉稿基准是iphone6(750 x 1334)，遵循苹果尺寸规范，且原则上保持栅格最小相对距离为8px。
-
-<img src="./image/layout.png"/>
-
-**需要注意的是**，为了适配各种屏幕，我们的组件样式库均使用viewport + rem布局，css样式单位使用rem + px。在使用我们的组件库时，需要引入js文件:
-
-```xml
-<script type="text/javascript" src="https://www.dpfile.com/app/gfs-viewport/gfs-viewport.js"></script>
-```
-
-并且，**您的业务代码中，css样式都需要使用rem作为单位。**
-
-比如，下面宽750的视觉稿和宽375的视觉稿
-
-<div>
-<img src="./image/mark.png" height="400">
-<img src="./image/sketch.png" height="400">
-</div>
-
-
-如果是左边宽750的视觉稿，顶部高度128，css样式直接除以100
-
-```css
-div{
-	height: 1.28rem;
-}
-```
-如果是右边宽375的视觉稿，顶部高度64，css样式直接除以50
-
-```css
-div{
-	height: 1.28rem;
-}
-```
-
 ### 自定义组件样式
 在使用组件时，我们可以自定义样式，覆盖组件样式：
 
@@ -428,6 +390,7 @@ npm run dev
 - v1.0.5 修复prompt默认取消按钮无法关闭问题
 - v1.0.6 修复Image无法动态更新
 - v1.0.7 修复Toast文字溢出 && 添加logger
+- v1.0.8 修复Object.assign兼容性问题
 
 ## 更多
 
